@@ -1,0 +1,117 @@
+,genus,species,name,corallite,shape,max_depth,comments
+1,Acropora,cervicornis,Acropora cervicornis ,1,branching,60,
+2,Acropora,palmata,Acropora palmata ,0.8,branching,40,
+3,Acropora,panamensis,Acropora panamensis ,1.5,caespitose,NA,"Early Miocene shallow-water corals from La Guajira, Colombia: part I, Acroporidae–Montastraeidae"
+4,Acropora,saludensis,Acropora saludensis ,2.2,branching,NA,"Early Miocene shallow-water corals from La Guajira, Colombia: part I, Acroporidae–Montastraeidae"
+5,Agaricia,grahamae,Agaricia grahamae ,2.9,platy,115,
+6,Agaricia,lamarcki,Agaricia lamarcki ,4.5,platy,76,
+7,Agaricia,undata,Agaricia undata ,2.9,platy,80,
+8,Archohelia,limonensis,Archohelia limonensis ,3,branching,NA,"Vaughan, T. W (1919) Fossil corals from central america, cuba and porto rico, with an account of the american tertiary, pleistocene and recent coral reefs"
+9,Caulastraea,portoricensis,Caulastraea portoricensis ,9,branching,NA,stratigraphic distributions of genera…
+10,Colpophyllia,amaranthus,Colpophyllia natans ,30,massive,55,
+11,Colpophyllia,breviserialis,Colpophyllia natans ,30,massive,55,
+12,Colpophyllia,natans,Colpophyllia natans ,30,massive,55,
+13,Dendrogyra,cylindrus,Dendrogyra cylindrus ,10,massive,25,
+14,Dichocoenia,caloosahatcheensis,Dichocoenia caloosahatcheensis ,10,platy,NA,
+15,Dichocoenia,eminens,Dichocoenia eminens ,10,platy,NA,
+16,Dichocoenia,stellaris,Dichocoenia stokesii ,10,massive,72,
+17,Dichocoenia,stokesi,Dichocoenia stokesii ,10,massive,72,
+18,Dichocoenia,tuberosa,Dichocoenia tuberosa ,3,massive,NA,stratigraphic distributions of genera…
+19,Diploria,clivosa,Pseudodiploria clivosa ,5,massive,NA,2: stratigraphic distributions of genera
+20,Diploria,labyrinthiformis,Diploria labyrinthiformis ,10,massive,43,2: stratigraphic distributions of genera
+21,Diploria,sarasotana,Diploria sarasotana ,10,massive,NA,2: stratigraphic distributions of genera
+22,Diploria,strigosa,Pseudodiploria strigosa ,10,massive,NA,
+23,Diploria,zambensis,Pseudodiploria strigosa ,10,massive,NA,
+24,Eusmilia,fastigiata,Eusmilia fastigiata ,15,branching,65,1: Use of fractal dimensions to quantify coral shape
+25,Favia,dominicensis,Favia dominicensis ,10,massive,NA,
+26,Favia,fragum,Favia fragum ,5,massive,20,
+27,Favia,maoadentrensis,Favia maoadentrensis ,5,massive,NA,
+28,Favia,vokesae,Favia vokesae ,5,encrusting,NA,
+29,Galaxea,excelsa,Galaxea excelsa ,5.4,massive,NA,stratigraphic distributions of genera…
+30,Gardineroseris,planulata,Gardineroseris planulata ,4.9,massive,20,
+31,Goniopora,calhounensis,Goniopora calhounensis ,5,massive,NA,stratigraphic distributions of genera…
+32,Goniopora,hilli,Goniopora hilli ,10,massive,NA,
+33,Goniopora,imperatoris,Goniopora imperatoris ,10,massive,NA,
+34,Helioseris,cucullata,Helioseris cucullata ,4.6,platy,40,
+35,Isophyllastrea,rigida,Isophyllia rigida ,20,massive,20,
+36,Isophyllia,sinuosa,Isophyllia sinuosa ,11.2,massive,20,ctdb
+37,Isopora,curacaoensis,Isopora curacaoensis ,5,branching,NA,"FIRST RECORD OF THE INDO-PACIFIC REEF CORALGENUSISOPORAIN THE CARIBBEAN REGION: TWONEW SPECIES FROM THE NEOGENE OF CURAC ̧AO,NETHERLANDS ANTILLES"
+38,Isopora,ginsburgi,Isopora ginsburgi ,2,cuneiform,NA,"FIRST RECORD OF THE INDO-PACIFIC REEF CORALGENUSISOPORAIN THE CARIBBEAN REGION: TWONEW SPECIES FROM THE NEOGENE OF CURAC ̧AO,NETHERLANDS ANTILLES"
+39,Leptoseris,cailleti,Leptoseris cailleti ,2.3,branching,150,stratigraphic distributions of genera
+40,Leptoseris,gardineri,Leptoseris gardineri ,4.7,"branching, digitate",70,
+41,Leptoseris,glabra,Leptoseris glabra ,5.2,laminar,44,"stratigraphic distributions of genera, 2: ctdb"
+42,Agaricia,undata,Agaricia undata ,2.9,laminar,80,"1:stratigraphic distributions of genera, 2: ctdb"
+43,Montastraea-ann,annularis,Orbicella annularis ,3.5,massive,82,stratigraphic distributions of genera
+44,Montastraea,brevis,Montastraea brevis ,3.8,massive,NA,stratigraphic distributions of genera
+45,Montastraea-ann,faveolata,Orbicella faveolata ,2.7,massive,40,
+46,Montastraea-ann,franksi,Orbicella franksi ,3.5,massive,50,
+47,Montastraea-ann,limbata,Orbicella limbata ,10,massive,NA,
+48,Montastraea,trinitatis,Montastraea trinitatis ,3.5,massive,NA,
+49,Montastraea-cav,canalis,Montastraea canalis ,8,massive,NA,"Early Miocene shallow-water corals from La Guajira, Colombia: part I, Acroporidae–Montastraeidae , 2: stratigraphic distributions of genera"
+50,Montastraea-cav,cavernosa,Montastraea cavernosa ,7.2,massive,113,stratigraphic distributions of genera
+51,Montastraea-cav,cylindrica,Montastraea cylindrica ,5,platy,NA,
+52,Montastraea-cav,endothecata,Montastraea cavernosa ,9,massive,113,2: stratigraphic distributions of genera
+53,Madracis,asperula,Madracis asperula ,3,branching,64,
+54,Madracis,cf.herricki,Madracis herricki ,3,branching,NA,
+55,Madracis,decactis,Madracis decactis ,1.9,encrusting,98,
+56,Madracis,decaseptata,Madracis decaseptata ,1.7,branching,NA,
+57,Madracis,mirabilis,Madracis auretenra ,1.6,branching,40,
+58,Madracis,pharensis,Madracis pharensis ,0.6,encrusting,99,
+59,Madracis,sp.A,Madracis,1.5,branching,NA,
+60,Manicina,aff.mayori,Manicina areolata ,15,massive,65,
+61,Manicina,areolata,Manicina areolata ,15,massive,65,
+62,Manicina,grandis,Manicina grandis ,15,massive,NA,
+63,Manicina,mayori,Manicina areolata ,15,massive,65,
+64,Meandrina,braziliensis,Meandrina brasiliensis ,20,massive,15,
+65,Meandrina,meandrites,Meandrina meandrites ,14,massive,80,
+66,Mussa,angulosa,Mussa angulosa ,7,branching,30,
+67,Mussismilia,aff.hartti,Mussismilia harttii ,30,branching,NA,stratigraphic distributions of genera
+68,Mycetophyllia,aliciae,Mycetophyllia aliciae ,20,platy,85,
+69,Mycetophyllia,bullbrooki,Mycetophyllia bullbrooki ,20,platy,NA,
+70,Mycetophyllia,danaana,Mycetophyllia danaana ,20,platy,30,
+71,Mycetophyllia,ferox,Mycetophyllia ferox ,20,platy,30,
+72,Mycetophyllia,lamarckiana,Mycetophyllia lamarckana ,20,platy,75,
+73,Mycetophyllia,reesi,Mycetophyllia reesi ,20,platy,76,
+74,Porites-mass,aff.astreoides,Porites astreoides ,1.4,massive,70,2: stratigraphic distributions of genera
+75,Porites-mass,astreoides,Porites astreoides ,1.4,massive,70,2: stratigraphic distributions of genera
+76,Porites-mass,macdonaldi,Porites macdonaldi ,1.6,platy,NA,
+77,Porites-mass,portoricensis,Porites portoricensis ,1.8,branching,NA,
+78,Porites-mass,waylandi,Porites waylandi ,1.6,massive,NA,
+79,Porites-br,baracoaensis,Porites baracoaensis ,1.2,intermediate branched,NA,
+80,Porites-br,branneri,Porites branneri ,1.8,encrusting,3,
+81,Porites-br,colonensis,Porites colonensis ,2,platy,25,
+82,Porites-br,convivatoris,Porites convivatoris,1.4,encrusting,NA,
+83,Porites-br,divaricata,Porites divaricata,1.6,branching,47,
+84,Porites-br,furcata,Porites furcata,1.8,intermediate branched,50,
+85,Porites-br,porites,Porites porites,2,branching,35,
+86,Pironastrea,anguillensis,Pironastraea anguillensis,20,massive,NA,2: strati
+90,Placocyathus,trinitatis,Antillocyathus trinitatis,50,massive,NA,
+92,Pocillopora,arnoldi,Pocillopora arnoldi,1.2,branching,NA,stratigraphic distributions of genera
+93,Pocillopora,baracoaensis,Pocillopora baracoaensis,0.8,branching,NA,stratigraphic distributions of genera
+94,Pocillopora,crassoramosa,Pocillopora crassoramosa,1,branching,NA,
+95,Psammocora,trinitatis,Psammocora trinitatis,3,massive,NA,stratigraphic distributions of genera
+96,Scolymia,cubensis,Scolymia cubensis,40,massive,92,solitary coral
+97,Scolymia,lacera,Scolymia lacera,50,massive,80,solitary coral
+98,Siderastrea,mendenhalli,Siderastrea mendenhalli,4,massive,NA,
+99,Siderastrea,radians,Siderastrea radians,3.5,massive,3,
+100,Siderastrea,siderea,Siderastrea siderea,5,massive,8.5,
+101,Siderastrea,silecensis,Siderastrea silecensis,6.5,massive,NA,stratigraphic distributions of genera
+102,Solenastrea,bournoni,Solenastrea bournoni,2.5,massive,30,
+103,Solenastrea,hyades,Solenastrea hyades,10,massive,40,
+104,Stephanocoenia,duncani,Stephanocoenia duncani,2,massive,NA,
+105,Stephanocoenia,intersepta,Stephanocoenia intersepta,2,massive,100,
+106,Stephanocoenia,spongiformis,Stephanocoenia spongiformis,2,massive,NA,
+107,Stylophora,aff.portobellensis,Stylophora portobellensis,0.75,branching,NA,"Vaughan, T. W (1919) Fossil corals from central america, cuba and porto rico, with an account of the american tertiary, pleistocene and recent coral reefs"
+108,Stylophora,affinis,Stylophora affinis,1,branching,NA,
+109,Stylophora,granulata,Stylophora granulata,1,branching,NA,
+110,Stylophora,imperatoris,Stylophora imperatoris,1,branching,NA,stratigraphic distributions of genera
+111,Stylophora,minor,Stylophora minor,0.7,branching,NA,
+112,Stylophora,monticulosa,Stylophora monticulosa,1,branching,NA,stratigraphic distributions of genera
+113,Stylophora,panamensis,Stylophora affinis,1,branching,NA,stratigraphic distributions of genera
+114,Thysanus,crassicostatus,Hadrophyllia saundersi ,NA,massive,NA,2: stratigraphic distributions of genera
+115,Thysanus,excentricus,Thysanus excentricus,15,massive,NA,2: stratigraphic distributions of genera
+116,Trachyphyllia,bilobata,Trachyphyllia bilobata,60,massive,NA,stratigraphic distributions of genera
+117,Undaria,agaricites,Agaricia agaricites,3.1,branching,75,
+118,Undaria,crassa,Agaricia agaricites,3,platy,75,
+119,Undaria,pusilla,Undaria pusilla,1.9,encrusting,NA,stratigraphic distributions of genera
+120,Undaria,sp.A,Agaricia,4.3,platy,NA,

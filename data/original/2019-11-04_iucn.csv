@@ -1,0 +1,887 @@
+assessmentId,internalTaxonId,scientificName,kingdomName,phylumName,orderName,className,familyName,genusName,speciesName,infraType,infraName,infraAuthority,authority,redlistCategory,redlistCriteria,criteriaVersion,populationTrend,scopes
+3465107,132859,Oulastrea crispata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Oulastrea,crispata,,,,"(Lamarck, 1816)",Least Concern,,3.1,Unknown,Global
+3466085,132861,Calathiscus tantillus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Calathiscus,tantillus,,,,"Claereboudt &amp; Al-Amri, 2004",Data Deficient,,3.1,Unknown,Global
+3466788,132863,Acropora prostrata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,prostrata,,,,"(Dana, 1846)",Data Deficient,,3.1,Decreasing,Global
+3467805,132865,Alveopora japonica,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Alveopora,japonica,,,,"Eguchi, 1968",Vulnerable,A4cd,3.1,Unknown,Global
+3468128,132866,Montipora angulata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,angulata,,,,"(Lamarck, 1816)",Vulnerable,A4ce,3.1,Decreasing,Global
+3468654,132867,Acropora pectinatus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,pectinatus,,,,"Veron, 2002",Data Deficient,,3.1,Decreasing,Global
+3469001,132868,Goniastrea columella,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Goniastrea,columella,,,,"Crossland, 1948",Near Threatened,,3.1,Decreasing,Global
+3470090,132870,Moseleya latistellata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Moseleya,latistellata,,,,"Quelch, 1884",Vulnerable,A4c,3.1,Decreasing,Global
+3470484,132871,Pectinia elongata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Pectinia,elongata,,,,"Rehberg, 1892",Near Threatened,,3.1,Unknown,Global
+3470903,132872,Favia vietnamensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,vietnamensis,,,,"Veron, 2002",Near Threatened,,3.1,Decreasing,Global
+3471788,132874,Scolymia lacera,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Scolymia,lacera,,,,"(M. Edwards &amp; Haime, 1849)",Least Concern,,3.1,Unknown,Global
+3472248,132875,Pocillopora kelleheri,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Pocillopora,kelleheri,,,,"Veron, 2002",Least Concern,,3.1,Stable,Global
+3472602,132876,Leptoseris tubulifera,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Leptoseris,tubulifera,,,,"Vaughan, 1907",Least Concern,,3.1,Unknown,Global
+3472961,132877,Fungia fralinae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,fralinae,,,,"Nemenzo, 1955",Least Concern,,3.1,Unknown,Global
+3473842,132879,Goniopora tenella,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,tenella,,,,"(Quelch, 1886)",Near Threatened,,3.1,Unknown,Global
+3475620,132882,Acropora japonica,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,japonica,,,,"Veron, 2002",Data Deficient,,3.1,Decreasing,Global
+3476602,132884,Colpophyllia natans,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Colpophyllia,natans,,,,"(Houttuyn, 1772)",Least Concern,,3.1,Stable,Global
+3477764,132886,Acropora seriata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,seriata,,,,"Ehrenberg, 1834",Data Deficient,,3.1,Decreasing,Global
+3479415,132889,Porites nodifera,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,nodifera,,,,"Klunzinger, 1879",Least Concern,,3.1,Unknown,Global
+3479919,132890,Catalaphyllia jardinei,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,EUPHYLLIDAE,Catalaphyllia,jardinei,,,,"(Saville-Kent, 1893)",Vulnerable,A4cd,3.1,Unknown,Global
+3480480,132891,Porites duerdeni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,duerdeni,,,,"Vaughan, 1907",Least Concern,,3.1,Unknown,Global
+3480772,132892,Montipora hodgsoni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,hodgsoni,,,,"Veron, 2002",Vulnerable,A4c,3.1,Decreasing,Global
+3481145,132893,Platygyra crosslandi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Platygyra,crosslandi,,,,"Matthai, 1928",Near Threatened,,3.1,Decreasing,Global
+3481551,132894,Favia veroni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,veroni,,,,"Moll &amp; Borel-Best, 1984",Near Threatened,,3.1,Decreasing,Global
+3482552,132896,Alveopora marionensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Alveopora,marionensis,,,,"Veron &amp; Pichon, 1982",Vulnerable,A4c,3.1,Unknown,Global
+3483414,132898,Goniopora cellulosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,cellulosa,,,,"Veron, 1990",Vulnerable,A4c,3.1,Unknown,Global
+3483734,132899,Favia rosaria,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,rosaria,,,,"Veron, 2002",Vulnerable,A4c,3.1,Decreasing,Global
+3484188,132900,Symphyllia radians,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Symphyllia,radians,,,,"Milne Edwards &amp; Haime, 1849",Least Concern,,3.1,Unknown,Global
+3484796,132901,Leptoseris amitoriensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Leptoseris,amitoriensis,,,,"Veron, 1990",Near Threatened,,3.1,Unknown,Global
+3485139,132902,Fungia puishani,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,puishani,,,,"Veron &amp; DeVantier, 2000",Data Deficient,,3.1,Unknown,Global
+3486545,132905,Alveopora catalai,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Alveopora,catalai,,,,"Wells, 1968",Near Threatened,,3.1,Unknown,Global
+3487497,132907,Echinomorpha nishihirai,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Echinomorpha,nishihirai,,,,"(Veron, 1990)",Near Threatened,,3.1,Unknown,Global
+3487914,132908,Acropora rosaria,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,rosaria,,,,"(Dana, 1846)",Data Deficient,,3.1,Decreasing,Global
+3488412,132909,Acropora turaki,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,turaki,,,,"Wallace, 1994",Vulnerable,A4ce,3.1,Decreasing,Global
+3488908,132910,Acropora divaricata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,divaricata,,,,"(Dana, 1846)",Near Threatened,,3.1,Decreasing,Global
+3490281,132912,Enigmopora darveliensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Enigmopora,darveliensis,,,,"Ditlev, 2003",Data Deficient,,3.1,Decreasing,Global
+3490569,132913,Acropora rudis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,rudis,,,,"(Rehberg, 1892)",Endangered,A4ce,3.1,Decreasing,Global
+3490934,132914,Acropora maryae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,maryae,,,,"Veron, 2002",Data Deficient,,3.1,Decreasing,Global
+3492871,132918,Pectinia pygmaeus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Pectinia,pygmaeus,,,,"Veron, 2002",Near Threatened,,3.1,Unknown,Global
+3493197,132919,Acropora stoddarti,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,stoddarti,,,,"Pillai &amp; Scheer, 1976",Data Deficient,,3.1,Decreasing,Global
+3493758,132920,Echinopora ashmorensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Echinopora,ashmorensis,,,,"Veron, 1990",Vulnerable,A4c,3.1,Decreasing,Global
+3494120,132921,Porites branneri,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,branneri,,,,"Rathbun, 1887",Near Threatened,,3.1,Stable,Global
+3495703,132924,Pachyseris gemmae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pachyseris,gemmae,,,,"Nemenzo, 1955",Near Threatened,,3.1,Unknown,Global
+3496457,132926,Madracis asanoi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ASTROCOENIIDAE,Madracis,asanoi,,,,"Yabe &amp; Sugiyama, 1941",Data Deficient,,3.1,Unknown,Global
+3496754,132927,Leptoseris striata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Leptoseris,striata,,,,"(Fenner &amp; Veron, 2000)",Near Threatened,,3.1,Unknown,Global
+3497113,132928,Pectinia lactuca,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Pectinia,lactuca,,,,"(Pallas, 1766)",Vulnerable,A4cd,3.1,Unknown,Global
+3497675,132929,Acanthastrea subechinata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Acanthastrea,subechinata,,,,"Veron, 2002",Near Threatened,,3.1,Unknown,Global
+3498147,132930,Montipora gaimardi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,gaimardi,,,,"Bernard, 1897",Vulnerable,A4c,3.1,Decreasing,Global
+3498522,132931,Acropora willisae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,willisae,,,,"Veron &amp; Wallace, 1984",Vulnerable,A4ce,3.1,Decreasing,Global
+3499012,132932,Montipora orientalis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,orientalis,,,,"Nemenzo, 1967",Vulnerable,A4c,3.1,Decreasing,Global
+3499437,132933,Acropora carduus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,carduus,,,,"(Dana, 1846)",Near Threatened,,3.1,Decreasing,Global
+3499896,132934,Acropora tanegashimensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,tanegashimensis,,,,"Veron, 1990",Data Deficient,,3.1,Unknown,Global
+3500180,132935,Acropora plumosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,plumosa,,,,"Wallace &amp; Wolstenholme, 1998",Vulnerable,A4ce,3.1,Decreasing,Global
+3501291,132937,Acropora spathulata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,spathulata,,,,"(Brook, 1891)",Least Concern,,3.1,Unknown,Global
+3501583,132938,Porites evermanni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,evermanni,,,,"Vaughan, 1907",Data Deficient,,3.1,Unknown,Global
+3502065,132939,Heterocyathus sulcatus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,CARYOPHYLLIIDAE,Heterocyathus,sulcatus,,,,"Verrill, 1866",Least Concern,,3.1,Unknown,Global
+3503052,132941,Indophyllia macassarensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Indophyllia,macassarensis,,,,"Best &amp; Hoeksema, 1987",Data Deficient,,3.1,Unknown,Global
+3503328,132942,Montipora patula,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,patula,,,,"Verrill, 1864",Vulnerable,D2,3.1,Decreasing,Global
+3503629,132943,Stylophora madagascarensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Stylophora,madagascarensis,,,,"Veron, 2002",Endangered,A4c,3.1,Unknown,Global
+3503904,132944,Montipora nodosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,nodosa,,,,"(Dana, 1846)",Near Threatened,,3.1,Decreasing,Global
+3504491,132945,Porites colonensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,colonensis,,,,"Zlatarski, 1990",Data Deficient,,3.1,Unknown,Global
+3504801,132946,Acropora lianae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,lianae,,,,"Nemenzo, 1967",Data Deficient,,3.1,Decreasing,Global
+3505161,132947,Echinophyllia echinoporoides,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Echinophyllia,echinoporoides,,,,"Veron &amp; Pichon, 1979",Least Concern,,3.1,Unknown,Global
+3506268,132949,Goniopora pendulus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,pendulus,,,,"Veron, 1985",Least Concern,,3.1,Unknown,Global
+3506667,132950,Acropora macrostoma,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,macrostoma,,,,"(Brook, 1891)",Data Deficient,,3.1,Decreasing,Global
+3507057,132951,Acropora rufus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,rufus,,,,"Veron, 2002",Data Deficient,,3.1,Decreasing,Global
+3507379,132952,Acropora variabilis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,variabilis,,,,"(Klunzinger, 1879)",Data Deficient,,3.1,Decreasing,Global
+3507854,132953,Merulina scheeri,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MERULINIDAE,Merulina,scheeri,,,,"Head, 1983",Least Concern,,3.1,Unknown,Global
+3508778,132955,Goniopora pearsoni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,pearsoni,,,,"Veron, 2002",Least Concern,,3.1,Unknown,Global
+3509603,132957,Turbinaria bifrons,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Turbinaria,bifrons,,,,"Brüggemann, 1877",Vulnerable,A4c,3.1,Unknown,Global
+3510441,132959,Porites desilveri,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,desilveri,,,,"Veron, 2002",Endangered,A4ce,3.1,Unknown,Global
+3511531,132961,Oculina tenella,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,OCULINIDAE,Oculina,tenella,,,,"(De Pourtales, 1871)",Data Deficient,,3.1,Unknown,Global
+3511799,132962,Symphyllia erythraea,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Symphyllia,erythraea,,,,"(Klunzinger, 1879)",Least Concern,,3.1,Unknown,Global
+3512182,132963,Manicina areolata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Manicina,areolata,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Stable,Global
+3512652,132964,Fungia taiwanensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,taiwanensis,,,,"Hoeksema &amp; Dai, 1991",Vulnerable,A4c,3.1,Unknown,Global
+3513876,132967,Euphyllia yaeyamaensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,EUPHYLLIDAE,Euphyllia,yaeyamaensis,,,,"(Shirai, 1980)",Near Threatened,,3.1,Unknown,Global
+3514322,132968,Halomitra clavator,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Halomitra,clavator,,,,"Hoeksema, 1989",Vulnerable,A4c,3.1,Unknown,Global
+3515504,132970,Agaricia lamarcki,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Agaricia,lamarcki,,,,"Milne Edwards &amp; Haime, 1851",Vulnerable,A4ce,3.1,Decreasing,Global
+3515966,132971,Acropora tumida,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,tumida,,,,"(Verrill, 1866)",Data Deficient,,3.1,Decreasing,Global
+3516341,132972,Acropora paniculata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,paniculata,,,,"Verrill, 1902",Vulnerable,A4ce,3.1,Decreasing,Global
+3516876,132973,Anacropora matthai,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Anacropora,matthai,,,,"Pillai, 1973",Vulnerable,A4c,3.1,Decreasing,Global
+3517278,132974,Plerogyra discus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,EUPHYLLIDAE,Plerogyra,discus,,,,"Veron &amp; Fenner, 2000",Vulnerable,A4c,3.1,Unknown,Global
+3519010,132977,Montipora stilosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,stilosa,,,,"(Ehrenberg, 1834)",Vulnerable,A4c,3.1,Decreasing,Global
+3520070,132979,Favites complanata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favites,complanata,,,,"(Ehrenberg, 1834)",Near Threatened,,3.1,Decreasing,Global
+3521498,132981,Acropora hemprichii,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,hemprichii,,,,"(Ehrenberg, 1834)",Vulnerable,A4ce,3.1,Decreasing,Global
+3521978,132982,Montigyra kenti,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MEANDRINIDAE,Montigyra,kenti,,,,"Matthai, 1928",Data Deficient,,3.1,Unknown,Global
+3522855,132984,Acropora derawanensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,derawanensis,,,,"Wallace, 1997",Vulnerable,A4ce,3.1,Decreasing,Global
+3523207,132985,Turbinaria radicalis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Turbinaria,radicalis,,,,"Bernard, 1896",Near Threatened,,3.1,Unknown,Global
+3524260,132987,Echinopora gemmacea,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Echinopora,gemmacea,,,,"Lamarck, 1816",Least Concern,,3.1,Decreasing,Global
+3524962,132988,Acropora longicyathus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,longicyathus,,,,"(Milne Edwards &amp; Haime, 1860)",Least Concern,,3.1,Decreasing,Global
+3525568,132989,Psammocora interstinctus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Psammocora,interstinctus,,,,Claereboudt 2006,Data Deficient,,3.1,Unknown,Global
+3525960,132990,Acropora multiacuta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,multiacuta,,,,"Nemenzo, 1967",Vulnerable,A4ce,3.1,Decreasing,Global
+3526345,132991,Coscinaraea crassa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Coscinaraea,crassa,,,,"Veron &amp; Pichon, 1980",Near Threatened,,3.1,Unknown,Global
+3527470,132993,Zoopilus echinatus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Zoopilus,echinatus,,,,"Dana, 1846",Least Concern,,3.1,Unknown,Global
+3527894,132994,Favites vasta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favites,vasta,,,,"(Klunzinger, 1879)",Near Threatened,,3.1,Decreasing,Global
+3528386,132995,Goniopora planulata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,planulata,,,,"Ehrenberg, 1834",Vulnerable,A4c,3.1,Unknown,Global
+3528886,132996,Fungia seychellensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,seychellensis,,,,"Hoeksema, 1993",Vulnerable,A4c,3.1,Unknown,Global
+3530477,132999,Millepora nitida,ANIMALIA,CNIDARIA,MILLEPORINA,HYDROZOA,MILLEPORIDAE,Millepora,nitida,,,,Verrill 1868,Data Deficient,,3.1,Unknown,Global
+3530977,133060,Goniastrea favulus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Goniastrea,favulus,,,,"(Dana, 1846)",Near Threatened,,3.1,Decreasing,Global
+3531954,133062,Mycetophyllia lamarckiana,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Mycetophyllia,lamarckiana,,,,"Milne Edwards &amp; Haime, 1848",Least Concern,,3.1,Unknown,Global
+3532888,133061,Acropora tizardi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,tizardi,,,,"(Brook, 1892)",Data Deficient,,3.1,Decreasing,Global
+3533248,133002,Seriatopora stellata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Seriatopora,stellata,,,,"Quelch, 1886",Near Threatened,,3.1,Stable,Global
+3534237,133003,Leptastrea bewickensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Leptastrea,bewickensis,,,,"Veron &amp; Pichon, 1977",Near Threatened,,3.1,Decreasing,Global
+3534713,133064,Montipora florida,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,florida,,,,"Nemenzo, 1967",Vulnerable,A4c,3.1,Decreasing,Global
+3535063,133004,Simplastrea vesicularis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,OCULINIDAE,Simplastrea,vesicularis,,,,"Umbgrove, 1939",Data Deficient,,3.1,Unknown,Global
+3535393,133075,Palauastrea ramosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ASTROCOENIIDAE,Palauastrea,ramosa,,,,"Yabe &amp; Sugiyama, 1941",Near Threatened,,3.1,Unknown,Global
+3535813,133005,Anacropora spumosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Anacropora,spumosa,,,,"Veron Turak &amp; DeVantier, 2000",Data Deficient,,3.1,Decreasing,Global
+3536699,133006,Acropora palmata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,palmata,,,,"(Lamarck, 1816)",Critically Endangered,A2ace,3.1,Stable,Global
+3537154,133077,Coscinaraea mcneilli,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Coscinaraea,mcneilli,,,,Wells 1962,Least Concern,,3.1,Unknown,Global
+3537466,133007,Montipora malampaya,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,malampaya,,,,"Nemenzo, 1967",Vulnerable,A4c,3.1,Decreasing,Global
+3537856,133078,Favites acuticollis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favites,acuticollis,,,,"(Ortmann, 1889)",Near Threatened,,3.1,Decreasing,Global
+3538624,133079,Montipora meandrina,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,meandrina,,,,"(Ehrenberg, 1834)",Vulnerable,A4c,3.1,Decreasing,Global
+3539011,133009,Favia albidus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,albidus,,,,"Veron, 2002",Near Threatened,,3.1,Decreasing,Global
+3539345,133080,Acropora selago,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,selago,,,,"(Studer, 1878)",Near Threatened,,3.1,Decreasing,Global
+3540096,133081,Acropora kirstyae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,kirstyae,,,,"Veron &amp; Wallace, 1984",Vulnerable,A4ce,3.1,Decreasing,Global
+3540541,133010,Acropora elseyi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,elseyi,,,,"(Brook, 1892)",Least Concern,,3.1,Decreasing,Global
+3541868,133011,Pocillopora ankeli,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Pocillopora,ankeli,,,,"Scheer &amp; Pillai, 1974",Vulnerable,A4c,3.1,Unknown,Global
+3542659,133012,Montastraea franksi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Montastraea,franksi,,,,"(Gregory, 1895)",Vulnerable,A4ce,3.1,Decreasing,Global
+3544759,133014,Goniopora polyformis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,polyformis,,,,"Zou, 1980",Vulnerable,A4c,3.1,Unknown,Global
+3545155,133086,Acropora lamarcki,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,lamarcki,,,,"Veron, 2002",Data Deficient,,3.1,Decreasing,Global
+3545567,133015,Montipora millepora,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,millepora,,,,"Crossland, 1952",Least Concern,,3.1,Decreasing,Global
+3547919,133017,Acropora plana,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,plana,,,,"Nemenzo, 1967",Data Deficient,,3.1,Decreasing,Global
+3548292,133089,Echinophyllia patula,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Echinophyllia,patula,,,,"(Hodgson &amp; Ross, 1982)",Least Concern,,3.1,Unknown,Global
+3548723,133018,Acropora minuta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,minuta,,,,"Veron, 2002",Data Deficient,,3.1,Decreasing,Global
+3549807,133019,Galaxea cryptoramosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,OCULINIDAE,Galaxea,cryptoramosa,,,,"Fenner &amp; Veron, 2000",Vulnerable,A4c,3.1,Unknown,Global
+3551566,133092,Astreopora incrustans,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Astreopora,incrustans,,,,"Bernard, 1896",Vulnerable,A4ce,3.1,Decreasing,Global
+3552627,133093,Alveopora daedalea,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Alveopora,daedalea,,,,"Forskål, 1775",Vulnerable,A4c,3.1,Unknown,Global
+3553102,133022,Montipora niugini,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,niugini,,,,"Veron, 2002",Near Threatened,,3.1,Decreasing,Global
+3553544,133094,Psammocora nierstraszi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Psammocora,nierstraszi,,,,Horst 1921,Least Concern,,3.1,Stable,Global
+3556040,133096,Porites columnaris,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,columnaris,,,,"Klunzinger, 1879",Least Concern,,3.1,Unknown,Global
+3557383,133026,Mycedium mancaoi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Mycedium,mancaoi,,,,"Nemenzo, 1979",Least Concern,,3.1,Unknown,Global
+3558498,133027,Siderastrea radians,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Siderastrea,radians,,,,(Pallas 1766),Least Concern,,3.1,Stable,Global
+3560174,133100,Agaricia undata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Agaricia,undata,,,,"(Ellis &amp; Solander, 1786)",Data Deficient,,3.1,Unknown,Global
+3561302,133101,Goniastrea minuta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Goniastrea,minuta,,,,"Veron, 2002",Near Threatened,,3.1,Decreasing,Global
+3561794,133030,Acropora tutuilensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,tutuilensis,,,,"Hoffmeister, 1925",Data Deficient,,3.1,Decreasing,Global
+3562254,133102,Dichocoenia stokesii,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MEANDRINIDAE,Dichocoenia,stokesii,,,,"Milne Edwards &amp; Haime, 1848",Vulnerable,A4c,3.1,Decreasing,Global
+3562717,133031,Montipora effusa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,effusa,,,,"Dana, 1846",Near Threatened,,3.1,Decreasing,Global
+3563274,133103,Acropora pinguis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,pinguis,,,,"Wells, 1950",Data Deficient,,3.1,Decreasing,Global
+3563709,133032,Lobophyllia flabelliformis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Lobophyllia,flabelliformis,,,,"Veron, 2002",Vulnerable,A4ce,3.1,Unknown,Global
+3564103,133104,Acropora elegantula,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,elegantula,,,,"(Ortmann, 1889)",Data Deficient,,3.1,Unknown,Global
+3564383,133033,Acropora pulchra,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,pulchra,,,,"(Brook, 1891)",Least Concern,,3.1,Decreasing,Global
+3566820,133035,Acropora insignis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,insignis,,,,"Nemenzo, 1967",Data Deficient,,3.1,Decreasing,Global
+3567265,133107,Porites attenuata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,attenuata,,,,"Nemenzo, 1955",Vulnerable,A4cde,3.1,Unknown,Global
+3567705,133036,Fungia curvata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,curvata,,,,"(Hoeksema, 1989)",Vulnerable,A4c,3.1,Unknown,Global
+3568247,133108,Hydnophora bonsai,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MERULINIDAE,Hydnophora,bonsai,,,,Veron 1990,Endangered,A4c,3.1,Unknown,Global
+3568568,133037,Mycetophyllia reesi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Mycetophyllia,reesi,,,,"Wells, 1973",Data Deficient,,3.1,Unknown,Global
+3569019,133109,Galaxea acrhelia,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,OCULINIDAE,Galaxea,acrhelia,,,,"Veron, 2002",Vulnerable,A4c,3.1,Unknown,Global
+3570015,133110,Ctenactis crassa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Ctenactis,crassa,,,,"(Dana, 1846)",Least Concern,,3.1,Unknown,Global
+3570554,133039,Turbinaria conspicua,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Turbinaria,conspicua,,,,"Bernard, 1896",Least Concern,,3.1,Unknown,Global
+3570858,133111,Montipora saudii,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,saudii,,,,"Turak DeVantier &amp; Veron, 2000",Near Threatened,,3.1,Decreasing,Global
+3571197,133040,Echinopora mammiformis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Echinopora,mammiformis,,,,"(Nemenzo, 1959)",Near Threatened,,3.1,Decreasing,Global
+3571758,133112,Acropora caroliniana,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,caroliniana,,,,"Nemenzo, 1976",Vulnerable,A4ce,3.1,Decreasing,Global
+3572830,133113,Montipora cactus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,cactus,,,,"Bernard, 1897",Vulnerable,A4ce,3.1,Decreasing,Global
+3573218,133042,Millepora complanata,ANIMALIA,CNIDARIA,MILLEPORINA,HYDROZOA,MILLEPORIDAE,Millepora,complanata,,,,Lamarck 1816,Least Concern,,3.1,Stable,Global
+3573682,133114,Duncanopsammia axifuga,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Duncanopsammia,axifuga,,,,"(Milne Edwards &amp; Haime, 1848)",Near Threatened,,3.1,Unknown,Global
+3574580,133115,Acropora retusa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,retusa,,,,"(Dana, 1846)",Vulnerable,A4ce,3.1,Decreasing,Global
+3577184,133118,Porites sillimaniana,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,sillimaniana,,,,"Nemenzo, 1976",Vulnerable,A4cde,3.1,Unknown,Global
+3577639,133047,Mycetophyllia aliciae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Mycetophyllia,aliciae,,,,"Wells, 1973",Least Concern,,3.1,Stable,Global
+3578094,133119,Plerogyra cauliformis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,EUPHYLLIDAE,Plerogyra,cauliformis,,,,"Ditlev, 2003",Data Deficient,,3.1,Unknown,Global
+3578380,133048,Astreopora suggesta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Astreopora,suggesta,,,,"Wells, 1954",Least Concern,,3.1,Decreasing,Global
+3578932,133120,Acropora latistella,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,latistella,,,,"(Brook, 1891)",Least Concern,,3.1,Decreasing,Global
+3580319,133121,Siderastrea glynni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Siderastrea,glynni,,,,"Budd &amp; Guzman, 1994",Critically Endangered,"B2ab(iii,iv,v)",3.1,Stable,Global
+3580548,133050,Acropora vermiculata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,vermiculata,,,,"Nemenzo, 1967",Data Deficient,,3.1,Decreasing,Global
+3580943,133122,Acropora plantaginea,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,plantaginea,,,,"(Lamarck, 1816)",Data Deficient,,3.1,Decreasing,Global
+3581313,133051,Goniopora norfolkensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,norfolkensis,,,,"Veron &amp; Pichon, 1982",Least Concern,,3.1,Unknown,Global
+3581754,133123,Porites cumulatus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,cumulatus,,,,"Nemenzo, 1955",Vulnerable,A4cde,3.1,Unknown,Global
+3582144,133052,Echinopora irregularis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Echinopora,irregularis,,,,"Veron Turak &amp; DeVantier, 2000",Data Deficient,,3.1,Decreasing,Global
+3582471,133124,Dendrogyra cylindrus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MEANDRINIDAE,Dendrogyra,cylindrus,,,,"Ehrenberg, 1834",Vulnerable,A4ce,3.1,Stable,Global
+3582924,133053,Scolymia cubensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Scolymia,cubensis,,,,"(Milne Edwards &amp; Haime, 1849)",Least Concern,,3.1,Unknown,Global
+3583402,133125,Acropora fenneri,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,fenneri,,,,"Veron, 2002",Data Deficient,,3.1,Decreasing,Global
+3584398,133126,Symphyllia hassi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Symphyllia,hassi,,,,"Pillai &amp; Scheer, 1976",Vulnerable,A4c,3.1,Unknown,Global
+3586145,133056,Montipora spongiosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,spongiosa,,,,"(Ehrenberg, 1834)",Least Concern,,3.1,Decreasing,Global
+3586482,133128,Acropora pruinosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,pruinosa,,,,"(Brook, 1893)",Data Deficient,,3.1,Decreasing,Global
+3586802,133057,Euphyllia paradivisa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,EUPHYLLIDAE,Euphyllia,paradivisa,,,,"Veron, 1990",Vulnerable,A4cd,3.1,Unknown,Global
+3587170,133129,Astreopora ocellata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Astreopora,ocellata,,,,"Bernard, 1896",Least Concern,,3.1,Decreasing,Global
+3588362,133130,Acropora paragemmifera,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,paragemmifera,,,,"Claereboudt, 2006",Data Deficient,,3.1,Decreasing,Global
+3588650,133059,Platygyra verweyi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Platygyra,verweyi,,,,"Wijsman-Best, 1976",Near Threatened,,3.1,Decreasing,Global
+3589084,133065,Tubipora musica,ANIMALIA,CNIDARIA,ALCYONACEA,ANTHOZOA,TUBIPORIDAE,Tubipora,musica,,,,Linnaeus 1758,Near Threatened,,3.1,Unknown,Global
+3589759,133131,Montipora friabilis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,friabilis,,,,"Bernard, 1897",Vulnerable,A4ce,3.1,Decreasing,Global
+3591441,133067,Platygyra yaeyamaensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Platygyra,yaeyamaensis,,,,"Eguchi &amp; Shirai, 1977",Vulnerable,A4c,3.1,Decreasing,Global
+3591848,133133,Acropora abrolhosensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,abrolhosensis,,,,"Veron, 1985",Vulnerable,A4cde,3.1,Decreasing,Global
+3592271,133068,Platygyra sinensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Platygyra,sinensis,,,,"(Milne Edwards &amp; Haime, 1849)",Least Concern,,3.1,Decreasing,Global
+3592972,133134,Montastraea annularis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Montastraea,annularis,,,,"(Ellis &amp; Solander, 1786)",Endangered,A2ace,3.1,Decreasing,Global
+3593444,133069,Astreopora cucullata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Astreopora,cucullata,,,,"Lamberts, 1980",Vulnerable,A4ce,3.1,Decreasing,Global
+3593982,133135,Madracis pharensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ASTROCOENIIDAE,Madracis,pharensis,,,,"(Heller, 1868)",Least Concern,,3.1,Stable,Global
+3596557,133072,Montipora echinata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,echinata,,,,"Veron DeVantier &amp; Turak, 2000",Data Deficient,,3.1,Decreasing,Global
+3596874,133138,Acropora parapharaonis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,parapharaonis,,,,"Veron, 2002",Data Deficient,,3.1,Decreasing,Global
+3597197,133073,Porites bernardi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,bernardi,,,,"Vaughan, 1907",Least Concern,,3.1,Unknown,Global
+3598100,133074,Goniastrea deformis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Goniastrea,deformis,,,,"Veron, 1990",Vulnerable,A4c,3.1,Decreasing,Global
+3599075,133141,Schizoculina fissipara,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,OCULINIDAE,Schizoculina,fissipara,,,,"(Milne Edwards &amp; Haime, 1850)",Data Deficient,,3.1,Unknown,Global
+3599798,133143,Millepora squarrosa,ANIMALIA,CNIDARIA,MILLEPORINA,HYDROZOA,MILLEPORIDAE,Millepora,squarrosa,,,,Lamarck 1816,Least Concern,,3.1,Decreasing,Global
+3600166,133144,Millepora alcicornis,ANIMALIA,CNIDARIA,MILLEPORINA,HYDROZOA,MILLEPORIDAE,Millepora,alcicornis,,,,Linneaus 1758,Least Concern,,3.1,Stable,Global
+3600644,133145,Stylocoeniella cocosensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ASTROCOENIIDAE,Stylocoeniella,cocosensis,,,,"Veron, 1990",Vulnerable,A4c,3.1,Unknown,Global
+3601023,133146,Turbinaria frondens,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Turbinaria,frondens,,,,"(Dana, 1846)",Least Concern,,3.1,Unknown,Global
+3601675,133147,Leptoseris yabei,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Leptoseris,yabei,,,,"(Pillai &amp; Scheer, 1976)",Vulnerable,A4ce,3.1,Unknown,Global
+3602794,133149,Goniopora ciliatus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,ciliatus,,,,"Veron, 2002",Least Concern,,3.1,Unknown,Global
+3603143,133150,Porites aranetai,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,aranetai,,,,"Nemenzo, 1955",Vulnerable,A4cde,3.1,Unknown,Global
+3603565,133151,Favia lacuna,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,lacuna,,,,"Veron Turak &amp; DeVantier, 2000",Near Threatened,,3.1,Decreasing,Global
+3603924,133152,Lobophyllia pachysepta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Lobophyllia,pachysepta,,,,"Chevalier, 1975",Near Threatened,,3.1,Unknown,Global
+3604404,133153,Agaricia fragilis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Agaricia,fragilis,,,,"Dana, 1848",Data Deficient,,3.1,Unknown,Global
+3604872,133154,Echinophyllia pectinata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Echinophyllia,pectinata,,,,"Veron, 2002",Data Deficient,,3.1,Unknown,Global
+3605234,133155,Diploria strigosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Diploria,strigosa,,,,"(Dana, 1848)",Least Concern,,3.1,Stable,Global
+3606283,133157,Scolymia vitiensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Scolymia,vitiensis,,,,"Brüggemann, 1878",Near Threatened,,3.1,Unknown,Global
+3607479,133159,Plesiastrea devantieri,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Plesiastrea,devantieri,,,,"Veron, 2002",Near Threatened,,3.1,Decreasing,Global
+3607835,133160,Acropora austera,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,austera,,,,"(Dana, 1846)",Near Threatened,,3.1,Decreasing,Global
+3608479,133161,Platygyra contorta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Platygyra,contorta,,,,"Veron, 1990",Least Concern,,3.1,Decreasing,Global
+3609003,133162,Montastrea salebrosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Montastrea,salebrosa,,,,"(Nemenzo, 1959)",Vulnerable,A4c,3.1,Decreasing,Global
+3609430,133163,Coscinaraea marshae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Coscinaraea,marshae,,,,Wells 1962,Least Concern,,3.1,Unknown,Global
+3609729,133164,Acropora russelli,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,russelli,,,,"Wallace, 1994",Vulnerable,A4c,3.1,Decreasing,Global
+3610094,133165,Oculina varicosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,OCULINIDAE,Oculina,varicosa,,,,"(Lesueur, 1821)",Vulnerable,A2ac,3.1,Unknown,Global
+3611859,133168,Pavona gigantea,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pavona,gigantea,,,,"Verril, 1896",Least Concern,,3.1,Increasing,Global
+3612163,133169,Stylophora mamillata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Stylophora,mamillata,,,,"Scheer &amp; Pillai, 1983",Least Concern,,3.1,Unknown,Global
+3612492,133170,Montipora dilatata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,dilatata,,,,"Studer, 1901",Endangered,B2ac(iii),3.1,Decreasing,Global
+3614080,133173,Euphyllia ancora,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,EUPHYLLIDAE,Euphyllia,ancora,,,,"Veron &amp; Pichon, 1979",Vulnerable,A4cd,3.1,Unknown,Global
+3614541,133174,Astreopora moretonensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Astreopora,moretonensis,,,,"Veron &amp; Wallace, 1984",Vulnerable,A4ce,3.1,Decreasing,Global
+3615628,133176,Coscinaraea exesa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Coscinaraea,exesa,,,,"Dana, 1846",Least Concern,,3.1,Stable,Global
+3616117,133177,Turbinaria patula,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Turbinaria,patula,,,,"(Dana, 1846)",Vulnerable,A4c,3.1,Unknown,Global
+3616568,133178,Montastrea annuligera,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Montastrea,annuligera,,,,"(Milne Edwards &amp; Haime, 1849)",Near Threatened,,3.1,Decreasing,Global
+3617187,133179,Fungia scabra,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,scabra,,,,"Döderlein, 1901",Least Concern,,3.1,Unknown,Global
+3618097,133180,Galaxea longisepta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,OCULINIDAE,Galaxea,longisepta,,,,"Fenner &amp; Veron, 2000",Near Threatened,,3.1,Unknown,Global
+3618490,133181,Acropora sukarnoi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,sukarnoi,,,,"Wallace, 1997",Data Deficient,,3.1,Decreasing,Global
+3618783,133182,Isopora brueggemanni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Isopora,brueggemanni,,,,"(Brook, 1893)",Vulnerable,A4ce,3.1,Decreasing,Global
+3619906,133184,Mussismilia hispida,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Mussismilia,hispida,,,,"(Verrill, 1902)",Data Deficient,,3.1,Unknown,Global
+3620185,133185,Montipora calcarea,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,calcarea,,,,"Bernard, 1897",Vulnerable,A4ce,3.1,Decreasing,Global
+3621345,133187,Porites arnaudi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,arnaudi,,,,"Reyes-Bonilla &amp; Carricart-Ganivet, 2000",Least Concern,,3.1,Unknown,Global
+3621724,133188,Echinopora hirsutissima,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Echinopora,hirsutissima,,,,"Milne Edwards &amp; Haime, 1849",Least Concern,,3.1,Decreasing,Global
+3622351,133189,Acropora meridiana,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,meridiana,,,,"Nemenzo, 1971",Data Deficient,,3.1,Decreasing,Global
+3622829,133190,Montipora vietnamensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,vietnamensis,,,,"Veron, 2002",Vulnerable,A4c,3.1,Decreasing,Global
+3623220,133191,Montipora porites,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,porites,,,,"Veron, 2002",Near Threatened,,3.1,Decreasing,Global
+3624060,133193,Heliopora coerulea,ANIMALIA,CNIDARIA,HELIOPORACEA,ANTHOZOA,HELIOPORIDAE,Heliopora,coerulea,,,,Pallas 1766,Vulnerable,A4cde,3.1,Decreasing,Global
+3624773,133194,Montipora digitata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,digitata,,,,"(Dana, 1846)",Least Concern,,3.1,Decreasing,Global
+3625344,133195,Acropora appressa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,appressa,,,,"(Ehrenberg, 1834)",Near Threatened,,3.1,Decreasing,Global
+3625707,133196,Montipora incrassata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,incrassata,,,,"(Dana, 1846)",Near Threatened,,3.1,Decreasing,Global
+3627486,133199,Montipora aspergillus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,aspergillus,,,,"Veron DeVantier &amp; Turak, 2000",Data Deficient,,3.1,Decreasing,Global
+3629234,133202,Montipora hemispherica,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,hemispherica,,,,"Veron, 2002",Data Deficient,,3.1,Decreasing,Global
+3629926,133204,Acropora forskali,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,forskali,,,,"(Ehrenberg, 1834)",Data Deficient,,3.1,Decreasing,Global
+3630306,133205,Pectinia teres,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Pectinia,teres,,,,"Nemenzo &amp; Montecillo, 1981",Near Threatened,,3.1,Unknown,Global
+3630720,133206,Acropora roseni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,roseni,,,,"Wallace, 1999",Endangered,A4ce,3.1,Decreasing,Global
+3631022,133207,Acropora clathrata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,clathrata,,,,"(Brook, 1891)",Least Concern,,3.1,Decreasing,Global
+3633217,133210,Favia speciosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,speciosa,,,,"Dana, 1846",Least Concern,,3.1,Decreasing,Global
+3633935,133211,Porites negrosensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,negrosensis,,,,"Veron, 1990",Near Threatened,,3.1,Unknown,Global
+3634319,133212,Oculina diffusa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,OCULINIDAE,Oculina,diffusa,,,,"(Lamarck, 1816)",Least Concern,,3.1,Stable,Global
+3634799,133213,Lithophyllon undulatum,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Lithophyllon,undulatum,,,,"Rehberg, 1892",Near Threatened,,3.1,Unknown,Global
+3637026,133217,Meandrina danae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MEANDRINIDAE,Meandrina,danae,,,,"Milen-Edwards &amp; Haime, 1948",Least Concern,,3.1,Stable,Global
+3637495,133218,Pachyseris foliosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pachyseris,foliosa,,,,"Veron, 1990",Least Concern,,3.1,Unknown,Global
+3637817,133219,Nemenzophyllia turbida,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,EUPHYLLIDAE,Nemenzophyllia,turbida,,,,"Hodgson &amp; Ross, 1981",Vulnerable,A4cd,3.1,Unknown,Global
+3638772,133221,Stylocoeniella muscosus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ASTROCOENIIDAE,Stylocoeniella,muscosus,,,,"Claereboudt, 2006",Data Deficient,,3.1,Unknown,Global
+3639848,133223,Acropora donei,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,donei,,,,"Veron &amp; Wallace, 1984",Vulnerable,A4ce,3.1,Decreasing,Global
+3640365,133224,Meandrina meandrites,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MEANDRINIDAE,Meandrina,meandrites,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Stable,Global
+3640833,133225,Euphyllia divisa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,EUPHYLLIDAE,Euphyllia,divisa,,,,"Veron &amp; Pichon, 1980",Near Threatened,,3.1,Unknown,Global
+3641250,133226,Lobophyllia serratus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Lobophyllia,serratus,,,,"Veron, 2002",Endangered,A4c,3.1,Unknown,Global
+3641605,133227,Astreopora expansa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Astreopora,expansa,,,,"Brüggemann, 1877",Near Threatened,,3.1,Decreasing,Global
+3642202,133228,Euphyllia paraglabrescens,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,EUPHYLLIDAE,Euphyllia,paraglabrescens,,,,"Veron, 1990",Vulnerable,A4c,3.1,Unknown,Global
+3642551,133229,Montipora flabellata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,flabellata,,,,"Studer, 1901",Vulnerable,D2,3.1,Decreasing,Global
+3644307,133232,Goniopora palmensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,palmensis,,,,"Veron &amp; Pichon, 1982",Least Concern,,3.1,Unknown,Global
+3644721,133233,Acropora kimbeensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,kimbeensis,,,,"Wallace, 1999",Vulnerable,A4cde,3.1,Decreasing,Global
+3645116,133234,Stylophora danae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Stylophora,danae,,,,"Milne Edwards &amp; Haime, 1850",Least Concern,,3.1,Stable,Global
+3645445,133235,Turbinaria heronensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Turbinaria,heronensis,,,,"Wells, 1958",Vulnerable,A4c,3.1,Unknown,Global
+3646174,133237,Montastraea cavernosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Montastraea,cavernosa,,,,"(Linnaeus, 1766)",Least Concern,,3.1,Stable,Global
+3646741,133238,Montipora hispida,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,hispida,,,,"(Dana, 1846)",Least Concern,,3.1,Decreasing,Global
+3648998,133241,Pectinia crassa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Pectinia,crassa,,,,"Ditlev, 2003",Data Deficient,,3.1,Unknown,Global
+3649963,133243,Echinopora pacificus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Echinopora,pacificus,,,,"Veron, 1990",Near Threatened,,3.1,Decreasing,Global
+3651115,133245,Montipora spongodes,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,spongodes,,,,"Bernard, 1897",Least Concern,,3.1,Decreasing,Global
+3652463,133247,Acropora pharaonis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,pharaonis,,,,"(Milne Edwards &amp; Haime, 1860)",Vulnerable,A4ce,3.1,Decreasing,Global
+3653628,133249,Porites mayeri,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,mayeri,,,,"Vaughan, 1918",Least Concern,,3.1,Unknown,Global
+3655027,133251,Stylophora wellsi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Stylophora,wellsi,,,,"Scheer, 1964",Near Threatened,,3.1,Unknown,Global
+3655366,133252,Acropora tortuosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,tortuosa,,,,"(Dana, 1846)",Least Concern,,3.1,Decreasing,Global
+3655785,133253,Blastomussa wellsi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Blastomussa,wellsi,,,,"Wijsmann-Best, 1973",Near Threatened,,3.1,Unknown,Global
+3656302,133254,Acropora suharsonoi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,suharsonoi,,,,"Wallace, 1994",Endangered,A4ce,3.1,Decreasing,Global
+3656604,133255,Agaricia humilis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Agaricia,humilis,,,,"Verrill, 1901",Least Concern,,3.1,Stable,Global
+3657726,133257,Diploria labyrinthiformis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Diploria,labyrinthiformis,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Stable,Global
+3658855,133259,Montipora stellata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,stellata,,,,"Bernard, 1897",Least Concern,,3.1,Decreasing,Global
+3659374,133260,Trachyphyllia geoffroyi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,TRACHYPHYLLIIDAE,Trachyphyllia,geoffroyi,,,,Audouin 1826,Near Threatened,,3.1,Decreasing,Global
+3659948,133261,Pavona danai,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pavona,danai,,,,"Milne Edwards &amp; Haime, 1860",Vulnerable,A4c,3.1,Unknown,Global
+3660889,133263,Montastrea serageldini,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Montastrea,serageldini,,,,"Veron, 2002",Vulnerable,A4c,3.1,Decreasing,Global
+3661261,133264,Acropora cardenae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,cardenae,,,,"Wells, 1985",Data Deficient,,3.1,Unknown,Global
+3661581,133265,Acropora orbicularis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,orbicularis,,,,"Brook, 1892",Data Deficient,,3.1,Decreasing,Global
+3661951,133266,Acropora nobilis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,nobilis,,,,"(Dana, 1846)",Least Concern,,3.1,Decreasing,Global
+3663229,133268,Micromussa diminuta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Micromussa,diminuta,,,,"Veron, 2002",Data Deficient,,3.1,Unknown,Global
+3663591,133269,Heliofungia actiniformis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Heliofungia,actiniformis,,,,"Quoy &amp; Gaimard, 1833",Vulnerable,A4cd,3.1,Unknown,Global
+3664020,133270,Porites myrmidonensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,myrmidonensis,,,,"Veron, 1985",Least Concern,,3.1,Unknown,Global
+3664344,133271,Acropora sarmentosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,sarmentosa,,,,"(Brook, 1892)",Least Concern,,3.1,Decreasing,Global
+3665366,133273,Acropora inermis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,inermis,,,,"(Brook, 1891)",Data Deficient,,3.1,Decreasing,Global
+3665886,133274,Acropora sekiseiensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,sekiseiensis,,,,"Veron, 1990",Data Deficient,,3.1,Decreasing,Global
+3666266,133275,Psammocora decussata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Psammocora,decussata,,,,Yabe and Sugiyama 1937,Data Deficient,,3.1,Unknown,Global
+3666546,133276,Millepora latifolia,ANIMALIA,CNIDARIA,MILLEPORINA,HYDROZOA,MILLEPORIDAE,Millepora,latifolia,,,,Boschma 1948,Vulnerable,A4c,3.1,Decreasing,Global
+3667540,133278,Leptastrea pruinosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Leptastrea,pruinosa,,,,"Crossland, 1952",Least Concern,,3.1,Decreasing,Global
+3668188,133279,Acropora parilis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,parilis,,,,"(Quelch, 1886)",Data Deficient,,3.1,Decreasing,Global
+3668602,133280,Acropora navini,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,navini,,,,"Veron, 2002",Data Deficient,,3.1,Decreasing,Global
+3668897,133281,Madracis formosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ASTROCOENIIDAE,Madracis,formosa,,,,"Wells, 1973",Least Concern,,3.1,Stable,Global
+3669355,133282,Montipora kellyi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,kellyi,,,,"Veron, 2002",Data Deficient,,3.1,Decreasing,Global
+3669637,133283,Acropora batunai,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,batunai,,,,"Wallace, 1997",Vulnerable,A4ce,3.1,Decreasing,Global
+3670775,133285,Montipora palawanensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,palawanensis,,,,"Veron, 2002",Near Threatened,,3.1,Decreasing,Global
+3671148,133286,Porites excavata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,excavata,,,,"Claereboudt, 2006",Data Deficient,,3.1,Unknown,Global
+3671439,133287,Caulastrea connata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Caulastrea,connata,,,,"(Ortmann, 1892)",Vulnerable,A4c,3.1,Decreasing,Global
+3671856,133288,Agaricia grahamae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Agaricia,grahamae,,,,"Wells, 1973",Least Concern,,3.1,Unknown,Global
+3675348,133294,Acropora lokani,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,lokani,,,,"Wallace, 1994",Vulnerable,A4ce,3.1,Decreasing,Global
+3675736,133295,Mycedium umbra,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Mycedium,umbra,,,,"Veron, 2002",Least Concern,,3.1,Unknown,Global
+3676106,133296,Porites tuberculosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,tuberculosa,,,,"Veron, 2002",Vulnerable,A4cde,3.1,Unknown,Global
+3676481,133297,Goniopora savignyi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,savignyi,,,,"Dana, 1846",Least Concern,,3.1,Unknown,Global
+3676822,133298,Montipora turgescens,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,turgescens,,,,"Bernard, 1897",Least Concern,,3.1,Decreasing,Global
+3678127,133300,Millepora boschmai,ANIMALIA,CNIDARIA,MILLEPORINA,HYDROZOA,MILLEPORIDAE,Millepora,boschmai,,,,De Weerdt and Glynn 1991,Critically Endangered,A2ac,3.1,Unknown,Global
+3678479,133301,Porites ornata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,ornata,,,,"Nemenzo, 1971",Endangered,A4cde,3.1,Unknown,Global
+3680892,133306,Astreopora macrostoma,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Astreopora,macrostoma,,,,"Veron &amp; Wallace, 1984",Near Threatened,,3.1,Decreasing,Global
+3681329,133307,Favia rotundata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,rotundata,,,,"Veron Pichon &amp; Wijsman-Best, 1972",Near Threatened,,3.1,Decreasing,Global
+3682485,133309,Pocillopora inflata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Pocillopora,inflata,,,,"Glynn, 1999",Vulnerable,A4ce,3.1,Unknown,Global
+3682860,133310,Leptoria irregularis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Leptoria,irregularis,,,,"Veron, 1990",Vulnerable,A4c,3.1,Decreasing,Global
+3683336,133311,Acropora halmaherae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,halmaherae,,,,"Wallace &amp; Wolstenholme, 1998",Data Deficient,,3.1,Decreasing,Global
+3683643,133312,Acropora fastigata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,fastigata,,,,"Nemenzo, 1967",Data Deficient,,3.1,Decreasing,Global
+3684008,133313,Acropora cytherea,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,cytherea,,,,"(Dana, 1846)",Least Concern,,3.1,Decreasing,Global
+3685993,133316,Mycedium robokaki,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Mycedium,robokaki,,,,"Moll &amp; Best, 1984",Least Concern,,3.1,Unknown,Global
+3686349,133317,Lithophyllon mokai,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Lithophyllon,mokai,,,,"Hoeksema, 1989",Least Concern,,3.1,Unknown,Global
+3686803,133318,Acropora torihalimeda,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,torihalimeda,,,,"Wallace, 1994",Data Deficient,,3.1,Decreasing,Global
+3687166,133319,Acropora horrida,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,horrida,,,,"(Dana, 1846)",Vulnerable,A4cde,3.1,Decreasing,Global
+3688042,133320,Acropora solitaryensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,solitaryensis,,,,"Veron &amp; Wallace, 1984",Vulnerable,A4ce,3.1,Decreasing,Global
+3688541,133321,Cyphastrea ocellina,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Cyphastrea,ocellina,,,,"(Dana, 1864)",Vulnerable,A4c,3.1,Decreasing,Global
+3689003,133322,Acropora dendrum,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,dendrum,,,,"(Bassett-Smith, 1890)",Vulnerable,A4ce,3.1,Decreasing,Global
+3689502,133323,Coscinaraea monile,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Coscinaraea,monile,,,,"Foskål, 1775",Least Concern,,3.1,Unknown,Global
+3692262,133328,Psammocora verrilli,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Psammocora,verrilli,,,,Vaughan 1907,Data Deficient,,3.1,Unknown,Global
+3694756,133333,Oulophyllia bennettae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Oulophyllia,bennettae,,,,"(Veron &amp; Pichon, 1977)",Near Threatened,,3.1,Decreasing,Global
+3695325,133334,Acropora branchi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,branchi,,,,"Riegl, 1995",Data Deficient,,3.1,Decreasing,Global
+3695673,133335,Mycedium steeni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Mycedium,steeni,,,,"Veron, 2002",Vulnerable,A4c,3.1,Unknown,Global
+3696019,133336,Echinopora tiranensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Echinopora,tiranensis,,,,"Veron Turak &amp; DeVantier, 2000",Data Deficient,,3.1,Decreasing,Global
+3697011,133338,Acropora speciosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,speciosa,,,,"(Quelch, 1886)",Vulnerable,A4ce,3.1,Decreasing,Global
+3697468,133339,Alveopora ocellata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Alveopora,ocellata,,,,"Wells, 1954",Data Deficient,,3.1,Unknown,Global
+3697941,133340,Symphyllia wilsoni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Symphyllia,wilsoni,,,,"Veron, 1985",Least Concern,,3.1,Unknown,Global
+3698245,133341,Anacropora forbesi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Anacropora,forbesi,,,,"Ridley, 1884",Least Concern,,3.1,Decreasing,Global
+3698789,133342,Montipora cryptus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,cryptus,,,,"Veron, 2002",Near Threatened,,3.1,Decreasing,Global
+3699841,133344,Podabacia sinai,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Podabacia,sinai,,,,"Veron, 2002",Data Deficient,,3.1,Unknown,Global
+3700901,133346,Psammocora albopicta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Psammocora,albopicta,,,,"Benzoni, 2007",Data Deficient,,3.1,Unknown,Global
+3701273,133347,Plerogyra diabolotus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,EUPHYLLIDAE,Plerogyra,diabolotus,,,,"Ditlev, 2003",Data Deficient,,3.1,Unknown,Global
+3701559,133348,Acropora variolosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,variolosa,,,,"(Klunzinger, 1879)",Least Concern,,3.1,Decreasing,Global
+3701925,133349,Porites compressa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,compressa,,,,"Dana, 1846",Least Concern,,3.1,Unknown,Global
+3702298,133350,Acropora ridzwani,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,ridzwani,,,,"Ditlev, 2003",Data Deficient,,3.1,Decreasing,Global
+3703303,133352,Acropora gomezi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,gomezi,,,,"Veron, 2002",Data Deficient,,3.1,Decreasing,Global
+3704161,133354,Galaxea astreata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,OCULINIDAE,Galaxea,astreata,,,,"(Lamarck, 1816)",Vulnerable,A4cd,3.1,Unknown,Global
+3704805,133355,Acropora scherzeriana,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,scherzeriana,,,,"(Brüggemann, 1877)",Data Deficient,,3.1,Decreasing,Global
+3705165,133356,Mycetophyllia ferox,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Mycetophyllia,ferox,,,,"Wells, 1973",Vulnerable,A4ce,3.1,Unknown,Global
+3706472,133359,Acropora microclados,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,microclados,,,,"(Ehrenberg, 1834)",Vulnerable,A4ce,3.1,Decreasing,Global
+3707592,133361,Montipora setosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,setosa,,,,"Nemenzo, 1976",Endangered,A4c,3.1,Decreasing,Global
+3707937,133362,Millepora braziliensis,ANIMALIA,CNIDARIA,MILLEPORINA,HYDROZOA,MILLEPORIDAE,Millepora,braziliensis,,,,Verrill 1868,Data Deficient,,3.1,Unknown,Global
+3708237,133363,Mycedium spina,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Mycedium,spina,,,,"Ditlev, 2003",Data Deficient,,3.1,Unknown,Global
+3709692,133366,Acanthastrea lordhowensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Acanthastrea,lordhowensis,,,,"Veron &amp; Pichon, 1982",Near Threatened,,3.1,Unknown,Global
+3710227,133367,Montipora confusa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,confusa,,,,"Nemenzo, 1967",Near Threatened,,3.1,Decreasing,Global
+3710621,133368,Goniopora albiconus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,albiconus,,,,"Veron, 2002",Vulnerable,A4c,3.1,Unknown,Global
+3711056,133369,Echinopora robusta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Echinopora,robusta,,,,"Veron, 2002",Vulnerable,A4c,3.1,Decreasing,Global
+3711391,133370,Porites profundus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,profundus,,,,"Rehberg, 1892",Least Concern,,3.1,Unknown,Global
+3711800,133371,Fungia distorta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,distorta,,,,"Michelin, 1842",Least Concern,,3.1,Stable,Global
+3712056,133372,Polyphyllia novaehiberniae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Polyphyllia,novaehiberniae,,,,"(Lesson, 1831)",Near Threatened,,3.1,Unknown,Global
+3712432,133373,Montastraea faveolata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Montastraea,faveolata,,,,"(Ellis &amp; Solander, 1786)",Endangered,A2ace,3.1,Decreasing,Global
+3712904,133374,Montastrea multipunctata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Montastrea,multipunctata,,,,"Hodgson, 1985",Vulnerable,A4c,3.1,Decreasing,Global
+3713346,133375,Montipora corbettensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,corbettensis,,,,"Veron &amp; Wallace, 1984",Vulnerable,A4c,3.1,Decreasing,Global
+3714388,133377,Diploria clivosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Diploria,clivosa,,,,"(Ellis &amp; Solander, 1786)",Least Concern,,3.1,Stable,Global
+3715556,133379,Acropora convexa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,convexa,,,,"(Dana, 1846)",Data Deficient,,3.1,Unknown,Global
+3716457,133381,Acropora cervicornis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,cervicornis,,,,"(Lamarck, 1816)",Critically Endangered,A2ace,3.1,Stable,Global
+3718094,133384,Cantharellus noumeae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Cantharellus,noumeae,,,,"Hoeksema &amp; Best, 1984",Endangered,B2ab(iii),3.1,Unknown,Global
+3718418,133385,Acropora parahemprichii,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,parahemprichii,,,,"Veron, 2002",Data Deficient,,3.1,Decreasing,Global
+3720000,133389,Siderastrea siderea,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Siderastrea,siderea,,,,Ellis and Solander 1786,Least Concern,,3.1,Stable,Global
+3721140,133391,Goniopora burgosi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,burgosi,,,,"Nemenzo, 1955",Vulnerable,A4c,3.1,Unknown,Global
+3721615,133392,Favia laxa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,laxa,,,,"(Klunzinger, 1879)",Near Threatened,,3.1,Decreasing,Global
+3722644,133394,Acropora loisetteae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,loisetteae,,,,"Wallace, 1994",Vulnerable,A4ce,3.1,Decreasing,Global
+3723011,133395,Porites porites,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,porites,,,,"Pallas, 1766",Least Concern,,3.1,Stable,Global
+3723571,133396,Acropora desalwii,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,desalwii,,,,"Wallace, 1994",Vulnerable,A4ce,3.1,Decreasing,Global
+3723930,133397,Fungia somervillei,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,somervillei,,,,"Gardiner, 1909",Least Concern,,3.1,Unknown,Global
+3725125,133399,Porites okinawensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,okinawensis,,,,"Veron, 1990",Vulnerable,A4ce,3.1,Unknown,Global
+3725706,133400,Eusmilia fastigiata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MEANDRINIDAE,Eusmilia,fastigiata,,,,"(Pallas, 1766)",Least Concern,,3.1,Stable,Global
+3726166,133401,Acropora hoeksemai,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,hoeksemai,,,,"Wallace, 1997",Vulnerable,A4ce,3.1,Decreasing,Global
+3726540,133402,Acropora squarrosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,squarrosa,,,,"(Ehrenberg, 1834)",Least Concern,,3.1,Decreasing,Global
+3727543,133404,Montipora samarensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,samarensis,,,,"Nemenzo, 1967",Vulnerable,A4c,3.1,Decreasing,Global
+3727973,133405,Caulastrea tumida,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Caulastrea,tumida,,,,"Matthai, 1928",Near Threatened,,3.1,Decreasing,Global
+3729974,133408,Coscinaraea wellsi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Coscinaraea,wellsi,,,,"Veron &amp; Pichon, 1980",Least Concern,,3.1,Unknown,Global
+3730592,133409,Montipora verruculosus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,verruculosus,,,,"Veron, 2002",Vulnerable,A4c,3.1,Decreasing,Global
+3731644,133411,Acanthastrea bowerbanki,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Acanthastrea,bowerbanki,,,,"Milne Edwards &amp; Haime, 1851",Vulnerable,A4ce,3.1,Unknown,Global
+3732125,133412,Gyrosmilia interrupta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MEANDRINIDAE,Gyrosmilia,interrupta,,,,"(Ehrenberg, 1834)",Least Concern,,3.1,Decreasing,Global
+3732504,133413,Cynarina lacrymalis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Cynarina,lacrymalis,,,,"(Milne Edwards &amp; Haime, 1848)",Near Threatened,,3.1,Unknown,Global
+3734284,133416,Montipora circumvallata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,circumvallata,,,,"(Ehrenberg, 1834)",Least Concern,,3.1,Decreasing,Global
+3734638,133417,Caulastrea furcata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Caulastrea,furcata,,,,"Dana, 1846",Least Concern,,3.1,Decreasing,Global
+3737144,133421,Porites baueri,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,baueri,,,,"Squires, 1959",Data Deficient,,3.1,Unknown,Global
+3737366,133422,Montipora capricornis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,capricornis,,,,"Veron, 1985",Vulnerable,A4ce,3.1,Decreasing,Global
+3738458,133424,Leptastrea inaequalis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Leptastrea,inaequalis,,,,"Klunzinger, 1879",Near Threatened,,3.1,Decreasing,Global
+3739067,133425,Solenastrea hyades,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Solenastrea,hyades,,,,"(Dana, 1846)",Least Concern,,3.1,Stable,Global
+3740058,133427,Acropora simplex,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,simplex,,,,"Wallace &amp; Wolstenholme, 1998",Vulnerable,A4ce,3.1,Decreasing,Global
+3741135,133429,Echinopora horrida,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Echinopora,horrida,,,,"Dana, 1846",Near Threatened,,3.1,Decreasing,Global
+3741793,133430,Porites heronensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,heronensis,,,,"Veron, 1985",Least Concern,,3.1,Unknown,Global
+3742172,133431,Heterocyathus aequicostatus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,CARYOPHYLLIIDAE,Heterocyathus,aequicostatus,,,,"Milne Edwards &amp; Haime, 1848",Least Concern,,3.1,Unknown,Global
+3742589,133432,Acropora spicifera,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,spicifera,,,,"(Dana, 1846)",Vulnerable,A4ce,3.1,Decreasing,Global
+3743106,133433,Montipora crassituberculata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,crassituberculata,,,,"Bernard, 1897",Vulnerable,A4c,3.1,Decreasing,Global
+3743594,133434,Montipora mactanensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,mactanensis,,,,"Nemenzo, 1979",Vulnerable,A4c,3.1,Decreasing,Global
+3743974,133435,Seriatopora dendritica,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Seriatopora,dendritica,,,,"Veron, 2002",Vulnerable,A4c,3.1,Unknown,Global
+3744323,133436,Dichocoenia stellaris,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MEANDRINIDAE,Dichocoenia,stellaris,,,,"(M. Edwards &amp; Haime, 1848)",Data Deficient,,3.1,Unknown,Global
+3744774,133437,Fungia moluccensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,moluccensis,,,,"Horst, 1919",Least Concern,,3.1,Unknown,Global
+3745981,133439,Agaricia tenuifolia,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Agaricia,tenuifolia,,,,"Dana, 1848",Near Threatened,,3.1,Unknown,Global
+3747261,133441,Acropora walindii,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,walindii,,,,"Wallace, 1999",Vulnerable,A4ce,3.1,Decreasing,Global
+3747583,133442,Oxypora lacera,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Oxypora,lacera,,,,"Verrill, 1864",Least Concern,,3.1,Unknown,Global
+3748279,133443,Montipora australiensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,australiensis,,,,"Bernard, 1897",Vulnerable,A4ce,3.1,Decreasing,Global
+3748822,133444,Oculina valenciennesi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,OCULINIDAE,Oculina,valenciennesi,,,,"Milne Edwards &amp; Haime, 1850",Data Deficient,,3.1,Unknown,Global
+3749135,133445,Porites harrisoni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,harrisoni,,,,"Veron, 2002",Near Threatened,,3.1,Stable,Global
+3749524,133446,Astrangia poculata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,RHIZANGIIDAE,Astrangia,poculata,,,,"Ellis &amp; Solander, 1786",Least Concern,,3.1,Unknown,Global
+3749929,133447,Echinopora taylorae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Echinopora,taylorae,,,,"(Veron, 2002)",Near Threatened,,3.1,Unknown,Global
+3750950,133449,Acropora haimei,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,haimei,,,,"(Milne Edwards &amp; Haime, 1860)",Data Deficient,,3.1,Decreasing,Global
+3751322,133450,Montipora turtlensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,turtlensis,,,,"Veron &amp; Wallace, 1984",Vulnerable,A4c,3.1,Decreasing,Global
+3753708,133454,Montipora pachytuberculata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,pachytuberculata,,,,"Veron DeVantier &amp; Turak, 2000",Data Deficient,,3.1,Decreasing,Global
+3753994,133455,Pavona xarifae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pavona,xarifae,,,,"Scheer &amp; Pillai, 1974",Data Deficient,,3.1,Unknown,Global
+3754872,133457,Mussa angulosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Mussa,angulosa,,,,(Pallas 1766),Least Concern,,3.1,Stable,Global
+3756703,133460,Montipora cocosensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,cocosensis,,,,"Vaughan, 1918",Vulnerable,A4ce,3.1,Decreasing,Global
+3757142,133461,Meandrina braziliensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MEANDRINIDAE,Meandrina,braziliensis,,,,"(Milne Edwards &amp; Haime, 1858)",Data Deficient,,3.1,Unknown,Global
+3757437,133462,Acropora rongelapensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,rongelapensis,,,,"Richards &amp; Wallace, 2004",Data Deficient,,3.1,Decreasing,Global
+3758346,133464,Alveopora excelsa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Alveopora,excelsa,,,,"Verrill, 1863",Endangered,A4c,3.1,Unknown,Global
+3758729,133465,Plerogyra multilobata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,EUPHYLLIDAE,Plerogyra,multilobata,,,,"Ditlev, 2003",Data Deficient,,3.1,Unknown,Global
+3758997,133466,Millepora striata,ANIMALIA,CNIDARIA,MILLEPORINA,HYDROZOA,MILLEPORIDAE,Millepora,striata,,,,Duchassaing and Michelotti 1864,Endangered,A4ce,3.1,Decreasing,Global
+3759369,133467,Alveopora minuta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Alveopora,minuta,,,,"Veron, 2002",Endangered,A4cd,3.1,Unknown,Global
+3760463,133469,Acropora downingi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,downingi,,,,"Wallace, 1999",Least Concern,,3.1,Decreasing,Global
+3761342,133471,Acropora bushyensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,bushyensis,,,,"Veron &amp; Wallace, 1984",Least Concern,,3.1,Decreasing,Global
+3761737,133472,Isopora crateriformis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Isopora,crateriformis,,,,"(Gardiner, 1898)",Vulnerable,A4ce,3.1,Decreasing,Global
+3763341,133475,Acropora pagoensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,pagoensis,,,,"Hoffmeister, 1925",Data Deficient,,3.1,Decreasing,Global
+3763724,133476,Madracis asperula,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ASTROCOENIIDAE,Madracis,asperula,,,,"Milne Edwards &amp; Haime, 1850",Data Deficient,,3.1,Unknown,Global
+3764042,133477,Favia leptophylla,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,leptophylla,,,,"Verrill, 1868",Data Deficient,,3.1,Unknown,Global
+3765052,133479,Acropora hyacinthus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,hyacinthus,,,,"(Dana, 1846)",Near Threatened,,3.1,Decreasing,Global
+3765747,133480,Acropora natalensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,natalensis,,,,"Riegl, 1995",Data Deficient,,3.1,Decreasing,Global
+3766092,133481,Acropora chesterfieldensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,chesterfieldensis,,,,"Veron &amp; Wallace, 1984",Least Concern,,3.1,Decreasing,Global
+3767185,133483,Acropora mirabilis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,mirabilis,,,,"(Quelch, 1886)",Data Deficient,,3.1,Decreasing,Global
+3767662,133484,Anomastraea irregularis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Anomastraea,irregularis,,,,"Marenzeller, 1901",Vulnerable,A4ce,3.1,Decreasing,Global
+3769066,133487,Echinopora grandicula,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Echinopora,grandicula,,,,"Claereboudt, 2006",Data Deficient,,3.1,Unknown,Global
+3769343,133488,Pectinia africanus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Pectinia,africanus,,,,"Veron, 2002",Vulnerable,A4c,3.1,Unknown,Global
+3769700,133489,Montipora delicatula,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,delicatula,,,,"Veron, 2002",Vulnerable,A4ce,3.1,Decreasing,Global
+3770332,133490,Acanthastrea maxima,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Acanthastrea,maxima,,,,"Sheppard &amp; Salm, 1988",Near Threatened,,3.1,Unknown,Global
+3772361,133494,Acropora papillare,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,papillare,,,,"Latypov, 1992",Vulnerable,A4ce,3.1,Decreasing,Global
+3773853,133497,Caulastrea echinulata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Caulastrea,echinulata,,,,"(Milne Edwards &amp; Haime, 1849)",Vulnerable,A4cd,3.1,Decreasing,Global
+3774286,133498,Turbinaria peltata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Turbinaria,peltata,,,,"(Esper, 1794)",Vulnerable,A4cd,3.1,Unknown,Global
+3774943,133499,Porites cocosensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,cocosensis,,,,"Wells, 1950",Vulnerable,A4cde,3.1,Unknown,Global
+3775573,133500,Acropora kosurini,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,kosurini,,,,"Wallace, 1994",Vulnerable,A4ce,3.1,Decreasing,Global
+3775923,133501,Alveopora gigas,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Alveopora,gigas,,,,"Veron, 1985",Vulnerable,A4c,3.1,Unknown,Global
+3777733,133504,Porites furcata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,furcata,,,,"Lamarck, 1816",Least Concern,,3.1,Stable,Global
+3778200,133505,Montipora taiwanensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,taiwanensis,,,,"Veron, 2002",Data Deficient,,3.1,Decreasing,Global
+3778538,133506,Cyphastrea hexasepta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Cyphastrea,hexasepta,,,,"Veron Turak &amp; DeVantier, 2000",Vulnerable,A4c,3.1,Decreasing,Global
+3778879,133507,Acropora khayranensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,khayranensis,,,,"Claereboudt, 2006",Data Deficient,,3.1,Decreasing,Global
+3779166,133508,Platygyra acuta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Platygyra,acuta,,,,"Veron, 2002",Near Threatened,,3.1,Decreasing,Global
+3779677,133509,Podabacia motuporensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Podabacia,motuporensis,,,,"Veron, 1990",Near Threatened,,3.1,Unknown,Global
+3780151,133510,Favia lizardensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,lizardensis,,,,"Veron &amp; Pichon, 1977",Near Threatened,,3.1,Decreasing,Global
+3781140,133512,Porites sverdrupi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,sverdrupi,,,,"Durham, 1947",Vulnerable,A4ce,3.1,Unknown,Global
+3781375,133513,Acropora anthocercis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,anthocercis,,,,"(Brook, 1893)",Vulnerable,A4ce,3.1,Decreasing,Global
+3781971,133514,Psammocora ramosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Psammocora,ramosa,,,,Claereboudt 2006,Data Deficient,,3.1,Unknown,Global
+3782264,133515,Goniastrea ramosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Goniastrea,ramosa,,,,"Veron, 2002",Vulnerable,A4c,3.1,Decreasing,Global
+3783173,133517,Lithophyllon ranjithi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Lithophyllon,ranjithi,,,,"Ditlev, 2003",Endangered,"A4c; B2ab(ii,iii)",3.1,Unknown,Global
+3783479,133518,Acropora wallaceae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,wallaceae,,,,"Veron, 1990",Data Deficient,,3.1,Decreasing,Global
+3783874,133519,Mycetophyllia danaana,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Mycetophyllia,danaana,,,,"Milne Edwards &amp; Haime, 1849",Least Concern,,3.1,Unknown,Global
+3784329,133520,Pavona chiriquiensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pavona,chiriquiensis,,,,"Glynn Maté &amp; Stemann, 2001",Least Concern,,3.1,Increasing,Global
+3784571,133521,Stephanocoenia intersepta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ASTROCOENIIDAE,Stephanocoenia,intersepta,,,,"Lamarck, 1816",Least Concern,,3.1,Stable,Global
+3785002,133522,Helioseris cucullata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Helioseris,cucullata,,,,"(Ellis &amp; Solander, 1786)",Least Concern,,3.1,Stable,Global
+3786069,133524,Anacropora pillai,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Anacropora,pillai,,,,"Veron, 2002",Data Deficient,,3.1,Decreasing,Global
+3787489,133527,Mussismilia harttii,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Mussismilia,harttii,,,,"(Verrill, 1868)",Data Deficient,,3.1,Unknown,Global
+3787781,133528,Blastomussa merleti,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Blastomussa,merleti,,,,"Wells, 1961",Least Concern,,3.1,Unknown,Global
+3788398,133529,Horastrea indica,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Horastrea,indica,,,,"Pichon, 1971",Vulnerable,A4c,3.1,Unknown,Global
+3788729,133530,Stylophora subseriata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Stylophora,subseriata,,,,"(Ehrenberg, 1834)",Least Concern,,3.1,Unknown,Global
+3790408,133533,Oculina robusta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,OCULINIDAE,Oculina,robusta,,,,"Pourtalés, 1871",Data Deficient,,3.1,Unknown,Global
+3790679,133534,Pocillopora zelli,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Pocillopora,zelli,,,,"Veron, 2002",Least Concern,,3.1,Unknown,Global
+3791008,133535,Agaricia agaricites,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Agaricia,agaricites,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Stable,Global
+3791495,133536,Millepora intricata,ANIMALIA,CNIDARIA,MILLEPORINA,HYDROZOA,MILLEPORIDAE,Millepora,intricata,,,,Milne Edwards 1857,Least Concern,,3.1,Stable,Global
+3791989,133537,Heterocyathus alternatus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,CARYOPHYLLIIDAE,Heterocyathus,alternatus,,,,"Verrill, 1865",Least Concern,,3.1,Unknown,Global
+3793719,133540,Poritipora paliformis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Poritipora,paliformis,,,,"Veron, 2002",Vulnerable,A4c,3.1,Unknown,Global
+3794074,133541,Isopora elizabethensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Isopora,elizabethensis,,,,"Veron, 2002",Data Deficient,,3.1,Decreasing,Global
+3794364,133542,Leptastrea aequalis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Leptastrea,aequalis,,,,"Veron, 2002",Vulnerable,A4c,3.1,Decreasing,Global
+3794762,133543,Porites brighami,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,brighami,,,,"Vaughan, 1907",Least Concern,,3.1,Unknown,Global
+3795073,133544,Madracis carmabi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ASTROCOENIIDAE,Madracis,carmabi,,,,"Vermeij Diekmann &amp; Bak, 2003",Data Deficient,,3.1,Unknown,Global
+3795789,133546,Porites latistella,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,latistella,,,,"Quelch, 1886",Least Concern,,3.1,Unknown,Global
+3796328,133547,Acropora yongei,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,yongei,,,,"Veron &amp; Wallace, 1984",Least Concern,,3.1,Decreasing,Global
+3797544,133549,Porites panamensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,panamensis,,,,"Verril, 1866",Least Concern,,3.1,Stable,Global
+3798083,133550,Acropora glauca,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,glauca,,,,"(Brook, 1893)",Near Threatened,,3.1,Decreasing,Global
+3799217,133552,Pocillopora fungiformis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Pocillopora,fungiformis,,,,"Veron, 2002",Endangered,A4c,3.1,Unknown,Global
+3800049,133554,Echinopora fruticulosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Echinopora,fruticulosa,,,,"(Ehrenberg, 1834)",Near Threatened,,3.1,Decreasing,Global
+3800428,133555,Porites deformis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,deformis,,,,"Nemenzo, 1955",Near Threatened,,3.1,Unknown,Global
+3800877,133556,Montipora spumosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,spumosa,,,,"(Lamarck, 1816)",Least Concern,,3.1,Decreasing,Global
+3804247,133561,Porites flavus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,flavus,,,,"Veron, 2002",Data Deficient,,3.1,Unknown,Global
+3804557,133562,Oxypora convoluta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Oxypora,convoluta,,,,"Veron, 2002",Data Deficient,,3.1,Unknown,Global
+3804883,133563,Montipora peltiformis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,peltiformis,,,,"Bernard, 1897",Near Threatened,,3.1,Decreasing,Global
+3805492,133564,Isophyllastrea rigida,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Isophyllastrea,rigida,,,,"(Dana, 1848)",Least Concern,,3.1,Stable,Global
+3805962,133565,Lobophyllia dentatus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Lobophyllia,dentatus,,,,"Veron, 2002",Vulnerable,A4c,3.1,Unknown,Global
+3807153,133568,Porites rugosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,rugosa,,,,"Fenner &amp; Veron, 2000",Vulnerable,A4cde,3.1,Unknown,Global
+3808958,133571,Platygyra carnosus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Platygyra,carnosus,,,,"Veron, 2002",Near Threatened,,3.1,Decreasing,Global
+3809462,133572,Porites echinulata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,echinulata,,,,"Klunzinger, 1879",Near Threatened,,3.1,Unknown,Global
+3809861,133573,Australomussa rowleyensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Australomussa,rowleyensis,,,,"Veron, 1985",Near Threatened,,3.1,Unknown,Global
+3810276,133574,Porites pukoensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,pukoensis,,,,"Vaughan, 1907",Critically Endangered,D,3.1,Unknown,Global
+3810570,133575,Cladocora arbuscula,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Cladocora,arbuscula,,,,"(Lesueur, 1821)",Least Concern,,3.1,Unknown,Global
+3811673,133577,Favites spinosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favites,spinosa,,,,"(Klunzinger, 1879)",Vulnerable,A4c,3.1,Decreasing,Global
+3812131,133578,Favites bestae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favites,bestae,,,,"Veron, 2002",Near Threatened,,3.1,Decreasing,Global
+3812570,133579,Pocillopora molokensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Pocillopora,molokensis,,,,"Vaughan, 1907",Data Deficient,,3.1,Unknown,Global
+3812839,133580,Montipora hirsuta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,hirsuta,,,,"Nemenzo, 1967",Near Threatened,,3.1,Decreasing,Global
+3814135,133583,Acropora awi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,awi,,,,"(Wallace &amp; Wolstenholme, 1998)",Vulnerable,A4ce,3.1,Decreasing,Global
+3814471,133584,Porites divaricata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,divaricata,,,,"Lesueur, 1821",Least Concern,,3.1,Stable,Global
+3814938,133585,Pseudosiderastrea tayami,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Pseudosiderastrea,tayami,,,,Yabe and Sugiyama 1935,Near Threatened,,3.1,Unknown,Global
+3815548,133586,Mussismilia braziliensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Mussismilia,braziliensis,,,,"(Verrill, 1867)",Data Deficient,,3.1,Unknown,Global
+3816883,133589,Psammocora explanulata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Psammocora,explanulata,,,,Horst 1922,Least Concern,,3.1,Unknown,Global
+3817478,133590,Siderastrea savignyana,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Siderastrea,savignyana,,,,Milne Edwards and Haime 1850,Least Concern,,3.1,Unknown,Global
+3818036,133591,Isophyllia sinuosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Isophyllia,sinuosa,,,,"(Ellis &amp; Solander, 1786)",Least Concern,,3.1,Stable,Global
+3818507,133592,Acropora exquisita,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,exquisita,,,,"Nemenzo, 1971",Data Deficient,,3.1,Decreasing,Global
+3819647,133594,Favia fragum,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,fragum,,,,"(Esper, 1797)",Least Concern,,3.1,Stable,Global
+3820225,133595,Millepora platyphylla,ANIMALIA,CNIDARIA,MILLEPORINA,HYDROZOA,MILLEPORIDAE,Millepora,platyphylla,,,,Hemprich and Ehrenberg 1834,Least Concern,,3.1,Unknown,Global
+3820937,133596,Schizoculina africana,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,OCULINIDAE,Schizoculina,africana,,,,"(Thiel, 1928)",Data Deficient,,3.1,Unknown,Global
+3821289,133597,Cantharellus doederleini,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Cantharellus,doederleini,,,,"(Marenzeller, 1907)",Least Concern,,3.1,Unknown,Global
+3821628,133598,Acropora proximalis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,proximalis,,,,"Veron, 2002",Data Deficient,,3.1,Decreasing,Global
+3821970,133599,Montipora undata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,undata,,,,"Bernard, 1897",Near Threatened,,3.1,Decreasing,Global
+3822535,133600,Acropora indonesia,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,indonesia,,,,"Wallace, 1997",Vulnerable,A4ce,3.1,Decreasing,Global
+3823501,133602,Isopora togianensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Isopora,togianensis,,,,"Wallace, 1997",Endangered,A4ce,3.1,Decreasing,Global
+3823788,133603,Millepora murrayi,ANIMALIA,CNIDARIA,MILLEPORINA,HYDROZOA,MILLEPORIDAE,Millepora,murrayi,,,,Quelch 1884,Near Threatened,,3.1,Unknown,Global
+3824242,133604,Acropora arabensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,arabensis,,,,"Hodgson &amp; Carpenter, 1995",Near Threatened,,3.1,Decreasing,Global
+3824582,133605,Scolymia wellsi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Scolymia,wellsi,,,,"(Laborel, 1967)",Data Deficient,,3.1,Unknown,Global
+3825042,133606,Symphyllia recta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Symphyllia,recta,,,,"(Dana, 1846)",Least Concern,,3.1,Unknown,Global
+3826306,133608,Oxypora egyptensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Oxypora,egyptensis,,,,"Veron, 2002",Data Deficient,,3.1,Unknown,Global
+3826632,133609,Echinophyllia orpheensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Echinophyllia,orpheensis,,,,"Veron &amp; Pichon, 1980",Least Concern,,3.1,Unknown,Global
+3827184,133610,Porites decasepta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,decasepta,,,,"Claereboudt, 2006",Data Deficient,,3.1,Unknown,Global
+3827469,133611,Madracis senaria,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ASTROCOENIIDAE,Madracis,senaria,,,,"Wells, 1974",Least Concern,,3.1,Unknown,Global
+3827924,133612,Millepora foveolata,ANIMALIA,CNIDARIA,MILLEPORINA,HYDROZOA,MILLEPORIDAE,Millepora,foveolata,,,,Crossland 1952,Vulnerable,A4cde,3.1,Decreasing,Global
+3829003,133614,Seriatopora guttatus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Seriatopora,guttatus,,,,"Veron, 2002",Least Concern,,3.1,Unknown,Global
+3829417,133615,Goniopora stutchburyi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,stutchburyi,,,,"Wells, 1955",Least Concern,,3.1,Unknown,Global
+3830663,133617,Acropora jacquelineae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,jacquelineae,,,,"Wallace, 1994",Vulnerable,A4ce,3.1,Decreasing,Global
+3831028,133618,Madracis auretenra,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ASTROCOENIIDAE,Madracis,auretenra,,,,"Locke Weil &amp; Coates, 2007",Least Concern,,3.1,Stable,Global
+3831529,133619,Lobophyllia diminuta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Lobophyllia,diminuta,,,,"Veron, 1985",Vulnerable,A4ce,3.1,Unknown,Global
+3831999,133620,Australogyra zelli,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Australogyra,zelli,,,,"(Veron &amp; Pichon, 1977)",Vulnerable,A4c,3.1,Decreasing,Global
+3832396,133621,Acropora valenciennesi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,valenciennesi,,,,"(Milne Edwards &amp; Haime, 1860)",Least Concern,,3.1,Decreasing,Global
+3833067,133622,Montipora capitata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,capitata,,,,"Dana, 1846",Near Threatened,,3.1,Decreasing,Global
+3833556,133623,Montipora cebuensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,cebuensis,,,,"Nemenzo, 1976",Vulnerable,A4ce,3.1,Decreasing,Global
+3833996,133624,Acanthastrea faviaformis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Acanthastrea,faviaformis,,,,"Veron, 2002",Vulnerable,A4c,3.1,Unknown,Global
+3834422,133625,Porites studeri,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,studeri,,,,"Vaughan, 1907",Least Concern,,3.1,Unknown,Global
+3834725,133626,Acropora schmitti,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,schmitti,,,,"Wells, 1950",Data Deficient,,3.1,Decreasing,Global
+3835105,133627,Goniastrea peresi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Goniastrea,peresi,,,,"(Faure &amp; Pichon, 1978)",Near Threatened,,3.1,Decreasing,Global
+3835999,133629,Favites stylifera,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favites,stylifera,,,,"(Yabe &amp; Sugiyama, 1937)",Near Threatened,,3.1,Decreasing,Global
+3836426,133630,Favites micropentagona,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favites,micropentagona,,,,"Veron, 2002",Near Threatened,,3.1,Decreasing,Global
+3836895,133631,Erythrastrea flabellata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Erythrastrea,flabellata,,,,"Scheer &amp; Pillai, 1983",Near Threatened,,3.1,Decreasing,Global
+3837240,133632,Montipora vaughani,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,vaughani,,,,"Hoffmeister, 1925",Data Deficient,,3.1,Decreasing,Global
+3840117,133637,Pocillopora indiania,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Pocillopora,indiania,,,,"Veron, 2002",Vulnerable,A4c,3.1,Unknown,Global
+3841032,133639,Acropora pichoni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,pichoni,,,,"Wallace, 1999",Near Threatened,,3.1,Decreasing,Global
+3842687,133642,Acanthastrea hemprichii,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Acanthastrea,hemprichii,,,,"(Ehrenberg, 1834)",Vulnerable,A4c,3.1,Unknown,Global
+3843239,133643,Goniopora sultani,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,sultani,,,,"Veron DeVantier &amp; Turak, 2000",Least Concern,,3.1,Unknown,Global
+3844285,133645,Porites somaliensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,somaliensis,,,,Gravier 1911,Near Threatened,,3.1,Unknown,Global
+3845401,133647,Acropora polystoma,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,polystoma,,,,"(Brook, 1891)",Vulnerable,A4ce,3.1,Decreasing,Global
+3847420,133650,Favites paraflexuosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favites,paraflexuosa,,,,"Veron, 2002",Near Threatened,,3.1,Decreasing,Global
+3847939,133651,Platygyra lamellina,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Platygyra,lamellina,,,,"(Ehrenberg, 1834)",Near Threatened,,3.1,Decreasing,Global
+3849370,133653,Isopora cylindrica,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Isopora,cylindrica,,,,"Veron &amp; Fenner, 2000",Data Deficient,,3.1,Decreasing,Global
+3849670,133654,Favites chinensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favites,chinensis,,,,"(Verrill, 1866)",Near Threatened,,3.1,Decreasing,Global
+3850335,133655,Acropora akajimensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,akajimensis,,,,"Veron, 1990",Data Deficient,,3.1,Decreasing,Global
+3850660,133656,Echinophyllia costata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Echinophyllia,costata,,,,"Fenner and Veron, 2000",Vulnerable,A4c,3.1,Unknown,Global
+3851010,133657,Solenastrea bournoni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Solenastrea,bournoni,,,,"Milne Edwards &amp; Haime, 1849",Least Concern,,3.1,Stable,Global
+3851882,133659,Stylophora kuehlmanni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Stylophora,kuehlmanni,,,,"Scheer &amp; Pillai, 1983",Least Concern,,3.1,Unknown,Global
+3852783,133661,Acropora echinata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,echinata,,,,"(Dana, 1846)",Vulnerable,A4cde,3.1,Decreasing,Global
+3853981,133663,Madracis decactis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ASTROCOENIIDAE,Madracis,decactis,,,,"(Lyman, 1859)",Least Concern,,3.1,Stable,Global
+3854452,133664,Pachyseris involuta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pachyseris,involuta,,,,"(Studer, 1877)",Vulnerable,A4ce,3.1,Unknown,Global
+3854732,133665,Goniastrea thecata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Goniastrea,thecata,,,,"Veron DeVantier &amp; Turak, 2000",Near Threatened,,3.1,Decreasing,Global
+3855655,133667,Craterestrea levis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Craterestrea,levis,,,,Head 1983,Least Concern,,3.1,Unknown,Global
+3855942,133668,Goniopora stokesi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,stokesi,,,,"Milne Edwards &amp; Haime, 1851",Near Threatened,,3.1,Unknown,Global
+3856563,133669,Cyphastrea decadia,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Cyphastrea,decadia,,,,"Moll &amp; Best, 1984",Least Concern,,3.1,Decreasing,Global
+3857022,133670,Micromussa minuta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Micromussa,minuta,,,,"(Moll &amp; Borel-Best, 1984)",Near Threatened,,3.1,Unknown,Global
+3857412,133671,Heteropsammia eupsammides,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Heteropsammia,eupsammides,,,,"Gray, 1849",Near Threatened,,3.1,Unknown,Global
+3857791,133672,Acropora efflorescens,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,efflorescens,,,,"(Dana, 1846)",Data Deficient,,3.1,Decreasing,Global
+3858821,133674,Montipora mollis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,mollis,,,,"Bernard, 1897",Least Concern,,3.1,Decreasing,Global
+3859481,133675,Alveopora tizardi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Alveopora,tizardi,,,,"Bassett-Smith, 1890",Least Concern,,3.1,Unknown,Global
+3860495,133677,Acropora massawensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,massawensis,,,,"Marenzeller, 1906",Data Deficient,,3.1,Decreasing,Global
+3860815,133678,Acropora copiosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,copiosa,,,,"Nemenzo, 1967",Data Deficient,,3.1,Decreasing,Global
+3861285,133679,Heteropsammia cochlea,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Heteropsammia,cochlea,,,,"(Spengler, 1781)",Least Concern,,3.1,Unknown,Global
+3861919,133680,Porites astreoides,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,astreoides,,,,"Lamarck, 1816",Least Concern,,3.1,Increasing,Global
+3862493,133681,Acropora torresiana,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,torresiana,,,,"Veron, 2002",Data Deficient,,3.1,Decreasing,Global
+3862790,133682,Acropora subulata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,subulata,,,,"(Dana, 1846)",Least Concern,,3.1,Decreasing,Global
+3863409,133683,Pectinia maxima,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Pectinia,maxima,,,,"(Moll &amp; Borel Best, 1984)",Endangered,A4cd,3.1,Unknown,Global
+3863779,133684,Coscinaraea hahazimaensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Coscinaraea,hahazimaensis,,,,"Yabe &amp; Sugiyama, 1936",Vulnerable,B1ab(iii),3.1,Unknown,Global
+3864752,133686,Leptoseris cailleti,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Leptoseris,cailleti,,,,"(Duchassaing &amp; Michelotti, 1864)",Least Concern,,3.1,Unknown,Global
+3865216,133687,Echinopora forskaliana,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Echinopora,forskaliana,,,,"(Milne Edwards &amp; Haime, 1850)",Near Threatened,,3.1,Decreasing,Global
+3865610,133688,Acropora elegans,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,elegans,,,,"Milne Edwards &amp; Haime, 1860",Vulnerable,A4cde,3.1,Decreasing,Global
+3865955,133689,Anacropora reticulata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Anacropora,reticulata,,,,"Veron &amp; Wallace, 1984",Vulnerable,A4ce,3.1,Decreasing,Global
+3866487,133690,Cyphastrea japonica,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Cyphastrea,japonica,,,,"Yabe &amp; Sugiyama, 1932",Least Concern,,3.1,Decreasing,Global
+3866881,133691,Pocillopora effusus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Pocillopora,effusus,,,,"Veron, 2002",Data Deficient,,3.1,Unknown,Global
+3867187,133692,Parasimplastrea sheppardi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Parasimplastrea,sheppardi,,,,"Veron, 2002",Endangered,A4c,3.1,Decreasing,Global
+3867532,133693,Sandalolitha robusta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Sandalolitha,robusta,,,,"Quelch, 1886",Least Concern,,3.1,Unknown,Global
+3868012,133694,Pectinia ayleni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Pectinia,ayleni,,,,"(Wells, 1935)",Near Threatened,,3.1,Unknown,Global
+3868413,133695,Caulastrea curvata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Caulastrea,curvata,,,,"Wijsmann-Best, 1972",Vulnerable,A4cd,3.1,Decreasing,Global
+3868861,133696,Montipora altasepta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,altasepta,,,,"Nemenzo, 1967",Vulnerable,A4cde,3.1,Decreasing,Global
+3869980,133698,Acropora nana,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,nana,,,,"(Studer, 1878)",Near Threatened,,3.1,Decreasing,Global
+3870532,133699,Acropora filiformis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,filiformis,,,,"Veron, 2002",Data Deficient,,3.1,Decreasing,Global
+3871401,133701,Ctenella chagius,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MEANDRINIDAE,Ctenella,chagius,,,,"Matthai, 1928",Endangered,A4c,3.1,Decreasing,Global
+3872441,133703,Porites ericacea,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,ericacea,,,,"Claereboudt, 2006",Data Deficient,,3.1,Unknown,Global
+4440023,14500,Nematostella vectensis,ANIMALIA,CNIDARIA,ACTINARIA,ANTHOZOA,EDWARDSIIDAE,Nematostella,vectensis,,,,"Stephenson, 1935",Vulnerable,A1ce,2.3,,Global
+12683306,63578,Endopsammia pourtalesi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Endopsammia,pourtalesi,,,,"(Durham &amp; Barnard, 1952)",Data Deficient,,3.1,Unknown,Global
+12683468,63579,Rhizopsammia wellingtoni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Rhizopsammia,wellingtoni,,,,"Wells, 1982",Critically Endangered,A2a; B1ab(i)+2ab(i),3.1,Decreasing,Global
+12683651,63580,Tubastraea floreana,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Tubastraea,floreana,,,,"Wells, 1982",Critically Endangered,A2a,3.1,Decreasing,Global
+12683824,63581,Flabellum daphnense,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FLABELLIDAE,Flabellum,daphnense,,,,"(Durham &amp; Barnard, 1952)",Data Deficient,,3.1,Unknown,Global
+12683988,63582,Pseudocyathoceras avis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,TURBINOLIIDAE,Pseudocyathoceras,avis,,,,"(Durham &amp; Barnard, 1952)",Data Deficient,,3.1,Unknown,Global
+12693155,63573,Caryophyllia solida,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,CARYOPHYLLIIDAE,Caryophyllia,solida,,,,"Cairns, 1991",Data Deficient,,3.1,Unknown,Global
+12693272,63574,Concentrotheca vaughani,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,CARYOPHYLLIIDAE,Concentrotheca,vaughani,,,,"Cairns, 1991",Data Deficient,,3.1,Unknown,Global
+12693389,63575,Crispatotrochus galapagensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,CARYOPHYLLIIDAE,Crispatotrochus,galapagensis,,,,"Cairns, 1991",Data Deficient,,3.1,Unknown,Global
+12693506,63576,Polycyathus isabela,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,CARYOPHYLLIIDAE,Polycyathus,isabela,,,,"Wells, 1982",Vulnerable,D2,3.1,Unknown,Global
+12693621,63577,Dendrophyllia johnsoni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Dendrophyllia,johnsoni,,,,"Cairns, 1991",Data Deficient,,3.1,Unknown,Global
+12736062,64017,Micruroides euryxanthus,ANIMALIA,CHORDATA,SQUAMATA,REPTILIA,ELAPIDAE,Micruroides,euryxanthus,,,,"(Kennicott, 1860)",Least Concern,,3.1,Stable,Global
+12738512,64033,Micrurus tener,ANIMALIA,CHORDATA,SQUAMATA,REPTILIA,ELAPIDAE,Micrurus,tener,,,,"(Baird &amp; Girard, 1853)",Least Concern,,3.1,Stable,Global
+12824113,7035,Edwardsia ivelli,ANIMALIA,CNIDARIA,ACTINARIA,ANTHOZOA,EDWARDSIIDAE,Edwardsia,ivelli,,,,"Manuel, 1975",Data Deficient,,2.3,,Global
+12903486,8262,Eunicella verrucosa,ANIMALIA,CNIDARIA,ALCYONACEA,ANTHOZOA,PLEXAURIDAE,Eunicella,verrucosa,,,,"(Pallas, 1766)",Vulnerable,A1d,2.3,,Global
+50605632,50020625,Clavularia carpediem,ANIMALIA,CNIDARIA,ALCYONACEA,ANTHOZOA,CORNULARIIDAE,Clavularia,carpediem,,,,"Weinberg, 1986",Data Deficient,,3.1,Unknown,Global & Mediterranean
+50605656,50020621,Clavularia crassa,ANIMALIA,CNIDARIA,ALCYONACEA,ANTHOZOA,CORNULARIIDAE,Clavularia,crassa,,,,"(Milne Edwards, 1848)",Least Concern,,3.1,Stable,Global & Mediterranean
+50605984,50011071,Maasella edwardsi,ANIMALIA,CNIDARIA,ALCYONACEA,ANTHOZOA,PARALCYONIIDAE,Maasella,edwardsi,,,,"(de Lacaze-Duthiers, 1888)",Data Deficient,,3.1,Unknown,Global & Mediterranean
+50609268,50012470,Paramuricea macrospina,ANIMALIA,CNIDARIA,ALCYONACEA,ANTHOZOA,PLEXAURIDAE,Paramuricea,macrospina,,,,"(Koch, 1882)",Data Deficient,,3.1,Unknown,Global & Mediterranean
+50856395,50107293,Bunodeopsis strumosa,ANIMALIA,CNIDARIA,ACTINARIA,ANTHOZOA,BOLOCEROIDIDAE,Bunodeopsis,strumosa,,,,"Andrès, 1881",Data Deficient,,3.1,Unknown,Global
+51216308,50160898,Cladopsammia rolandi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Cladopsammia,rolandi,,,,"Lacaze-Duthiers, 1897",Data Deficient,,3.1,Unknown,Global & Mediterranean
+51216640,50107605,Actinia cari,ANIMALIA,CNIDARIA,ACTINARIA,ANTHOZOA,ACTINIIDAE,Actinia,cari,,,,"Delle Chiaje, 1822",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+51216703,50113365,Cribrinopsis crassa,ANIMALIA,CNIDARIA,ACTINARIA,ANTHOZOA,ACTINIIDAE,Cribrinopsis,crassa,,,,"(Andrès, 1881)",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+51216714,50148677,Paranemonia cinerea,ANIMALIA,CNIDARIA,ACTINARIA,ANTHOZOA,ACTINIIDAE,Paranemonia,cinerea,,,,"(Contarini, 1844)",Data Deficient,,3.1,Unknown,Global & Mediterranean
+51216727,50148695,Paranemonia vouliagmeniensis,ANIMALIA,CNIDARIA,ACTINARIA,ANTHOZOA,ACTINIIDAE,Paranemonia,vouliagmeniensis,,,,"Doumenc, England &amp; Chintiroglou, 1987",Endangered,B1ab(iii)+2ab(iii),3.1,Decreasing,"Global, Europe & Mediterranean"
+51216754,50148787,Segonzactis hartogi,ANIMALIA,CNIDARIA,ACTINARIA,ANTHOZOA,CONDYLANTHIDAE,Segonzactis,hartogi,,,,"Dimitris &amp; Chariton, 2002",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+51217121,50148930,Phymanthus pulcher,ANIMALIA,CNIDARIA,ACTINARIA,ANTHOZOA,PHYMANTHIDAE,Phymanthus,pulcher,,,,"(Andrès, 1883)",Data Deficient,,3.1,Unknown,Global & Mediterranean
+51217531,50016125,Crassophyllum thessalonicae,ANIMALIA,CNIDARIA,PENNATULACEA,ANTHOZOA,PENNATULIDAE,Crassophyllum,thessalonicae,,,,"Vafidis &amp; Koukouras, 1991",Endangered,"B1ab(ii,iii)+2ab(ii,iii)",3.1,Decreasing,"Global, Europe & Mediterranean"
+54149966,132860,Psammocora stellata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Psammocora,stellata,,,,"Verrill, 1868",Vulnerable,A4ce,3.1,Unknown,Global
+54150383,132862,Acropora cophodactyla,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,cophodactyla,,,,"(Brook, 1892)",Data Deficient,,3.1,Decreasing,Global
+54150814,132864,Fungia costulata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,costulata,,,,"Ortmann, 1889",Least Concern,,3.1,Unknown,Global
+54151400,132869,Acropora florida,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,florida,,,,"(Dana, 1846)",Near Threatened,,3.1,Decreasing,Global
+54151995,132873,Porites densa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,densa,,,,"Vaughan, 1918",Near Threatened,,3.1,Unknown,Global
+54152435,132878,Favia maxima,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,maxima,,,,"Veron Pichon &amp; Wijsman-Best, 1972",Near Threatened,,3.1,Decreasing,Global
+54152993,132880,Pavona venosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pavona,venosa,,,,"(Ehrenberg, 1834)",Vulnerable,A4c,3.1,Unknown,Global
+54153640,132881,Hydnophora rigida,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MERULINIDAE,Hydnophora,rigida,,,,"(Dana, 1846)",Least Concern,,3.1,Unknown,Global
+54154226,132883,Goniastrea australensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Goniastrea,australensis,,,,"(Milne Edwards &amp; Haime, 1857)",Least Concern,,3.1,Decreasing,Global
+54154907,132885,Leptoseris hawaiiensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Leptoseris,hawaiiensis,,,,"Vaughan, 1907",Least Concern,,3.1,Unknown,Global
+54155614,132887,Leptoseris explanata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Leptoseris,explanata,,,,"Yabe &amp; Sugiyama, 1941",Least Concern,,3.1,Unknown,Global
+54156250,132888,Acropora secale,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,secale,,,,"(Studer, 1878)",Near Threatened,,3.1,Decreasing,Global
+54156915,132895,Hydnophora pilosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MERULINIDAE,Hydnophora,pilosa,,,,"Veron, 1985",Least Concern,,3.1,Unknown,Global
+54157360,132897,Porites eridani,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,eridani,,,,"Umbgrove, 1940",Endangered,A4cde,3.1,Unknown,Global
+54157772,132903,Leptoseris solida,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Leptoseris,solida,,,,"(Quelch, 1886)",Least Concern,,3.1,Unknown,Global
+54158371,132904,Pavona minuta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pavona,minuta,,,,"Wells, 1954",Near Threatened,,3.1,Unknown,Global
+54158837,132906,Acropora irregularis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,irregularis,,,,"(Brook, 1892)",Data Deficient,,3.1,Decreasing,Global
+54159304,132911,Pavona maldivensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pavona,maldivensis,,,,"(Gardiner, 1905)",Least Concern,,3.1,Unknown,Global
+54160045,132915,Siderastrea stellata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Siderastrea,stellata,,,,Verrill 1868,Data Deficient,,3.1,Unknown,Global
+54160351,132916,Turbinaria irregularis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Turbinaria,irregularis,,,,"Bernard, 1896",Least Concern,,3.1,Unknown,Global
+54160895,132917,Gardineroseris planulata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Gardineroseris,planulata,,,,"Dana, 1846",Least Concern,,3.1,Unknown,Global
+54161679,132922,Montastrea curta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Montastrea,curta,,,,"(Dana, 1846)",Least Concern,,3.1,Decreasing,Global
+54162387,132923,Pocillopora woodjonesi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Pocillopora,woodjonesi,,,,"Vaughan, 1918",Least Concern,,3.1,Unknown,Global
+54162921,132925,Fungia hexagonalis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,hexagonalis,,,,"Edwards &amp; Haine, 1848",Least Concern,,3.1,Unknown,Global
+54163337,132936,Favia pallida,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,pallida,,,,"(Dana, 1846)",Least Concern,,3.1,Decreasing,Global
+54164079,132940,Acropora acuminata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,acuminata,,,,(Verrill 1864),Vulnerable,A4ce,3.1,Decreasing,Global
+54164687,132948,Acropora granulosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,granulosa,,,,"(Milne Edwards &amp; Haime, 1860)",Near Threatened,,3.1,Decreasing,Global
+54165319,132954,Fungia cyclolites,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,cyclolites,,,,"Lamarck, 1816",Least Concern,,3.1,Unknown,Global
+54165929,132956,Pectinia alcicornis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Pectinia,alcicornis,,,,"(Saville-Kent, 1871)",Vulnerable,A4c,3.1,Unknown,Global
+54166425,132958,Pocillopora capitata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Pocillopora,capitata,,,,"Verrill, 1864",Least Concern,,3.1,Unknown,Global
+54166859,132960,Hydnophora grandis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MERULINIDAE,Hydnophora,grandis,,,,"Gardiner, 1904",Least Concern,,3.1,Unknown,Global
+54167334,132965,Boninastrea boninensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MERULINIDAE,Boninastrea,boninensis,,,,"Yabe &amp; Sugiyama, 1935",Data Deficient,,3.1,Unknown,Global
+54167680,132966,Acropora rambleri,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,rambleri,,,,"(Bassett-Smith, 1890)",Data Deficient,,3.1,Decreasing,Global
+54168256,132969,Acropora listeri,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,listeri,,,,"(Brook, 1893)",Vulnerable,A4ce,3.1,Decreasing,Global
+54168861,132975,Millepora tenera,ANIMALIA,CNIDARIA,MILLEPORINA,HYDROZOA,MILLEPORIDAE,Millepora,tenera,,,,Boschma 1949,Least Concern,,3.1,Unknown,Global
+54169590,132976,Acropora loripes,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,loripes,,,,"(Brook, 1892)",Near Threatened,,3.1,Decreasing,Global
+54170240,132978,Montastrea magnistellata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Montastrea,magnistellata,,,,"Chevalier, 1971",Near Threatened,,3.1,Decreasing,Global
+54170883,132980,Leptoria phrygia,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Leptoria,phrygia,,,,"(Ellis &amp; Solander, 1786)",Near Threatened,,3.1,Decreasing,Global
+54171607,132983,Leptastrea bottae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Leptastrea,bottae,,,,"(Milne Edwards &amp; Haime, 1849)",Near Threatened,,3.1,Decreasing,Global
+54172227,132986,Fungia repanda,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,repanda,,,,"Dana, 1846",Least Concern,,3.1,Unknown,Global
+54172878,132992,Acropora humilis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,humilis,,,,"(Dana, 1846)",Near Threatened,,3.1,Decreasing,Global
+54173555,132997,Montastrea valenciennesi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Montastrea,valenciennesi,,,,"(Milne Edwards &amp; Haime, 1848)",Near Threatened,,3.1,Decreasing,Global
+54174146,132998,Acropora samoensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,samoensis,,,,"(Brook, 1891)",Least Concern,,3.1,Decreasing,Global
+54174814,133000,Acropora ocellata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,ocellata,,,,"(Klunzinger, 1879)",Data Deficient,,3.1,Decreasing,Global
+54175228,133001,Goniopora pandoraensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,pandoraensis,,,,"Veron &amp; Pichon, 1982",Least Concern,,3.1,Unknown,Global
+54175713,133008,Fungia spinifer,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,spinifer,,,,"Claereboudt &amp; Hoeksema, 1987",Least Concern,,3.1,Unknown,Global
+54176059,133013,Acropora grandis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,grandis,,,,"(Brook, 1892)",Least Concern,,3.1,Decreasing,Global
+54176681,133016,Porites vaughani,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,vaughani,,,,"Crossland, 1952",Least Concern,,3.1,Unknown,Global
+54177216,133020,Acropora tenuis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,tenuis,,,,"(Dana, 1846)",Near Threatened,,3.1,Decreasing,Global
+54177921,133021,Acropora microphthalma,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,microphthalma,,,,"(Verrill, 1859)",Least Concern,,3.1,Decreasing,Global
+54178603,133023,Porites lichen,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,lichen,,,,"Dana, 1846",Least Concern,,3.1,Unknown,Global
+54179290,133024,Merulina scabricula,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MERULINIDAE,Merulina,scabricula,,,,"Dana, 1846",Least Concern,,3.1,Unknown,Global
+54179867,133025,Acropora vaughani,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,vaughani,,,,"Wells, 1954",Vulnerable,A4ce,3.1,Decreasing,Global
+54180448,133028,Seriatopora caliendrum,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Seriatopora,caliendrum,,,,"Ehrenberg, 1834",Near Threatened,,3.1,Unknown,Global
+54181084,133029,Favia rotumana,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,rotumana,,,,"(Gardiner, 1899)",Least Concern,,3.1,Decreasing,Global
+54181822,133034,Fungia fragilis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,fragilis,,,,"(Hoeksema, 1989)",Least Concern,,3.1,Unknown,Global
+54182379,133038,Porites nigrescens,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,nigrescens,,,,"Dana, 1846",Vulnerable,A4cde,3.1,Unknown,Global
+54183041,133041,Pavona decussata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pavona,decussata,,,,"(Dana, 1846)",Vulnerable,A4c,3.1,Unknown,Global
+54183741,133043,Psammocora digitata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Psammocora,digitata,,,,Milne Edwards and Haime 1851,Near Threatened,,3.1,Unknown,Global
+54184322,133044,Cantharellus jebbi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Cantharellus,jebbi,,,,"Hoeksema, 1993",Least Concern,,3.1,Unknown,Global
+54184676,133045,Pocillopora ligulata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Pocillopora,ligulata,,,,"Dana, 1846",Least Concern,,3.1,Unknown,Global
+54185058,133046,Anacropora spinosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Anacropora,spinosa,,,,"Rehberg, 1892",Endangered,A4ce,3.1,Decreasing,Global
+54185489,133049,Stylocoeniella guentheri,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ASTROCOENIIDAE,Stylocoeniella,guentheri,,,,"Bassett-Smith, 1890",Least Concern,,3.1,Unknown,Global
+54186210,133054,Goniopora tenuidens,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,tenuidens,,,,"Quelch, 1886",Least Concern,,3.1,Unknown,Global
+54186872,133055,Favites halicora,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favites,halicora,,,,"(Ehrenberg, 1834)",Near Threatened,,3.1,Decreasing,Global
+54187520,133058,Echinophyllia echinata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Echinophyllia,echinata,,,,"(Saville-Kent, 1871)",Least Concern,,3.1,Unknown,Global
+54188187,133063,Polyphyllia talpina,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Polyphyllia,talpina,,,,"(Lamarck, 1801)",Least Concern,,3.1,Unknown,Global
+54188728,133066,Montipora informis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,informis,,,,"Bernard, 1897",Least Concern,,3.1,Decreasing,Global
+54189409,133070,Montastrea colemani,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Montastrea,colemani,,,,"Veron, 2002",Near Threatened,,3.1,Decreasing,Global
+54189890,133071,Montipora foliosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,foliosa,,,,"(Pallas, 1766)",Near Threatened,,3.1,Decreasing,Global
+54190610,133076,Lobophyllia robusta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Lobophyllia,robusta,,,,"Yabe &amp; Sugiyama, 1936",Least Concern,,3.1,Unknown,Global
+54191180,133082,Porites lutea,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,lutea,,,,"Milne Edwards &amp; Haime, 1851",Least Concern,,3.1,Unknown,Global
+54191947,133083,Ctenactis albitentaculata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Ctenactis,albitentaculata,,,,"Hoeksema, 1989",Near Threatened,,3.1,Unknown,Global
+54192366,133084,Barabattoia amicorum,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Barabattoia,amicorum,,,,"(Milne Edwards &amp; Haime, 1850)",Least Concern,,3.1,Decreasing,Global
+54192983,133087,Acropora subglabra,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,subglabra,,,,"(Brook, 1891)",Least Concern,,3.1,Decreasing,Global
+54193471,133088,Echinopora lamellosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Echinopora,lamellosa,,,,(Esper 1795),Least Concern,,3.1,Decreasing,Global
+54194183,133090,Leptastrea purpurea,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Leptastrea,purpurea,,,,"(Dana, 1846)",Least Concern,,3.1,Decreasing,Global
+54194931,133091,Leptoseris scabra,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Leptoseris,scabra,,,,"Vaughan, 1907",Least Concern,,3.1,Unknown,Global
+54195662,133095,Pocillopora meandrina,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Pocillopora,meandrina,,,,"Dana, 1846",Least Concern,,3.1,Unknown,Global
+54196271,133097,Pocillopora danae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Pocillopora,danae,,,,"Verrill, 1864",Vulnerable,A4ce,3.1,Unknown,Global
+54196691,133098,Leptoseris papyracea,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Leptoseris,papyracea,,,,"(Dana, 1846)",Least Concern,,3.1,Unknown,Global
+54197316,133099,Pocillopora elegans,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Pocillopora,elegans,,,,"Dana, 1846",Vulnerable,A4ce,3.1,Unknown,Global
+54197833,133105,Porites murrayensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,murrayensis,,,,"Vaughan, 1918",Near Threatened,,3.1,Unknown,Global
+54198491,133106,Acanthastrea hillae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Acanthastrea,hillae,,,,"Wells, 1955",Near Threatened,,3.1,Unknown,Global
+54199096,133116,Plerogyra simplex,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,EUPHYLLIDAE,Plerogyra,simplex,,,,"Rehberg, 1892",Near Threatened,,3.1,Unknown,Global
+54199574,133117,Montipora lobulata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,lobulata,,,,"Bernard, 1897",Vulnerable,A4c,3.1,Decreasing,Global
+54200038,133127,Symphyllia valenciennesii,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Symphyllia,valenciennesii,,,,"Milne Edwards &amp; Haime, 1849",Least Concern,,3.1,Unknown,Global
+54200688,133132,Acropora aspera,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,aspera,,,,"(Dana, 1846)",Vulnerable,A4ce,3.1,Decreasing,Global
+54201246,133136,Favia marshae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,marshae,,,,"Veron, 2002",Near Threatened,,3.1,Decreasing,Global
+54201666,133137,Astreopora scabra,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Astreopora,scabra,,,,"Lamberts, 1982",Least Concern,,3.1,Decreasing,Global
+54202066,133139,Isopora palifera,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Isopora,palifera,,,,"(Lamarck, 1816)",Near Threatened,,3.1,Decreasing,Global
+54202675,133140,Millepora exaesa,ANIMALIA,CNIDARIA,MILLEPORINA,HYDROZOA,MILLEPORIDAE,Millepora,exaesa,,,,Forskål 1775,Least Concern,,3.1,Stable,Global
+54203254,133148,Ctenactis echinata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Ctenactis,echinata,,,,"(Pallas, 1766)",Least Concern,,3.1,Unknown,Global
+54203839,133156,Alveopora verrilliana,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Alveopora,verrilliana,,,,"Dana, 1872",Vulnerable,A4cd,3.1,Unknown,Global
+54204422,133158,Podabacia crustacea,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Podabacia,crustacea,,,,"(Pallas, 1766)",Least Concern,,3.1,Unknown,Global
+54205058,133166,Halomitra pileus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Halomitra,pileus,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Unknown,Global
+54205621,133167,Cyphastrea serailia,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Cyphastrea,serailia,,,,"(Forskål, 1775)",Least Concern,,3.1,Decreasing,Global
+54206365,133171,Coeloseris mayeri,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Coeloseris,mayeri,,,,"Vaughan, 1918",Least Concern,,3.1,Unknown,Global
+54206928,133172,Echinophyllia aspera,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Echinophyllia,aspera,,,,"(Ellis &amp; Solander, 1788)",Least Concern,,3.1,Unknown,Global
+54207651,133175,Montipora efflorescens,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,efflorescens,,,,"Bernard, 1897",Near Threatened,,3.1,Decreasing,Global
+54208354,133183,Fungia granulosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,granulosa,,,,"Klunzinger, 1879",Least Concern,,3.1,Unknown,Global
+54209005,133186,Montipora floweri,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,floweri,,,,"Wells, 1954",Least Concern,,3.1,Decreasing,Global
+54209633,133192,Oxypora glabra,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Oxypora,glabra,,,,"Nemenzo, 1959",Least Concern,,3.1,Unknown,Global
+54210095,133197,Pocillopora verrucosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Pocillopora,verrucosa,,,,"(Ellis &amp; Solander, 1786)",Least Concern,,3.1,Unknown,Global
+54210879,133198,Goniopora fruticosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,fruticosa,,,,"Saville-Kent, 1893",Least Concern,,3.1,Unknown,Global
+54211359,133200,Oulophyllia crispa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Oulophyllia,crispa,,,,"(Lamarck, 1816)",Near Threatened,,3.1,Decreasing,Global
+54212029,133201,Fungia scutaria,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,scutaria,,,,"Lamarck, 1801",Least Concern,,3.1,Unknown,Global
+54212697,133203,Acropora tenella,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,tenella,,,,"(Brook, 1892)",Vulnerable,A4ce,3.1,Decreasing,Global
+54213078,133208,Psammocora contigua,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Psammocora,contigua,,,,Esper 1797,Near Threatened,,3.1,Unknown,Global
+54213777,133209,Favites pentagona,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favites,pentagona,,,,"(Esper, 1794)",Least Concern,,3.1,Decreasing,Global
+54214470,133214,Astreopora eliptica,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Astreopora,eliptica,,,,"Yabe &amp; Sugiyama, 1941",Data Deficient,,3.1,Decreasing,Global
+54214845,133215,Fungia tenuis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,tenuis,,,,"Dana, 1846",Least Concern,,3.1,Unknown,Global
+54215500,133216,Porites lobata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,lobata,,,,"Dana, 1846",Near Threatened,,3.1,Unknown,Global
+54216304,133220,Montipora caliculata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,caliculata,,,,"(Dana, 1846)",Vulnerable,A4ce,3.1,Decreasing,Global
+54216898,133222,Pocillopora damicornis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Pocillopora,damicornis,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Unknown,Global
+54217692,133230,Fungia vaughani,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,vaughani,,,,"Boschma, 1923",Least Concern,,3.1,Unknown,Global
+54218331,133231,Diploastrea heliopora,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Diploastrea,heliopora,,,,"(Lamarck, 1816)",Near Threatened,,3.1,Decreasing,Global
+54218977,133236,Galaxea paucisepta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,OCULINIDAE,Galaxea,paucisepta,,,,"Claereboudt, 1990",Near Threatened,,3.1,Unknown,Global
+54219368,133239,Acropora nasuta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,nasuta,,,,"(Dana, 1846)",Near Threatened,,3.1,Decreasing,Global
+54220093,133240,Pavona clavus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pavona,clavus,,,,"(Dana, 1846)",Least Concern,,3.1,Unknown,Global
+54220828,133242,Pavona frondifera,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pavona,frondifera,,,,"(Lamarck, 1816)",Least Concern,,3.1,Unknown,Global
+54221512,133244,Favites flexuosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favites,flexuosa,,,,"(Dana, 1846)",Near Threatened,,3.1,Decreasing,Global
+54222215,133246,Acanthastrea echinata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Acanthastrea,echinata,,,,"(Dana, 1846)",Least Concern,,3.1,Unknown,Global
+54222944,133248,Acropora robusta,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,robusta,,,,"(Dana, 1846)",Least Concern,,3.1,Decreasing,Global
+54223617,133250,Acropora digitifera,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,digitifera,,,,"(Dana, 1846)",Near Threatened,,3.1,Decreasing,Global
+54224297,133256,Euphyllia glabrescens,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,EUPHYLLIDAE,Euphyllia,glabrescens,,,,"(Chamisso &amp; Eysenhardt, 1821)",Near Threatened,,3.1,Unknown,Global
+54224963,133258,Plerogyra sinuosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,EUPHYLLIDAE,Plerogyra,sinuosa,,,,"(Dana, 1846)",Near Threatened,,3.1,Unknown,Global
+54225629,133262,Porites annae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,annae,,,,"Crossland, 1952",Near Threatened,,3.1,Unknown,Global
+54226156,133267,Astreopora listeri,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Astreopora,listeri,,,,"Bernard, 1896",Least Concern,,3.1,Decreasing,Global
+54226794,133272,Pectinia paeonia,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Pectinia,paeonia,,,,"(Dana, 1846)",Near Threatened,,3.1,Unknown,Global
+54227316,133277,Porites australiensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,australiensis,,,,"Vaughan, 1918",Least Concern,,3.1,Unknown,Global
+54227968,133284,Plesiastrea versipora,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Plesiastrea,versipora,,,,"(Lamarck, 1816)",Least Concern,,3.1,Decreasing,Global
+54228736,133289,Euphyllia paraancora,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,EUPHYLLIDAE,Euphyllia,paraancora,,,,"Veron, 1990",Vulnerable,A4cd,3.1,Unknown,Global
+54229155,133290,Favites abdita,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favites,abdita,,,,"(Ellis &amp; Solander, 1786)",Near Threatened,,3.1,Decreasing,Global
+54229881,133291,Acropora striata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,striata,,,,"(Verrill, 1866)",Vulnerable,A4ce,3.1,Decreasing,Global
+54230315,133292,Astreopora myriophthalma,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Astreopora,myriophthalma,,,,"(Lamarck, 1816)",Least Concern,,3.1,Decreasing,Global
+54231035,133293,Acropora valida,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,valida,,,,"(Dana, 1846)",Least Concern,,3.1,Decreasing,Global
+54231790,133299,Fungia sinensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,sinensis,,,,"Edwards &amp; Haine, 1851",Least Concern,,3.1,Unknown,Global
+54232334,133302,Astreopora gracilis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Astreopora,gracilis,,,,"Bernard, 1896",Least Concern,,3.1,Decreasing,Global
+54232897,133303,Acropora lutkeni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,lutkeni,,,,"Crossland, 1952",Near Threatened,,3.1,Decreasing,Global
+54233479,133304,Lobophyllia hataii,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Lobophyllia,hataii,,,,"Yabe &amp; Sugiyama, 1936",Least Concern,,3.1,Unknown,Global
+54234087,133305,Montipora verrilli,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,verrilli,,,,"Vaughan, 1907",Data Deficient,,3.1,Decreasing,Global
+54234411,133308,Fungia scruposa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,scruposa,,,,"Klunzinger, 1879",Least Concern,,3.1,Unknown,Global
+54235037,133314,Montipora aequituberculata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,aequituberculata,,,,"Bernard, 1897",Least Concern,,3.1,Decreasing,Global
+54235770,133315,Acropora monticulosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,monticulosa,,,,"(Brüggemann, 1879)",Near Threatened,,3.1,Decreasing,Global
+54236356,133324,Acropora gemmifera,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,gemmifera,,,,"(Brook, 1892)",Least Concern,,3.1,Decreasing,Global
+54237016,133325,Cyphastrea chalcidicum,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Cyphastrea,chalcidicum,,,,"(Forskål, 1775)",Least Concern,,3.1,Decreasing,Global
+54237697,133326,Acanthastrea regularis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Acanthastrea,regularis,,,,"Veron, 2002",Vulnerable,A4c,3.1,Unknown,Global
+54238095,133327,Acropora lovelli,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,lovelli,,,,"Veron &amp; Wallace, 1984",Vulnerable,A4ce,3.1,Decreasing,Global
+54238576,133329,Porites stephensoni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,stephensoni,,,,"Crossland, 1952",Near Threatened,,3.1,Unknown,Global
+54239113,133330,Leptoseris foliosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Leptoseris,foliosa,,,,"Dineson, 1980",Least Concern,,3.1,Unknown,Global
+54239745,133331,Millepora tuberosa,ANIMALIA,CNIDARIA,MILLEPORINA,HYDROZOA,MILLEPORIDAE,Millepora,tuberosa,,,,Boschma 1966,Endangered,A4c,3.1,Decreasing,Global
+54240066,133332,Alveopora allingi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Alveopora,allingi,,,,"Hoffmeister, 1925",Vulnerable,A4cd,3.1,Unknown,Global
+54240738,133337,Merulina ampliata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MERULINIDAE,Merulina,ampliata,,,,"(Ellis &amp; Solander, 1786)",Least Concern,,3.1,Unknown,Global
+54241411,133343,Favites russelli,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favites,russelli,,,,"(Wells, 1954)",Near Threatened,,3.1,Decreasing,Global
+54242092,133345,Montipora tuberculosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,tuberculosa,,,,"(Lamarck, 1816)",Least Concern,,3.1,Decreasing,Global
+54242828,133351,Leptoseris mycetoseroides,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Leptoseris,mycetoseroides,,,,"Wells, 1954",Least Concern,,3.1,Unknown,Global
+54243552,133353,Psammocora obtusangula,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Psammocora,obtusangula,,,,"Lamarck, 1816",Near Threatened,,3.1,Unknown,Global
+54244070,133357,Goniopora eclipsensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,eclipsensis,,,,"Veron &amp; Pichon, 1982",Least Concern,,3.1,Unknown,Global
+54244522,133358,Porites napopora,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,napopora,,,,"Veron, 2002",Vulnerable,A4cde,3.1,Unknown,Global
+54244933,133360,Pavona bipartita,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pavona,bipartita,,,,"Nemenzo, 1980",Vulnerable,A4c,3.1,Unknown,Global
+54245520,133364,Stylaraea punctata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Stylaraea,punctata,,,,"Linneaus, 1758",Data Deficient,,3.1,Unknown,Global
+54246041,133365,Goniastrea edwardsi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Goniastrea,edwardsi,,,,"Chevalier, 1971",Least Concern,,3.1,Decreasing,Global
+54246712,133376,Acanthastrea ishigakiensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Acanthastrea,ishigakiensis,,,,"Veron, 1990",Vulnerable,A4c,3.1,Unknown,Global
+54247298,133378,Goniopora somaliensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,somaliensis,,,,"Vaughan, 1907",Least Concern,,3.1,Unknown,Global
+54248003,133380,Madracis kirbyi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ASTROCOENIIDAE,Madracis,kirbyi,,,,"Veron &amp; Pichon, 1976",Least Concern,,3.1,Unknown,Global
+54248571,133382,Pavona explanulata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pavona,explanulata,,,,"(Lamarck, 1816)",Least Concern,,3.1,Unknown,Global
+54249305,133383,Barabattoia laddi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Barabattoia,laddi,,,,"(Wells, 1954)",Vulnerable,A4c,3.1,Decreasing,Global
+54249756,133386,Acanthastrea rotundoflora,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Acanthastrea,rotundoflora,,,,"Chevalier, 1975",Near Threatened,,3.1,Unknown,Global
+54250269,133387,Acropora globiceps,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,globiceps,,,,"(Dana, 1846)",Vulnerable,A4ce,3.1,Decreasing,Global
+54250752,133388,Pocillopora setichelli,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Pocillopora,setichelli,,,,"Hoffmeister, 1929",Least Concern,,3.1,Unknown,Global
+54251074,133390,Seriatopora hystrix,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Seriatopora,hystrix,,,,"Dana, 1846",Least Concern,,3.1,Unknown,Global
+54251763,133393,Acropora teres,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,teres,,,,"(Verrill, 1866)",Data Deficient,,3.1,Decreasing,Global
+54252233,133398,Pavona varians,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pavona,varians,,,,"Verrill, 1864",Least Concern,,3.1,Unknown,Global
+54253005,133403,Turbinaria stellulata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Turbinaria,stellulata,,,,"(Lamarck, 1816)",Vulnerable,A4c,3.1,Unknown,Global
+54253622,133406,Psammocora haimeana,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Psammocora,haimeana,,,,Milne Edwards and Haime 1851,Least Concern,,3.1,Unknown,Global
+54254336,133407,Pocillopora eydouxi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Pocillopora,eydouxi,,,,"Milne Edwards &amp; Haime, 1860",Near Threatened,,3.1,Unknown,Global
+54255088,133410,Pachyseris speciosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pachyseris,speciosa,,,,"(Dana, 1846)",Least Concern,,3.1,Unknown,Global
+54255764,133414,Goniastrea pectinata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Goniastrea,pectinata,,,,"(Ehrenberg, 1834)",Least Concern,,3.1,Decreasing,Global
+54256450,133415,Anacropora puertogalerae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Anacropora,puertogalerae,,,,"Nemenzo, 1964",Vulnerable,A4ce,3.1,Decreasing,Global
+54256929,133418,Fungia concinna,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,concinna,,,,"Verrill, 1864",Least Concern,,3.1,Unknown,Global
+54257594,133419,Lobophyllia hemprichii,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Lobophyllia,hemprichii,,,,"(Ehrenberg, 1834)",Least Concern,,3.1,Unknown,Global
+54258298,133420,Montipora grisea,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,grisea,,,,"Bernard, 1897",Least Concern,,3.1,Decreasing,Global
+54258883,133423,Fungia horrida,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,horrida,,,,"Dana, 1846",Least Concern,,3.1,Unknown,Global
+54259526,133426,Favia danae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,danae,,,,"Verrill, 1872",Least Concern,,3.1,Decreasing,Global
+54260083,133428,Coscinaraea columna,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Coscinaraea,columna,,,,"Dana, 1846",Least Concern,,3.1,Unknown,Global
+54260807,133438,Montipora foveolata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,foveolata,,,,"(Dana, 1846)",Near Threatened,,3.1,Decreasing,Global
+54261428,133440,Platygyra pini,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Platygyra,pini,,,,"Chevalier, 1975",Least Concern,,3.1,Decreasing,Global
+54262083,133448,Goniopora columna,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,columna,,,,"Dana, 1846",Near Threatened,,3.1,Unknown,Global
+54262745,133451,Montipora danae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,danae,,,,"(Milne Edwards &amp; Haime, 1851)",Least Concern,,3.1,Decreasing,Global
+54263428,133452,Goniastrea aspera,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Goniastrea,aspera,,,,"Verrill, 1905",Least Concern,,3.1,Decreasing,Global
+54264116,133453,Pachyseris rugosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pachyseris,rugosa,,,,"(Lamarck, 1801)",Vulnerable,A4cd,3.1,Unknown,Global
+54264713,133456,Physogyra lichtensteini,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,EUPHYLLIDAE,Physogyra,lichtensteini,,,,"(Milne Edwards &amp; Haime, 1851)",Vulnerable,A4cd,3.1,Unknown,Global
+54265370,133458,Hydnophora microconos,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MERULINIDAE,Hydnophora,microconos,,,,"(Lamarck, 1816)",Near Threatened,,3.1,Unknown,Global
+54266093,133459,Goniopora lobata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,lobata,,,,"Milne Edwards &amp; Haime, 1860",Near Threatened,,3.1,Unknown,Global
+54266755,133463,Acropora aculeus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,aculeus,,,,(Dana 1846),Vulnerable,A4ce,3.1,Decreasing,Global
+54267376,133468,Platygyra daedalea,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Platygyra,daedalea,,,,"(Ellis &amp; Solander, 1786)",Least Concern,,3.1,Decreasing,Global
+54268105,133470,Micromussa amakusensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Micromussa,amakusensis,,,,"(Veron, 1990)",Near Threatened,,3.1,Unknown,Global
+54268623,133473,Scapophyllia cylindrica,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MERULINIDAE,Scapophyllia,cylindrica,,,,"Milne Edwards &amp; Haime, 1848",Least Concern,,3.1,Unknown,Global
+54269135,133474,Symphyllia agaricia,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Symphyllia,agaricia,,,,"Milne Edwards &amp; Haime, 1849",Least Concern,,3.1,Unknown,Global
+54269781,133478,Hydnophora exesa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MERULINIDAE,Hydnophora,exesa,,,,"(Pallas, 1766)",Near Threatened,,3.1,Unknown,Global
+54270492,133482,Alveopora spongiosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Alveopora,spongiosa,,,,"Dana, 1846",Near Threatened,,3.1,Unknown,Global
+54271187,133485,Astreopora randalli,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Astreopora,randalli,,,,"Lamberts, 1980",Least Concern,,3.1,Decreasing,Global
+54271677,133486,Porites horizontalata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,horizontalata,,,,"Hoffmeister, 1925",Vulnerable,A4cde,3.1,Unknown,Global
+54272181,133491,Oulophyllia levis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Oulophyllia,levis,,,,"Nemenzo, 1959",Least Concern,,3.1,Decreasing,Global
+54272623,133492,Porites rus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,rus,,,,"Forskål, 1775",Least Concern,,3.1,Unknown,Global
+54273347,133493,Platygyra ryukyuensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Platygyra,ryukyuensis,,,,"Yabe &amp; Sugiyama, 1936",Near Threatened,,3.1,Decreasing,Global
+54273884,133495,Galaxea horrescens,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,OCULINIDAE,Galaxea,horrescens,,,,"(Dana, 1846)",Least Concern,,3.1,Unknown,Global
+54274373,133496,Porites cylindrica,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,cylindrica,,,,"Dana, 1846",Near Threatened,,3.1,Unknown,Global
+54274989,133502,Psammocora superficialis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Psammocora,superficialis,,,,"Gardiner, 1898",Least Concern,,3.1,Unknown,Global
+54275766,133503,Fungia fungites,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,fungites,,,,"(Linneaus, 1758)",Near Threatened,,3.1,Unknown,Global
+54276445,133516,Favia truncatus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,truncatus,,,,"Veron, 2002",Least Concern,,3.1,Decreasing,Global
+54276986,133523,Alveopora fenestrata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Alveopora,fenestrata,,,,"Lamarck, 1816",Vulnerable,A4c,3.1,Unknown,Global
+54277592,133525,Montipora monasteriata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,monasteriata,,,,"(Forskäl, 1775)",Least Concern,,3.1,Decreasing,Global
+54278291,133526,Seriatopora aculeata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Seriatopora,aculeata,,,,"Quelch, 1886",Vulnerable,A4c,3.1,Unknown,Global
+54278678,133531,Acropora palmerae,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,palmerae,,,,"Wells, 1954",Vulnerable,A4ce,3.1,Decreasing,Global
+54279224,133532,Acropora verweyi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,verweyi,,,,"Veron &amp; Wallace, 1984",Vulnerable,A4ce,3.1,Decreasing,Global
+54279805,133538,Herpolitha limax,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Herpolitha,limax,,,,"Esper, 1797",Least Concern,,3.1,Unknown,Global
+54280477,133539,Leptoseris incrustans,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Leptoseris,incrustans,,,,"(Quelch, 1886)",Vulnerable,A4ce,3.1,Unknown,Global
+54281094,133545,Paraclavarina triangularis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MERULINIDAE,Paraclavarina,triangularis,,,,(Veron and Pichon 1980),Near Threatened,,3.1,Unknown,Global
+54281547,133548,Stylocoeniella armata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ASTROCOENIIDAE,Stylocoeniella,armata,,,,"(Ehrenberg, 1834)",Least Concern,,3.1,Unknown,Global
+54282200,133551,Lobophyllia corymbosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Lobophyllia,corymbosa,,,,"(Forskål, 1775)",Least Concern,,3.1,Unknown,Global
+54282868,133553,Millepora dichotoma,ANIMALIA,CNIDARIA,MILLEPORINA,HYDROZOA,MILLEPORIDAE,Millepora,dichotoma,,,,Forskål 1775,Least Concern,,3.1,Stable,Global
+54283430,133557,Acanthastrea brevis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Acanthastrea,brevis,,,,"Milne Edwards &amp; Haime, 1849",Vulnerable,A4ce,3.1,Unknown,Global
+54283966,133558,Pavona cactus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pavona,cactus,,,,"(Forskål, 1775)",Vulnerable,A4cd,3.1,Unknown,Global
+54284676,133559,Mycedium elephantotus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Mycedium,elephantotus,,,,"(Pallas, 1766)",Least Concern,,3.1,Unknown,Global
+54285344,133560,Goniastrea palauensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Goniastrea,palauensis,,,,"(Yabe &amp; Sugiyama, 1936)",Near Threatened,,3.1,Decreasing,Global
+54285951,133566,Scolymia australis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,MUSSIDAE,Scolymia,australis,,,,"(Milne Edwards &amp; Haime, 1849)",Least Concern,,3.1,Unknown,Global
+54286388,133567,Alveopora viridis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Alveopora,viridis,,,,"Quoy &amp; Gaimard, 1833",Near Threatened,,3.1,Unknown,Global
+54286783,133569,Favia favus,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,favus,,,,"(Forskål, 1775)",Least Concern,,3.1,Decreasing,Global
+54287517,133570,Psammocora profundacella,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Psammocora,profundacella,,,,Gardiner 1898,Least Concern,,3.1,Unknown,Global
+54288231,133576,Acropora cerealis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,cerealis,,,,"(Dana, 1846)",Least Concern,,3.1,Decreasing,Global
+54288876,133581,Pavona diffluens,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pavona,diffluens,,,,"(Lamarck, 1816)",Vulnerable,A4c,3.1,Unknown,Global
+54289278,133582,Oxypora crassispinosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PECTINIIDAE,Oxypora,crassispinosa,,,,"Nemenzo, 1979",Least Concern,,3.1,Unknown,Global
+54289781,133587,Sandalolitha dentata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Sandalolitha,dentata,,,,"Quelch, 1884",Least Concern,,3.1,Unknown,Global
+54290322,133588,Euphyllia cristata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,EUPHYLLIDAE,Euphyllia,cristata,,,,"Chevalier, 1971",Vulnerable,A4cd,3.1,Stable,Global
+54290854,133593,Favia stelligera,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,stelligera,,,,"(Dana, 1846)",Near Threatened,,3.1,Decreasing,Global
+54291558,133601,Favia helianthoides,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,helianthoides,,,,"Wells, 1954",Near Threatened,,3.1,Decreasing,Global
+54292169,133607,Goniopora minor,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,minor,,,,"Crossland, 1952",Near Threatened,,3.1,Unknown,Global
+54292846,133613,Porites solida,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,solida,,,,"Forskål, 1775",Least Concern,,3.1,Unknown,Global
+54293583,133616,Favia matthaii,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,matthaii,,,,"Vaughan, 1918",Near Threatened,,3.1,Decreasing,Global
+54294296,133628,Cyphastrea agassizi,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Cyphastrea,agassizi,,,,"(Vaughan, 1907)",Vulnerable,A4c,3.1,Decreasing,Global
+54294757,133633,Turbinaria mesenterina,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Turbinaria,mesenterina,,,,"(Lamarck, 1816)",Vulnerable,A4cd,3.1,Unknown,Global
+54295467,133634,Goniastrea retiformis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Goniastrea,retiformis,,,,"(Lamarck, 1816)",Least Concern,,3.1,Decreasing,Global
+54296140,133635,Montipora venosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,venosa,,,,"(Ehrenberg, 1834)",Near Threatened,,3.1,Decreasing,Global
+54296861,133636,Leptoseris gardineri,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Leptoseris,gardineri,,,,"Horst, 1921",Least Concern,,3.1,Unknown,Global
+54297382,133638,Favia maritima,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Favia,maritima,,,,"(Nemenzo, 1971)",Near Threatened,,3.1,Decreasing,Global
+54297995,133640,Porites monticulosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Porites,monticulosa,,,,"Dana, 1846",Least Concern,,3.1,Unknown,Global
+54298605,133641,Goniopora djiboutiensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,PORITIDAE,Goniopora,djiboutiensis,,,,"Vaughan, 1907",Least Concern,,3.1,Unknown,Global
+54299282,133644,Acropora formosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,formosa,,,,"(Dana, 1846)",Near Threatened,,3.1,Decreasing,Global
+54299989,133646,Montipora verrucosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,verrucosa,,,,"(Lamarck, 1816)",Least Concern,,3.1,Decreasing,Global
+54300728,133648,Cyphastrea microphthalma,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Cyphastrea,microphthalma,,,,"(Lamarck, 1816)",Least Concern,,3.1,Decreasing,Global
+54301475,133649,Acropora abrotanoides,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,abrotanoides,,,,(Lamarck 1816),Least Concern,,3.1,Decreasing,Global
+54302167,133652,Leptastrea transversa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Leptastrea,transversa,,,,"Klunzinger, 1879",Least Concern,,3.1,Decreasing,Global
+54302913,133658,Acropora bifurcata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,bifurcata,,,,"Nemenzo, 1971",Data Deficient,,3.1,Decreasing,Global
+54303355,133660,Isopora cuneata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Isopora,cuneata,,,,"(Dana, 1846)",Vulnerable,A4ce,3.1,Decreasing,Global
+54303932,133662,Galaxea fascicularis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,OCULINIDAE,Galaxea,fascicularis,,,,"(Linnaeus, 1767)",Near Threatened,,3.1,Unknown,Global
+54304631,133666,Acropora millepora,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Acropora,millepora,,,,"(Ehrenberg, 1834)",Near Threatened,,3.1,Decreasing,Global
+54305216,133673,Fungia paumotensis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FUNGIIDAE,Fungia,paumotensis,,,,"Stutchbury, 1833",Least Concern,,3.1,Unknown,Global
+54305840,133676,Psammocora vaughani,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,SIDERASTREIDAE,Psammocora,vaughani,,,,Yabe and Sugiyama 1936,Near Threatened,,3.1,Unknown,Global
+54306217,133685,Stylophora pistillata,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,POCILLOPORIDAE,Stylophora,pistillata,,,,"Esper, 1797",Near Threatened,,3.1,Unknown,Global
+54306914,133697,Turbinaria reniformis,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Turbinaria,reniformis,,,,"Bernard, 1896",Vulnerable,A4c,3.1,Unknown,Global
+54307611,133700,Montipora hoffmeisteri,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,ACROPORIDAE,Montipora,hoffmeisteri,,,,"Wells, 1954",Least Concern,,3.1,Decreasing,Global
+54308197,133702,Pavona duerdeni,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,AGARICIIDAE,Pavona,duerdeni,,,,"Vaughan, 1907",Least Concern,,3.1,Unknown,Global
+64372294,64372284,Epizoanthus tergestinus,ANIMALIA,CNIDARIA,ZOANTHINARIA,ANTHOZOA,EPIZOANTHIDAE,Epizoanthus,tergestinus,,,,"Pax, 1937",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+64822273,50161085,Epizoanthus frenzeli,ANIMALIA,CNIDARIA,ZOANTHINARIA,ANTHOZOA,EPIZOANTHIDAE,Epizoanthus,frenzeli,,,,"Pax, 1937",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+64822481,50161091,Epizoanthus paguricola,ANIMALIA,CNIDARIA,ZOANTHINARIA,ANTHOZOA,EPIZOANTHIDAE,Epizoanthus,paguricola,,,,"Roule, 1900",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+64823113,50161093,Epizoanthus paxii,ANIMALIA,CNIDARIA,ZOANTHINARIA,ANTHOZOA,EPIZOANTHIDAE,Epizoanthus,paxii,,,,"Abel, 1955",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+64944067,50113293,Condylactis aurantiaca,ANIMALIA,CNIDARIA,ACTINARIA,ANTHOZOA,ACTINIIDAE,Condylactis,aurantiaca,,,,"(Delle Chiaje, 1825)",Least Concern,,3.1,Unknown,Global & Mediterranean
+65475420,65475413,Epizoanthus univittatus,ANIMALIA,CNIDARIA,ZOANTHINARIA,ANTHOZOA,EPIZOANTHIDAE,Epizoanthus,univittatus,,,,"(Lorenz, 1860)",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+65476104,65476067,Epizoanthus vagus,ANIMALIA,CNIDARIA,ZOANTHINARIA,ANTHOZOA,EPIZOANTHIDAE,Epizoanthus,vagus,,,,"Herberts, 1972",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+65476263,65476258,Arachnanthus oligopodus,ANIMALIA,CNIDARIA,CERIANTHARIA,ANTHOZOA,ARACHNACTIDAE,Arachnanthus,oligopodus,,,,"(Cerfontaine, 1891)",Data Deficient,,3.1,Unknown,Global & Mediterranean
+65649708,50161095,Epizoanthus steueri,ANIMALIA,CNIDARIA,ZOANTHINARIA,ANTHOZOA,EPIZOANTHIDAE,Epizoanthus,steueri,,,,"Pax, 1937",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+66444490,50161089,Epizoanthus mediterraneus,ANIMALIA,CNIDARIA,ZOANTHINARIA,ANTHOZOA,EPIZOANTHIDAE,Epizoanthus,mediterraneus,,,,"Carlgren, 1935",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+75723638,133085,Balanophyllia europaea,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,DENDROPHYLLIIDAE,Balanophyllia,europaea,,,,"(Risso, 1826)",Least Concern,,3.1,Stable,Global
+75872554,133142,Cladocora caespitosa,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,FAVIIDAE,Cladocora,caespitosa,,,,"(Linnaeus, 1767)",Endangered,A4a,3.1,Decreasing,Global
+98556570,133511,Oculina patagonica,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,OCULINIDAE,Oculina,patagonica,,,,"Angelis, 1908",Least Concern,,3.1,Increasing,Global & Mediterranean
+100622062,50108167,Actinia striata,ANIMALIA,CNIDARIA,ACTINARIA,ANTHOZOA,ACTINIIDAE,Actinia,striata,,,,"Risso, 1826",Data Deficient,,3.1,Unknown,Global & Mediterranean
+112092853,50149061,Ceratotrochus magnaghii,ANIMALIA,CNIDARIA,SCLERACTINIA,ANTHOZOA,CARYOPHYLLIIDAE,Ceratotrochus,magnaghii,,,,"Cecchini, 1914",Data Deficient,,3.1,Unknown,Global & Mediterranean
+112093393,50012660,Spinimuricea klavereni,ANIMALIA,CNIDARIA,ALCYONACEA,ANTHOZOA,PLEXAURIDAE,Spinimuricea,klavereni,,,,"(Carpine &amp; Grasshoff, 1975)",Data Deficient,,3.1,Decreasing,Global & Mediterranean

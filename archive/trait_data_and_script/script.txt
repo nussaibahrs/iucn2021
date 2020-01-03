@@ -1,0 +1,3280 @@
+imp<-read.csv("X:/imp.csv",header=T,sep=",")
+imp<-imp[,4:17]
+result<-imp
+x<-seq(1,7390,739)
+y<-seq(739,7390,739)
+e<-1
+subs<- result[x[e]:y[e],]
+subs<-subs[!is.na(subs),]
+subs<-subset(subs,IUCN.Red.List.category!="DD")
+subs$IUCN.Red.List.category<-droplevels(subs$IUCN.Red.List.category)
+
+subs<-subs[1:661,]
+#subs<-subs[,c(4:17)]
+subsScale<-subs
+subsScale$IUCN.Red.List.category<-droplevels(subsScale$IUCN.Red.List.category)
+for(i in c(4,5,8,10,11,14)) subsScale[,i] = scale(subsScale[,i])
+
+CR<-c("Acropora cervicornis","Acropora palmata",
+      "Porites pukoensis","Siderastrea glynni")
+EN<-c("Acropora roseni","Acropora rudis","Acropora suharsonoi",
+      "Alveopora excelsa","Alveopora minuta","Anacropora spinosa",
+      "Blastomussa omanensis","Cantharellus noumeae","Ctenella chagius",
+      "Hydnophora bonsai","Isopora togianensis","Lithophyllon ranjithi",
+      "Lobophyllia serrata","Montipora dilatata","Montipora setosa",
+      "Orbicella annularis","Orbicella faveolata","Pectinia maxima",
+      "Pocillopora fungiformis","Porites desilveri","Porites eridani",
+      "Porites ornata","Stylophora madagascarensis")
+#load other categories
+VU<-read.csv("X:/VU.csv",header=T,sep=";")
+NT<-read.csv("X:/NT.csv",header=T,sep=";")
+LC<-read.csv("X:/LC.csv",header=T,sep=";")
+
+
+rec_LC<-round(length(LC[,1])*100/(length(LC[,1])+length(NT[,1])+length(VU[,1])+length(EN[1])+length(CR[1])),2)
+rec_NT<-round(length(NT[,1])*100/(length(LC[,1])+length(NT[,1])+length(VU[,1])+length(EN[1])+length(CR[1])),2)
+rec_VU<-round(length(VU[,1])*100/(length(LC[,1])+length(NT[,1])+length(VU[,1])+length(EN[1])+length(CR[1])),2)
+rec_EN<-round(length(EN[1])*100/(length(LC[,1])+length(NT[,1])+length(VU[,1])+length(EN[1])+length(CR[1])),2)
+rec_CR<-round(length(CR[1])*100/(length(LC[,1])+length(NT[,1])+length(VU[,1])+length(EN[1])+length(CR[1])),2)
+
+
+
+#write.csv(OBIS,"X:/OBIS_all.csv")
+OBIS<-read.csv("X:/OBIS_all.csv",sep=",",header=T) 
+OBIS<-OBIS[,-1]
+#delete the non scientific diver stuff
+scuba<-read.csv("X:/scuba.csv",header=T,sep=";")
+dfd<-which(OBIS$latitude%in%scuba$latitude)
+OBIS<-OBIS[-dfd,]
+## add the coral triangle
+cor_tri<-read.csv("X:/coral_triangle.csv",header=T,sep=";")
+## add the coral triangle
+atlantic<-read.csv("X:/atlantic.csv",header=T,sep=";")
+colnames(worms)
+gg<-merge(OBIS)
+#### range size comparison
+#nocar<- c("Porites_porites","Agaricia_agaricites","Porites_branneri"
+#          ,"Siderastrea_radians","Pavona_gigantea","Agaricia_grahamae"
+#          ,"Porites_nodifera","Scolymia_lacera","Meandrina_danae"
+#          ,"Oulastrea_crispata","Palauastrea_ramosa",
+#          "Acropora_striata","Montastraea_cavernosa",
+#          "Mycedium_elephantotus","Platygyra_lamellina"
+#          ,"Orbicella_annularis","Orbicella_faveolata","Leptoseris_papyracea"
+#          ,"Platygyra_daedalea"
+#          ,"Acropora_muricata","Pavona_maldivensis",
+#          "Gardineroseris_planulata","Pavona_clavus"
+#          ,"Pavona_duerdeni","Orbicella_franksi","Porites_astreoides"
+#          ,"Favia_fragum","Scolymia_cubensis")
+nocar<- c("Pavona_gigantea"
+          ,"Porites_nodifera","Meandrina_danae"
+          ,"Oulastrea_crispata","Palauastrea_ramosa",
+          "Acropora_striata",
+          "Mycedium_elephantotus","Platygyra_lamellina"
+          ,"Leptoseris_papyracea"
+          ,"Platygyra_daedalea"
+          ,"Acropora_muricata","Pavona_maldivensis",
+          "Gardineroseris_planulata","Pavona_clavus"
+          ,"Pavona_duerdeni","Orbicella_franksi","Porites_astreoides"
+          ,"Favia_fragum","Scolymia_cubensis")
+
+
+
+p<-which(OBIS$gensp=="Acropora cervicornis"&
+           OBIS$latitude==-10.57000&
+           OBIS$longitude==142.22000)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Acropora cervicornis"&
+           OBIS$latitude==8.5&
+           OBIS$longitude==79.00000)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Acropora cervicornis"&
+           OBIS$latitude==-12.46000&
+           OBIS$longitude==130.84000)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Acropora muricata"&
+           OBIS$latitude==13.16700&
+           OBIS$longitude==-59.53300)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Acropora palmata"&
+           OBIS$latitude==-17.85000&
+           OBIS$longitude==179.43000)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Acropora palmata"&
+           OBIS$latitude==-12.46000&
+           OBIS$longitude==130.84000)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Agaricia lamarcki"&
+           OBIS$latitude==-3.00000&
+           OBIS$longitude==74.00000)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Agaricia tenuifolia"&
+           OBIS$latitude==-23.42708&
+           OBIS$longitude==152.05560)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Favia fragum"&
+           OBIS$latitude==-24.72000&
+           OBIS$longitude==34.90000)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Favia fragum"&
+           OBIS$latitude==-26.00000&
+           OBIS$longitude==32.92000)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Favia fragum"&
+           OBIS$latitude==-29.82000&
+           OBIS$longitude==31.07000)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Favia fragum"&
+           OBIS$latitude==-29.98000&
+           OBIS$longitude==30.97000)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Manicina areolata"&
+           OBIS$latitude==-34.18890&
+           OBIS$longitude==18.43860)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Manicina areolata"&
+           OBIS$latitude==-34.18000&
+           OBIS$longitude==18.43000)
+OBIS<-OBIS[-p,]
+
+p<-which(OBIS$gensp=="Mussa angulosa"&
+           OBIS$latitude==7.237777&
+           OBIS$longitude==93.73611)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Mussa angulosa"&
+           OBIS$latitude==10.000000&
+           OBIS$longitude==93.00000)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Mycedium elephantotus"&
+           OBIS$latitude==15.0000000&
+           OBIS$longitude==-75.00000)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Orbicella annularis"&
+           OBIS$latitude==-29.480000&
+           OBIS$longitude==31.26000)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Pavona gigantea"&
+           OBIS$latitude==11.327410&
+           OBIS$longitude==-74.13919)
+OBIS<-OBIS[-p,]
+
+p<-which(OBIS$gensp=="Porites nodifera"&
+           OBIS$latitude==18.34000&
+           OBIS$longitude==-64.94000)
+OBIS<-OBIS[-p,]
+
+p<-which(OBIS$gensp=="Porites nodifera"&
+           OBIS$latitude==32.32000&
+           OBIS$longitude==-64.78000)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Porites nodifera"&
+           OBIS$latitude==16.26000&
+           OBIS$longitude==-62.52000)
+OBIS<-OBIS[-p,]
+
+p<-which(OBIS$gensp=="Porites nodifera"&
+           OBIS$latitude==8.50000&
+           OBIS$longitude==79.00000)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Porites nodifera"&
+           OBIS$latitude==-6.20000&
+           OBIS$longitude==71.50000)
+OBIS<-OBIS[-p,]
+dfd<-which(OBIS$gensp=="Porites nodifera"&OBIS$latitude<0)
+OBIS<-OBIS[-dfd,]
+
+p<-which(OBIS$gensp=="Pseudodiploria strigosa"&
+           OBIS$latitude==10.00000&
+           OBIS$longitude==114.00000)
+OBIS<-OBIS[-p,]
+p<-which(OBIS$gensp=="Scolymia lacera"&
+           OBIS$latitude==2.79000&
+           OBIS$longitude==-83.69000)
+OBIS<-OBIS[-p,]
+
+#OBIS<-subset(OBIS,gensp!="Siderastrea radians")
+
+p<-which(OBIS$gensp=="Siderastrea siderea"&
+           OBIS$latitude==-29.72000&
+           OBIS$longitude==31.10000)
+OBIS<-OBIS[-p,]
+
+imp<-read.csv("X:/imp.csv",header=T,sep=",")
+imp<-imp[,4:17]
+result<-imp
+x<-seq(1,7390,739)
+y<-seq(739,7390,739)
+e<-1
+subs<- result[x[e]:y[e],]
+subs<-subs[!is.na(subs),]
+subs<-subset(subs,IUCN.Red.List.category!="DD")
+subs$IUCN.Red.List.category<-droplevels(subs$IUCN.Red.List.category)
+
+subs<-subs[1:661,]
+#subs<-subs[,c(4:17)]
+subsScale<-subs
+subsScale$IUCN.Red.List.category<-droplevels(subsScale$IUCN.Red.List.category)
+for(i in c(4,5,8,10,11,14)) subsScale[,i] = scale(subsScale[,i])
+
+
+
+nocar<- c("Pavona_gigantea"
+          ,"Porites_nodifera","Meandrina_danae"
+          ,"Oulastrea_crispata","Palauastrea_ramosa",
+          "Acropora_striata",
+          "Mycedium_elephantotus","Platygyra_lamellina"
+          ,"Leptoseris_papyracea"
+          ,"Platygyra_daedalea"
+          ,"Acropora_muricata","Pavona_maldivensis",
+          "Gardineroseris_planulata","Pavona_clavus"
+          ,"Pavona_duerdeni","Orbicella_franksi","Porites_astreoides"
+          ,"Favia_fragum","Scolymia_cubensis")
+
+
+OBIS_car<-point.in.polygon(OBIS$longitude,OBIS$latitude ,car_poly$long,car_poly$lat)
+OBIS_car<-which(OBIS_car==1)
+OBIS_car<-OBIS[OBIS_car,]
+#gather species list and merge with traits
+OBIS_car_calc<-unique(OBIS_car$gensp)
+q<-strsplit(as.character(OBIS_car_calc) ," ")
+w<-lapply(q,function(x) paste(x,collapse = "_"))
+OBIS_car_calc<-as.data.frame(unlist(w))
+colnames(OBIS_car_calc)<-"gensp"
+zz<-merge(OBIS_car_calc,subsScale,by.x="gensp",by.y="Taxa",all.x = T)
+zz<-subset(zz,!is.na(IUCN.Red.List.category))
+OBIS_car_calc<-zz
+OBIS_car_calc<-subset(OBIS_car_calc,gensp%nin%nocar)
+
+
+# OBIS indopacific
+OBIS_pac<-point.in.polygon(OBIS$longitude,OBIS$latitude ,atlantic$long,atlantic$lat)
+OBIS_pac<-which(OBIS_pac==0)
+OBIS_pac<-OBIS[OBIS_pac,]
+#gather species list and merge with traits
+OBIS_pac_calc<-unique(OBIS_pac$gensp)
+q<-strsplit(as.character(OBIS_pac_calc) ," ")
+w<-lapply(q,function(x) paste(x,collapse = "_"))
+OBIS_pac_calc<-as.data.frame(unlist(w))
+colnames(OBIS_pac_calc)<-"gensp"
+zz<-merge(OBIS_pac_calc,subsScale,by.x="gensp",by.y="Taxa",all.x = T)
+zz<-subset(zz,!is.na(IUCN.Red.List.category))
+OBIS_pac_calc<-zz
+
+
+# OBIS coral triangle
+OBIS_cortri<-point.in.polygon(OBIS$longitude,OBIS$latitude ,cor_tri$long,cor_tri$lat)
+OBIS_cortri<-which(OBIS_cortri==1)
+OBIS_cortri<-OBIS[OBIS_cortri,]
+#gather species list and merge with traits
+OBIS_cortri_calc<-unique(OBIS_cortri$gensp)
+q<-strsplit(as.character(OBIS_cortri_calc) ," ")
+w<-lapply(q,function(x) paste(x,collapse = "_"))
+OBIS_cortri_calc<-as.data.frame(unlist(w))
+colnames(OBIS_cortri_calc)<-"gensp"
+zz<-merge(OBIS_cortri_calc,subsScale,by.x="gensp",by.y="Taxa",all.x = T)
+zz<-subset(zz,!is.na(IUCN.Red.List.category))
+OBIS_cortri_calc<-zz
+
+
+obis<-rbind(OBIS_pac,OBIS_car)
+
+q<-strsplit(as.character(obis$gensp) ," ")
+w<-lapply(q,function(x) paste(x,collapse = "_"))
+rr<-as.data.frame(unlist(w))
+obis$gensp<-rr
+colnames(obis)<-c("gensp","genus","species","lat","long")
+obis<-obis[,c(1,4,5)]
+
+
+
+
+
+
+## 1. all traits - worldwide
+library(rgdal)
+library(icosa)
+library(nnet)
+imp2<-imp
+imp2<-imp2[,4:17]
+levels(imp2[,2])[1]<-as.numeric(5)
+levels(imp2[,2])[2]<-as.numeric(0)
+levels(imp2[,2])[3]<-as.numeric(4)
+levels(imp2[,2])[4]<-as.numeric(1)
+levels(imp2[,2])[5]<-as.numeric(2)
+levels(imp2[,2])[6]<-as.numeric(3)
+imp2$IUCN.Red.List.category<-as.numeric(as.character(imp2$IUCN.Red.List.category))
+#levels(imp2[,2])[6]<-as.numeric(3)
+#imp2<-subset(imp2,IUCN.Red.List.category!=0)
+#imp2$IUCN.Red.List.category<-droplevels(imp2$IUCN.Red.List.category)
+
+resi<-NULL
+resi2<-data.frame(x=1:661)
+for( i in 1:10){
+  result<-imp2
+  x<-seq(1,7390,739)
+  y<-seq(739,7390,739)
+  e<-i
+  subs<- result[x[e]:y[e],]
+  subs<-subs[!is.na(subs),]
+  subs<-subset(subs,IUCN.Red.List.category!=0)
+  #subs<-subs[2:661,]
+  subs<-subs[,c(2:14)]
+  #subs<-subs[,1:13]
+  subsScale<-subs
+  #subsScale$IUCN.Red.List.category<-droplevels(subsScale$IUCN.Red.List.category)
+  for(i in c(3,4,7,9,10,13)) subsScale[,i] = scale(subsScale[,i])
+  #subsScale<-subsScale[,-c(1)]
+  
+  #subsScale<-subsScale[,c(1,2,3,7,8,9,10,13)]
+  set.seed(3003423)
+  series<-1:nrow(subs)
+  #train set
+  #subsScale<-subsScale[,-1]
+  ind<-sample(series,449)
+  bSelect<-!series%in%ind
+  indNeg<-series[bSelect]
+  # cross validation + test set
+  cv_set<-sample(indNeg,106)
+  bSelectc<-!indNeg%in%cv_set
+  test_set<-indNeg[bSelectc]
+  
+  mod <-nnet(IUCN.Red.List.category ~.,data=subsScale,
+             subset=ind, size=20, maxit=10000,trace = T)
+  
+  #PBDB_caribbean_backup<-PBDB_car_calc
+  
+  #PBDB_car_calc<-PBDB_car_calc[,c(1,2,3,6,7,8,9,12)]
+  #combined<-rbind(PBDB_car_calc,PBDB_pac_calc)
+  #zz<-which(duplicated(combined$gensp))
+  #combined<-combined[-zz,]
+  #combined<-combined[,-1]
+  
+  pre<-predict(mod,subsScale, type="raw")
+  
+  resi<-cbind(pre,subsScale)
+  resi<-resi[,1:2]
+  resi2<-cbind(resi2,resi)
+  #j<-table(resi$pre)
+  
+  #ly<-NULL
+ # for(k in 1:length( j)){
+    
+  # p<-round(j[k]/sum(j),2)
+    
+  #  ly<-as.data.frame(cbind(ly,p))
+  #}
+  #names(ly)<-names(j)
+ # lyy<-list(lyy,ly)
+}
+
+
+erg<-resi2[,c(3,2,4,6,8,10,12,14,16,18,20)]
+erg<-cbind(erg,subs$Taxa)
+erg[,1]<-as.numeric(levels(erg[,1]))[erg[,1]]
+erg[,2]<-as.numeric(levels(erg[,2]))[erg[,2]]
+erg[,3]<-as.numeric(levels(erg[,3]))[erg[,3]]
+erg[,4]<-as.numeric(levels(erg[,4]))[erg[,4]]
+erg[,5]<-as.numeric(levels(erg[,5]))[erg[,5]]
+erg[,6]<-as.numeric(levels(erg[,6]))[erg[,6]]
+erg[,7]<-as.numeric(levels(erg[,7]))[erg[,7]]
+erg[,8]<-as.numeric(levels(erg[,8]))[erg[,8]]
+erg[,9]<-as.numeric(levels(erg[,9]))[erg[,9]]
+erg[,10]<-as.numeric(levels(erg[,10]))[erg[,10]]
+erg[,11]<-as.numeric(levels(erg[,11]))[erg[,11]]
+#erg<-subset(erg,IUCN.Red.List.category!=0)
+erg [350,1]<-1 #somehow wrong entires???
+erg[448,1]<-1
+
+erg$mean<-rowMeans(erg[,2:11])
+erg$median<-rowMedians(as.matrix(erg[,2:11]))
+jkj<-which(abs(erg$IUCN.Red.List.category-erg$mean)>=2.0)
+jkj<-which(abs(erg$IUCN.Red.List.category-erg$median)>=2.0)
+outli<-erg[jkj,]
+colnames(outli)<-c("IUCN status","run_1","run_2","run_3","run_4","run_5"
+                   ,"run_6","run_7","run_8","run_9","run_10","Species","mean","median")
+View(outli)
+#write.csv(outli,"X:/discrepacies_2.csv")
+
+#check the range
+res<-NULL
+for ( i in 1:length(outli [,1])){
+gg<-abs(range(outli[i,2:11])[1]-range(outli[i,2:11])[2])
+res<-rbind(res,gg)
+}
+View(res)
+outli$range<-res
+write.csv(outli,"X:/discrepacies_range_2.csv")
+res<-NULL
+
+for ( i in 1:length(outli [,1])){
+  gg<-max(table((as.numeric((outli[i,2:11])))))
+  res<-rbind(res,gg)
+}
+View(res)
+outli$outlier<-res
+write.csv(outli,"X:/discrepacies_outlier.csv")
+############
+
+
+
+## all from new
+library(rgdal)
+library(icosa)
+library(nnet)
+imp2<-imp
+imp2<-imp2[,4:17]
+levels(imp2[,2])[1]<-as.numeric(5)
+levels(imp2[,2])[2]<-as.numeric(0)
+levels(imp2[,2])[3]<-as.numeric(4)
+levels(imp2[,2])[4]<-as.numeric(1)
+levels(imp2[,2])[5]<-as.numeric(2)
+levels(imp2[,2])[6]<-as.numeric(3)
+imp2$IUCN.Red.List.category<-as.numeric(as.character(imp2$IUCN.Red.List.category))
+#levels(imp2[,2])[6]<-as.numeric(3)
+imp2<-subset(imp2,IUCN.Red.List.category!=0)
+#imp2$IUCN.Red.List.category<-droplevels(imp2$IUCN.Red.List.category)
+#library(nnet)
+#for ( j in 1:100){
+resi<-NULL
+for( i in 1:10){
+  result<-imp_n[,1:15]
+  x<-seq(1,7390,739)
+  y<-seq(739,7390,739)
+  e<-i
+  subs<- result[x[e]:y[e],]
+  subs<-subs[!is.na(subs),]
+  subs<-subset(subs,IUCN.Red.List.category!="DD")
+  subs<-subs[1:661,]
+  #subs<-subs[,c(3:16)]
+  #subs<-subs[,1:13]
+  subsScale<-subs
+  subsScale$IUCN.Red.List.category<-droplevels(subsScale$IUCN.Red.List.category)
+  for(i in c(4,5,8,10,11,14)) subsScale[,i] = scale(subsScale[,i])
+  subsScale<-subsScale[,-c(1)]
+  
+  subsScale<-subsScale[,c(1,2,4,7,9,14)]
+  #set.seed(j)
+  series<-1:nrow(subs)
+  #train set
+  #subsScale<-subsScale[,-1]
+  ind<-sample(series,449)
+  bSelect<-!series%in%ind
+  indNeg<-series[bSelect]
+  # cross validation + test set
+  cv_set<-sample(indNeg,106)
+  bSelectc<-!indNeg%in%cv_set
+  test_set<-indNeg[bSelectc]
+  
+  mod <-nnet(IUCN.Red.List.category ~.,data=subsScale,
+             subset=ind, size=20, maxit=10000,trace = F)
+  
+  #PBDB_caribbean_backup<-PBDB_car_calc
+  
+  #PBDB_car_calc<-PBDB_car_calc[,c(1,2,3,6,7,8,9,12)]
+  #combined<-rbind(PBDB_car_calc,PBDB_pac_calc)
+  #zz<-which(duplicated(combined$gensp))
+  #combined<-combined[-zz,]
+  #combined<-combined[,-1]
+  
+  pre<-predict(mod,subsScale, type="class")
+  
+  resi<-cbind(resi,pre)
+  
+  
+  
+}
+hh<-rbind(hh,resi)
+cat(j, "\r")
+flush.console()
+}
+tt<-subs$Taxa
+tt<-tt[1:661]
+tt<-droplevels(tt)
+tt<-as.data.frame(tt)
+resi2<-cbind(resi,tt)
+for(i in 1:10){
+levels(resi2[,i])[1]<-as.numeric(5)
+levels(resi2[,i])[2]<-as.numeric(4)
+levels(resi2[,i])[3]<-as.numeric(1)
+levels(resi2[,i])[4]<-as.numeric(2)
+levels(resi2[,i])[5]<-as.numeric(3)
+}
+for( i in 1:10){
+resi2[,i]<-as.numeric(as.character(resi2[,i]) )
+}
+library(matrixStats)
+resi2$mean<-rowMeans(resi2[,1:10])
+resi2$median<-rowMedians(as.matrix(resi2[,1:10]))
+
+colnames(resi2)<-c("run_1","run_2","run_3","run_4","run_5"
+                   ,"run_6","run_7","run_8","run_9","run_10"
+                   ,"species","mean","median")
+## calculate how good it is with subsScale and resi
+pre<-resi
+real<-subsScale[1:661,1]
+jj<-NULL
+for (i in 1:661){
+  ff<-length(which(pre[i,]==real[i]))
+  jj<-rbind(jj,ff)
+}
+
+View(jj)
+summary(jj)
+
+
+
+
+
+obis<-read.csv("X:/5b0e637824eb1_20180530_104052.csv",header=T,sep=";")
+
+obis$gensp<-paste(obis$tname,obis$X, sep = " ")
+obis<-obis[,-2]
+colnames(obis)<-c("genus","lat","long","gensp")
+obis<-obis[,c(4,3,2,1)]
+gg<-merge(obis,worms,by.x="gensp",by.y="taxon.name",all.x=T)
+gg$gensp<-gg$valid.name
+obis<-gg[,1:3]
+obis<-na.omit(obis)
+q<-strsplit(as.character(obis$gensp) ," ")
+w<-lapply(q,function(x) paste(x,collapse = "_"))
+nam<-as.vector(unlist(w))
+nam<-as.vector(nam)
+obis$gensp<-nam
+colnames(obis)<-c("gensp","long","lat")
+
+q<-strsplit(as.character(PBDB_co$gensp) ,"_")
+w<-lapply(q,function(x) paste(x,collapse = " "))
+nam<-as.vector(unlist(w))
+nam<-as.vector(nam)
+PBDB_co$gensp<-nam
+colnames(PBDB_co)<-c("gensp","long","lat")
+
+gg<-merge(gg,worms,by.x="gensp",by.y="taxon.name",all=T)
+gg$gensp<-gg$valid.name
+PBDB_co<-gg[,1:3]
+PBDB_co<-na.omit(PBDB_co)
+
+
+q<-strsplit(as.character(PBDB_co$gensp) ," ")
+w<-lapply(q,function(x) paste(x,collapse = "_"))
+nam<-as.vector(unlist(w))
+nam<-as.vector(nam)
+PBDB_co$gensp<-nam
+colnames(PBDB_co)<-c("gensp","long","lat")
+
+test<-merge(resi2,obis,by.x="species","gensp",all.x=T)
+
+#points(test$long,test$lat,pch=16,col="red")
+library(icosa)
+library(rgdal)
+file <- system.file("extdata", "land_polygons_z3.shx", package = "icosa")
+gLow <- hexagrid(tessellation=c(4,4))
+wo <- readOGR(file, "land_polygons_z3")
+wo <- spTransform(wo, gLow@proj4string)
+gLow<-newsp(gLow)
+plot(gLow, border="gray", lty=1)
+hLow <- hexagrid(c(2,2))
+#plot3d(hLow)
+##
+
+test<-subset(test,genus!="Cladocora")
+test<-subset(test,lat>-30&lat<30)
+#plot from here
+library(icosa)
+testbackup<-test
+#test<-subset(test,species!="Acropora_palmata")
+gLow <- hexagrid(tessellation=c(3,4))
+gLow
+library(rgdal)
+wo <- spTransform(wo, gLow@proj4string)
+gLow<-newsp(gLow)
+pointdat<-cbind(test$long,test$lat)
+cells<-locate(gLow, pointdat)
+fMed<-tapply(INDEX=cells,  X=test$median, function(x){
+  median(x)})
+fl <- facelayer(gLow,NA)
+fl[]<-fMed
+windows(20,10)
+
+plot(fl, col=c("darkblue", "blue", "yellow", "orange", "red"),
+     main="Median coral threat status, modelled with all traits, 2.5° resolution"
+,cex=3,ylim=c(-40,40), xlim=c(-180,180))
+plot(wo, add=T,col="gray90")            #,italic(", A. palmata")," excluded"
+lines(cor_tri$long,cor_tri$lat,type="l",lwd=1.5)
+
+
+gridlabs(gLow, cex=0.4, col="red")
+fl[c("F176")]   <-c(5)
+fl[c("F2374")]   <-NA
+########### fossil traits
+
+## all from new
+library(rgdal)
+library(icosa)
+library(nnet)
+library(nnet)
+
+
+#imp_backup<-imp
+imp$Range.size<-imp$Range.size/max(imp$Range.size)
+## put in the new range sizes
+q<-strsplit(as.character(erg_OBIS$Taxa) ," ")
+w<-lapply(q,function(x) paste(x,collapse = "_"))
+nam<-as.vector(unlist(w))
+nam<-as.vector(nam)
+erg_OBIS$Taxa<-nam
+
+#imp_back<-imp
+imp<-imp_back
+imp<-subset(imp,IUCN.Red.List.category!="DD")
+imp_n<-merge(imp,erg_OBIS,by.x="Taxa",by.y="Taxa",all.x=T)
+colnames(erg_OBIS)<-c("max_dist_normed","Taxa")
+imp_n<-join(imp,erg_OBIS )#,by.x="Taxa",by.y="species",all.x=T)
+
+##cor plot
+
+corr<-imp_n
+
+corr$IUCN.Red.List.category<-droplevels(corr$IUCN.Red.List.category)
+
+levels(corr$IUCN.Red.List.category)[1]<-5
+levels(corr$IUCN.Red.List.category)[2]<-4
+levels(corr$IUCN.Red.List.category)[3]<-1
+levels(corr$IUCN.Red.List.category)[4]<-2
+levels(corr$IUCN.Red.List.category)[5]<-3
+corr$IUCN.Red.List.category<-as.numeric(as.character(corr$IUCN.Red.List.category))
+cor.test(corr$IUCN.Red.List.category,corr$Depth.lower,method="spearm")
+cor.test(corr$IUCN.Red.List.category,corr$max_dist_normed ,method="spearm")
+
+windows()
+plot(corr$Depth.lower,corr$IUCN.Red.List.category,xlab="Maximum water depth"
+     ,ylab="IUCN Red List category",yaxt='n',pch=16,
+     main="Scatterplot of the IUCN category and maximum water depth",cex=1.4)
+axis(2, at=c(1,2,3,4,5),labels=c("LC","NT","VU","EN","CR"),cex=1.4)
+abline(lm(corr$IUCN.Red.List.category~corr$Depth.lower),lwd=2.5)
+
+lines(loess.smooth(corr$Depth.lower,corr$IUCN.Red.List.category,
+                   span=0.263),lwd=2.5,col="red")
+
+gg<-loess.as(corr$Depth.lower, corr$IUCN.Red.List.category,degree=1
+             ,criterion = c("aicc"))
+
+#remove missing vals
+corr<-corr[complete.cases(corr), ]
+
+plot(corr$max_dist_normed,corr$IUCN.Red.List.category,xlab="Geographic range (standardized)"
+     ,ylab="IUCN Red List category",yaxt='n',pch=16,
+     main="Scatterplot of the IUCN category and geographic range",cex=1.4)
+axis(2, at=c(1,2,3,4,5),labels=c("LC","NT","VU","EN","CR"),cex=1.4)
+abline(lm(corr$IUCN.Red.List.category~corr$max_dist_normed),lwd=2.5)
+
+lines(loess.smooth(corr$max_dist_normed,corr$IUCN.Red.List.category,
+                   span=0.15),lwd=2.5,col="red")
+
+gg<-loess.as(corr$max_dist_normed, corr$IUCN.Red.List.category,degree=2
+,             criterion = c("aicc"))
+summary(gg)
+
+
+###
+
+
+
+resi<-NULL
+
+for( i in 1:10){
+  result<-imp_n[,c(1:10,12:15)]
+  x<-seq(1,7390,739)
+  y<-seq(739,7390,739)
+  e<-i
+  subs<- result[x[e]:y[e],]
+  #subs<-subs[!is.na(subs),]
+  subs<-subset(subs,IUCN.Red.List.category!="DD")
+  subs<-subs[1:661,]
+  #subs<-subs[,c(3:16)]
+  #subs<-subs[,1:13]
+  subsScale<-subs
+  subsScale$IUCN.Red.List.category<-droplevels(subsScale$IUCN.Red.List.category)
+  for(i in c(4,5,8,10,13)) subsScale[,i] = scale(subsScale[,i])
+  subsScale<-subsScale[,-c(1)]
+  #subsScale<-subsScale[,-10]
+  subsScale<-subsScale[,c(1,2,4,7,9,13)]
+  #set.seed(5645268)
+  series<-1:nrow(subs)
+  #train set
+  #subsScale<-subsScale[,-1]
+  ind<-sample(series,449)
+  bSelect<-!series%in%ind
+  indNeg<-series[bSelect]
+  # cross validation + test set
+  cv_set<-sample(indNeg,106)
+  bSelectc<-!indNeg%in%cv_set
+  test_set<-indNeg[bSelectc]
+  
+  mod <-nnet(IUCN.Red.List.category ~.,data=subsScale,
+             subset=ind, size=20, maxit=100,trace = T,na.action=)
+  
+  #PBDB_caribbean_backup<-PBDB_car_calc
+  
+  #PBDB_car_calc<-PBDB_car_calc[,c(1,2,3,6,7,8,9,12)]
+  #combined<-rbind(PBDB_car_calc,PBDB_pac_calc)
+  #zz<-which(duplicated(combined$gensp))
+  #combined<-combined[-zz,]
+  #combined<-combined[,-1]
+  
+  pre<-predict(mod,subsScale, type="class")
+  
+  resi<-cbind(resi,pre)
+  
+}
+
+tt<-subs$Taxa
+tt<-tt[1:661]
+tt<-droplevels(tt)
+tt<-as.data.frame(tt)
+resi2<-cbind(resi,tt)
+for(i in 1:10){
+  levels(resi2[,i])[1]<-as.numeric(5)
+  levels(resi2[,i])[2]<-as.numeric(4)
+  levels(resi2[,i])[3]<-as.numeric(1)
+  levels(resi2[,i])[4]<-as.numeric(2)
+  levels(resi2[,i])[5]<-as.numeric(3)
+}
+for( i in 1:10){
+  resi2[,i]<-as.numeric(as.character(resi2[,i]))
+}
+library(matrixStats)
+resi2$mean<-rowMeans(resi2[,1:10])
+resi2$median<-rowMedians(as.matrix(resi2[,1:10]))
+
+colnames(resi2)<-c("run_1","run_2","run_3","run_4","run_5"
+                   ,"run_6","run_7","run_8","run_9","run_10"
+                   ,"species","mean","median")
+
+#kkk
+test<-merge(resi2,obis,by.x="species","gensp",all.x=T)
+
+test<-subset(test,genus!="Cladocora")
+test<-subset(test,lat>-30&lat<30)
+#plot from here
+library(icosa)
+testbackup<-test
+#test<-subset(test,species!="Acropora_palmata")
+gLow <- hexagrid(tessellation=c(4,4))
+gLow
+library(rgdal)
+wo <- spTransform(wo, gLow@proj4string)
+gLow<-newsp(gLow)
+pointdat<-cbind(test$long,test$lat)
+cells<-locate(gLow, pointdat)
+fMed<-tapply(INDEX=cells,  X=test$median, function(x){
+  median(x)})
+fl <- facelayer(gLow,NA)
+fl[]<-fMed
+#fl[c("F176")]   <-c(5)
+windows(20,10)
+plot(fl, col=c("darkblue", "blue", "yellow", "orange", "red"),
+     main="Median coral threat status,
+modelled with preservable traits, 2.5° resolution")
+plot(wo, add=T,col="gray90")
+lines(cor_tri$long,cor_tri$lat,type="l",lwd=1.5)
+
+
+
+
+obis<-read.csv("X:/5b0e637824eb1_20180530_104052.csv",header=T,sep=";")
+obis$gensp<-paste(obis$tname,obis$X, sep = "_")
+obis<-obis[,-2]
+colnames(obis)<-c("genus","lat","long","gensp")
+obis<-obis[,c(4,3,2,1)]
+test<-merge(resi2,obis,by.x="species","gensp",all.x=T)
+#points(test$long,test$lat,pch=16,col="red")
+library(icosa)
+file <- system.file("extdata", "land_polygons_z3.shx", package = "icosa")
+gLow <- hexagrid(tessellation=c(4,4))
+wo <- readOGR(file, "land_polygons_z3")
+wo <- spTransform(wo, gLow@proj4string)
+gLow<-newsp(gLow)
+plot(gLow, border="gray", lty=1)
+hLow <- hexagrid(c(2,2))
+plot(fl, col=c("darkblue","green", "yellow", "orange", "red") ,                                #            #
+     main="Proportion of species listed as CR, 
+     modelled with fossil traits, 2.5° resolution",ylim=c(-30,30))
+plot(wo, add=T,col="gray90")
+lines(cor_tri$long,cor_tri$lat,type="l",lwd=1.5)
+##
+
+
+test<-merge(resi2,obis,by.x="species","gensp",all.x=T)
+test<-subset(test,genus!="Cladocora")
+test<-subset(test,lat>-30&lat<30)
+#plot from here
+library(icosa)
+testbackup<-test
+#test<-subset(test,species!="Acropora_palmata")
+gLow <- hexagrid(tessellation=c(4,4))
+gLow
+library(rgdal)
+wo <- spTransform(wo, gLow@proj4string)
+gLow<-newsp(gLow)
+pointdat<-cbind(test$long,test$lat)
+cells<-locate(gLow, pointdat)
+#Adams fMed
+fMed<-tapply(INDEX=cells,  X=test$median, function(x){
+  median(x)})
+## changed fMed for Carpenter mirro plot
+fMed<-tapply(INDEX=cells,  X=test$median, function(x){
+  length(which(x==5))})
+
+fMed_2<-tapply(INDEX=cells,  X=test$species, function(x){
+         which(!duplicated(x))})
+
+
+fMed_3<-tapply(INDEX=cells,  X=test$median, function(x){
+  x+1-1})
+fMed_4<-tapply(INDEX=cells,  X=test$median, function(x){
+  x+1-1})
+
+head(fMed_2)
+for ( i in 1:length(fMed_2)){
+  
+  t<- as.vector(as.numeric((unlist(fMed_2[i]))))
+  tt <-as.vector(as.numeric((unlist(fMed_3[i]))))
+   k<-tt[t]
+   lc<-length(which(k==5|k==4.5|k==4|k==3.5|k==3))/length(k)
+   #nt<-length(which(k==2))/length(k)
+   #vu<-length(which(k==3))/length(k)
+   #en<-length(which(k==4))/length(k)
+   #cr<-length(which(k==5))/length(k)
+   fMed_4[i]<-lc
+}
+#fMed_4<-lapply(INDEX=cells,  X=fMed_4, function(x){
+ # x+1-1})
+
+###
+
+fl <- facelayer(gLow,NA)
+u<-unlist (fMed_4)
+u<-u*100
+l<-which(u>0&u<=10) 
+u[l]<- 1
+l<-which(u>10&u<=20)
+u[l]<- 20
+l<-which(u>20&u<=30)
+u[l]<- 30
+l<-which(u>30&u<=40)
+u[l]<- 40
+l<-which(u>40&u<=50)
+u[l]<- 50
+l<-which(u>50&u<=60)
+u[l]<- 60
+l<-which(u>60&u<=70)
+u[l]<- 70
+l<-which(u>70&u<=80)
+u[l]<- 80
+l<-which(u>80&u<=90)
+u[l]<-90
+l<-which(u>90&u<=100)
+u[l]<- 100
+
+
+fl[]<-u
+#fl["F176"]<-100
+#fl[]<-fMed
+windows(20,10)
+pal<-heat.colors(3)
+plot(fl, col=c("darkblue","green", "yellow", "orange", "red") ,                                #            #
+     main="Proportion of species listed as CR, EN, VU or NT, 
+modelled with preservable traits, 2.5° resolution",ylim=c(-30,30))
+plot(wo, add=T,col="gray90")
+lines(cor_tri$long,cor_tri$lat,type="l",lwd=1.5)
+###comparison with carpenter, modelled mine above
+
+test<-as.data.frame(cbind(as.character(imp_new_back$species),imp_new_back$iucn_status))
+test[,2]<-as.numeric(as.character(test[,2]))
+colnames(test)<-c("species","IUCN_status")
+test<-merge(test,obis,by.x="species",by.y="species",all.x=T)
+test<-subset(test,species!="Cladocora_arbuscula")
+test<-subset(test,lat>-30&lat<30)
+
+testbackup<-test
+#test<-subset(test,species!="Acropora_palmata")
+gLow <- hexagrid(tessellation=c(4,4))
+gLow
+library(rgdal)
+wo <- spTransform(wo, gLow@proj4string)
+gLow<-newsp(gLow)
+pointdat<-cbind(test$long,test$lat)
+cells<-locate(gLow, pointdat)
+#Adams fMed
+fMed<-tapply(INDEX=cells,  X=test$IUCN_status, function(x){
+  median(x)})
+## changed fMed for Carpenter mirro plot
+fMed<-tapply(INDEX=cells,  X=test$IUCN_status, function(x){
+  length(which(x==5))})
+
+fMed_2<-tapply(INDEX=cells,  X=test$species, function(x){
+  which(!duplicated(x))})
+
+
+fMed_3<-tapply(INDEX=cells,  X=test$IUCN_status, function(x){
+  x+1-1})
+fMed_4<-tapply(INDEX=cells,  X=test$median, function(x){
+  x+1-1})
+
+head(fMed_2)
+for ( i in 1:length(fMed_2)){
+  
+  t<- as.vector(as.numeric((unlist(fMed_2[i]))))
+  tt <-as.vector(as.numeric((unlist(fMed_3[i]))))
+  k<-tt[t]
+  lc<-length(which(k==5|k==4.5|k==4|k==3.5|k==3))/length(k)
+  #nt<-length(which(k==2))/length(k)
+  #vu<-length(which(k==3))/length(k)
+  #en<-length(which(k==4))/length(k)
+  #cr<-length(which(k==5))/length(k)
+  fMed_4[i]<-lc
+}
+#fMed_4<-lapply(INDEX=cells,  X=fMed_4, function(x){
+# x+1-1})
+
+###
+
+fl <- facelayer(gLow,NA)
+u<-unlist (fMed_4)
+u<-u*100
+l<-which(u>0&u<=10) 
+u[l]<- 1
+l<-which(u>10&u<=20)
+u[l]<- 20
+l<-which(u>20&u<=30)
+u[l]<- 30
+l<-which(u>30&u<=40)
+u[l]<- 40
+l<-which(u>40&u<=50)
+u[l]<- 50
+l<-which(u>50&u<=60)
+u[l]<- 60
+l<-which(u>60&u<=70)
+u[l]<- 70
+l<-which(u>70&u<=80)
+u[l]<- 80
+l<-which(u>80&u<=90)
+u[l]<-90
+l<-which(u>90&u<=100)
+u[l]<- 100
+
+
+fl[]<-u
+#fl["F176"]<-100
+#fl[]<-fMed
+windows(20,10)
+pal<-heat.colors(3)
+plot(fl, col=c("darkblue","green", "yellow", "orange", "red") ,                                #            #
+     main="Proportion of species listed as CR, EN, VU or NT, 
+     modelled with preservable traits, 2.5° resolution",ylim=c(-30,30))
+plot(wo, add=T,col="gray90")
+lines(cor_tri$long,cor_tri$lat,type="l",lwd=1.5)
+# ### fossil traits
+########### 
+## all from new
+library(rgdal)
+library(icosa)
+library(nnet)
+library(nnet)
+
+## try two extinct
+mont<-c("Montastrea nancyi","massive",15,6,"massive",2.5,9,1126413.28)
+poc<-c("Pocillopora palmata","not massive",5.6,10,
+       "not massive",0.8,35,1126413.28)
+
+CR EN LC NT VU 
+1  2  2  1  4
+EN LC VU 
+8  1  1
+#############
+h<-seq(10000,3000000,10000)
+
+for( j in 1:length(h)){
+
+  
+  monta<-subset(PBDB,gensp=="Montastrea nancyi")
+  xy.coords_m<-cbind(monta$lng,monta$lat)
+  poci<-subset(PBDB,gensp=="Pocillopora palmata")
+  xy.coords_p<-cbind(poci$lng,poci$lat)
+  monta_range<-round(max(spDists(xy.coords_m,longlat=T)))
+  poci_range<-round(max(spDists(xy.coords_p,longlat=T)))
+  
+  mont<-c("Montastrea nancyi","massive",80,300,4.3,monta_range)
+poc<-c("Pocillopora palmata","not massive",15,10
+       ,0.8,poci_range)
+
+
+
+gy<-rbind(mont,poc)
+colnames(gy)<-c("Taxa","Growth.form.typical","Depth.lower",
+                "Colony.maximum.diameter","Corallite.width.maximum"
+                ,"max_dist_normed")
+class(gy)
+gy<-as.data.frame(gy)
+gy$Depth.lower<-as.numeric(as.character(gy$Depth.lower))
+gy$Colony.maximum.diameter<-as.numeric(as.character(gy$Colony.maximum.diameter))
+gy$Corallite.width.maximum<-as.numeric(as.character(gy$Corallite.width.maximum))
+gy$max_dist_normed<-as.numeric(as.character(gy$max_dist_normed))
+gy$max_dist_normed<-gy$max_dist_normed/19783
+#gy$Colony.maximum.diameter<-scale(gy$Colony.maximum.diameter)
+  #gy$Corallite.width.maximum<-scale(gy$Corallite.width.maximum)
+  #gy$Depth.lower<-scale(gy$Depth.lower)
+#gy$Water.depth<-as.matrix(as.numeric(gy$Water.depth))
+#gy$Water.depth<-as.matrix(as.numeric(gy$Colony.maximum.diameter))
+#gy$Water.depth<-as.matrix(as.numeric(gy$Corallite.width.maximum))
+#gy$Water.depth<-as.matrix(as.numeric(gy$Range.size))
+#gy$Water.depth<-as.matrix(as.numeric(gy$Growth.rate))
+
+#for(i in c(3,4,6,7,8)) gy[,i] = scale(gy[,i])
+
+#gy<-gy[,-8]
+
+
+#for(i in c(3,4,6,7,8)) gy[,i] = log(gy[,i])
+
+gggg<-NULL
+for( j in 1:5000){
+
+  
+  resi<-NULL
+for( i in 1:10){
+  
+  result<-imp_n[,1:15]
+  x<-seq(1,7390,739)
+  y<-seq(739,7390,739)
+  e<-i
+  subs<- result[x[e]:y[e],]
+  subs<-subs[!is.na(subs),]
+  subs<-subset(subs,IUCN.Red.List.category!="DD")
+  subs<-subs[1:661,]
+  #subs<-subs[,c(3:16)]
+  #subs<-subs[,1:13]
+  subsScale<-subs
+  subsScale$IUCN.Red.List.category<-droplevels(subsScale$IUCN.Red.List.category)
+  #for(i in c(4,5,8,10,11,14)) subsScale[,i] = scale(subsScale[,i])
+  #rtr<-which(subsScale$Water.depth==-Inf)
+  #subsScale[rtr,3]<-NA
+  subsScale<-subsScale[,-c(1)]
+  subsScale<-subsScale[,c(1,4,7,8,9,14)]
+  #subsScale<-subsScale[,c(1,2,3,7,8,9,10,13)]
+ # k<-sample(1:10000,1)
+  #set.seed(k)        #set.seed(703410459)
+  #set.seed(703410459)
+  series<-1:nrow(subs)
+  #train set
+  #subsScale<-subsScale[,-1]
+  ind<-sample(series,449)
+  bSelect<-!series%in%ind
+  indNeg<-series[bSelect]
+  # cross validation + test set
+  cv_set<-sample(indNeg,106)
+  bSelectc<-!indNeg%in%cv_set
+  test_set<-indNeg[bSelectc]
+  
+  mod <-nnet(IUCN.Red.List.category ~.,data=subsScale,
+             subset=ind, size=20, maxit=20000,trace=F
+            ,na.action=na.omit)
+  
+  #PBDB_caribbean_backup<-PBDB_car_calc
+  
+  #PBDB_car_calc<-PBDB_car_calc[,c(1,2,3,6,7,8,9,12)]
+  #combined<-rbind(PBDB_car_calc,PBDB_pac_calc)
+  #zz<-which(duplicated(combined$gensp))
+  #combined<-combined[-zz,]
+  #combined<-combined[,-1]
+  
+  pre<-predict(mod,gy, type="class",na.action="na.exclude")
+  
+  resi<-cbind(resi,pre)
+  
+}
+#View(resi)
+
+gggg<-rbind(gggg,resi)
+cat(j, "\r")
+flush.console()
+}
+
+View(gggg)
+## count them
+gggg<-as.data.frame(gggg)
+gggg$LC<-rowSums(gggg=="LC")
+gggg$NT<-rowSums(gggg=="NT")
+gggg$VU<-rowSums(gggg=="VU")
+gggg$EN<-rowSums(gggg=="EN")
+gggg$CR<-rowSums(gggg=="CR")
+gggg$TH<-rowSums(gggg=="CR"|gggg=="EN"|gggg=="VU")
+M_nancyi<-gggg[seq(1,length(gggg[,1])-1,2),]
+P_palmata<-gggg[seq(2,length(gggg[,1]),2),]
+
+length(which(M_nancyi$TH>6))
+length(which(P_palmata$TH>6))
+
+k<-NULL
+for ( i in 1:length(gggg[,1])){
+  f<-gggg[i,]
+  h<-length(which(f=="CR"|f=="EN"|f=="VU"))
+  k<-rbind(k,h)
+  
+}
+
+
+end_nancyi<-k[seq(1,6999,2)]
+length(which(end_nancyi>5))/3500*100
+end_palmata<-k[seq(2,7000,2)]
+length(which(end_palmata>5))/3500*100
+
+par(mar=c(5,5,5,5),cex=1.6)
+plot(sort(end_palmata,decreasing = T),col="red",ylim=c(0,10),
+     xlab="Number of iterations",ylab="Number of same results"
+     ,main="Number of same results that M. nancyi or P. palmata 
+is categorized either CR, EN or VU")
+points(sort(end_nancyi,decreasing = T))
+segments(0,median(end_palmata),3500,median(end_palmata),col="red")
+segments(0,median(end_nancyi),3500,median(end_nancyi),col="black")
+legend("topright",legend=c("M. nancyi","P. palmata"),fill=c("red","black"))
+
+g<-cbind(k,rep(1:(length(k[,1])/2),each=2))
+View(g)
+## highly eendangered
+k<-NULL
+for ( i in 1:length(gggg[,1])){
+  f<-gggg[i,]
+  h<-length(which(f=="CR"))
+  k<-rbind(k,h)
+  
+}
+g<-cbind(k,rep(1:(length(k[,1])/2),each=2))
+View(g)
+
+#table(resi[1,])
+#table(resi[2,])
+
+# calculate range size with convex hull
+monti<-subset(PBDB,gensp=="Montastrea nancyi")
+
+x1 <- monti$lng
+y1 <- monti$lat
+hpts <- chullsphere(cbind(x1,y1))
+hpts <- c(hpts, hpts[1])
+xy.coords <- cbind(x1, y1)
+chull.coords <- xy.coords[hpts,]
+chull.poly <- Polygon(chull.coords, hole=F)
+pss<-Polygons(list(chull.poly), ID=1)
+psp <-SpatialPolygons(list(pss))
+psp@proj4string <- CRS("+proj=longlat")
+library(raster)
+monta_range<-area(psp)/1000000
+plot(wo)
+plot(psp, add=T,col="green")
+
+pocci<-subset(PBDB,gensp=="Pocillopora palmata")
+
+x1 <- pocci$lng
+y1 <- pocci$lat
+hpts <- chullsphere(cbind(x1,y1))
+hpts <- c(hpts, hpts[1])
+xy.coords <- cbind(x1, y1)
+chull.coords <- xy.coords[hpts,]
+chull.poly <- Polygon(chull.coords, hole=F)
+pss<-Polygons(list(chull.poly), ID=1)
+psp <-SpatialPolygons(list(pss))
+psp@proj4string <- CRS("+proj=longlat")
+library(raster)
+poci_range<-area(psp)/1000000
+chull.area <- chull.poly@area
+plot(wo)
+plot(psp, add=T,col="green")
+
+tt<-subs$Taxa
+tt<-tt[1:661]
+tt<-droplevels(tt)
+tt<-as.data.frame(tt)
+resi2<-cbind(resi,tt)
+for(i in 1:10){
+  levels(resi2[,i])[1]<-as.numeric(5)
+  levels(resi2[,i])[2]<-as.numeric(4)
+  levels(resi2[,i])[3]<-as.numeric(1)
+  levels(resi2[,i])[4]<-as.numeric(2)
+  levels(resi2[,i])[5]<-as.numeric(3)
+}
+for( i in 1:10){
+  resi2[,i]<-as.numeric(as.character(resi2[,i]))
+}
+library(matrixStats)
+resi2$mean<-rowMeans(resi2[,1:10])
+resi2$median<-rowMedians(as.matrix(resi2[,1:10]))
+
+colnames(resi2)<-c("run_1","run_2","run_3","run_4","run_5"
+                   ,"run_6","run_7","run_8","run_9","run_10"
+                   ,"species","mean","median")
+
+test<-merge(resi2,obis,by.x="species","gensp",all.x=T)
+
+test<-subset(test,genus!="Cladocora")
+test<-subset(test,lat>-30&lat<30)
+#plot from here
+library(icosa)
+testbackup<-test
+#test<-subset(test,species!="Acropora_palmata")
+gLow <- hexagrid(tessellation=c(4,4))
+gLow
+library(rgdal)
+wo <- spTransform(wo, gLow@proj4string)
+gLow<-newsp(gLow)
+pointdat<-cbind(test$long,test$lat)
+cells<-locate(gLow, pointdat)
+fMed<-tapply(INDEX=cells,  X=test$median, function(x){
+  median(x)})
+fl <- facelayer(gLow,NA)
+fl[]<-fMed
+fl[c("F176")]   <-c(5)
+windows(20,10)
+plot(fl, col=c("darkblue", "blue", "yellow", "orange", "red"),
+     main="Median coral threat status,
+     modelled with preservable traits, 4.44° resolution")
+plot(wo, add=T,col="gray90")
+lines(cor_tri$long,cor_tri$lat,type="l",lwd=1.5)
+########## convex hull on all
+namm<-unique(PBDB$gensp)
+erg<-NULL
+ergg<-NULL
+for ( i in 1:length(namm)){
+      
+monti<-subset(PBDB,gensp==namm[i])
+if(length(unique(monti$paleolng))>=3){
+x1 <- monti$lng
+y1 <- monti$lat
+hpts <- chullsphere(cbind(x1,y1))
+hpts <- c(hpts, hpts[1])
+xy.coords <- cbind(x1, y1)
+chull.coords <- xy.coords[hpts,]
+chull.poly <- Polygon(chull.coords, hole=F)
+pss<-Polygons(list(chull.poly), ID=1)
+psp <-SpatialPolygons(list(pss))
+psp@proj4string <- CRS("+proj=longlat")
+library(raster)
+monta_range<-area(psp)/1000000
+ergg<-cbind(monta_range,as.character(namm[i]))
+erg<-rbind(erg,ergg)
+plot(wo)
+plot(psp)
+
+}
+
+}
+
+namm<-unique(PBDB$gensp)
+
+erg<-NULL
+ergg<-NULL
+for ( i in 1:length(namm)){
+  
+  monti<-subset(PBDB,gensp==namm[i])
+  if(length(unique(monti$lng))>=1){
+    x1 <- monti$lng
+    y1 <- monti$lat
+
+    xy.coords <- cbind(x1, y1)
+    
+    
+    #monta_range<-round(max(distCosine(xy.coords)/1000))
+    monta_range<-round(max(spDists(xy.coords,longlat=T)))
+    ergg<-cbind(monta_range,as.character(namm[i]))
+    erg<-rbind(erg,ergg)
+    #plot(wo)
+    #plot(psp)
+    
+  }
+  cat(i, "\r")
+  flush.console()
+}
+erg<-as.data.frame(erg)
+erg[,1]<-as.numeric(as.character(erg[,1]))
+t<-which(erg[,1]==0)
+erg[t,1]<-1
+erg[,1]<-erg[,1]/max(erg[,1])
+colnames(erg)<-c("max_dist_normed","species")
+View(erg)
+
+
+### now for OBIS
+
+OBIS<-OBIS[complete.cases(OBIS), ]
+namm<-unique(OBIS$gensp)
+
+#namm<-namm[!="Pseudodiploria strigosa"]
+erg<-NULL
+ergg<-NULL
+for ( i in 1:length(namm)){
+  
+  monti<-subset(OBIS,gensp==namm[i])
+  if(length(unique(monti$longitude))>=1&length(monti$longitude)<=12000)
+    {
+    x1 <- monti$longitude
+    y1 <- monti$latitude
+    
+    xy.coords <- cbind(x1, y1)
+    
+    
+    #monta_range<-round(max(distCosine(xy.coords)/1000))
+    monta_range<-round(max(spDists(xy.coords,longlat=T)))
+    ergg<-cbind(monta_range,as.character(namm[i]))
+    erg<-rbind(erg,ergg)
+    #plot(wo)
+    #plot(psp)
+    
+  }
+  cat(i, "\r")
+  flush.console()
+}
+erg<-as.data.frame(erg)
+colnames(erg)<-c("V1","V2")
+erg[,1]<-as.numeric(as.character(erg[,1]))
+
+erg<-rbind(erg,zz)
+erg[complete.cases(erg), ]
+
+erg_OBIS<-erg
+#erg_OBIS<-as.data.frame(erg_OBIS)
+#erg_OBIS[,1]<-as.numeric(as.character(erg_OBIS[,1]))
+t<-which(erg_OBIS[,1]==0)
+erg_OBIS[t,1]<-1
+erg_OBIS<-erg_OBIS[1:803,]
+erg_OBIS[,1]<-erg_OBIS[,1]/max(erg_OBIS[,1])
+colnames(erg_OBIS)<-c("max_dist_normed","species")
+View(erg_OBIS)
+write.csv(erg_OBIS,"X:/erg_OBIS.csv")
+
+### check which ones have larger 5000 lats/longs
+ergr<-NULL
+erggr<-NULL
+for ( i in 1:length(namm)){
+  
+  monti<-subset(OBIS,gensp==namm[i])
+  ergr<-length(monti[,1])
+  
+erggr<-rbind(erggr,ergr)
+  cat(i, "\r")
+  flush.console()
+}
+tt<-which(erggr>12000)
+namms<-namm[tt]
+
+try<-subset(OBIS,gensp=="Porites lobata")
+xy<-cbind(try$longitude,try$latitude)
+
+
+xy<-as.data.frame(xy)
+xy$sum<-rowSums(xy)
+k<-which(duplicated(xy$sum))
+xy<-xy[-k,]
+xy<-xy[,-3]
+max(spDists(as.matrix(xy),longlat=T))
+
+l<-c(11909.92,"Montipora capitata")
+ll<-c(18464.52,"Pocillopora meandrina")
+lll<-c(17572.07,"Porites compressa")
+llll<-c(18866.26,"Porites lobata")
+
+zz<-rbind(l,ll,lll,llll)
+zz<-as.data.frame(zz)
+zz[,1]<-as.numeric(as.character(zz[,1]))
+
+## model the data deficient ones
+1/19983
+##remove NA values
+na<-which(is.na(imp_n$max_dist_normed))
+imp_n[na,15]<-100/19983
+
+resi<-NULL
+for( i in 1:10){
+  result<-imp_n[,1:15]
+  x<-seq(1,7390,739)
+  y<-seq(739,7390,739)
+  e<-i
+  subs<- result[x[e]:y[e],]
+  #subs<-subs[!is.na(subs),]
+  hh<-subset(subs,IUCN.Red.List.category=="DD")
+  subs<-subset(subs,IUCN.Red.List.category!="DD")
+  for(i in c(4,5,8,10,11,14)) hh[,i] = scale(hh[,i])
+  nameshh<-hh[,1]
+  hh<-hh[,-1]
+  subs<-subs[1:661,]
+  #subs<-subs[,c(3:16)]
+  #subs<-subs[,1:13]
+  subsScale<-subs
+  subsScale$IUCN.Red.List.category<-droplevels(subsScale$IUCN.Red.List.category)
+  for(i in c(4,5,8,10,11,14)) subsScale[,i] = scale(subsScale[,i])
+  subsScale<-subsScale[,-c(1)]
+  #subsScale<-subsScale[,-10]
+  subsScale<-subsScale[,c(1,4,8,14)]
+  #set.seed(3003423)
+  series<-1:nrow(subs)
+  #train set
+  #subsScale<-subsScale[,-1]
+  ind<-sample(series,449)
+  bSelect<-!series%in%ind
+  indNeg<-series[bSelect]
+  # cross validation + test set
+  cv_set<-sample(indNeg,106)
+  bSelectc<-!indNeg%in%cv_set
+  test_set<-indNeg[bSelectc]
+  
+  mod <-nnet(IUCN.Red.List.category ~.,data=subsScale,
+             subset=ind, size=20, maxit=10000,trace = T
+             ,na.action = na.omit)
+  
+  #PBDB_caribbean_backup<-PBDB_car_calc
+  
+  #PBDB_car_calc<-PBDB_car_calc[,c(1,2,3,6,7,8,9,12)]
+  #combined<-rbind(PBDB_car_calc,PBDB_pac_calc)
+  #zz<-which(duplicated(combined$gensp))
+  #combined<-combined[-zz,]
+  #combined<-combined[,-1]
+  
+  pre<-predict(mod,hh, type="class")
+  
+  resi<-cbind(resi,pre)
+  
+}
+
+tt<-nameshh
+
+tt<-droplevels(tt)
+tt<-as.data.frame(tt)
+resi2<-cbind(resi,tt)
+
+#
+
+for(i in 5:6){
+  levels(resi2[,i])[1]<-as.numeric(4)
+  levels(resi2[,i])[2]<-as.numeric(1)
+  levels(resi2[,i])[3]<-as.numeric(2)
+  levels(resi2[,i])[4]<-as.numeric(3)
+  #levels(resi2[,i])[5]<-as.numeric(3)
+}
+for( i in 1:10){
+  resi2[,i]<-as.numeric(as.character(resi2[,i]))
+}
+library(matrixStats)
+resi2$mean<-rowMeans(resi2[,1:10])
+resi2$median<-rowMedians(as.matrix(resi2[,1:10]))
+
+colnames(resi2)<-c("run_1","run_2","run_3","run_4","run_5"
+                   ,"run_6","run_7","run_8","run_9","run_10"
+                   ,"species","mean","median")
+## count number of entries
+resi2$one<-rowSums(resi2[,1:10]==1)
+resi2$two<-rowSums(resi2[,1:10]==2)
+resi2$three<-rowSums(resi2[,1:10]==3)
+resi2$four<-rowSums(resi2[,1:10]==4)
+resi2$five<-rowSums(resi2[,1:10]==5)
+
+
+
+
+test<-merge(resi2,obis,by.x="species",by.y="species",all.x=T)
+
+#test<-subset(test,genus!="Cladocora")
+test<-subset(test,lat>-30&lat<30)
+#plot from here
+library(icosa)
+testbackup<-test
+#test<-subset(test,species!="Acropora_palmata")
+gLow <- hexagrid(tessellation=c(4,4))
+gLow
+library(rgdal)
+wo <- spTransform(wo, gLow@proj4string)
+gLow<-newsp(gLow)
+pointdat<-cbind(test$long,test$lat)
+cells<-locate(gLow, pointdat)
+fMed<-tapply(INDEX=cells,  X=test$median, function(x){
+  median(x)})
+fl <- facelayer(gLow,NA)
+fl[]<-fMed
+#fl[c("F176")]   <-c(5)
+windows(20,10)
+plot(fl, col=c("darkblue", "blue", "yellow", "orange", "red"),
+     main="Median threat status for data deficient corals,
+modelled with preservable traits, 2.5° resolution")
+plot(wo, add=T,col="gray90")
+lines(cor_tri$long,cor_tri$lat,type="l",lwd=1.5)
+#fl[c("F176")]   <-c(5)
+
+## deficient percentage
+## changed fMed for Carpenter mirro plot
+fMed<-tapply(INDEX=cells,  X=test$median, function(x){
+  length(which(x==5))})
+
+fMed_2<-tapply(INDEX=cells,  X=test$species, function(x){
+  which(!duplicated(x))})
+
+
+fMed_3<-tapply(INDEX=cells,  X=test$median, function(x){
+  x+1-1})
+fMed_4<-tapply(INDEX=cells,  X=test$median, function(x){
+  x+1-1})
+
+head(fMed_2)
+for ( i in 1:length(fMed_2)){
+  
+  t<- as.vector(as.numeric((unlist(fMed_2[i]))))
+  tt <-as.vector(as.numeric((unlist(fMed_3[i]))))
+  k<-tt[t]
+  lc<-length(which(k==5|k==4.5|k==4|k==3.5|k==3))/length(k)
+  #nt<-length(which(k==2))/length(k)
+  #vu<-length(which(k==3))/length(k)
+  #en<-length(which(k==4))/length(k)
+  #cr<-length(which(k==5))/length(k)
+  fMed_4[i]<-lc
+}
+#fMed_4<-lapply(INDEX=cells,  X=fMed_4, function(x){
+# x+1-1})
+
+###
+
+fl <- facelayer(gLow,NA)
+u<-unlist (fMed_4)
+u<-u*100
+l<-which(u>0&u<=10) 
+u[l]<- 1
+l<-which(u>10&u<=20)
+u[l]<- 20
+l<-which(u>20&u<=30)
+u[l]<- 30
+l<-which(u>30&u<=40)
+u[l]<- 40
+l<-which(u>40&u<=50)
+u[l]<- 50
+l<-which(u>50&u<=60)
+u[l]<- 60
+l<-which(u>60&u<=70)
+u[l]<- 70
+l<-which(u>70&u<=80)
+u[l]<- 80
+l<-which(u>80&u<=90)
+u[l]<-90
+l<-which(u>90&u<=100)
+u[l]<- 100
+
+
+fl[]<-u
+#fl["F176"]<-100
+#fl[]<-fMed
+windows(20,10)
+pal<-heat.colors(3)
+plot(fl, col=c("darkblue","green", "yellow", "orange", "red") ,                                #            #
+     main="Proportion of deta deficient species listed as CR, EN, or VU, 
+modelled with preservable traits, 2.5° resolution",ylim=c(-30,30))
+plot(wo, add=T,col="gray90")
+lines(cor_tri$long,cor_tri$lat,type="l",lwd=1.5)
+
+
+
+
+
+
+
+
+
+
+
+
+# calculate how often single vlues occure
+hh<-NULL
+for ( i in 1:length(resi2[,1])){
+  ff<-resi2[i,1:10]
+  a<-length(which(ff==1))
+  b<-length(which(ff==2))
+  c<-length(which(ff==3))
+  d<-length(which(ff==4))
+  e<-length(which(ff==5))
+  zz<-cbind(a,b,c,d,e)
+  hh<-rbind(hh,zz)
+}
+
+### no range size
+resi<-NULL
+for( i in 1:10){
+  result<-imp[,4:17]
+  x<-seq(1,7390,739)
+  y<-seq(739,7390,739)
+  e<-i
+  subs<- result[x[e]:y[e],]
+  subs<-subs[!is.na(subs),]
+  hh<-subset(subs,IUCN.Red.List.category=="DD")
+  subs<-subset(subs,IUCN.Red.List.category!="DD")
+  for(i in c(4,5,8,10,11,14)) hh[,i] = scale(hh[,i])
+  nameshh<-hh[,1]
+  hh<-hh[,-1]
+  hh<-hh[,-10]
+  subs<-subs[1:661,]
+  #subs<-subs[,c(3:16)]
+  #subs<-subs[,1:13]
+  subsScale<-subs
+  subsScale$IUCN.Red.List.category<-droplevels(subsScale$IUCN.Red.List.category)
+  for(i in c(4,5,8,10,11,14)) subsScale[,i] = scale(subsScale[,i])
+  subsScale<-subsScale[,-c(1)]
+  subsScale<-subsScale[,-10]
+  #subsScale<-subsScale[,c(1,2,3,7,8,9,10,13)]
+  set.seed(5645268)
+  series<-1:nrow(subs)
+  #train set
+  #subsScale<-subsScale[,-1]
+  ind<-sample(series,449)
+  bSelect<-!series%in%ind
+  indNeg<-series[bSelect]
+  # cross validation + test set
+  cv_set<-sample(indNeg,106)
+  bSelectc<-!indNeg%in%cv_set
+  test_set<-indNeg[bSelectc]
+  
+  mod <-nnet(IUCN.Red.List.category ~.,data=subsScale,
+             subset=ind, size=20, maxit=10000,trace = T)
+  
+  #PBDB_caribbean_backup<-PBDB_car_calc
+  
+  #PBDB_car_calc<-PBDB_car_calc[,c(1,2,3,6,7,8,9,12)]
+  #combined<-rbind(PBDB_car_calc,PBDB_pac_calc)
+  #zz<-which(duplicated(combined$gensp))
+  #combined<-combined[-zz,]
+  #combined<-combined[,-1]
+  
+  pre<-predict(mod,hh, type="class")
+  
+  resi<-cbind(resi,pre)
+  
+}
+
+tt<-nameshh
+
+tt<-droplevels(tt)
+tt<-as.data.frame(tt)
+resi2<-cbind(resi,tt)
+for(i in 1:10){
+  levels(resi2[,i])[1]<-as.numeric(5)
+  levels(resi2[,i])[2]<-as.numeric(4)
+  levels(resi2[,i])[3]<-as.numeric(1)
+  levels(resi2[,i])[4]<-as.numeric(2)
+  levels(resi2[,i])[5]<-as.numeric(3)
+}
+for( i in 1:10){
+  resi2[,i]<-as.numeric(as.character(resi2[,i]))
+}
+library(matrixStats)
+resi2$mean<-rowMeans(resi2[,1:10])
+resi2$median<-rowMedians(as.matrix(resi2[,1:10]))
+
+colnames(resi2)<-c("run_1","run_2","run_3","run_4","run_5"
+                   ,"run_6","run_7","run_8","run_9","run_10"
+                   ,"species","mean","median")
+
+test<-merge(resi2,obis,by.x="species",by.y="gensp",all.x=T)
+
+test<-subset(test,genus!="Cladocora")
+test<-subset(test,lat>-30&lat<30)
+#plot from here
+library(icosa)
+testbackup<-test
+#test<-subset(test,species!="Acropora_palmata")
+gLow <- hexagrid(tessellation=c(8,8))
+gLow
+library(rgdal)
+wo <- spTransform(wo, gLow@proj4string)
+gLow<-newsp(gLow)
+pointdat<-cbind(test$long,test$lat)
+cells<-locate(gLow, pointdat)
+fMed<-tapply(INDEX=cells,  X=test$median, function(x){
+  median(x)})
+fl <- facelayer(gLow,NA)
+fl[]<-fMed
+windows(20,10)
+plot(fl, col=c("darkblue", "blue", "yellow", "orange", "red"),
+     main="Median coral threat status,
+     modelled without range size, 0.62° resolution")
+plot(wo, add=T,col="gray90")
+lines(cor_tri$long,cor_tri$lat,type="l",lwd=1.5)
+
+
+## fossil traits
+
+resi<-NULL
+for( i in 1:10){
+  result<-imp[,4:17]
+  x<-seq(1,7390,739)
+  y<-seq(739,7390,739)
+  e<-i
+  subs<- result[x[e]:y[e],]
+  subs<-subs[!is.na(subs),]
+  hh<-subset(subs,IUCN.Red.List.category=="DD")
+  subs<-subset(subs,IUCN.Red.List.category!="DD")
+  for(i in c(4,5,8,10,11,14)) hh[,i] = scale(hh[,i])
+  nameshh<-hh[,1]
+  hh<-hh[,-1]
+  hh<-hh[,c(1,2,3,7,8,9,10,13)]
+  subs<-subs[1:661,]
+  #subs<-subs[,c(3:16)]
+  #subs<-subs[,1:13]
+  subsScale<-subs
+  subsScale$IUCN.Red.List.category<-droplevels(subsScale$IUCN.Red.List.category)
+  for(i in c(4,5,8,10,11,14)) subsScale[,i] = scale(subsScale[,i])
+  subsScale<-subsScale[,-c(1)]
+  subsScale<-subsScale[,c(1,2,3,7,8,9,10,13)]
+  #subsScale<-subsScale[,c(1,2,3,7,8,9,10,13)]
+  set.seed(7034109)
+  series<-1:nrow(subs)
+  #train set
+  #subsScale<-subsScale[,-1]
+  ind<-sample(series,449)
+  bSelect<-!series%in%ind
+  indNeg<-series[bSelect]
+  # cross validation + test set
+  cv_set<-sample(indNeg,106)
+  bSelectc<-!indNeg%in%cv_set
+  test_set<-indNeg[bSelectc]
+  
+  mod <-nnet(IUCN.Red.List.category ~.,data=subsScale,
+             subset=ind, size=20, maxit=10000,trace = T)
+  
+  #PBDB_caribbean_backup<-PBDB_car_calc
+  
+  #PBDB_car_calc<-PBDB_car_calc[,c(1,2,3,6,7,8,9,12)]
+  #combined<-rbind(PBDB_car_calc,PBDB_pac_calc)
+  #zz<-which(duplicated(combined$gensp))
+  #combined<-combined[-zz,]
+  #combined<-combined[,-1]
+  
+  pre<-predict(mod,hh, type="class")
+  
+  resi<-cbind(resi,pre)
+  
+}
+
+tt<-nameshh
+
+tt<-droplevels(tt)
+tt<-as.data.frame(tt)
+resi2<-cbind(resi,tt)
+for(i in 9){
+  levels(resi2[,i])[1]<-as.numeric(4)
+  levels(resi2[,i])[2]<-as.numeric(1)
+  levels(resi2[,i])[3]<-as.numeric(2)
+  levels(resi2[,i])[4]<-as.numeric(3)
+  #levels(resi2[,i])[5]<-as.numeric(3)
+}
+for( i in 1:10){
+  resi2[,i]<-as.numeric(as.character(resi2[,i]))
+}
+library(matrixStats)
+resi2$mean<-rowMeans(resi2[,1:10])
+resi2$median<-rowMedians(as.matrix(resi2[,1:10]))
+
+colnames(resi2)<-c("run_1","run_2","run_3","run_4","run_5"
+                   ,"run_6","run_7","run_8","run_9","run_10"
+                   ,"species","mean","median")
+
+
+
+test<-merge(resi2,obis,by.x="species","gensp",all.x=T)
+
+test<-subset(test,genus!="Cladocora")
+test<-subset(test,lat>-30&lat<30)
+#plot from here
+library(icosa)
+testbackup<-test
+#test<-subset(test,species!="Acropora_palmata")
+gLow <- hexagrid(tessellation=c(4,4))
+gLow
+library(rgdal)
+wo <- spTransform(wo, gLow@proj4string)
+gLow<-newsp(gLow)
+pointdat<-cbind(test$long,test$lat)
+cells<-locate(gLow, pointdat)
+fMed<-tapply(INDEX=cells,  X=test$median, function(x){
+  median(x)})
+fl <- facelayer(gLow,NA)
+fl[c("F176")]   <-c(5)
+fl[]<-fMed
+windows(20,10)
+plot(fl, col=c("darkblue", "blue", "yellow", "orange", "red"),
+     main="Median coral threat status for data deficient corals
+modelled with fossil preservable traits, 2.5° resolution",ylim=c(1,5))
+plot(wo, add=T,col="gray90")
+lines(cor_tri$long,cor_tri$lat,type="l",lwd=1.5)
+
+
+
+## pleistocene data
+PBDB_co<-PBDB[,c(3:5)]
+nam<-PBDB_co$gensp
+combined<-rbind(PBDB_car_calc,PBDB_pac_calc)
+q<-strsplit(as.character(nam) ," ")
+w<-lapply(q,function(x) paste(x,collapse = "_"))
+nam<-as.vector(unlist(w))
+nam<-as.vector(nam)
+PBDB_co$gensp<-nam
+colnames(PBDB_co)<-c("gensp","long","lat")
+combined_names<-combined$gensp
+combined_names<-droplevels(combined_names)
+combined<-combined[,-1]
+
+q<-strsplit(as.character(erg$species) ," ")
+w<-lapply(q,function(x) paste(x,collapse = "_"))
+nam<-as.vector(unlist(w))
+nam<-as.vector(nam)
+erg$gensp<-nam
+
+
+
+te<-join(combined,erg)
+combined<-te
+levels(te[,2])[1]<-5
+levels(te[,2])[2]<-4
+levels(te[,2])[3]<-1
+levels(te[,2])[4]<-2
+levels(te[,2])[5]<-3
+te[,2]<-as.numeric(as.character(te[,2]))
+
+
+
+
+library()
+library(nnet)
+resi<-NULL
+for( i in 1:10){
+  result<-imp_n[,1:15]
+  x<-seq(1,7390,739)
+  y<-seq(739,7390,739)
+  e<-i
+  subs<- result[x[e]:y[e],]
+  subs<-subs[!is.na(subs),]
+  #hh<-plei
+  subs<-subset(subs,IUCN.Red.List.category!="DD")
+  #for(i in c(4,5,8,10,11,14)) hh[,i] = scale(hh[,i])
+  nameshh<-combined_names
+  hh<-combined
+  #hh<-hh[,-1]
+  hh<-hh[,c(1,4,8,9,14)]
+  
+  
+  subs<-subs[1:661,]
+  #subs<-subs[,c(3:16)]
+  #subs<-subs[,1:13]
+  subsScale<-subs
+  subsScale$IUCN.Red.List.category<-droplevels(subsScale$IUCN.Red.List.category)
+  for(i in c(4,5,8,10,11,14)) subsScale[,i] = scale(subsScale[,i])
+  subsScale<-subsScale[,-c(1)]
+  subsScale<-subsScale[,c(1,4,8,9,14)]
+
+
+  series<-1:nrow(subs)
+  #train set
+  #subsScale<-subsScale[,-1]
+  ind<-sample(series,449)
+  bSelect<-!series%in%ind
+  indNeg<-series[bSelect]
+  # cross validation + test set
+  cv_set<-sample(indNeg,106)
+  bSelectc<-!indNeg%in%cv_set
+  test_set<-indNeg[bSelectc]
+  
+  mod <-nnet(IUCN.Red.List.category ~.,data=subsScale,
+             subset=ind, size=20, maxit=10000,trace = T)
+  
+  #PBDB_caribbean_backup<-PBDB_car_calc
+  
+  #PBDB_car_calc<-PBDB_car_calc[,c(1,2,3,6,7,8,9,12)]
+  #combined<-rbind(PBDB_car_calc,PBDB_pac_calc)
+  #zz<-which(duplicated(combined$gensp))
+  #combined<-combined[-zz,]
+  #combined<-combined[,-1]
+  
+  pre<-predict(mod,hh, type="class")
+  
+  resi<-cbind(resi,pre)
+  
+}
+
+tt<-nameshh
+
+tt<-droplevels(tt)
+tt<-as.data.frame(tt)
+resi2<-cbind(resi,tt)
+for(i in 5){
+  levels(resi2[,i])[1]<-as.numeric(4)
+  levels(resi2[,i])[2]<-as.numeric(1)
+  levels(resi2[,i])[3]<-as.numeric(2)
+  levels(resi2[,i])[4]<-as.numeric(3)
+  #levels(resi2[,i])[5]<-as.numeric(3)
+}
+for( i in 1:10){
+  resi2[,i]<-as.numeric(as.character(resi2[,i]))
+}
+library(matrixStats)
+resi2$mean<-rowMeans(resi2[,1:10])
+resi2$median<-rowMedians(as.matrix(resi2[,1:10]))
+
+colnames(resi2)<-c("run_1","run_2","run_3","run_4","run_5"
+                   ,"run_6","run_7","run_8","run_9","run_10"
+                   ,"species","mean","median")
+colnames(PBDB_co)<-paste(c("gensp","long","lat"))
+test<-merge(resi2,PBDB_co,by.x="species",by.y="gensp",all.x=T)
+
+
+
+
+test<-subset(test,genus!="Cladocora")
+test<-subset(test,lat>-30&lat<30)
+#plot from here
+library(icosa)
+testbackup<-test
+#test<-subset(test,species!="Acropora_palmata")
+gLow <- hexagrid(tessellation=c(3,3))
+gLow
+library(rgdal)
+wo <- spTransform(wo, gLow@proj4string)
+gLow<-newsp(gLow)
+pointdat<-cbind(test$long,test$lat)
+cells<-locate(gLow, pointdat)
+fMed<-tapply(INDEX=cells,  X=test$median, function(x){
+  median(x)})
+fl <- facelayer(gLow,NA)
+fl[]<-fMed
+fl[c("F176")]   <-c(5)
+
+windows(20,10)
+plot(fl, col=c("darkblue", "blue", "yellow", "orange", "red"),
+     main="Median threat status of late Pleistocene corals,
+modelled with preservable traits, 1.11° resolution")
+plot(wo, add=T,col="gray90",ylim=c(-40,40))
+lines(cor_tri$long,cor_tri$lat,type="l",lwd=1.5)
+
+##fMed<-tapply(INDEX=cells,  X=test$median, function(x){
+#length(which(x==5))})
+
+fMed_2<-tapply(INDEX=cells,  X=test$species, function(x){
+  which(!duplicated(x))})
+
+
+fMed_3<-tapply(INDEX=cells,  X=test$median, function(x){
+  x+1-1})
+fMed_4<-tapply(INDEX=cells,  X=test$median, function(x){
+  x+1-1})
+
+head(fMed_2)
+for ( i in 1:length(fMed_2)){
+  
+  t<- as.vector(as.numeric((unlist(fMed_2[i]))))
+  tt <-as.vector(as.numeric((unlist(fMed_3[i]))))
+  k<-tt[t]
+  lc<-length(which(k==5|k==4.5|k==4|k==3.5|k==3))/length(k)
+  #nt<-length(which(k==2))/length(k)
+  #vu<-length(which(k==3))/length(k)
+  #en<-length(which(k==4))/length(k)
+  #cr<-length(which(k==5))/length(k)
+  fMed_4[i]<-lc
+}
+#fMed_4<-lapply(INDEX=cells,  X=fMed_4, function(x){
+# x+1-1})
+
+###
+
+fl <- facelayer(gLow,NA)
+u<-unlist (fMed_4)
+u<-u*100
+l<-which(u>0&u<=10) 
+u[l]<- 1
+l<-which(u>10&u<=20)
+u[l]<- 20
+l<-which(u>20&u<=30)
+u[l]<- 30
+l<-which(u>30&u<=40)
+u[l]<- 40
+l<-which(u>40&u<=50)
+u[l]<- 50
+l<-which(u>50&u<=60)
+u[l]<- 60
+l<-which(u>60&u<=70)
+u[l]<- 70
+l<-which(u>70&u<=80)
+u[l]<- 80
+l<-which(u>80&u<=90)
+u[l]<-90
+l<-which(u>90&u<=100)
+u[l]<- 100
+
+
+fl[]<-u
+fl["F176"]<-100
+#fl[]<-fMed
+windows(20,10)
+pal<-heat.colors(3)
+plot(fl, col=c("darkblue","green", "yellow", "orange", "red") ,                                #            #
+     main="Proportion of Pleistocene species listed as CR, EN, or VU, 
+modelled without colony diameter, 4.44° resolution",ylim=c(-30,30))
+plot(wo, add=T,col="gray90")
+lines(cor_tri$long,cor_tri$lat,type="l",lwd=1.5)
+
+
+
+### no range size
+resi<-NULL
+for( i in 1:10){
+  result<-imp[,4:17]
+  x<-seq(1,7390,739)
+  y<-seq(739,7390,739)
+  e<-i
+  subs<- result[x[e]:y[e],]
+  subs<-subs[!is.na(subs),]
+  hh<-subset(subs,IUCN.Red.List.category=="DD")
+  subs<-subset(subs,IUCN.Red.List.category!="DD")
+  for(i in c(4,5,8,10,11,14)) hh[,i] = scale(hh[,i])
+  nameshh<-combined[,1]
+  hh<-combined[,-1]
+  hh<-hh[,-10]
+  subs<-subs[1:661,]
+  #subs<-subs[,c(3:16)]
+  #subs<-subs[,1:13]
+  subsScale<-subs
+  subsScale$IUCN.Red.List.category<-droplevels(subsScale$IUCN.Red.List.category)
+  for(i in c(4,5,8,10,11,14)) subsScale[,i] = scale(subsScale[,i])
+  subsScale<-subsScale[,-c(1)]
+  subsScale<-subsScale[,-10]
+  #subsScale<-subsScale[,c(1,2,3,7,8,9,10,13)]
+  set.seed(5645268)
+  series<-1:nrow(subs)
+  #train set
+  #subsScale<-subsScale[,-1]
+  ind<-sample(series,449)
+  bSelect<-!series%in%ind
+  indNeg<-series[bSelect]
+  # cross validation + test set
+  cv_set<-sample(indNeg,106)
+  bSelectc<-!indNeg%in%cv_set
+  test_set<-indNeg[bSelectc]
+  
+  mod <-nnet(IUCN.Red.List.category ~.,data=subsScale,
+             subset=ind, size=20, maxit=10000,trace = T)
+  
+  #PBDB_caribbean_backup<-PBDB_car_calc
+  
+  #PBDB_car_calc<-PBDB_car_calc[,c(1,2,3,6,7,8,9,12)]
+  #combined<-rbind(PBDB_car_calc,PBDB_pac_calc)
+  #zz<-which(duplicated(combined$gensp))
+  #combined<-combined[-zz,]
+  #combined<-combined[,-1]
+  
+  pre<-predict(mod,hh, type="class")
+  
+  resi<-cbind(resi,pre)
+  
+}
+
+tt<-nameshh
+
+tt<-droplevels(tt)
+tt<-as.data.frame(tt)
+resi2<-cbind(resi,tt)
+for(i in 1:10){
+  levels(resi2[,i])[1]<-as.numeric(5)
+  levels(resi2[,i])[2]<-as.numeric(4)
+  levels(resi2[,i])[3]<-as.numeric(1)
+  levels(resi2[,i])[4]<-as.numeric(2)
+  levels(resi2[,i])[5]<-as.numeric(3)
+}
+for( i in 1:10){
+  resi2[,i]<-as.numeric(as.character(resi2[,i]))
+}
+library(matrixStats)
+resi2$mean<-rowMeans(resi2[,1:10])
+resi2$median<-rowMedians(as.matrix(resi2[,1:10]))
+
+colnames(resi2)<-c("run_1","run_2","run_3","run_4","run_5"
+                   ,"run_6","run_7","run_8","run_9","run_10"
+                   ,"species","mean","median")
+
+test<-merge(resi2,PBDB_co,by.x="species",by.y="gensp",all.x=T)
+
+test<-subset(test,genus!="Cladocora")
+test<-subset(test,lat>-30&lat<30)
+#plot from here
+library(icosa)
+testbackup<-test
+#test<-subset(test,species!="Acropora_palmata")
+gLow <- hexagrid(tessellation=c(6,6))
+gLow
+library(rgdal)
+wo <- spTransform(wo, gLow@proj4string)
+gLow<-newsp(gLow)
+pointdat<-cbind(test$long,test$lat)
+cells<-locate(gLow, pointdat)
+fMed<-tapply(INDEX=cells,  X=test$median, function(x){
+  median(x)})
+fl <- facelayer(gLow,NA)
+fl[]<-fMed
+windows(20,10)
+plot(fl, col=c("darkblue", "blue", "yellow", "orange", "red"),
+     main="Median threat status of late Pleistocene corals,
+     modelled without range size, 1.11° resolution")
+plot(wo, add=T,col="gray90")
+lines(cor_tri$long,cor_tri$lat,type="l",lwd=1.5)
+
+
+## fossil traits
+
+resi<-NULL
+for( i in 1:10){
+  result<-imp[,4:17]
+  x<-seq(1,7390,739)
+  y<-seq(739,7390,739)
+  e<-i
+  subs<- result[x[e]:y[e],]
+  subs<-subs[!is.na(subs),]
+  hh<-subset(subs,IUCN.Red.List.category=="DD")
+  subs<-subset(subs,IUCN.Red.List.category!="DD")
+  for(i in c(4,5,8,10,11,14)) hh[,i] = scale(hh[,i])
+  nameshh<-combined_names
+  hh<-combined[,-1]
+  hh<-hh[,c(1,2,6,7,8,9,12)]
+  subs<-subs[1:661,]
+  #subs<-subs[,c(3:16)]
+  #subs<-subs[,1:13]
+  subsScale<-subs
+  subsScale$IUCN.Red.List.category<-droplevels(subsScale$IUCN.Red.List.category)
+  for(i in c(4,5,8,10,11,14)) subsScale[,i] = scale(subsScale[,i])
+  subsScale<-subsScale[,-c(1)]
+  subsScale<-subsScale[,c(1,2,3,7,8,9,10,13)]
+  #subsScale<-subsScale[,c(1,2,3,7,8,9,10,13)]
+  set.seed(7034109)
+  series<-1:nrow(subs)
+  #train set
+  #subsScale<-subsScale[,-1]
+  ind<-sample(series,449)
+  bSelect<-!series%in%ind
+  indNeg<-series[bSelect]
+  # cross validation + test set
+  cv_set<-sample(indNeg,106)
+  bSelectc<-!indNeg%in%cv_set
+  test_set<-indNeg[bSelectc]
+  
+  mod <-nnet(IUCN.Red.List.category ~.,data=subsScale,
+             subset=ind, size=20, maxit=10000,trace = T)
+  
+  #PBDB_caribbean_backup<-PBDB_car_calc
+  
+  #PBDB_car_calc<-PBDB_car_calc[,c(1,2,3,6,7,8,9,12)]
+  #combined<-rbind(PBDB_car_calc,PBDB_pac_calc)
+  #zz<-which(duplicated(combined$gensp))
+  #combined<-combined[-zz,]
+  #combined<-combined[,-1]
+  
+  pre<-predict(mod,hh, type="class")
+  
+  resi<-cbind(resi,pre)
+  
+}
+
+tt<-nameshh
+
+tt<-droplevels(tt)
+tt<-as.data.frame(tt)
+resi2<-cbind(resi,tt)
+for(i in 1:10){
+  levels(resi2[,i])[1]<-as.numeric(5)
+  levels(resi2[,i])[2]<-as.numeric(4)
+  levels(resi2[,i])[3]<-as.numeric(1)
+  levels(resi2[,i])[4]<-as.numeric(2)
+  levels(resi2[,i])[5]<-as.numeric(3)
+}
+for( i in 1:10){
+  resi2[,i]<-as.numeric(as.character(resi2[,i]))
+}
+library(matrixStats)
+resi2$mean<-rowMeans(resi2[,1:10])
+resi2$median<-rowMedians(as.matrix(resi2[,1:10]))
+
+colnames(resi2)<-c("run_1","run_2","run_3","run_4","run_5"
+                   ,"run_6","run_7","run_8","run_9","run_10"
+                   ,"species","mean","median")
+q<-strsplit(as.character(PBDB_co$gensp) ," ")
+w<-lapply(q,function(x) paste(x,collapse = "_"))
+nam<-as.vector(unlist(w))
+nam<-as.vector(nam)
+PBDB_co$gensp<-nam
+colnames(PBDB_co)<-c("gensp","long","lat")
+test<-merge(resi2,PBDB_co,by.x="species",by.y="gensp",all.x=T)
+
+test<-subset(test,genus!="Cladocora")
+test<-subset(test,lat>-30&lat<30)
+#plot from here
+library(icosa)
+testbackup<-test
+#test<-subset(test,species!="Acropora_palmata")
+gLow <- hexagrid(tessellation=c(3,3))
+gLow
+library(rgdal)
+wo <- spTransform(wo, gLow@proj4string)
+gLow<-newsp(gLow)
+pointdat<-cbind(test$long,test$lat)
+cells<-locate(gLow, pointdat)
+fMed<-tapply(INDEX=cells,  X=test$median, function(x){
+  median(x)})
+fl <- facelayer(gLow,NA)
+fl[]<-fMed
+windows(20,10)
+plot(fl, col=c("darkblue", "blue", "yellow", "orange", "red"),
+     main="Median threat status of late Pleistocene corals,
+modelled with preservable traits, 4.44° resolution")
+
+plot(wo, add=T,col="gray90")
+lines(cor_tri$long,cor_tri$lat,type="l",lwd=1.5)
+
+fl[c("F176")]   <-c(5)
+
+###### prepare scatterplots
+
+View(imp)
+rep(1:10,each=10)
+grep<-imp[,c(1:14)]
+grep$imp<-rep(1:10,each=739)
+grep<-subset(grep,IUCN.Red.List.category!="DD")
+grep<-droplevels(grep)
+levels(grep[,2])[1]<-as.numeric(5)
+levels(grep[,2])[2]<-as.numeric(4)
+levels(grep[,2])[3]<-as.numeric(1)
+levels(grep[,2])[4]<-as.numeric(2)
+levels(grep[,2])[5]<-as.numeric(3)
+
+## just 0 and 1
+levels(grep[,2])[3]<-as.numeric(0)
+levels(grep[,2])[4]<-as.numeric(0)
+levels(grep[,2])[1]<-as.numeric(1)
+levels(grep[,2])[2]<-as.numeric(1)
+levels(grep[,2])[3]<-as.numeric(1)
+
+#####
+
+
+
+levels(grep[,3])[1]<-as.numeric(1)
+levels(grep[,3])[2]<-as.numeric(0)
+levels(grep[,6])[1]<-as.numeric(1)
+levels(grep[,6])[2]<-as.numeric(0)
+levels(grep[,7])[1]<-as.numeric(0)
+levels(grep[,7])[2]<-as.numeric(1)
+levels(grep[,9])[1]<-as.numeric(1)
+levels(grep[,9])[2]<-as.numeric(0)
+levels(grep[,12])[1]<-as.numeric(1)
+levels(grep[,12])[2]<-as.numeric(0)
+levels(grep[,13])[1]<-as.numeric(0)
+levels(grep[,13])[2]<-as.numeric(1)
+
+grep[,2]<-as.numeric(as.character(grep[,2]))
+grep[,3]<-as.numeric(as.character(grep[,3]))
+grep[,6]<-as.numeric(as.character(grep[,6]))
+grep[,7]<-as.numeric(as.character(grep[,7]))
+grep[,9]<-as.numeric(as.character(grep[,9]))
+grep[,12]<-as.numeric(as.character(grep[,12]))
+grep[,13]<-as.numeric(as.character(grep[,13]))
+
+
+grep$imp<-rep(1:10,each=10)
+
+zz<-NULL
+for( i in 1:10){
+
+  grep1<-subset(grep,imp==i)
+  
+a<-cor.test(grep1[,2],grep1[,3],method="spearm")
+b<-cor.test(grep1[,2],grep1[,4],method="spearm")
+c<-cor.test(grep1[,2],grep1[,5],method="spearm")
+d<-cor.test(grep1[,2],grep1[,6],method="spearm")
+e<-cor.test(grep1[,2],grep1[,7],method="spearm")
+f<-cor.test(grep1[,2],grep1[,8],method="spearm")
+g<-cor.test(grep1[,2],grep1[,9],method="spearm")
+h<-cor.test(grep1[,2],grep1[,10],method="spearm")
+n<-cor.test(grep1[,2],grep1[,11],method="spearm")
+j<-cor.test(grep1[,2],grep1[,12],method="spearm")
+k<-cor.test(grep1[,2],grep1[,13],method="spearm")
+l<-cor.test(grep1[,2],grep1[,14],method="spearm")
+
+aa<-cbind(a$estimate,a$p.value)
+bb<-cbind(b$estimate,b$p.value)
+cc<-cbind(c$estimate,c$p.value)
+dd<-cbind(d$estimate,d$p.value)
+ee<-cbind(e$estimate,e$p.value)
+ff<-cbind(f$estimate,f$p.value)
+gg<-cbind(g$estimate,g$p.value)
+hh<-cbind(h$estimate,h$p.value)
+nn<-cbind(n$estimate,n$p.value)
+jj<-cbind(j$estimate,j$p.value)
+kk<-cbind(k$estimate,k$p.value)
+ll<-cbind(l$estimate,l$p.value)
+
+asa<-rbind(aa,bb,cc,dd,ee,ff,gg,hh,nn,jj,kk,ll)
+zz<-cbind(zz,asa)
+
+}
+
+summary(zz[7,seq(1,19,2)])
+summary(zz[7,seq(2,20,2)])
+sd(zz[7,seq(1,19,2)])
+
+iii<-subset(grep,imp==5)
+## polynomial
+y<-iii[,11]
+x<-iii[,2]
+#fit first degree polynomial equation:
+fit  <- lm(y~x)
+#second degree
+fit2 <- lm(y~poly(x,2,raw=TRUE))
+#third degree
+fit3 <- lm(y~poly(x,3,raw=TRUE))
+#fourth degree
+fit4 <- lm(y~poly(x,4,raw=TRUE))
+#generate range of 50 numbers starting from 30 and ending at 160
+xx<-seq(1,length(x),1)
+plot(x,y,pch=19,ylim=c(0,max(y)))
+lines(xx, predict(fit, data.frame(x=xx)), col="red")
+lines(xx, predict(fit2, data.frame(x=xx)), col="green")
+lines(xx, predict(fit3, data.frame(x=xx)), col="blue")
+lines(xx, predict(fit4, data.frame(x=xx)), col="purple")
+
+####
+
+iii<-subset(grep,imp==2)
+
+(y1.fit <- loess.as(backi[,2], backi[,3], plot=TRUE,
+                    criterion = c("aicc"),family = c("gaussian", "symmetric")))
+
+
+
+###
+plot(iii[,2], iii[,11]/100000,pch=1
+     ,ylab="Range size/100000 [km^2]",xlab="IUCN threat category",col="gray78"
+     ,main="Range size ~ IUCN status",cex=1.5)
+lines(loess.smooth(iii[,2], iii[,11]/100000,span=0.6063085),lwd=3)
+####
+plot(iii[,2], iii[,3],pch=1
+     ,ylab="Growth form (Veron)",xlab="IUCN threat category",col="gray78"
+     ,main="Growth form (Veron) ~ IUCN status",cex=1.5)
+lines(loess.smooth(iii[,2], iii[,3],span=0.7437665),lwd=3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+loess.ancova(grep[,2], grep[,11], degree = 2, criterion = c("aicc", "gcv"),
+             family = c("gaussian", "symmetric"), method=c("Speckman", "Backfitting"),
+             iter = 10, tol = 0.01, user.span = NULL, plot = FALSE,
+             data.points = FALSE, legend.position = "topright")
+###
+plot(iii[,2], iii[,11]/100000,pch=1
+     ,ylab="range size/100000 [km^2]",xlab="IUCN threat category",col="gray78"
+   ,main="Range size ~ IUCN status",cex=1.5)
+lines(loess.smooth(iii[,2], iii[,11]/100000,span=0.6063085),lwd=3)
+
+
+
+
+
+#lines(loess.smooth(iii[,3], iii[,1],span=0.3),col="red")
+#lines(loess.smooth(iii[,3], iii[,1],span=0.8),col="blue")
+
+## Fit semiparametric ANCOVA model
+library(stats,quietly = T)
+library(ggplot2,quietly = T)
+library(fANCOVA,quietly = T)
+FTSE_close <- EuStockMarkets[,4]
+Index <- seq(1, length(FTSE_close), by = 1)
+FTSE.lm <- lm(FTSE_close ~ Index, data = EuStockMarkets)
+FTSE.lm.predict <- predict(FTSE.lm,  data.frame(Index=Index))
+FTSE.lo <- loess(FTSE_close ~ Index, data = EuStockMarkets)
+FTSE.lo.predict <- predict(FTSE.lo, data.frame(Index=Index), span = 0.3)
+
+FTSE.lo3 <- loess.as(Index, FTSE_close, degree = 1,
+                     criterion = c("aicc", "gcv")[2],
+                     user.span = NULL, plot = T)
+FTSE.lo.predict3 <- predict(FTSE.lo3, data.frame(Index=Index))
+##########
+
+x <- grep[,1]
+y <- grep[,2]
+group <- grep[,6]
+data<-as.data.frame(cbind(x,y,group))
+data1<-subset(data,group==1|group==2)
+xx<-loess.ancova(data1[,1],data1[,2],group=data1[,3], plot=TRUE, data.points=TRUE)
+
+plot(data1[,1],data1[,4])
+lines(loess.smooth(data1[,1],data1[,2],span=0.606))
+
+
+
+# generalized linear mixed effect models
+hdp <- read.csv("https://stats.idre.ucla.edu/stat/data/hdp.csv")
+hdp <- within(hdp, {
+  Married <- factor(Married, levels = 0:1, labels = c("no", "yes"))
+  DID <- factor(DID)
+  HID <- factor(HID)
+})
+m <- glmer(remission ~ IL6 + CRP + CancerStage + LengthofStay + Experience +
+             (1 | DID), data = hdp, family = binomial, control = glmerControl(optimizer = "bobyqa"),
+           nAGQ = 10)
+
+# print the mod results without correlations among fixed effects
+print(m, corr = T)
+
+
+
+View(imp)
+
+### start here
+hdp<-imp
+hdp <- imp[1:739+4*739,]
+hdp<-hdp[,3:16]
+imps<-hdp
+# growth Veron
+imps$Growth.form.Veron<-as.character(imps$Growth.form.Veron)
+imps[imps$Growth.form.Veron == "massive",]$Growth.form.Veron = 1
+imps[imps$Growth.form.Veron == "not massive",]$Growth.form.Veron = 0
+imps$Growth.form.Veron<-as.numeric(imps$Growth.form.Veron)
+
+# growth typical
+imps$Growth.form.typical<-as.character(imps$Growth.form.typical)
+imps[imps$Growth.form.typical == "massive",]$Growth.form.typical = 1
+imps[imps$Growth.form.typical == "not massive",]$Growth.form.typical = 0
+imps$Growth.form.typical<-as.numeric(imps$Growth.form.typical)
+
+# symbiont clade
+imps$Symbiodinium.clade<-as.character(imps$Symbiodinium.clade)
+imps[imps$Symbiodinium.clade == "D",]$Symbiodinium.clade = 1
+imps[imps$Symbiodinium.clade == "not D",]$Symbiodinium.clade = 0
+imps$Symbiodinium.clade<-as.numeric(imps$Symbiodinium.clade)
+
+# larval development
+imps$Mode.of.larval.development<-as.character(imps$Mode.of.larval.development)
+imps[imps$Mode.of.larval.development == "spawner",]$Mode.of.larval.development = 1
+imps[imps$Mode.of.larval.development == "brooder",]$Mode.of.larval.development = 0
+imps$Mode.of.larval.development<-as.numeric(imps$Mode.of.larval.development)
+
+# sym in prop
+imps$Symbiodinium.sp..in.propagules<-as.character(imps$Symbiodinium.sp..in.propagules)
+imps[imps$Symbiodinium.sp..in.propagules == "sip",]$Symbiodinium.sp..in.propagules = 1
+imps[imps$Symbiodinium.sp..in.propagules == "snip",]$Symbiodinium.sp..in.propagules = 0
+imps$Symbiodinium.sp..in.propagules<-as.numeric(imps$Symbiodinium.sp..in.propagules)
+# life history strategy
+imps$Life.history.strategy<-as.character(imps$Life.history.strategy)
+imps[imps$Life.history.strategy == "tolerant",]$Life.history.strategy = 1
+imps[imps$Life.history.strategy == "not tolerant",]$Life.history.strategy = 0
+imps$Life.history.strategy<-as.numeric(imps$Life.history.strategy)
+
+## water depth
+imps[imps$Water.depth <=20,]$Water.depth = 0
+imps[imps$Water.depth >20,]$Water.depth = 1
+
+# lowermost water depth
+imps[imps$Depth.lower <= 20,]$Depth.lower = 0
+imps[imps$Depth.lower >20,]$Depth.lower = 1
+
+# or 
+## water depth
+#imps[imps$Water.depth < summary(imps$Water.depth)[3],]$Water.depth = 0
+#imps[imps$Water.depth != 0,]$Water.depth = 1
+
+# lowermost water depth
+#imps[imps$Depth.lower < summary(imps$Depth.lower)[3],]$Depth.lower = 0
+#imps[imps$Depth.lower != 0,]$Depth.lower = 1
+
+
+# col diameter
+imps[imps$Colony.maximum.diameter < summary(imps$Colony.maximum.diameter)[3],]$Colony.maximum.diameter = 0
+imps[imps$Colony.maximum.diameter != 0,]$Colony.maximum.diameter = 1
+
+# corallite diameter
+imps[imps$Corallite.width.maximum < summary(imps$Corallite.width.maximum)[3],]$Corallite.width.maximum = 0
+imps[imps$Corallite.width.maximum != 0,]$Corallite.width.maximum = 1
+
+# range size
+imps[imps$Range.size < summary(imps$Range.size)[3],]$Range.size = 0
+imps[imps$Range.size != 0,]$Range.size = 1
+
+# growth rate
+imps[imps$Growth.rate < summary(imps$Growth.rate)[3],]$Growth.rate = 1
+imps[imps$Growth.rate != 1,]$Growth.rate = 0
+
+hdp<-imps
+
+levels(hdp$IUCN.Red.List.category)[1]<-as.numeric(1)
+levels(hdp$IUCN.Red.List.category)[3]<-as.numeric(1)
+levels(hdp$IUCN.Red.List.category)[3]<-as.numeric(0)
+levels(hdp$IUCN.Red.List.category)[4]<-as.numeric(0)
+levels(hdp$IUCN.Red.List.category)[4]<-as.numeric(1)
+
+levels(hdp$IUCN.Red.List.category)[1]<-as.numeric(5)
+levels(hdp$IUCN.Red.List.category)[3]<-as.numeric(4)
+levels(hdp$IUCN.Red.List.category)[4]<-as.numeric(1)
+levels(hdp$IUCN.Red.List.category)[5]<-as.numeric(2)
+levels(hdp$IUCN.Red.List.category)[6]<-as.numeric(3)
+
+
+hdp<-subset(hdp,IUCN.Red.List.category!="DD")
+hdp$IUCN.Red.List.category<-as.numeric(as.character(hdp$IUCN.Red.List.category))
+m <- glmer(IUCN.Red.List.category ~ scale(Range.size)+scale(Water.depth)+scale(Depth.lower)
+             +scale(Colony.maximum.diameter)+
+             +scale(Corallite.width.maximum)
+             +scale(Growth.rate)+(1|Taxa)
+             , data = hdp,verbose=3, family = binomial, control = 
+             glmerControl(optimizer = "bobyqa"),
+           nAGQ = 80,na.action=na.omit)
+
+summary(m)
+library(MASS)
+PQL <- glmmPQL(IUCN.Red.List.category ~ scale(Range.size)+scale(Water.depth)+scale(Depth.lower)
+               +scale(Colony.maximum.diameter)+
+                 +scale(Corallite.width.maximum)
+               +scale(Growth.rate)+ Growth.form.Veron +Symbiodinium.clade +
+                 Mode.of.larval.development+ Growth.form.typical+Symbiodinium.sp..in.propagules
+               +Life.history.strategy ,~1|Taxa, family = gaussian,
+               data = hdp, verbose = FALSE)
+PQL <- glmmPQL(IUCN.Red.List.category ~ Range.size+Water.depth+Depth.lower
+               +Colony.maximum.diameter+
+                 +Corallite.width.maximum
+               +Growth.rate+ Growth.form.Veron +Symbiodinium.clade +
+                 Mode.of.larval.development+ Growth.form.typical+Symbiodinium.sp..in.propagules
+               +Life.history.strategy ,~1|Taxa, family = gaussian,
+               data = hdp, verbose = FALSE)
+levels(hdp$IUCN.Red.List.category)[1]<-as.numeric(5)
+levels(hdp$IUCN.Red.List.category)[3]<-as.numeric(4)
+levels(hdp$IUCN.Red.List.category)[4]<-as.numeric(1)
+levels(hdp$IUCN.Red.List.category)[5]<-as.numeric(2)
+levels(hdp$IUCN.Red.List.category)[6]<-as.numeric(3)
+
+
+hdp<-subset(hdp,IUCN.Red.List.category!="DD")
+hdp$IUCN.Red.List.category<-as.numeric(as.character(hdp$IUCN.Red.List.category))
+
+for ( i in 0:9){
+  hdp <- imp[1:739+i*739,3:16]
+  
+  levels(hdp$IUCN.Red.List.category)[1]<-as.numeric(5)
+  levels(hdp$IUCN.Red.List.category)[3]<-as.numeric(4)
+  levels(hdp$IUCN.Red.List.category)[4]<-as.numeric(1)
+ levels(hdp$IUCN.Red.List.category)[5]<-as.numeric(2)
+ levels(hdp$IUCN.Red.List.category)[6]<-as.numeric(3)
+  hdp<-subset(hdp,IUCN.Red.List.category!="DD")
+  hdp$IUCN.Red.List.category<-as.numeric(as.character(hdp$IUCN.Red.List.category))
+
+
+PQL <- glmmPQL(IUCN.Red.List.category ~ scale(Range.size)+
+                 scale(Water.depth)+scale(Depth.lower)
+               +scale(Colony.maximum.diameter)+
+                 +scale(Corallite.width.maximum)
+               + Growth.form.Veron +Symbiodinium.clade+ Growth.form.typical ,~1|Taxa, family = gaussian,
+               data = hdp, verbose = FALSE,niter = 100)
+
+l<-summary(PQL)
+k<-list(k,l)
+q<-r2beta(PQL, partial =F, method = "sgv")
+qq<-q$Rsq
+qqq<-rbind(qqq,qq)
+}
+###
+#test for colinearity
+vif(hdp)
+############ multinomila
+V1<-diag(2)
+V2<-1
+prior<-list(R=list(V=V1, nu=0.002), G=list(G1=list(V=V2, nu=0.002)))
+prior = list(R = list(V = 1, n = 0, fix = 1), G = list(G1 = list(V =  
+                     1,n = 0)))
+prior = list(R = list(V = 1, n = 0, fix = 1), 
+G = list(G1 = list(V =1,n = 1), G2 = list(V = 1,n = 1),
+         G3 = list(V = 1,n = 1)))
+
+
+
+test<-MCMCglmm(IUCN.Red.List.category~ scale(Range.size)+
+                 scale(Water.depth)+scale(Depth.lower)
+               +scale(Colony.maximum.diameter)+
+                 +scale(Corallite.width.maximum)
+               + Growth.form.Veron +Symbiodinium.clade+
+                 Growth.form.typical-1,
+        random= ~Taxa,family = "categorical",data = hdp)
+####
+ll<-imp[1:661,]
+autocorr(imp$IUCN.Red.List.category)
+
+
+
+
+
+
++t<-step(test)
+PseudoR2(t,which="all")
+z <- summary(t)$coefficients/summary(t)$standard.errors
+p <- (1 - pnorm(abs(ll), 0, 1)) * 2
+
+
+
+#multicollinearity
+vifstep(hdp,th=0.4)
+vifcor(vardata,th=10)
+
+
+
+#############
+m <- MCMCglmm(IUCN.Red.List.category ~ scale(Range.size)+
+             scale(Water.depth)+scale(Depth.lower)
+           +scale(Colony.maximum.diameter)+
+             +scale(Corallite.width.maximum)
+         + Growth.form.Veron +Symbiodinium.clade +
+             Mode.of.larval.development+ Growth.form.typical
+            +(1|Taxa), data = hdp, 
+          family = binomial, control = glmerControl(optimizer = "bobyqa"),
+           nAGQ = 10)
+
+r2beta(m, partial =F, method = "sgv",data=hdp)
+
+
+sink("X:/PQL_raw_raw.txt")
+k
+sink()
+
+
+
+
+hdp<-subset(hdp,IUCN.Red.List.category!="DD")
+hdp$IUCN.Red.List.category<-droplevels(hdp$IUCN.Red.List.category)
+levels(hdp$IUCN.Red.List.category)[1]<-5
+levels(hdp$IUCN.Red.List.category)[2]<-4
+levels(hdp$IUCN.Red.List.category)[3]<-1
+levels(hdp$IUCN.Red.List.category)[4]<-2
+levels(hdp$IUCN.Red.List.category)[5]<-3
+hdp$IUCN.Red.List.category<-as.numeric(as.character(hdp$IUCN.Red.List.category))
+qqp(hdp$IUCN.Red.List.category,"lnorm")
+
+nbinom <- fitdistr(hdp$IUCN.Red.List.category, "Negative Binomial")
+qqp(hdp$IUCN.Red.List.category, "nbinom", size = nbinom$estimate[[1]], mu = nbinom$estimate[[2]])
+
+poisson <- fitdistr(hdp$IUCN.Red.List.category, "Poisson")
+qqp(hdp$IUCN.Red.List.category, "pois", poisson$estimate)
+
+gamma <- fitdistr(hdp$IUCN.Red.List.category, "gamma")
+qqp(hdp$IUCN.Red.List.category, "gamma", shape = gamma$estimate[[1]], rate = gamma$estimate[[2]])
+
+##################
+hdp <- read.csv("https://stats.idre.ucla.edu/stat/data/hdp.csv")
+hdp <- within(hdp, {
+  Married <- factor(Married, levels = 0:1, labels = c("no", "yes"))
+  DID <- factor(DID)
+  HID <- factor(HID)
+})
+
+m <- glmer(remission ~ IL6 + CRP + CancerStage + LengthofStay + Experience +
+             (1 | DID), data = hdp, family = binomial, control = glmerControl(optimizer = "bobyqa"),
+           nAGQ = 10)
+m3a <- glmer(remission ~ Age + LengthofStay + FamilyHx + IL6 + CRP +
+               CancerStage + Experience + (1 | DID) + (1 | HID),
+             data = hdp, family = binomial, nAGQ=1)
+summary(m)
+
+
+hdp<-subset(hdp,IUCN.Red.List.category!=0)
+hdp$IUCN.Red.List.category<-droplevels(hdp$IUCN.Red.List.category)
+
+levels(hdp$IUCN.Red.List.category)[1]<-as.numeric(5)
+levels(hdp$IUCN.Red.List.category)[2]<-as.numeric(4)
+levels(hdp$IUCN.Red.List.category)[3]<-as.numeric(1)
+levels(hdp$IUCN.Red.List.category)[4]<-as.numeric(2)
+levels(hdp$IUCN.Red.List.category)[5]<-as.numeric(3)
+
+
+levels(hdp$Growth.form.Veron)[1]<-as.numeric(1)
+levels(hdp$Growth.form.Veron)[2]<-as.numeric(0)
+levels(hdp$Growth.form.typical)[1]<-as.numeric(1)
+levels(hdp$Growth.form.typical)[2]<-as.numeric(0)
+hdp$Growth.form.Veron<-as.numeric(as.character(hdp$Growth.form.Veron))
+hdp$Growth.form.typical<-as.numeric(as.character(hdp$Growth.form.typical))
+
+m <- glmer(IUCN.Red.List.category ~ Growth.form.Veron 
+             + scale(Range.size )+ scale(Water.depth) 
+           + scale(Depth.lower) 
+             +Growth.form.typical+(1|Taxa)
+           , data = hdp, family = gaussian, control = glmerControl(optimizer = "bobyqa"),
+           nAGQ = 10,na.action=na.omit)
+
+summary(m)
+
+# print the mod results without correlations among fixed effects
+print(m, corr = FALSE)
+se <- sqrt(diag(vcov(m)))
+# table of estimates with 95% CI
+(tab <- cbind(Est = fixef(m), LL = fixef(m) - 1.96 * se, UL = fixef(m) + 1.96 *
+                se))
+exp(tab)
+
+sampler <- function(dat, clustervar, replace = TRUE, reps = 1) {
+  cid <- unique(dat[, clustervar[1]])
+  ncid <- length(cid)
+  recid <- sample(cid, size = ncid * reps, replace = TRUE)
+  if (replace) {
+    rid <- lapply(seq_along(recid), function(i) {
+      cbind(NewID = i, RowID = sample(which(dat[, clustervar] == recid[i]),
+                                      size = length(which(dat[, clustervar] == recid[i])), replace = TRUE))
+    })
+  } else {
+    rid <- lapply(seq_along(recid), function(i) {
+      cbind(NewID = i, RowID = which(dat[, clustervar] == recid[i]))
+    })
+  }
+  dat <- as.data.frame(do.call(rbind, rid))
+  dat$Replicate <- factor(cut(dat$NewID, breaks = c(1, ncid * 1:reps), include.lowest = TRUE,
+                              labels = FALSE))
+  dat$NewID <- factor(dat$NewID)
+  return(dat)
+}
+
+set.seed(20)
+tmp <- sampler(hdp, "Taxa", reps = 100)
+bigdata <- cbind(tmp, hdp[tmp$RowID, ])
+
+f <- fixef(m)
+r <- getME(m, "theta")
+
+cl <- makeCluster(8)
+clusterExport(cl, c("bigdata", "f", "r"))
+clusterEvalQ(cl, require(lme4))
+
+myboot <- function(i) {
+  object <- try(glmer(IUCN.Red.List.category ~ Growth.form.Veron 
+                      + scale(Range.size )+ scale(Water.depth) 
+                      + scale(Depth.lower) 
+                      +Growth.form.typical+(1|Taxa), data = bigdata, subset = Replicate == i, family = binomial,
+                      nAGQ = 1, start = list(fixef = f, theta = r)), silent = TRUE)
+  if (class(object) == "try-error")
+    return(object)
+  c(fixef(object), getME(object, "theta"))
+}
+
+start <- proc.time()
+res <- parLapplyLB(cl, X = levels(bigdata$Replicate), fun = myboot)
+end <- proc.time()
+
+# shut down the cluster
+stopCluster(cl)
+
+success <- sapply(res, is.numeric)
+mean(success)
+
+
+
+# combine successful results
+bigres <- do.call(cbind, res[success])
+
+# calculate 2.5th and 97.5th percentiles for 95% CI
+(ci <- t(apply(bigres, 1, quantile, probs = c(0.025, 0.975))))
+
+##############
+h<-NULL
+for ( i in 1:length(hh[,1])){
+  g<-hh[i,]
+  gg<-length(which(is.na(g)))
+  h<-rbind(h,gg)
+}
+
+
+
+#####################
+imp<-imp[,3:16]
+#how much do they differ
+lll<-NULL
+jlj<-NULL
+for ( i in 1:length(unique(imp$Taxa))){
+
+      tt<-imp[seq(i,6651+i,739),]
+      
+       for ( j in 3:14){
+         
+            jj<-tt[,j]         
+          ll<-max(table(jj))
+         lll<-cbind(lll,ll)
+       }
+      jlj<-rbind(jlj,lll)  
+      lll<-NULL
+      cat(i, "\r")
+      flush.console() 
+}
+
+result<-jlj
+colnames(result)<-colnames(imp[3:14])
+rownames(result)<-imp[1:739,1]
+View(result)
+##
+lll<-NULL
+jlj<-NULL
+h<-c(4,5,8,10,11)
+for ( i in 1:length(unique(imp$Taxa))){
+  
+  tt<-imp[seq(i,6651+i,739),]
+  
+  for ( j in 1:5){
+    
+    jj<-tt[,h[j]]         
+    ll<-jj/mean(jj)#/mean(jj))
+      lll<-cbind(lll,ll)
+  }
+  jlj<-rbind(jlj,lll)  
+  lll<-NULL
+  cat(i, "\r")
+  flush.console() 
+}
+
+boxplot(jlj[,1],jlj[,2],jlj[,3],jlj[,4],jlj[,5],names=c("Water depth",
+"Lowermost water depth","Colony diameter","Corallite width","Range size")
+,
+main="Variation of numeric trait values between imputations runs")
+
+mtext("Trait value/mean of trait value",side=2,outer=F,adj=1,line=2,padj=0,at=6) 
+
+
+
+plot(sort(result[,2],decreasing = T),
+     xlab="",ylab="",
+     main="Water depth")
+plot(sort(result[,3],decreasing = T),
+     xlab="",ylab="",
+     main="Depth lowermost")
+
+plot(sort(result[,6],decreasing = T),
+     xlab="",ylab="",
+     main="Colony maximum diameter")
+
+plot(sort(result[,8],decreasing = T),
+     xlab="",ylab="",
+     main="Corallite width maximum")
+plot(sort(result[,9],decreasing = T),
+     xlab="",ylab="",
+     main="Range size")
+
+plot(sort(result[,12],decreasing = T),
+     xlab="Number of species",ylab="",
+     main="Growth rate")
+
+#######
+windows(6,6)
+op <- par(mfrow=c(3,2))
+barplot(c(length(which(result[,1]==10)),
+        length(which(result[,1]==9)),
+        length(which(result[,1]==8)),
+        length(which(result[,1]==7)),
+        length(which(result[,1]==6)),
+        length(which(result[,1]==5)),
+        length(which(result[,1]==4)),
+        length(which(result[,1]==3)),
+        length(which(result[,1]==2))),
+    ylab="Number of species",xaxt="n",
+     main="Growth form Veron",ylim=c(0,700),beside=T,space=c(0,0),col="white")
+axis(1,at=seq(0.5,8.5,1), labels=seq(10,2,-1))
+#
+barplot(c(length(which(result[,4]==10)),
+          length(which(result[,4]==9)),
+          length(which(result[,4]==8)),
+          length(which(result[,4]==7)),
+          length(which(result[,4]==6)),
+          length(which(result[,4]==5)),
+          length(which(result[,4]==4)),
+          length(which(result[,4]==3)),
+          length(which(result[,4]==2))),
+        ylab="",xaxt="n",
+        main="Symbiodinium clade",ylim=c(0,400),beside=T,space=c(0,0),col="white")
+axis(1,at=seq(0.5,8.5,1), labels=seq(10,2,-1),line=F)
+##
+barplot(c(length(which(result[,5]==10)),
+          length(which(result[,5]==9)),
+          length(which(result[,5]==8)),
+          length(which(result[,5]==7)),
+          length(which(result[,5]==6)),
+          length(which(result[,5]==5)),
+          length(which(result[,5]==4)),
+          length(which(result[,5]==3)),
+          length(which(result[,5]==2))),
+        ylab="Number of species",xaxt="n",
+        main="Mode of larval development",ylim=c(0,500),beside=T,space=c(0,0),col="white")
+axis(1,at=seq(0.5,8.5,1), labels=seq(10,2,-1))
+#
+barplot(c(length(which(result[,10]==10)),
+          length(which(result[,10]==9)),
+          length(which(result[,10]==8)),
+          length(which(result[,10]==7)),
+          length(which(result[,10]==6)),
+          length(which(result[,10]==5)),
+          length(which(result[,10]==4)),
+          length(which(result[,10]==3)),
+          length(which(result[,10]==2))),
+        ylab="",xaxt="n",
+        main="Symbiodinium sp. in propagules",ylim=c(0,200),beside=T,space=c(0,0),col="white")
+axis(1,at=seq(0.5,8.5,1), labels=seq(10,2,-1),line=F)
+
+barplot(c(length(which(result[,11]==10)),
+          length(which(result[,11]==9)),
+          length(which(result[,11]==8)),
+          length(which(result[,11]==7)),
+          length(which(result[,11]==6)),
+          length(which(result[,11]==5)),
+          length(which(result[,11]==4)),
+          length(which(result[,11]==3)),
+          length(which(result[,11]==2))),
+        ylab="Number of species",xaxt="n",xlab="Number of identical imputation results",
+        main="Life history strategy",ylim=c(0,400),beside=T,space=c(0,0),col="white")
+axis(1,at=seq(0.5,8.5,1), labels=seq(10,2,-1),line=F)
+##
+barplot(c(length(which(result[,7]==10)),
+          length(which(result[,7]==9)),
+          length(which(result[,7]==8)),
+          length(which(result[,7]==7)),
+          length(which(result[,7]==6)),
+          length(which(result[,7]==5)),
+          length(which(result[,7]==4)),
+          length(which(result[,7]==3)),
+          length(which(result[,7]==2))),
+        xaxt="n",xlab="Number of identical imputation results",
+        main="Growth form typical",ylim=c(0,800),beside=T,space=c(0,0),col="white")
+axis(1,at=seq(0.5,8.5,1), labels=seq(10,2,-1))
+par(op)
+
+par(mfrow=c(1,1))
+###boxplots
+boxplot(result[,2],result[,3],result[,6],result[,8],result[,9],
+     xlab="",ylab="",
+     main="Water depth")
+
+plot(sort(result[,3],decreasing = T),
+     xlab="",ylab="",
+     main="Depth lowermost")
+
+plot(sort(result[,6],decreasing = T),
+     xlab="",ylab="",
+     main="Colony maximum diameter")
+
+plot(sort(result[,8],decreasing = T),
+     xlab="",ylab="",
+     main="Corallite width maximum")
+plot(sort(result[,9],decreasing = T),
+     xlab="",ylab="",
+     main="Range size")
+
+plot(sort(result[,12],decreasing = T),
+     xlab="Number of species",ylab="",
+     main="Growth rate")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#barplot(c(length(which(result[,1]==10)),
+length(which(result[,1]==9)),
+length(which(result[,1]==8)),
+length(which(result[,1]==7)),
+length(which(result[,1]==6)),
+length(which(result[,1]==5)),
+length(which(result[,1]==4)),
+length(which(result[,1]==3)),
+length(which(result[,1]==2))),
+ylab="Number of species",xaxt="n",
+main="Growth form Veron",beside=T,space=c(0,0),col="white")
+axis(1,at=seq(0.5,8.5,1), labels=seq(10,2,-1))
+#
+barplot(c(length(which(result[,4]==10)),
+          length(which(result[,4]==9)),
+          length(which(result[,4]==8)),
+          length(which(result[,4]==7)),
+          length(which(result[,4]==6)),
+          length(which(result[,4]==5)),
+          length(which(result[,4]==4)),
+          length(which(result[,4]==3)),
+          length(which(result[,4]==2))),
+        ylab="",xaxt="n",
+        main="Symbiodinium clade",beside=T,space=c(0,0),col="white")
+axis(1,at=seq(0.5,8.5,1), labels=seq(10,2,-1),line=F)
+#
+
+
+plot(sort(result[,4],decreasing = T),
+     ylab="Number of identical imputation results",xlab="",
+     main="Symbiodinium clade")
+plot(sort(result[,5],decreasing = T),
+     xlab="",ylab="",
+     main="Mode of larval development")
+plot(sort(result[,10],decreasing = T),
+     xlab="Number of species",ylab="Number of identical imputation results",
+     main="Symbiodinium sp. in propagules")
+plot(sort(result[,11],decreasing = T),
+     xlab="Number of species",ylab="",
+     main="Life history strategy")
+plot(sort(result[,7],decreasing = T),
+     ylab="Number of identical imputation results",xlab="",
+     main="Growth form typical")
+
+
+
+#### 
+# test for multicollinearity
+vif(lm(IUCN.Red.List.category~Growth.form.Veron+Water.depth
+       +Depth.lower+Symbiodinium.clade+Mode.of.larval.development+
+         Colony.maximum.diameter+Growth.form.typical+
+         Corallite.width.maximum+Range.size+Symbiodinium.sp..in.propagules
+       +Life.history.strategy+Growth.rate, data=hdp))
+
+
+
+## glm again ;-)
+
+check<-imp_n
+check<-subset(check,IUCN.Red.List.category!="DD")
+check$IUCN.Red.List.category<-droplevels(check$IUCN.Red.List.category)
+levels(check$IUCN.Red.List.category)[1]<-5
+levels(check$IUCN.Red.List.category)[2]<-4
+levels(check$IUCN.Red.List.category)[3]<-1
+levels(check$IUCN.Red.List.category)[4]<-2
+levels(check$IUCN.Red.List.category)[5]<-3
+check$IUCN.Red.List.category<-as.numeric(as.character(check$IUCN.Red.List.category))
+levels(check$Growth.form.Veron)[1]<-1
+levels(check$Growth.form.Veron)[2]<-0
+check$Growth.form.Veron<-as.numeric(as.character(check$Growth.form.Veron))
+levels(check$Symbiodinium.clade)[1]<-1
+levels(check$Symbiodinium.clade)[2]<-0
+check$Symbiodinium.clade<-as.numeric(as.character(check$Symbiodinium.clade))
+
+levels(check$Mode.of.larval.development)[1]<-0
+levels(check$Mode.of.larval.development)[2]<-1
+check$Mode.of.larval.development<-as.numeric(as.character(check$Mode.of.larval.development))
+
+levels(check$Growth.form.typical)[1]<-1
+levels(check$Growth.form.typical)[2]<-0
+check$Growth.form.typical<-as.numeric(as.character(check$Growth.form.typical))
+
+levels(check$Symbiodinium.sp..in.propagules)[1]<-1
+levels(check$Symbiodinium.sp..in.propagules)[2]<-0
+check$Symbiodinium.sp..in.propagules<-as.numeric(as.character(check$Symbiodinium.sp..in.propagules))
+
+levels(check$Life.history.strategy)[1]<-0
+levels(check$Life.history.strategy)[2]<-1
+
+gg<-glm(check$IUCN.Red.List.category~check$Growth.form.Veron+
+      check$Depth.lower+check$Colony.maximum.diameter+check$Corallite.width.maximum+
+      check$max_dist_normed)
+gg<-glm(check$IUCN.Red.List.category~check$Growth.form.Veron+check$Water.depth+
+          check$Depth.lower+check$Symbiodinium.clade+
+            check$Mode.of.larval.development+
+            check$Colony.maximum.diameter+check$Growth.form.typical+
+            check$Range.size+check$Corallite.width.maximum+
+            +check$Symbiodinium.sp..in.propagules+check$Life.history.strategy+check$Growth.rate+
+          check$max_dist_normed)
+
+summary(gg)
+library(modEvA)
+Dsquared(gg)
+tt<-step(gg)
+summary(tt)
+Dsquared(tt)
+
+
+## summed up binary
+check<-NULL
+for( i in 1:10){
+  result<-imp_n
+  x<-seq(1,7390,739)
+  y<-seq(739,7390,739)
+  e<-i
+  subs<- result[x[e]:y[e],]
+ tt<-join(subs,erg_OBIS,by="Taxa")
+  check<-rbind(check,tt)
+}
+  
+check<-check[,c(2,3,5,8,10,16)]
+
+check<-subset(check,IUCN.Red.List.category!="DD")
+check$IUCN.Red.List.category<-droplevels(check$IUCN.Red.List.category)
+levels(check$IUCN.Red.List.category)[1]<-5
+levels(check$IUCN.Red.List.category)[2]<-4
+levels(check$IUCN.Red.List.category)[3]<-1
+levels(check$IUCN.Red.List.category)[4]<-2
+levels(check$IUCN.Red.List.category)[5]<-3
+check$IUCN.Red.List.category<-as.numeric(as.character(check$IUCN.Red.List.category))
+levels(check$Growth.form.Veron)[1]<-1
+levels(check$Growth.form.Veron)[2]<-0
+check$Growth.form.Veron<-as.numeric(as.character(check$Growth.form.Veron))
+
+ngr<-which(check$Depth.lower<20)
+check[ngr,3]<-0
+gr<-which(check$Depth.lower>=20)
+check[gr,3]<-1
+
+ngr<-which(check$Colony.maximum.diameter<median(check$Colony.maximum.diameter))
+ check[ngr,4]<-0
+ gr<-which(check$Colony.maximum.diameter>=median(check$Colony.maximum.diameter))
+ check[gr,4]<-1
+
+ ngr<-which(check$Corallite.width.maximum <median(check$Corallite.width.maximum))
+ check[ngr,5]<-0
+ gr<-which(check$Corallite.width.maximum>=median(check$Corallite.width.maximum))
+ check[gr,5]<-1
+ 
+ 
+ hh<-which(is.na(check$geo_range))
+ check[hh,6]<-1
+ ngr<-which(check$geo_range < median(check$geo_range))
+ check[ngr,6]<-0
+ gr<-which(check$geo_range>=median(check$geo_range))
+ check[gr,6]<-1
+ 
+ check$sum<-rowSums(check[,2:6])
+ cor.test(check$IUCN.Red.List.category,check$sum,method="spearm")
+ 
+ 
+ ttt<-NULL
+ checkl<-NULL
+ for( i in 1:10){
+   result<-imp_n
+   x<-seq(1,7390,739)
+   y<-seq(739,7390,739)
+   e<-i
+   subs<- result[x[e]:y[e],]
+   ttt<-cor.test(check$IUCN.Red.List.category,check$sum,method="spearm")
+   rtr<-cbind(ttt$estimate,ttt$p.value)
+   checkl<-rbind(checkl,rtr)
+ }
+ 
+ #### test for Carrib and pac and cortri
+ #Pleistocene
+PBDB_pac<-point.in.polygon(test$long,test$lat ,atlantic$long,atlantic$lat)
+PBDB_pac<-which(PBDB_pac==0)
+PBDB_pac<-test[PBDB_pac,]
+
+PBDB_car<-point.in.polygon(test$long,test$lat ,car_poly$long,car_poly$lat)
+PBDB_car<-which(PBDB_car==1)
+PBDB_car<-test[PBDB_car,]
+
+PBDB_cortri<-point.in.polygon(test$long,test$lat ,cor_tri$long,cor_tri$lat)
+PBDB_cortri<-which(PBDB_cortri==1)
+PBDB_cortri<-test[PBDB_cortri,]
+
+
+View(PBDB_pac)
+
+##Recent
+PBDB_pac_rec<-point.in.polygon(test$long,test$lat ,atlantic$long,atlantic$lat)
+PBDB_pac_rec<-which(PBDB_pac_rec==0)
+PBDB_pac_rec<-test[PBDB_pac_rec,]
+
+
+PBDB_car_rec<-point.in.polygon(test$long,test$lat ,car_poly$long,car_poly$lat)
+PBDB_car_rec<-which(PBDB_car_rec==1)
+PBDB_car_rec<-test[PBDB_car_rec,]
+
+PBDB_cortri_rec<-point.in.polygon(test$long,test$lat ,cor_tri$long,cor_tri$lat)
+PBDB_cortri_rec<-which(PBDB_cortri_rec==1)
+PBDB_cortri_rec<-test[PBDB_cortri_rec,]
+
+
+lc_car<-sum(table(PBDB_car$median)[c(1)])/sum(table(PBDB_car$median))
+nt_car<-sum(table(PBDB_car$median)[c(2,3)])/sum(table(PBDB_car$median))
+vu_car<-sum(table(PBDB_car$median)[c(4,5)])/sum(table(PBDB_car$median))
+en_car<-sum(table(PBDB_car$median)[c(6)])/sum(table(PBDB_car$median))
+cr_car<-sum(table(PBDB_car$median)[c(7)])/sum(table(PBDB_car$median))
+plei_car<-c(lc_car,nt_car,vu_car,en_car,cr_car)
+
+lc_pac<-sum(table(PBDB_pac$median)[c(1)])/sum(table(PBDB_pac$median))
+nt_pac<-sum(table(PBDB_pac$median)[c(2,3)])/sum(table(PBDB_pac$median))
+vu_pac<-sum(table(PBDB_pac$median)[c(4,5)])/sum(table(PBDB_pac$median))
+en_pac<-sum(table(PBDB_pac$median)[c(6,7)])/sum(table(PBDB_pac$median))
+cr_pac<-0
+plei_pac<-c(lc_pac,nt_pac,vu_pac,en_pac,cr_pac)
+
+lc_cortri<-sum(table(PBDB_cortri$median)[c(1)])/sum(table(PBDB_cortri$median))
+nt_cortri<-sum(table(PBDB_cortri$median)[c(2,3)])/sum(table(PBDB_cortri$median))
+vu_cortri<-sum(table(PBDB_cortri$median)[c(4,5)])/sum(table(PBDB_cortri$median))
+en_cortri<-sum(table(PBDB_cortri$median)[c(6)])/sum(table(PBDB_cortri$median))
+cr_cortri<-0
+plei_cortri<-c(lc_cortri,nt_cortri,vu_cortri,en_cortri,cr_cortri)
+
+#recent
+lc_car_rec<-sum(table(PBDB_car_rec$median)[c(1)])/sum(table(PBDB_car_rec$median))
+nt_car_rec<-sum(table(PBDB_car_rec$median)[c(2,3)])/sum(table(PBDB_car_rec$median))
+vu_car_rec<-sum(table(PBDB_car_rec$median)[c(4)])/sum(table(PBDB_car_rec$median))
+en_car_rec<-sum(table(PBDB_car_rec$median)[c(5)])/sum(table(PBDB_car_rec$median))
+cr_car_rec<-sum(table(PBDB_car_rec$median)[c(6)])/sum(table(PBDB_car_rec$median))
+plei_car_rec<-c(lc_car_rec,nt_car_rec,vu_car_rec,en_car_rec,cr_car_rec)
+lc_pac_rec<-sum(table(PBDB_pac_rec$median)[c(1)])/sum(table(PBDB_pac_rec$median))
+nt_pac_rec<-sum(table(PBDB_pac_rec$median)[c(2,3)])/sum(table(PBDB_pac_rec$median))
+vu_pac_rec<-sum(table(PBDB_pac_rec$median)[c(4,5)])/sum(table(PBDB_pac_rec$median))
+en_pac_rec<-sum(table(PBDB_pac_rec$median)[c(6,7)])/sum(table(PBDB_pac_rec$median))
+cr_pac_rec<-sum(table(PBDB_pac_rec$median)[c(8)])/sum(table(PBDB_pac_rec$median))
+plei_pac_rec<-c(lc_pac_rec,nt_pac_rec,vu_pac_rec,en_pac_rec,cr_pac_rec)
+lc_cortri_rec<-sum(table(PBDB_cortri_rec$median)[c(1)])/sum(table(PBDB_cortri_rec$median))
+nt_cortri_rec<-sum(table(PBDB_cortri_rec$median)[c(2,3)])/sum(table(PBDB_cortri_rec$median))
+vu_cortri_rec<-sum(table(PBDB_cortri_rec$median)[c(4,5)])/sum(table(PBDB_cortri_rec$median))
+en_cortri_rec<-sum(table(PBDB_cortri_rec$median)[c(6,7)])/sum(table(PBDB_cortri_rec$median))
+cr_cortri_rec<-0
+plei_cortri_rec<-c(lc_cortri_rec,nt_cortri_rec,vu_cortri_rec,en_cortri_rec,cr_cortri_rec)
+
+
+wilcox.test(plei_car,plei_car_rec)
+wilcox.test(plei_pac,plei_pac_rec)
+wilcox.test(plei_cortri,plei_cortri_rec)
+
+round(plei_car_rec-plei_car,3)*100
+round(plei_pac_rec-plei_pac,3)*100
+round(plei_cortri_rec-plei_cortri,3)*100
+round(world_rec-world_plei,3)*100
+
+
+lc_world_rec<-sum(table(test$median)[c(1)])/sum(table(test$median))
+nt_world_rec<-sum(table(test$median)[c(2,3)])/sum(table(test$median))
+vu_world_rec<-sum(table(test$median)[c(4,5)])/sum(table(test$median))
+en_world_rec<-sum(table(test$median)[c(6,7)])/sum(table(test$median))
+cr_world_rec<-sum(table(test$median)[c(8)])/sum(table(test$median))
+world_rec<-c(lc_world_rec,nt_world_rec,vu_world_rec,en_world_rec,cr_world_rec)
+
+lc_world_plei<-sum(table(test$median)[c(1)])/sum(table(test$median))
+nt_world_plei<-sum(table(test$median)[c(2,3)])/sum(table(test$median))
+vu_world_plei<-sum(table(test$median)[c(4,5)])/sum(table(test$median))
+en_world_plei<-sum(table(test$median)[c(6,7)])/sum(table(test$median))
+cr_world_plei<-0
+world_plei<-c(lc_world_plei,nt_world_plei,vu_world_plei,en_world_plei,cr_world_plei)
