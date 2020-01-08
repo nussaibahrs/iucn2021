@@ -204,6 +204,32 @@ library(caret)
 #load models 
 load(here("output", "ML_binary.RData"))
 
+#### find threshold by maximising youden's index
+cutoff=seq(0.1, 1, 0.1) #threshold values
+
+for (i in 1:length(mods)){
+  for (c in 1:length(cutoff)){
+    
+    res <- predict(mods[[i]], newdata=testTransformed, type="prob")
+    
+    #all values lower than cutoff value will be classified as 0 (NT in this case)
+    res[res<cutoff[c]]=0
+    
+    #all values greater than cutoff value will be classified as 1(T in this case)
+    res[res>=cutoff[c]]=1
+    
+    #error metrics
+    true.labels <- relabel(as.factor(testTransformed$iucn))
+    test.labels <- relabel(predict(mods[[i]], newdata=testTransformed))
+    met <- HMeasure(true.labels,test.labels)   
+    
+    #get youden index and save/replace
+    met$metrics$Youden
+  }
+}
+
+
+
 #compute performance
 mods.performance <- as.data.frame(matrix(ncol=5, nrow=length(mods)))
 colnames(mods.performance) <- c("model", "AUC", "misclass_rate", "youden", "h")
