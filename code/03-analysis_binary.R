@@ -204,31 +204,45 @@ library(caret)
 #load models 
 load(here("output", "ML_binary.RData"))
 
-#### find threshold by maximising youden's index
-cutoff=seq(0.1, 1, 0.1) #threshold values
+#### get optimised parameters
+cutoff=seq(0, 1, 0.01) #threshold values
+opt_par <- as.data.frame(matrix(0, nrow=length(mods), ncol=4))
+colnames(opt_par) <- c("model", "cutoff", "youden", "bestTune")
 
 for (i in 1:length(mods)){
+  opt_par$model[i] <- mods[[i]]$method
+  
   for (c in 1:length(cutoff)){
     
     res <- predict(mods[[i]], newdata=testTransformed, type="prob")
+    res <- res$NT
     
     #all values lower than cutoff value will be classified as 0 (NT in this case)
-    res[res<cutoff[c]]=0
-    
-    #all values greater than cutoff value will be classified as 1(T in this case)
-    res[res>=cutoff[c]]=1
-    
-    #error metrics
+    test.labels <- ifelse(res < cutoff[c], 0, 1)
     true.labels <- relabel(as.factor(testTransformed$iucn))
-    test.labels <- relabel(predict(mods[[i]], newdata=testTransformed))
+    
     met <- HMeasure(true.labels,test.labels)   
     
-    #get youden index and save/replace
-    met$metrics$Youden
+    if (opt_par[i,]$youden < met$metrics$Youden) {
+      opt_par[i,]$youden <- met$metrics$Youden
+      opt_par[i,]$cutoff <- cutoff[c]
+    }
   }
+
+    temp <- mods[[i]]$bestTune
+    
+    
+    if(mods[[i]]$method == "rf"){
+      temp <- c(paste(names(temp), temp, sep="="), 
+        paste(c("ntree", "nodesize", "maxnodes"), c(mods[[i]]$dots$ntree, mods[[i]]$dots$nodesize, mods[[i]]$dots$maxnodes), sep="="))
+    } else {
+      temp <-  paste(names(temp), temp, sep="=")
+    }
+    
+    opt_par$bestTune[i] <- paste(temp, collapse = ", ")
 }
 
-
+write.csv(opt_par, here("output", "Table_S_opt_par.csv"), row.names = FALSE)
 
 #compute performance
 mods.performance <- as.data.frame(matrix(ncol=5, nrow=length(mods)))
@@ -236,27 +250,34 @@ colnames(mods.performance) <- c("model", "AUC", "misclass_rate", "youden", "h")
 
 for (i in 1:length(mods)){
   res <- predict(mods[[i]], newdata=testTransformed, type="prob")
-  mod.roc <- roc(ifelse(testTransformed[,"iucn"] == "T", 1, 0), res[[2]])
-  
   
   #error metrics
+  mod.roc <- roc(ifelse(testTransformed[,"iucn"] == "T", 1, 0), res[[2]]) #may have to change
+  
+  # reference and predicted labels
   true.labels <- relabel(as.factor(testTransformed$iucn))
-  test.labels <- relabel(predict(mods[[i]], newdata=testTransformed))
+  test.labels <- ifelse(res$NT < opt_par$cutoff[i], 0, 1)
+  #test.labels <- relabel(predict(mods[[i]], newdata=testTransformed))
+  
+  
+
   met <- HMeasure(true.labels,test.labels)               
   # plot(mod.roc)
   
   #performance
   mods.performance[i,] <- c(mods[[i]]$method, 
-                            mod.roc$auc, #AUC
+                            auc(mod.roc), #AUC
                            met$metrics$ER, #misclassification rate = 1 - Accuracy
                           met$metrics$Youden, # Youden Index
                           met$metrics$H
                           )
 }
 
+mods.performance[,-1] <- apply(mods.performance[,-1], 2, as.numeric) 
 
-mods.performance %>% mutate(n=1:6) %>%
-  arrange(desc(AUC))
+mods.performance %>% 
+  mutate_at(2:4, round, 2) %>%
+  arrange(desc(AUC)) 
 
 ########
 # Comparing Multiple Models
@@ -269,13 +290,26 @@ mods.performance %>% mutate(n=1:6) %>%
 
 #needs the seeds to be the same
 rValues <- resamples(mods, modelNames = mods.performance$model)
-rValues$values
+vals <- rValues$values
 
-summary(rValues)
-
-bwplot(rValues,metric="AUC")	# boxplot
-dotplot(rValues,metric="AUC")	# dotplot
-#splom(rValues,metric="ROC")
+auc_vals <- vals[,grep("AUC", colnames(vals))]
+colnames(auc_vals) <- gsub("~AUC", "", colnames(auc_vals))
+auc_vals <- gather(auc_vals, model, AUC)
 
 ###
+library(DALEX)
 
+vip <- list()
+
+for (i in 1:length(mods)){
+  if (mods[[i]]$method == "knn"){
+    exp <- explain(mods[[4]], data=testTransformed[,-1], y=relabel(testTransformed$iucn), model_info = list("caret"), label="knn")
+    
+  } else {
+    exp <- explain(model = mods[[i]], data=testTransformed[,-1], y=relabel(testTransformed$iucn), label=mods[[i]]$method)
+  }
+  vip[[i]] <- variable_importance(exp, 
+                                  loss_function = loss_root_mean_square)
+}
+
+plot(vip[[1]], vip[[2]], vip[[3]], vip[[4]], vip[[5]], vip[[6]])
