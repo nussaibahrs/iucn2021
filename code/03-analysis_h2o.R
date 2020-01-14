@@ -63,8 +63,27 @@ x <- setdiff(names(df), y)
 
 
 # Models ------------------------------------------------------------------
-# define parameter search criteria grid
 seed.no <- 42 #for reproducibility
+
+# * Automatic Machine Learning ----------------------------------------------
+aml <- h2o.automl(y=y, x=x, training_frame = train, 
+                  keep_cross_validation_fold_assignment = TRUE,
+                  keep_cross_validation_predictions = TRUE,
+                  seed = seed.no,
+                  stopping_metric = "AUC",
+                  stopping_rounds = 10,
+                  stopping_tolerance = 0.005,
+                  balance_classes = TRUE,
+                  nfolds=10,
+                  max_runtime_secs = 900)
+
+# Extract leader model
+aml_leader <- aml@leader
+
+
+
+# define parameter search criteria grid
+
 
 search.criteria <- list(
   max_models = 500,
@@ -186,7 +205,7 @@ doub.lyrs <- expand.grid(1:20, 1:20)
 doub.lyrs <- as.list(as.data.frame(t(doub.lyrs)))
 names(doub.lyrs) <- NULL
 
-lyrs <- c(lyrs, doub.lyrs)
+lyrs <- c(sing.lyrs, doub.lyrs)
 
 hyper_params <- list(
   activation = c("Rectifier", "Maxout", "Tanh", "RectifierWithDropout", "MaxoutWithDropout", "TanhWithDropout"), 
@@ -280,6 +299,7 @@ for (i in 1:nrow(mods_3)){
     metalearner_nfolds = 10,
     base_models = mods_3[i,],
     metalearner_algorithm = "GBM"
+    model_id = model_id
   )
   
 }
