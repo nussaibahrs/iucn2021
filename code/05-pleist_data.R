@@ -219,35 +219,6 @@ pbdb_all <- read.csv("https://paleobiodb.org/data1.2/occs/list.csv?max_ma=5.333&
 
 pbdb_range <- max(rdist.earth(pbdb_all))
 
-pleist.df <- pleist.df %>% mutate(name = trimws(name)) %>%
-  left_join(cbind.data.frame(sp, range=great.circle, prop_range = great.circle/pbdb_range), by=c("name" = "sp")) %T>% 
+pleist.df <- pleist.df %>%
+  left_join(cbind.data.frame(sp, range=great.circle, prop_range = great.circle/pbdb_range), by=c("valid_name" = "sp")) %T>% 
   write.csv(here("data", "pleist_resolved.csv"), row.names = FALSE) 
-
-##### load model 
-load(here("output", "ML_binary.RData"))
-
-pleist.df <- read.csv(here("data", "pleist_resolved.csv"), stringsAsFactors = FALSE)
-
-#### process data
-pleist.df <- predict(preProcValues, pleist.df) %>% 
-  select (-range) %>%
-  rename(range=prop_range) #choose proportional range
-
-
-probsTest <- caret::predict(mods[[1]], #neural network
-                     newdata=na.omit(pleist.df), 
-                     type="prob")
-threshold <- 0.5
-pred      <- factor( ifelse(probsTest[, "T"] > threshold, "T", "NT") )
-pred
-
-##### add extinction
-cbind(na.omit(pleist.df), pred) 
-
-x <- pleist.loc %>% select(-GenusName, -SpeciesName) %>%
-  reshape2::melt(id.vars="sp", variable.name = "loc", value.name="n") %>%
-  filter(!is.na(n)) %>%
-  left_join(pleist.age, by="loc") 
-
-x %>% left_join(pleist.sp %>% mutate(name = trimws(name)), by=c("sp"="name"))
-  

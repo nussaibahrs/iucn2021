@@ -68,7 +68,7 @@ x <- setdiff(names(df), y)
 
 # Load Model --------------------------------------------------------------
 
-# * Load 20 best models in h2o session ------------------------------------
+# * Load 10 best models in h2o session ------------------------------------
 
 folder_name <- "model"
 leaderboard <- read.csv(here("output", folder_name, "leaderboard.csv"), stringsAsFactors = FALSE)
@@ -81,54 +81,75 @@ for(i in 1:nrow(leaderboard)){
 
 # * Find probability threshold by maximising youden index -----------------
 cutoff=seq(0, 1, 0.05) #threshold values
-n=20 #number of models
+n=10 #number of models
 
-opt_par <- as.data.frame(matrix(0, nrow=n, ncol=7))
-colnames(opt_par) <- c("fname", "model", "cutoff", "youden", 
-                       "AUC", "misclass_rate", "h")
+opt_par <- list()
+
 for (i in 1:n){
-  opt_par$model[i] <-mods[[i]]@algorithm
+  temp <- as.data.frame(matrix(0, nrow=(length(cutoff)-1), ncol=10))
+  colnames(temp) <- c("fname", "model", "cutoff.train", "cutoff.test", "youden.train", "youden.test", "AUC.train",
+    "AUC.test", "misclass_rate", "h")
+  temp$model <-mods[[i]]@algorithm
+  temp$fname <- mods[[i]]@model_id
   
   for (c in 2:length(cutoff)){
     
-    res <- h2o.predict(mods[[i]], test)
-    res <- as.data.frame(res)$p1
+    res.train <- h2o.predict(mods[[i]], train)
+    res.train <- as.data.frame(res.train)$p1
+    
+    res.test <- h2o.predict(mods[[i]], test)
+    res.test <- as.data.frame(res.test)$p1
     
     #all values lower than cutoff value will be classified as 0 (NT in this case)
-    test.labels <- ifelse(res < cutoff[c], 0, 1)
-    true.labels <- as.data.frame(test)$iucn
+    train.labels <- ifelse(res.train < cutoff[c], 0, 1)
+    test.labels <- ifelse(res.test < cutoff[c], 0, 1)
+    true.train.labels <- as.data.frame(train)$iucn
+    true.test.labels <- as.data.frame(test)$iucn
     
-    met <- hmeasure::HMeasure(true.labels,test.labels)   
+    met.train <- hmeasure::HMeasure(true.train.labels,train.labels) 
+    met.test <- hmeasure::HMeasure(true.test.labels,test.labels)   
     
-    if (opt_par[i,]$youden < met$metrics$Youden) {
-      opt_par[i,]$fname <- mods[[i]]@model_id
-      opt_par[i,]$cutoff <- cutoff[c]
-      
-      #error metrics
-      mod.roc <- pROC::roc(true.labels, test.labels) 
-      
-      #performance
-      opt_par[i, c("cutoff", "AUC", 
-                   "misclass_rate", "youden", "h")] <- c(cutoff[c],
-                                                         pROC::auc(mod.roc), #AUC
-                                                         met$metrics$ER, #misclassification rate = 1 - Accuracy
-                                                         met$metrics$Youden, # Youden Index
-                                                         met$metrics$H
-                   )
-    }
+    
+    temp[c,c("cutoff.train", "cutoff.test")] <- cutoff[c]
+    
+    #error metrics
+    mod.roc.train <- pROC::roc(true.train.labels, train.labels) 
+    mod.roc.test <- pROC::roc(true.test.labels, test.labels) 
+    #performance
+    temp[c, c("AUC.train", "AUC.test", 
+                 "misclass_rate", "youden.train", "youden.test", "h")] <- c(pROC::auc(mod.roc.train), #AUC
+                                                       pROC::auc(mod.roc.test), #AUC
+                                                       met.test$metrics$ER, #misclassification rate = 1 - Accuracy
+                                                       met.train$metrics$Youden,
+                                                       met.test$metrics$Youden, # Youden Index
+                                                       met.test$metrics$H
+                 )
   }
+  opt_par[[i]] <- temp
+  
 }
 
-#get final model
-opt_par <- opt_par %>% arrange(misclass_rate, desc(AUC))
-opt_par %>% select(model, cutoff, AUC, misclass_rate, youden) %>%
-  mutate_if(is.numeric, round, digits=3) %>%
-  mutate(misclass_rate = 1-misclass_rate) %>%
-  set_names(c("model type", "threshold", "AUC", "Accuracy", "Youden Index")) %T>%
-  write.csv(here("output", "Table_01_AutoML_results.csv"), row.names = FALSE)
+opt_par <- do.call(rbind, opt_par)
+
+temp <- opt_par %>% group_by(fname) %>% summarise(AUC.train=max(AUC.train), AUC.test=max(AUC.test)) %>%
+  na.omit()
+
+opt_train <- temp %>% select(fname, AUC.train) %>% 
+  left_join(opt_par %>% select(fname, AUC.train, youden.train, cutoff.train), by=c("fname", "AUC.train"))
+
+opt_test <- temp %>% select(fname, AUC.test) %>% 
+  left_join(opt_par %>% select(fname, AUC.test, youden.test, cutoff.test), by=c("fname", "AUC.test"))
+
+opt_par <- full_join(opt_train, opt_test) %>%
+  group_by(fname) %>%
+  mutate(cutoff = mean(cutoff.test, cutoff.train)) %>%
+  filter(cutoff > 0.3)   %>%
+  arrange(desc(AUC.train), desc(AUC.test))
+
 
 aml_leader <-  h2o.getModel(opt_par$fname[1])
 rm(list=("mods")) #remove models to save memory
+
 # * Model agnostic metrics
 
 # create a data frame with just the features
@@ -147,14 +168,19 @@ pred <- function(model, newdata)  {
 aml_varimp <- h2o.varimp(aml_leader) #calculate variable importance
 
 # ** Fig 2: Variable Importance -------------------------------------------
+aml_varimp <- aml_varimp %>% 
+  as.data.frame() %>%
+  filter(relative_importance > 0.11) %>%
+  mutate(rank = nrow(.):1) %>%
+  mutate(variable = gsub("\\.", ": ", variable),
+         variable = gsub("_", " ", variable))
 
 p_vi <- aml_varimp %>% 
   as.data.frame() %>%
-  filter(relative_importance > 0) %>%
+  filter(relative_importance > 0.1) %>%
   mutate(rank = nrow(.):1) %>%
   ggplot(aes(x=reorder(variable, rank), y=scaled_importance)) +
   geom_bar(stat="identity", width = 0.6, fill = u_col[5]) +
-  scale_x_discrete(labels=rev(c("corallite diameter", "branching: LB", "branching: NB", "branching: HB", "range", "branching: MB", "maximum water depth"))) +
   scale_y_continuous(expand=expand_scale(mult = c(0, .1))) +
   labs(x="Variables", y="Scaled Importance") +
   coord_flip() +
@@ -231,7 +257,7 @@ res <- h2o.predict(aml_leader, as.h2o(dd))
 res <- as.data.frame(res)$p1
 
 # calculate threat status based on threshold cutoff
-dd$status <- ifelse(res < opt_par$cutoff[1], "T", "NT")
+dd$status <- ifelse(res < opt_par$cutoff[1], "NT", "T")
 
 #number of missing values for each species
 dd$na_count <- apply(dd, 1, function(x) sum(is.na(x)))
@@ -294,42 +320,70 @@ dd_occ <- read.csv(here("data", "2019-11-05_obis_scleractinia.csv"), stringsAsFa
   distinct(scientificName, decimalLatitude, decimalLongitude) %>%
   left_join(dd %>% dplyr::select(sp, status), by=c("scientificName" = "sp"))
 
-mround <- function(x,base){
-  base*round(x/base)
-}
+#need script for obis cleaning here
 
-binwidth <- 5
-  
-dd_occ[,c(2,3)] <- apply(dd_occ[,c(2,3)], 2, mround, base=binwidth/2)
+library(icosa)
 
-hexes <- hex_coord_df(dd_occ$decimalLongitude, dd_occ$decimalLatitude, width=5, height=4)
+gr <- hexagrid(12, sp=TRUE)
+gr
 
-bin = hex_bin(dd_occ$decimalLongitude, dd_occ$decimalLatitude, var4=dd_occ$status, width=5, height=4)
-hexes = hex_coord_df(x=bin$x, y=bin$y, width=attr(bin,"width"), height=attr(bin,"height"), size=rep(1, nrow(bin)))
-hexes$prop = rep(bin$var, each=6)*100
-world <- map_data("world")
+dd_occ$cell <- locate(gr, dd_occ[, c(3,2)])
 
-bin <- hex_bin(dd_occ$decimalLongitude, dd_occ$decimalLatitude, var4=dd_occ$status, width=5, height=4, 
-               func=function(x){t <- table(x); t["DD"]/sum(t)}) %>%
-  mutate(dd = ifelse(var > 0.5, "DD", "DS"))
-hexes$dd = rep(bin$dd, each=6)
+me <- tapply(INDEX=dd_occ$cell, X=dd_occ$status, function (x) length(x[x == "T"])/length(x))
 
-hexes %>% left_join(hexes_dd, by="id") %>% head()
+fl <- facelayer(gr)
 
-p <- ggplot() +
-  geom_polygon(data = world, aes(x=long, y = lat, group = group), fill="lightgrey") +
-  geom_polygon(data=hexes, aes(x=x, y=y, fill=prop, group=id, col=dd)) + coord_equal(expand=FALSE) +
-  labs(x="Longitude", y="Latitude", fill="Percentage of \nDD species threatened") +
-  scale_fill_gradient2(low=u_col[2],  mid=u_col[4], high=u_col[5], midpoint=50) +
-  scale_color_manual(values=c("black", "white"), guide=FALSE)+
+fl[] <- me
+
+world <- rworldmap::getMap()
+
+svg(here("figs", "Fig_05_map_dd_risk.svg"), w=12, h=6)
+plot(fl, col=c("blue", "yellow", "red"), legend=FALSE)
+plot(world, col="lightgrey", border="darkgrey", add=TRUE)
+dev.off()
+
+
+
+# Plio-Pleistocene --------------------------------------------------------
+pleist.df <- read.csv(here("data", "pleist_resolved.csv"), stringsAsFactors = FALSE) %>%
+  mutate(corallite = as.numeric(gsub(">", "", corallite)), 
+         corallite = as.numeric(scale(corallite)),          
+         range = as.numeric(scale(prop_range)))
+pleist.df[pleist.df$globally.extinct == "extinct" & pleist.df$regionally.extinct == "extant",]$regionally.extinct <- "extinct"
+res <- h2o.predict(aml_leader, as.h2o(pleist.df))
+res <- as.data.frame(res)$p1
+
+# calculate threat status based on threshold cutoff
+pleist.df$status <- ifelse(res < opt_par$cutoff[1], "NT", "T")
+
+pleist.summ <- pleist.df %>% 
+  mutate(status = ifelse(status == "T", "Threatened", "Not Threatened"),
+         globally.extinct = tools::toTitleCase(globally.extinct),
+         regionally.extinct = tools::toTitleCase(regionally.extinct)) %>%
+  group_by(globally.extinct, regionally.extinct, status) %>%
+  tally()
+
+
+library(ggalluvial)
+
+ggplot(pleist.summ,
+       aes(y = n,
+           axis1 = regionally.extinct, axis2 = globally.extinct, axis3 = status)) +
+  scale_fill_manual(values = u_col[c(2,5)]) +
+  geom_flow(stat = "alluvium", lode.guidance = "frontback", aes(fill = status), width=0.1) +
+  geom_stratum(width = 0.1) +
+  geom_text(stat = "stratum", infer.label = TRUE, reverse = TRUE, angle=90) +
+  scale_x_continuous(breaks = 1:3, labels = c("Regionally", "Globally", "Predicted \nStatus"), expand = expand_scale(mult = 0)) +
+  scale_y_continuous(expand = expand_scale(mult = 0)) +
   theme_light(base_size = 15) +
+  labs(x="", y="No. of species", fill = "Status")+
   theme(axis.title = element_text(size = 12, face="bold"),
         legend.title = element_text(size = 12, face="bold"),
         legend.text = element_text(family = "Roboto Mono", size = 10),
-        axis.text = element_text(family = "Roboto Mono", size = 10),
+        axis.text = element_text(family = "Roboto Mono", size = 10, angle=45, hjust=1),
         panel.grid = element_blank(), 
-        legend.position = c(.15,0.07),
+        panel.border = element_blank(),
+        legend.position = "top",
         legend.direction = "horizontal")
-  
 
-ggsave(here("figs", "Fig_05_map_dd_risk.svg"), p, width = 12, h=6)
+ggsave(here("figs", "Fig_06_pleist_predictions.svg"), w=6, h=6)

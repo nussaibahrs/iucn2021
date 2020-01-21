@@ -1,21 +1,11 @@
-"model type","threshold","AUC","Accuracy","Youden Index"
-"deeplearning",0.45,0.841,0.861,0.682
-"deeplearning",0.4,0.843,0.843,0.687
-"stackedensemble",0.25,0.832,0.843,0.664
-"deeplearning",0.25,0.821,0.843,0.642
-"xgboost",0.35,0.775,0.806,0.551
-"deeplearning",0.25,0.759,0.806,0.517
-"stackedensemble",0.25,0.774,0.796,0.547
-"deeplearning",0.25,0.768,0.796,0.536
-"gbm",0.3,0.789,0.787,0.577
-"gbm",0.3,0.77,0.778,0.541
-"deeplearning",0.45,0.745,0.759,0.489
-"xgboost",0.3,0.765,0.75,0.531
-"xgboost",0.35,0.721,0.75,0.441
-"xgboost",0.35,0.713,0.741,0.427
-"gbm",0.35,0.708,0.741,0.416
-"xgboost",0.3,0.745,0.731,0.491
-"deeplearning",0.2,0.717,0.731,0.435
-"xgboost",0.35,0.712,0.731,0.424
-"deeplearning",0.2,0.714,0.713,0.428
-"gbm",0.3,0.687,0.685,0.373
+"model type","threshold","AUC.train","AUC.test","Accuracy","Youden Index"
+"deeplearning",0.2,0.74,0.717,0.731,0.435
+"deeplearning",0.2,0.74,0.714,0.713,0.428
+"stackedensemble",0.35,0.74,0.703,0.685,0.407
+"xgboost",0.4,0.731,0.69,0.639,0.379
+"xgboost",0.4,0.722,0.691,0.676,0.381
+"xgboost",0.5,0.722,0.672,0.667,0.344
+"deeplearning",0.55,0.722,0.71,0.657,0.419
+"stackedensemble",0.6,0.718,0.654,0.565,0.308
+"deeplearning",0.85,0.561,0.551,0.676,0.103
+"deeplearning",0.95,0,0,1,0

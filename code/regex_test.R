@@ -2,7 +2,7 @@ library(here)
 library(tidyverse)
 library(magrittr)
 
-dat <- read.csv(here("data", "pleist_sp.csv"), stringsAsFactors = FALSE)
+dat <- read.csv(here("data", "original", "pleist_sp.csv"), stringsAsFactors = FALSE)
 
 url <- "https://fossils.its.uiowa.edu/database/corals/combined/%s.htm"
 

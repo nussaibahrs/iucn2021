@@ -4,6 +4,9 @@ library(here)
 library(tidyverse)
 library(magrittr)
 
+# worms registry
+library(worrms)
+
 # load user functions
 source(here("code", "functions.R"))
 
@@ -12,138 +15,117 @@ source(here("code", "functions.R"))
 pleist.df <- read.table(here("data", "original", "range.txt")) %>%
   setNames(c("sp", "bottom", "top")) %>%
   mutate(genusName = sub("(.*)_.*", "\\1", sp),
-         speciesName = sub(".*_(.*)", "\\1", sp),
-         sp = gsub("_", " ", sp),
-         bottom = ifelse(bottom == 0.1, 0, abs(bottom)),
-         top = ifelse(top == 0.1, 0, abs(top))) 
+         speciesName = sub(".*_(.*)", "\\1", sp)) 
 
-# check names in worms
-sp_update <- match_taxa(pleist.df$sp, chunk = 10, verbose = FALSE) 
+pleist.df$genusName <- gsub("-.*","\\1",pleist.df$genusName)
+pleist.df$speciesName <- gsub("-.*","\\1",pleist.df$speciesName)
+pleist.df$sp <- paste(pleist.df$genusName, pleist.df$speciesName)
 
-#### Data prep: Pleistocene Data ####
-pleist.loc <- readxl::read_excel(here("data", "original", "budd-pleistocene.xls"), sheet=1, skip = 1) %>%
-  select(-total) %>% #remove last column
-  slice(1:n()-1) %>% #remove last row
-  mutate(SpeciesName = sub("^[^_]*_", "", SpeciesName),
-         sp = as.character(paste(GenusName, SpeciesName)))
 
-head(pleist.loc)
-pleist.loc$sp
+n <- c(seq(1,nrow(pleist.df),20), nrow(pleist.df))
 
-for (t in c("-ann", "-cav", "-mass", "-br", "-2", "aff\\.", ".cf")){
-  pleist.loc$sp <- sub(t, "", pleist.loc$sp)
+wm_sp <- c()
+
+for(i in 1:(length(n)-1)){
+  
+  ind <- seq(n[i],n[i+1]-1,1)
+  
+  #create sp df
+  temp.sp <- as.data.frame(pleist.df$sp[ind], stringsAsFactors = FALSE)
+  colnames(temp.sp) <- "sp"
+  temp.sp$new <- NA
+  temp.sp$extinct <- NA
+  temp.sp$source <- NA
+  temp.sp$notes <- NA
+  
+  temp <- wm_records_names(name = temp.sp$sp)
+  
+  #check for accepted taxa only
+  for (l in 1:length(temp)){
+    
+    if(nrow(temp[[l]] > 0)){
+      nn <- which(temp[[l]]$status == "accepted")
+      
+      if(length(nn) > 0){
+        temp.sp$new[l] <- temp[[l]][nn,]$valid_name
+        temp.sp$extinct[l] <- case_when(temp[[l]][nn,]$isExtinct==1~"extinct", 
+                                        temp[[l]][nn,]$isExtinct==0~"extant")
+        temp.sp$source[l] <- "worms"
+      } else temp.sp$notes[l] <- paste(temp[[l]][1,]$status[1], "in worms")
+    } 
+  }
+  
+  wm_sp <- rbind.data.frame(wm_sp, temp.sp)
 }
-
-# check names in worms
-sp_update <- match_taxa(pleist.loc$sp, chunk = 20, verbose = FALSE) 
-
-sp <- cbind.data.frame(old=pleist.loc$sp, new=sp_update %>% replace_na(""))
-sp <- sp %>% filter(new == "") #%T>% write.csv(here("data", "coral_indet.csv")) #those that were not matched in Worms
-
-pleist.loc$sp2 <- sp_update
 
 #check with pbdb
 url <- "https://paleobiodb.org/data1.2/taxa/single.txt?name=%s"
 
-sp_pbdb <- list()
-
-for (i in 1:nrow(sp)){
-  url2 <- sprintf(url, sp$old[i])
-  url2 <- gsub(" ", "%20", url2)
-  
-  sp_pbdb[[i]] <-tryCatch({
-    read.csv(url(url2))
-  }, error = function(e) {
-    cat('no')
-  })
-}
-
-sp_pbdb <- sp_pbdb[-which(sapply(sp_pbdb, is.null))]
-sp_pbdb <- do.call(rbind, sp_pbdb)
-
-#add the accepted name
-for(i in 1:nrow(sp_pbdb)){
-  pleist.loc$sp2[pleist.loc$sp == sp_pbdb$taxon_name[i]] <- as.character(sp_pbdb$accepted_name[i])
-}
-
-##### still unknown, need to check
-pleist.loc[is.na(pleist.loc$sp2),c("GenusName", "SpeciesName", "sp", "sp2")] <- c("Antillia dentata", "Caulastraea portoricensis", "Agaricia undata", "Montastraea brevis", "Montastraea trinitatis",
-                                                                                  "Undaria pusilla")
-
-pleist.loc[,c("GenusName", "SpeciesName", "sp2")] %>%
-  setNames(c("genus", "species", "name")) %T>%
-  write.csv(here("data", "pleist_sp.csv"), row.names = FALSE)
-
-# check traits from here: https://fossils.its.uiowa.edu/database/corals/combined/
-
-##### traits: branching, corallite diameter, range, Z or AZ  
-ctdb <- read.csv(here("data", "ctdb_resolved.csv"), stringsAsFactors = FALSE)
-
-sp_ctdb <- pleist.loc$sp2[which(pleist.loc$sp2 %in% ctdb$valid & !is.na(pleist.loc$sp2)),]
-length(sp_ctdb)
-
-#not in the database
-pleist.loc$sp2[which(!pleist.loc$sp2 %in% ctdb$valid & !is.na(pleist.loc$sp2)),] %>% length()
-
-selected_traits <- c("Depth lower",
-                     "Growth form typical", "Corallite width maximum")
-
-traits.corals <- ctdb %>% filter(valid %in% sp_ctdb) %>%
-  filter(trait_name %in% c(selected_traits, "Zooxanthellate"))
-
-#choose only symbiotic corals
-corals.z <-traits.corals %>% filter(value %in% c("zooxanthellate", "both")) %>% 
-  pull(specie_name) %>% unique()
-
-length(corals.z)
-
-traits.corals <- traits.corals[traits.corals$specie_name %in% corals.z,]
-
-### growth forms
-growth <- read.csv(here("data", "growth_forms.csv"), stringsAsFactors = FALSE)
-
-#replace with new branching categories
-traits.corals[traits.corals$trait_name == "Growth form typical",]$value <- plyr::mapvalues(traits.corals[traits.corals$trait_name == "Growth form typical",]$value, 
-                                                                                           from=growth$value, to=growth$branching)
-
-table(traits.corals[traits.corals$trait_name == "Growth form typical",]$value)
-
-###### generate traits table for selected traits
-traits.sp <- unique(traits.corals$valid)
-traits.up <- as.data.frame(matrix(ncol=4, nrow=length(traits.sp)))
-colnames(traits.up) <- c("sp", selected_traits)
-
-for(i in 1:length(traits.sp)){
-  temp <- traits.corals[traits.corals$valid == traits.sp[i],]
-  
-  traits.up$sp[i] <- traits.sp[i]
-  
-  for (j in selected_traits){
-    pl <- which(temp$trait_name == j)
+for (i in 1:nrow(wm_sp)){
+  if(is.na(wm_sp$new[i]) | is.na(wm_sp$extinct[i])){
+    url2 <- sprintf(url, wm_sp$sp[i])
+    url2 <- gsub(" ", "%20", url2)
     
-    if (length(pl) > 0){
-      #maximum depth or corallite width
-      if(j == "Depth lower"){ 
-        traits.up[i,j] <- max(as.numeric(temp[pl,]$value), na.rm = TRUE) #maximum in case of multiple
-      }
-      
-      if(j == "Corallite width maximum"){ 
-        traits.up[i,j] <- max(as.numeric(temp[pl,]$value), na.rm=TRUE) #maximum in case of multiple
-      }
-      
-      
-      if(j == "Growth form typical"){ 
-        if (length(unique(temp$value[pl])) > 1) { #check if they are all the same
-          traits.up[i,j] <- temp[pl,] %>% sample_n(1) %>% pull(value)
-        } else {
-          traits.up[i,j] <- unique(temp[pl,]$value) #get single branching from multiple
-        }
-      }
+    temp <- tryCatch({
+      read.csv(url(url2))
+    }, error = function(e) {
+      cat("\r", i)
+    })
+    
+    if (length(grep("Montastraea", wm_sp$sp[i])) > 0 & is.null(temp)) { #alternate spelling if not found with the other one
+      url2 <- sprintf(url, gsub("Montastraea", "Montastrea", wm_sp$sp[i]))
+      url2 <- gsub(" ", "%20", url2)
+      temp <- tryCatch({
+        read.csv(url(url2))
+      }, error = function(e) {
+        cat("\r", i)
+      })
     }
     
+    if(!is.null(temp)){
+      wm_sp$new[i] <- as.character(temp$accepted_name)
+      wm_sp$extinct[i] <- as.character(temp$is_extant)
+      wm_sp$source[i] <- "pbdb"
+    }
   }
-  
 }
+
+wm_sp <- wm_sp[-grep("sp\\.", wm_sp$sp),]
+wm_sp <- wm_sp[-grep("aff\\.", wm_sp$sp),]
+
+write.csv(wm_sp, here("data","pleist_sp.csv"), row.names = FALSE)
+
+#MANUAL CHECK PERFORMED HERE
+
+# Resolved species --------------------------------------------------------
+#read range data
+pleist.df <- read.table(here("data", "original", "range.txt")) %>%
+  setNames(c("sp", "bottom", "top")) %>%
+  mutate(genusName = sub("(.*)_.*", "\\1", sp),
+         speciesName = sub(".*_(.*)", "\\1", sp),
+         bottom = ifelse(bottom == 0.1, 0, abs(bottom)),
+         top = ifelse(top == 0.1, 0, abs(top))) 
+
+pleist.df$genusName <- gsub("-.*","\\1",pleist.df$genusName)
+pleist.df$speciesName <- gsub("-.*","\\1",pleist.df$speciesName)
+pleist.df$sp <- paste(pleist.df$genusName, pleist.df$speciesName)
+
+#get accepted species name and extinct status
+pleist.sp <- read.csv(here("data", "pleist_sp.csv"), stringsAsFactors = FALSE) %>%
+  mutate(new = case_when(is.na(new) & accepted == "yes" & accepted.name==""~sp,
+                        accepted.name!=""~accepted.name,
+         TRUE~new),
+         extinct = extinct.final,
+         new=trimws(new)) %>%
+  select(sp, new, extinct) %>%
+  distinct() %>%
+  rename(valid_name = new)
+
+pleist.df <- pleist.df %>% left_join(pleist.sp) %>%
+  filter(!is.na(valid_name)) %>%
+  group_by(valid_name) %>%
+  summarise(bottom=max(bottom), top=min(top), globally.extinct = unique(extinct)) %>%
+  mutate(regionally.extinct = ifelse(top > 0, "extinct", "extant"))
 
 ##### adding environment #####
 pleist.age <- readxl::read_excel(here("data", "original", "budd-pleistocene.xls"), sheet=2) %>%
@@ -152,47 +134,58 @@ pleist.age <- readxl::read_excel(here("data", "original", "budd-pleistocene.xls"
 pleist.loc <- readxl::read_excel(here("data", "original", "budd-pleistocene.xls"), sheet=1, skip = 1) %>%
   select(-total) %>% #remove last column
   slice(1:n()-1) %>% #remove last row
-  mutate(SpeciesName = sub("^[^_]*_", "", SpeciesName),
-         sp = as.character(paste(GenusName, SpeciesName)))
+  mutate(SpeciesName = sub("^[^_]*_", "", SpeciesName))
 
-#merge location and age
-pleist.df <- pleist.loc %>% select(-GenusName, -SpeciesName) %>%
-  reshape2::melt(id.vars="sp", variable.name = "loc", value.name="n") %>%
+pleist.loc$GenusName <- gsub("-.*","\\1",pleist.loc$GenusName)
+pleist.loc$SpeciesName <- gsub("-.*","\\1",pleist.loc$SpeciesName)
+pleist.loc$sp <- paste(pleist.loc$GenusName , pleist.loc$SpeciesName)
+
+#merge valid_name, location and age
+pleist.loc <- pleist.loc %>% left_join(pleist.sp) %>%
+  filter(!is.na(valid_name))%>% 
+  select(-GenusName, -SpeciesName) %>%
+  reshape2::melt(id.vars="valid_name", variable.name = "loc", value.name="n") %>%
   filter(!is.na(n)) %>%
   left_join(pleist.age, by="loc") %>%
   mutate(environment = ifelse(environment==1, "shallow", "deep")) %>%
-  group_by(sp, environment) %>%
-  tally() %>%
+  group_by(valid_name, environment) %>%
+  count(environment) %>%
   ungroup() %>%
-  reshape2::dcast(sp~environment) 
+  filter(!is.na(environment)) %>%
+  reshape2::dcast(valid_name~environment) 
 
-pleist.df[is.na(pleist.df)] <- 0
+pleist.loc[is.na(pleist.loc)] <- 0
 
-pleist.df <- pleist.df %>% mutate(env = case_when(deep > shallow ~ "deep",
+pleist.loc <- pleist.loc %>% mutate(env = case_when(deep > shallow ~ "deep",
                                                   shallow > deep ~ "shallow" ,
                                                   shallow == deep ~ "shallow"
 ))
 
 
-pleist.sp <- read.csv(here("data", "pleist_sp2.csv"), stringsAsFactors = FALSE) %>%
-  select(-comments)
+pleist.sp2 <- read.csv(here("data", "original", "pleist_sp.csv"), stringsAsFactors = FALSE) %>%
+  select(genus, species, name, corallite, shape, max_depth) 
 
+pleist.sp2$genus <- gsub("-.*","\\1",pleist.sp2$genus)
+pleist.sp2$species <- gsub("-.*","\\1",pleist.sp2$species)
+pleist.sp2$sp <- paste(pleist.sp2$genus  , pleist.sp2$species)
 
 #add to corrected species
-pleist.df <- pleist.sp %>% mutate(sp = paste(genus, species)) %>%
-  left_join(pleist.df, by="sp") %>%
+pleist.sp2 <- pleist.sp2 %>% mutate(sp = paste(genus, species)) %>%
+  left_join(pleist.sp) %>%
+  left_join(pleist.loc %>% select(valid_name, env)) %>%
   mutate(max_depth = case_when(env == "deep" ~ 50,
                                env == "shallow" ~ 30,
-                               TRUE ~ 0))
+                               TRUE ~ 0)) %>%
+  filter(!is.na(valid_name))
 
 
 #### branching
-pleist.df$branching <- plyr::mapvalues(pleist.df$shape, from=unique(pleist.df$shape), c("HB", "HB", "LB", "LB", "LB", "LB", "MB", "MB", "MB"))
+pleist.sp2$branching <- plyr::mapvalues(pleist.sp2$shape, from=unique(pleist.sp2$shape), c("HB", "HB", "LB", NA, "LB", "LB", NA, "MB", "MB", "MB", NA))
 
-pleist.df <- pleist.df %>% select(name, corallite, branching, max_depth)
+pleist.df <- pleist.sp2 %>% left_join(pleist.df) %>% select(valid_name, max_depth, branching, corallite, globally.extinct, regionally.extinct)
 
-##### get range from pbdb
-sp <- pleist.df$name
+  ##### get range from pbdb
+sp <- pleist.df$valid_name
 
 url <- "https://paleobiodb.org/data1.2/occs/list.txt?base_name=%s&show=paleoloc,coords"
 
@@ -204,20 +197,20 @@ for (i in 1:length(sp)){
   url2 <- gsub(" ", "%20", url2)
   
   sp_pbdb[[i]] <-tryCatch({
-    read.csv(url(url2))
+    read.csv(url(url2)) %>% mutate(valid_name = sp[i])
   }, error = function(e) {
-    cat('no')
+    cat('\r no')
   })
 }
 
 sp_pbdb <- sp_pbdb[-which(sapply(sp_pbdb, is.null))]
-sp_pbdb <- do.call(rbind, sp_pbdb) %>% filter(max_ma < 5.4 & #time constraints
+sp_pbdb <- do.call(rbind, sp_pbdb) %>% filter(max_ma < 5.333 & min_ma > 0.118 & #time constraints
                                                 !is.na(paleolng)) #may have to recompute paleolng
 
 #calculate geographic range
 library(fields)
 
-sp <- unique(sp_pbdb$accepted_name)
+sp <- unique(sp_pbdb$valid_name)
 great.circle <- c()
 
 for(i in 1:length(sp)){
@@ -227,42 +220,15 @@ for(i in 1:length(sp)){
   great.circle[i] <- max(rdist.earth(temp))
 }
 
+great.circle[is.infinite(great.circle)] <- NA
 
 #### add proportional range size calculations here
-pbdb_all <- read.csv("https://paleobiodb.org/data1.2/occs/list.csv?max_ma=5.333&min_ma=0.117&show=paleoloc") %>%
-  filter(!is.na(paleolng)) %>%
+pbdb_all <- chronosphere::fetch("pbdb") %>%
+  filter(max_ma < 5.333 & min_ma > 0.118 & !is.na(paleolng)) %>%
   distinct(paleolng, paleolat)
 
 pbdb_range <- max(rdist.earth(pbdb_all))
 
-pleist.df <- pleist.df %>% mutate(name = trimws(name)) %>%
-  left_join(cbind.data.frame(sp, range=great.circle, prop_range = great.circle/pbdb_range), by=c("name" = "sp")) %T>% 
+pleist.df <- pleist.df %>%   
+  left_join(cbind.data.frame(sp, range=great.circle, prop_range = great.circle/pbdb_range), by=c("valid_name" = "sp")) %T>% 
   write.csv(here("data", "pleist_resolved.csv"), row.names = FALSE) 
-
-##### load model 
-load(here("output", "ML_binary.RData"))
-
-pleist.df <- read.csv(here("data", "pleist_resolved.csv"), stringsAsFactors = FALSE)
-
-#### process data
-pleist.df <- predict(preProcValues, pleist.df) %>% 
-  select (-range) %>%
-  rename(range=prop_range) #choose proportional range
-
-
-probsTest <- caret::predict(mods[[1]], #neural network
-                            newdata=na.omit(pleist.df), 
-                            type="prob")
-threshold <- 0.5
-pred      <- factor( ifelse(probsTest[, "T"] > threshold, "T", "NT") )
-pred
-
-##### add extinction
-cbind(na.omit(pleist.df), pred) 
-
-x <- pleist.loc %>% select(-GenusName, -SpeciesName) %>%
-  reshape2::melt(id.vars="sp", variable.name = "loc", value.name="n") %>%
-  filter(!is.na(n)) %>%
-  left_join(pleist.age, by="loc") 
-
-x %>% left_join(pleist.sp %>% mutate(name = trimws(name)), by=c("sp"="name"))

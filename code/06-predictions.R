@@ -48,7 +48,8 @@ pleist.env %>%
   filter(!is.na(pred)) %>%
   View()
 
-###### DATA DEFICIENT ####
+
+# Data-deficient ----------------------------------------------------------
 ### load data
 df.corals <- read.csv(here("data", "traits_iucn.csv"), stringsAsFactors = FALSE)  %>%
   #remove all Data Deficient corals
@@ -68,3 +69,6 @@ dd.pred <- df.corals %>% select(sp) %>%
   distinct(sp, status)
 
 barplot(table(dd.pred$status))
+
+
+
