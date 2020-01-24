@@ -2,10 +2,7 @@
 # helper packages
 library(here)
 library(tidyverse)
-library(ggthemes)
-library(patchwork)
 library(magrittr)
-library(grid)
 
 # setting up machine learning models
 library(h2o)
@@ -17,14 +14,34 @@ library(pdp)
 library(DALEX)
 library(ingredients)
 
+# plotting packages
+library(icosa)
+library(ggthemes)
+library(patchwork)
+library(grid)
+library(ggalluvial)
+
+#load functions
 source(here("code", "functions.R"))
+
+#rescaling
+scaled.new <- function (newdata, olddata) {scale(newdata, attr(olddata, "scaled:center"), attr(olddata, "scaled:scale"))}
+unscale <- function(newdata, olddata){
+  newdata * attr(olddata, 'scaled:scale') + attr(olddata, 'scaled:center')
+}
+
 # Data  -------------------------------------------------------------------
 #palette
 u_col <- ggsci::pal_uchicago("default")(9)[c(2,5,4,3,1)]
 
 # classification data
-df.corals <- read.csv(here("data", "traits_iucn.csv"), stringsAsFactors = FALSE) %>% mutate(range = ifelse(range > 0, range, NA))
-df.corals <- df.corals %>% mutate_if(is.numeric, function (x) as.numeric(scale(x))) #normalise numerical predictors
+df.corals <- read.csv(here("data", "traits_iucn.csv"), stringsAsFactors = FALSE) %>% mutate(
+  range = ifelse(range > 0, range, NA),
+  corallite_ori = corallite,
+  depth_ori = max_depth,
+  range_ori = range)
+
+df.corals <- df.corals %>% mutate_at(c("max_depth", "corallite", "range"), function (x) as.numeric(scale(x))) #normalise numerical predictors
 
 df <- df.corals %>%
   na.omit() %>%
@@ -37,6 +54,7 @@ df <- df.corals %>%
   
   #treat as binary
   mutate(
+    status =iucn, 
     #reclassify iucn status 
     iucn = case_when(iucn == "Least Concern" ~ "NT",         
                      iucn == "Vulnerable" ~ "T",           
@@ -64,7 +82,7 @@ test <- data.split[[2]] # For final evaluation of model performance
 
 # variable names for response & features
 y <- "iucn"
-x <- setdiff(names(df), y)
+x <- c("max_depth", "branching", "corallite", "range" )
 
 # Load Model --------------------------------------------------------------
 
@@ -79,8 +97,8 @@ for(i in 1:nrow(leaderboard)){
   mods[[i]] <- h2o.loadModel(here("output", folder_name, leaderboard$model_id[i]))
 }
 
-# * Find probability threshold by maximising youden index -----------------
-cutoff=seq(0, 1, 0.05) #threshold values
+# * Find probability threshold  -----------------
+cutoff=seq(0, 1, 0.01) #threshold values
 n=10 #number of models
 
 opt_par <- list()
@@ -131,23 +149,116 @@ for (i in 1:n){
 
 opt_par <- do.call(rbind, opt_par)
 
-temp <- opt_par %>% group_by(fname) %>% summarise(AUC.train=max(AUC.train), AUC.test=max(AUC.test)) %>%
+#maximisation based on youden index
+temp <- opt_par %>% group_by(fname) %>% summarise(youden.train=max(youden.train), youden.test=max(youden.test)) %>%
   na.omit()
 
-opt_train <- temp %>% select(fname, AUC.train) %>% 
-  left_join(opt_par %>% select(fname, AUC.train, youden.train, cutoff.train), by=c("fname", "AUC.train"))
+opt_train <- temp %>% select(fname, youden.train) %>% 
+  left_join(opt_par %>% select(fname, AUC.train, youden.train, cutoff.train), by=c("fname", "youden.train"))
 
-opt_test <- temp %>% select(fname, AUC.test) %>% 
-  left_join(opt_par %>% select(fname, AUC.test, youden.test, cutoff.test), by=c("fname", "AUC.test"))
+opt_test <- temp %>% select(fname, youden.test) %>% 
+  left_join(opt_par %>% select(fname, AUC.test, youden.test, cutoff.test), by=c("fname", "youden.test"))
 
-opt_par <- full_join(opt_train, opt_test) %>%
+opt_par_final <- full_join(opt_train, opt_test) %T>%
+  write.csv(here("output", "Table_S_maximised_threshold_models.csv"), row.names = FALSE) %>%
   group_by(fname) %>%
-  mutate(cutoff = mean(cutoff.test, cutoff.train)) %>%
-  filter(cutoff > 0.3)   %>%
-  arrange(desc(AUC.train), desc(AUC.test))
+  mutate(cutoff = (cutoff.test+ cutoff.train)/2) %>%
+  arrange(desc(AUC.train), desc(AUC.test)) %>%
+  filter(cutoff > 0.3)
+
+opt_par_final
+win <- 1
+aml_leader <-  h2o.getModel(opt_par_final$fname[win])
 
 
-aml_leader <-  h2o.getModel(opt_par$fname[1])
+# * Confusion Matrix ------------------------------------------------------
+res.train <- h2o.predict(aml_leader , train)
+res.train <- as.data.frame(res.train)$p1
+
+res.test <- h2o.predict(aml_leader , test)
+res.test <- as.data.frame(res.test)$p1
+
+#all values lower than cutoff value will be classified as 0 (NT in this case)
+train.labels <- ifelse(res.train < opt_par_final$cutoff[win], 0, 1)
+test.labels <- ifelse(res.test < opt_par_final$cutoff[win], 0, 1)
+true.train.labels <- as.data.frame(train)$iucn
+true.test.labels <- as.data.frame(test)$iucn
+
+cf.train <- caret::confusionMatrix(as.factor(train.labels), true.train.labels)
+cf.test <- caret::confusionMatrix(as.factor(test.labels), true.test.labels)
+
+prop.table(cf.train$table, 2)
+prop.table(cf.test$table, 2)
+
+
+# * Misclassification -----------------------------------------------------
+train.df <- train %>% as.data.frame %>% 
+  mutate(pred = ifelse(train.labels==0, "NT", "T"))
+
+test.df <- test %>% as.data.frame %>% 
+  mutate(pred = ifelse(test.labels==0, "NT", "T"))
+
+
+df <- bind_rows(train.df, test.df) %>%
+  mutate(
+    status = factor(status, levels=c("Least Concern", "Near Threatened", "Vulnerable", "Endangered", "Critically Endangered")),
+         iucn = case_when(status == "Least Concern" ~ "NT",         
+                          status == "Vulnerable" ~ "T",           
+                          status == "Near Threatened"   ~ "NT",    
+                          status == "Endangered"   ~ "T",
+                          status == "Critically Endangered"   ~ "T")) 
+# per iucn status
+df %>% group_by(status, iucn, pred) %>%
+  tally() %>%
+  group_by(status) %>%
+  mutate(tot=sum(n), 
+         prop = n/sum(n)) %>%
+  ungroup %>%
+  reshape2::dcast(status+iucn~pred, value.var = "prop")
+
+# per branching
+df %>% 
+  group_by(branching, iucn, pred) %>%
+  tally() %>%
+  group_by(branching) %>%
+  mutate(tot=sum(n),
+         prop = n/tot) %>%
+  filter(iucn!=pred) %>%
+  summarise(prop =sum(prop))
+
+# per corallite diameter
+df %>% 
+  mutate( ints = cut(corallite_ori ,breaks = c(0, 5, 250))) %>%
+  group_by(iucn, pred, ints) %>%
+  tally() %>%
+  ungroup() %>%
+  group_by(ints) %>%
+  mutate(prop = n/sum(n)) %>%
+  filter(iucn != pred) %>%
+  group_by(ints) %>% summarise(sum(prop))
+
+# per range
+df %>% 
+  mutate( ints = cut(range_ori ,breaks=c(0, 1000, 20000))) %>%
+  group_by(iucn, pred, ints) %>%
+  tally() %>%
+  ungroup() %>%
+  group_by(ints) %>%
+  mutate(prop = n/sum(n)) %>%
+  filter(iucn != pred) %>%
+  group_by(ints) %>% summarise(sum(prop))
+
+# per range
+df %>% 
+  mutate( ints = cut(depth_ori ,breaks=c(0, 30, 165))) %>%
+  group_by(iucn, pred, ints) %>%
+  tally() %>%
+  ungroup() %>%
+  group_by(ints) %>%
+  mutate(prop = n/sum(n)) %>%
+  filter(iucn != pred) %>%
+  group_by(ints) %>% summarise(sum(prop))
+
 rm(list=("mods")) #remove models to save memory
 
 # * Model agnostic metrics
@@ -155,7 +266,7 @@ rm(list=("mods")) #remove models to save memory
 # create a data frame with just the features
 features <- as.data.frame(df) %>% select(-iucn)
 #  Create a numeric vector with the actual responses
-response <- as.numeric(df$iucn)
+response <- ifelse(df$iucn == "NT", 0, 1)
 
 # Create custom predict function that returns the predicted values as a vector
 pred <- function(model, newdata)  {
@@ -191,7 +302,7 @@ p_vi <- aml_varimp %>%
 
 ggsave (here("figs", "Fig_02_var_imp.svg"), p_vi, h=4, w=8)
 
-# *  partial dependence profile ---------------------------------------------------
+# *  Partial dependence profile ---------------------------------------------------
 
 # ** generate model agnostic object to explain response of features -------
 
@@ -212,11 +323,15 @@ pdp_max_depth <- ingredients::partial_dependency(dalex_explainer, variables = "m
 # ** Fig. 3: Partial dependency Plots -------------------------------------
 
 # function to plot pdp
-pdp_plot <- function (pdp, col="darkred"){
+pdp_plot <- function (pdp, olddata=NULL, levels=NULL, unscale=TRUE, col="darkred"){
   lab <- levels(pdp$`_vname_`)
   pdp <- as.data.frame(pdp)
   
+  if (unscale == TRUE) {pdp$`_x_` <- unscale(pdp$`_x_`, olddata)}
+  
   if(is.factor(pdp$`_x_`)){
+    pdp$`_x_` <- factor(as.character(pdp$`_x_`), levels=levels)
+    
     p <- ggplot(pdp, aes(x=`_x_`, y=`_yhat_`)) + geom_bar(stat="identity", aes(fill=`_x_`), width = 0.6) + 
       labs(x=lab, y="Predicted Value") +
       scale_y_continuous(expand=expand_scale(mult = c(0, .1))) +
@@ -239,10 +354,17 @@ pdp_plot <- function (pdp, col="darkred"){
 }
 
 # plot pdp
-p1 <- pdp_plot(pdp_corallite, col = u_col[2]) + labs(x="Corallite Diameter (normalised)")
-p2 <- pdp_plot(pdp_branching) + scale_fill_manual(values=u_col[2:5]) + labs(x="Degree of branching")
-p3 <- pdp_plot(pdp_range, col = u_col[3]) + labs(x="Range (normalised)")
-p4 <- pdp_plot(pdp_max_depth, col = u_col[4]) + labs(x="Maximum depth (normalised)")
+p1 <- pdp_plot(pdp_corallite, olddata=scale(df$corallite_ori), col = u_col[2]) + labs(x="Corallite Diameter (mm)") + 
+  coord_cartesian(xlim=c(0, 25)) + geom_hline(yintercept = opt_par_final$cutoff[win], linetype="dashed", col="darkgrey")
+
+p2 <- pdp_plot(pdp_branching, unscale = FALSE, levels=c("NB", "LB", "MB", "HB")) + scale_fill_manual(values=u_col[2:5]) + 
+  labs(x="Degree of branching")  + geom_hline(yintercept = opt_par_final$cutoff[win], linetype="dashed", col="darkgrey")
+
+p3 <- pdp_plot(pdp_range, olddata=scale(df$range_ori), col = u_col[3]) + labs(x="Range (normalised)") + 
+  geom_hline(yintercept = opt_par_final$cutoff[win], linetype="dashed", col="darkgrey")
+
+p4 <- pdp_plot(pdp_max_depth, olddata=scale(df$depth_ori), col = u_col[4]) + labs(x="Maximum depth (m)") +
+  coord_cartesian(xlim=c(0, 100)) + geom_hline(yintercept = opt_par_final$cutoff[win], linetype="dashed", col="darkgrey")
 
 svg(here("figs", "Fig_03_model_metrics.svg"), w=8, h=8)
 p1 + p2 + p3 + p4  + plot_annotation(tag_levels = "A")
@@ -257,7 +379,7 @@ res <- h2o.predict(aml_leader, as.h2o(dd))
 res <- as.data.frame(res)$p1
 
 # calculate threat status based on threshold cutoff
-dd$status <- ifelse(res < opt_par$cutoff[1], "NT", "T")
+dd$status <- ifelse(res < opt_par_final$cutoff[win], "NT", "T")
 
 #number of missing values for each species
 dd$na_count <- apply(dd, 1, function(x) sum(is.na(x)))
@@ -288,7 +410,7 @@ dd_sum <- dd_plot %>% ungroup() %>% group_by(genus, status) %>% mutate(tot=sum(n
 p <- ggplot(dd_plot, aes(fill=status2, y=n3, x=reorder(genus, n2))) +
   geom_bar(stat="identity", alpha=0.5, width=0.6) +
   geom_point(data=dd_sum , 
-             aes(x=genus, y=n, col=status2), cex=6, inherit.aes = FALSE) +
+             aes(x=genus, y=n, col=status2), cex=7.5, inherit.aes = FALSE) +
   geom_text(data=dd_sum, aes(x=genus, y=n, label=tot), col="white", fontface="bold", inherit.aes = FALSE) +
   scale_y_continuous(breaks = seq(-1,1, 0.5), labels = abs(seq(-1,1, 0.5))) +
   scale_x_discrete(expand=expand_scale(mult=0.05))+
@@ -316,64 +438,98 @@ dev.off()
 
 # * Map of DD distribution risk -------------------------------------------
 dd_occ <- read.csv(here("data", "2019-11-05_obis_scleractinia.csv"), stringsAsFactors = FALSE) %>%
+  filter(!between(decimalLatitude, 39, 45) & !between(decimalLongitude, -38, 30)) %>% #remove mediterranean ones
   filter(scientificName %in% dd$sp) %>% #select only occurrences for dd species
   distinct(scientificName, decimalLatitude, decimalLongitude) %>%
   left_join(dd %>% dplyr::select(sp, status), by=c("scientificName" = "sp"))
 
-#need script for obis cleaning here
-
-library(icosa)
-
-gr <- hexagrid(12, sp=TRUE)
-gr
-
+gr <- hexagrid(16, sp=TRUE) #2.5 degrees
 dd_occ$cell <- locate(gr, dd_occ[, c(3,2)])
 
-me <- tapply(INDEX=dd_occ$cell, X=dd_occ$status, function (x) length(x[x == "T"])/length(x))
-
-fl <- facelayer(gr)
-
-fl[] <- me
+me <- tapply(INDEX=dd_occ$cell, X=dd_occ$status, function (x) length(x[x == "T"])/length(x[x=="NT"| x == "T"]))
+mean(me, na.rm = TRUE)
 
 world <- rworldmap::getMap()
+cuts <- seq(0.0, 1, 0.2)
+map_col <- colorRampPalette(u_col[c(2,4,5)])(length(cuts)-1)
 
-svg(here("figs", "Fig_05_map_dd_risk.svg"), w=12, h=6)
-plot(fl, col=c("blue", "yellow", "red"), legend=FALSE)
-plot(world, col="lightgrey", border="darkgrey", add=TRUE)
+svg(here("figs", "Fig_05_map_dd_risk.svg"), w=8, h=5.4)
+plot(gr, border="NA")
+
+for (i in 1:(length(cuts)-1)){
+  n <- which(me >= cuts[i] & me < cuts[i+1])  
+  temp <- names(n)
+  
+  plot(gr[temp], col=map_col[i], border="white", add=TRUE)
+}
+
+plot(world, col=scales::alpha("grey95", 0.8), border="grey80", add=TRUE)
+cuts_labs <- cuts*100 #turn to percentage
+legend("bottomleft", paste0(cuts_labs[1:(length(cuts)-1)], "-", cuts_labs[2:length(cuts)], "%"), fill=map_col, horiz=TRUE, border=NA, bty="n", 
+       title = expression(bold("Percentage of DD species \nunder threat")))
 dev.off()
 
 
-
 # Plio-Pleistocene --------------------------------------------------------
+
 pleist.df <- read.csv(here("data", "pleist_resolved.csv"), stringsAsFactors = FALSE) %>%
-  mutate(corallite = as.numeric(gsub(">", "", corallite)), 
-         corallite = as.numeric(scale(corallite)),          
-         range = as.numeric(scale(prop_range)))
+  mutate(corallite = as.numeric(gsub(">", "", corallite)))
+
+pleist.df <- pleist.df %>% group_by(valid_name) %>%
+  summarise(corallite = max(corallite), max_depth=max(max_depth), range = max(range), #prop_range = max(prop_range), 
+            branching = unique(branching)[1], globally.extinct = unique(globally.extinct), 
+            regionally.extinct = unique(regionally.extinct)) 
+
+#scale based on original data
+pleist.df <- pleist.df %>% 
+  mutate(corallite = as.numeric(scaled.new(corallite, scale(df.corals$corallite_ori))),
+         max_depth = as.numeric(scaled.new(max_depth, scale(df.corals$depth_ori))),
+         range = as.numeric(scaled.new(max_depth, scale(df.corals$range_ori)))
+         )
+
+pleist.df[pleist.df$branching == "",]$branching <- NA 
+
 pleist.df[pleist.df$globally.extinct == "extinct" & pleist.df$regionally.extinct == "extant",]$regionally.extinct <- "extinct"
 res <- h2o.predict(aml_leader, as.h2o(pleist.df))
 res <- as.data.frame(res)$p1
 
 # calculate threat status based on threshold cutoff
-pleist.df$status <- ifelse(res < opt_par$cutoff[1], "NT", "T")
+pleist.df$status <- ifelse(res < opt_par_final$cutoff[win], "NT", "T")
+#number of missing values for each species
+pleist.df$na_count <- apply(pleist.df, 1, function(x) sum(is.na(x)))
+pleist.df[pleist.df$na_count >2,]$status <- "DD"
+
+prop.table(table(pleist.df$status[pleist.df$status != "DD"]))
 
 pleist.summ <- pleist.df %>% 
-  mutate(status = ifelse(status == "T", "Threatened", "Not Threatened"),
+  filter(status != "DD") %>%
+  mutate(status = case_when(status == "T" ~ "Threatened", 
+                            status == "NT" ~"Not Threatened"),
          globally.extinct = tools::toTitleCase(globally.extinct),
          regionally.extinct = tools::toTitleCase(regionally.extinct)) %>%
   group_by(globally.extinct, regionally.extinct, status) %>%
-  tally()
+  tally() %>%
+  ungroup()
 
+# % of threaned status going extinct
+pleist.summ %>% group_by(status, globally.extinct) %>% summarise(n=sum(n)) %>%
+  ungroup() %>%
+  left_join(pleist.summ %>% group_by(globally.extinct) %>% summarise(tot=sum(n))) %>%
+  mutate(prop = n/tot)
 
-library(ggalluvial)
+pleist.summ %>% group_by(status, regionally.extinct) %>% summarise(n=sum(n)) %>%
+  group_by(regionally.extinct) %>%
+  mutate(prop=n/sum(n))
 
+ 
 ggplot(pleist.summ,
-       aes(y = n,
-           axis1 = regionally.extinct, axis2 = globally.extinct, axis3 = status)) +
+       aes(y = n,axis1 = globally.extinct,
+           axis2 = regionally.extinct,  axis3 = status)) +
   scale_fill_manual(values = u_col[c(2,5)]) +
   geom_flow(stat = "alluvium", lode.guidance = "frontback", aes(fill = status), width=0.1) +
   geom_stratum(width = 0.1) +
   geom_text(stat = "stratum", infer.label = TRUE, reverse = TRUE, angle=90) +
-  scale_x_continuous(breaks = 1:3, labels = c("Regionally", "Globally", "Predicted \nStatus"), expand = expand_scale(mult = 0)) +
+  scale_x_continuous(breaks = 1:3, labels = c("Globally", "Regionally", "Predicted \nStatus"), expand = expand_scale(mult = 0)) +
   scale_y_continuous(expand = expand_scale(mult = 0)) +
   theme_light(base_size = 15) +
   labs(x="", y="No. of species", fill = "Status")+
@@ -386,4 +542,4 @@ ggplot(pleist.summ,
         legend.position = "top",
         legend.direction = "horizontal")
 
-ggsave(here("figs", "Fig_06_pleist_predictions.svg"), w=6, h=6)
+ggsave(here("figs", "Fig_06_pleist_predictions.svg"), w=6, h=8)

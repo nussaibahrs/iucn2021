@@ -21,32 +21,67 @@ write.csv(iucn, here("data", "iucn_resolved.csv"), row.names = FALSE)
 
 #Get OBIS Data
 #obis.corals<- occurrence("Scleractinia")
+load(here("data", "original", "2019-11-13_obis_scleractinia.RData"))
+# Remove unknown coordinates # they all have coordinates
+coral <- subset(obis.corals, is.na(decimalLatitude)==F)
+
+# remove records not identified to species level
+coral <- subset(coral, is.na(species)==F)
+
+# delete extinct species
+extinct <- c("Sphenotrochus intermedius")
+coral <- subset(coral, scientificName%in%extinct==F)
+
+# Get valid species names from OBIS to update coral species list
+species <- subset(coral, select=c(family, scientificName, scientificNameAuthorship))
+species <- unique(species)
+
+val.sp <- readxl::read_excel(here("data", "coral_species_new.xlsx"))
+coral2 <- merge(coral, val.sp, by="scientificName")
+
+# remove nomina dubia
+x <- which(coral2$valid=="dubium")
+coral2 <- coral2[-x,]
+
+# correct species names (and other information)
+x <- which(!is.na(coral2$validName))
+
+coral2$scientificName[x] <- coral2$validName[x]
+coral2$family.x[x] <- coral2$family.y[x]
+coral2$genus.x[x] <- coral2$genus.y[x]
+
+# remove superfluent columns
+coral2 <- subset(coral2, select= c(-family.y, -validName, -valid, -scientificNameAuthorship.y, -genus.y))
+obis.corals <- coral2
+
+
 
 # download only those in iucn from obis
 iucn.corals <- read.csv(here("data", "iucn_resolved.csv"), stringsAsFactors = FALSE)
+obis.corals <- subset(coral2, scientificName %in% iucn.corals$valid)
 
-obis.corals <- data.frame()
-na.corals <- c()
+# obis.corals <- data.frame()
+# na.corals <- c()
+# 
+# for (i in 1:nrow(iucn.corals)){
+#   cat("\r", i, "out of", nrow(iucn.corals))
+#   temp <- iucn.corals$valid[i]
+#   
+#   #download taxa occurrence from obis
+#   temp.occ <- occurrence(temp, verbose=FALSE) 
+#   
+#   if(length(temp.occ) > 0){
+#     obis.corals <- rbind(obis.corals, temp.occ%>%
+#                            select(scientificName, decimalLatitude, decimalLongitude))
+#   } else {
+#     na.corals[i] <- temp
+#   }
+# }
+# 
+# na.corals <- na.corals[!is.na(na.corals)]
+# na.corals #not in the obis database
 
-for (i in 1:nrow(iucn.corals)){
-  cat("\r", i, "out of", nrow(iucn.corals))
-  temp <- iucn.corals$valid[i]
-  
-  #download taxa occurrence from obis
-  temp.occ <- occurrence(temp, verbose=FALSE) 
-  
-  if(length(temp.occ) > 0){
-    obis.corals <- rbind(obis.corals, temp.occ%>%
-                           select(scientificName, decimalLatitude, decimalLongitude))
-  } else {
-    na.corals[i] <- temp
-  }
-}
-
-na.corals <- na.corals[!is.na(na.corals)]
-na.corals #not in the obis database
-
-write.csv(obis.corals, here("data", "2019-11-05_obis_scleractinia.csv"), row.names = FALSE)
+write.csv(obis.corals %>% select(scientificName, decimalLongitude, decimalLatitude), here("data", "2019-11-05_obis_scleractinia.csv"), row.names = FALSE)
 iucn.corals <- iucn.corals[!iucn.corals$scientificName %in% na.corals,]
 
 #### CoralTraits Database

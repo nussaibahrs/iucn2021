@@ -117,7 +117,7 @@ pleist.sp <- read.csv(here("data", "pleist_sp.csv"), stringsAsFactors = FALSE) %
          TRUE~new),
          extinct = extinct.final,
          new=trimws(new)) %>%
-  select(sp, new, extinct) %>%
+  select(sp, new, extinct, corallite, shape) %>%
   distinct() %>%
   rename(valid_name = new)
 
@@ -126,6 +126,8 @@ pleist.df <- pleist.df %>% left_join(pleist.sp) %>%
   group_by(valid_name) %>%
   summarise(bottom=max(bottom), top=min(top), globally.extinct = unique(extinct)) %>%
   mutate(regionally.extinct = ifelse(top > 0, "extinct", "extant"))
+
+pleist.df <- pleist.df %>% left_join(pleist.sp %>% select(valid_name, corallite, shape))
 
 ##### adding environment #####
 pleist.age <- readxl::read_excel(here("data", "original", "budd-pleistocene.xls"), sheet=2) %>%
@@ -157,37 +159,32 @@ pleist.loc <- pleist.loc %>% left_join(pleist.sp) %>%
 pleist.loc[is.na(pleist.loc)] <- 0
 
 pleist.loc <- pleist.loc %>% mutate(env = case_when(deep > shallow ~ "deep",
-                                                  shallow > deep ~ "shallow" ,
-                                                  shallow == deep ~ "shallow"
+                                                    shallow > deep ~ "shallow" ,
+                                                    shallow == deep ~ "shallow"
 ))
 
 
-pleist.sp2 <- read.csv(here("data", "original", "pleist_sp.csv"), stringsAsFactors = FALSE) %>%
-  select(genus, species, name, corallite, shape, max_depth) 
 
-pleist.sp2$genus <- gsub("-.*","\\1",pleist.sp2$genus)
-pleist.sp2$species <- gsub("-.*","\\1",pleist.sp2$species)
-pleist.sp2$sp <- paste(pleist.sp2$genus  , pleist.sp2$species)
+#### ctdb
+ctdb <- read.csv(here("data", "ctdb_resolved.csv"), stringsAsFactors  = FALSE) %>%
+  filter(trait_name == "Depth lower") %>% group_by(valid) %>%
+  summarise(max_depth = max(value)) %>%
+  na.omit()
 
-#add to corrected species
-pleist.sp2 <- pleist.sp2 %>% mutate(sp = paste(genus, species)) %>%
-  left_join(pleist.sp) %>%
+pleist.df <- pleist.df %>% left_join(ctdb, by=c("valid_name"= "valid")) %>%
   left_join(pleist.loc %>% select(valid_name, env)) %>%
-  mutate(max_depth = case_when(env == "deep" ~ 50,
-                               env == "shallow" ~ 30,
-                               TRUE ~ 0)) %>%
-  filter(!is.na(valid_name))
+  mutate(max_depth = ifelse(is.na(max_depth), case_when(env == "deep"  ~ 50,
+                               env == "shallow" ~ 30), max_depth))
 
+#write.csv(unique(pleist.df$shape), here("data", "growth_forms_pleist.csv"), row.names=FALSE)
+growth <- read.csv(here("data", "growth_forms_pleist.csv"), stringsAsFactors = FALSE)
 
-#### branching
-pleist.sp2$branching <- plyr::mapvalues(pleist.sp2$shape, from=unique(pleist.sp2$shape), c("HB", "HB", "LB", NA, "LB", "LB", NA, "MB", "MB", "MB", NA))
+pleist.df$branching <- plyr::mapvalues(pleist.df$shape, from=growth$old, to=growth$new)
 
-pleist.df <- pleist.sp2 %>% left_join(pleist.df) %>% select(valid_name, max_depth, branching, corallite, globally.extinct, regionally.extinct)
-
-  ##### get range from pbdb
+##### get range from pbdb
 sp <- pleist.df$valid_name
 
-url <- "https://paleobiodb.org/data1.2/occs/list.txt?base_name=%s&show=paleoloc,coords"
+url <- "https://paleobiodb.org/data1.2/occs/list.txt?base_name=%s&interval=Pliocene,Pleistocene&show=paleoloc,coords"
 
 sp_pbdb <- list()
 
@@ -204,8 +201,7 @@ for (i in 1:length(sp)){
 }
 
 sp_pbdb <- sp_pbdb[-which(sapply(sp_pbdb, is.null))]
-sp_pbdb <- do.call(rbind, sp_pbdb) %>% filter(max_ma < 5.333 & min_ma > 0.118 & #time constraints
-                                                !is.na(paleolng)) #may have to recompute paleolng
+sp_pbdb <- do.call(rbind, sp_pbdb) %>% filter(!is.na(paleolng)) #may have to recompute paleolng
 
 #calculate geographic range
 library(fields)
@@ -224,11 +220,12 @@ great.circle[is.infinite(great.circle)] <- NA
 
 #### add proportional range size calculations here
 pbdb_all <- chronosphere::fetch("pbdb") %>%
-  filter(max_ma < 5.333 & min_ma > 0.118 & !is.na(paleolng)) %>%
+  filter(max_ma <= 5.333 & min_ma > 0.118 & !is.na(paleolng)) %>%
   distinct(paleolng, paleolat)
 
 pbdb_range <- max(rdist.earth(pbdb_all))
 
 pleist.df <- pleist.df %>%   
-  left_join(cbind.data.frame(sp, range=great.circle, prop_range = great.circle/pbdb_range), by=c("valid_name" = "sp")) %T>% 
+  left_join(cbind.data.frame(valid_name=sp, range=great.circle, prop_range = great.circle/pbdb_range)) %T>% 
   write.csv(here("data", "pleist_resolved.csv"), row.names = FALSE) 
+
