@@ -2,8 +2,6 @@
 # helper packages
 library(here)
 library(tidyverse)
-library(ggthemes)
-library(patchwork)
 
 # setting up machine learning models
 library(h2o)
