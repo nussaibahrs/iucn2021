@@ -2,8 +2,6 @@
 # helper packages
 library(here)
 library(tidyverse)
-library(ggthemes)
-library(patchwork)
 
 # setting up machine learning models
 library(h2o)
@@ -52,12 +50,12 @@ test <- data.split[[2]] # For final evaluation of model performance
 
 # variable names for response & features
 y <- "iucn"
-x <- setdiff(names(df), y)
+x <- c("branching","corallite")
 
 
 # Models ------------------------------------------------------------------
 
-run_time <- 60 * 60 * 8 #maximum time to run automl
+run_time <- 60*60*8  #maximum time to run automl
 
 # * Automatic Machine Learning ----------------------------------------------
 system.time(aml <- h2o.automl(y=y, x=x, 
@@ -71,10 +69,9 @@ system.time(aml <- h2o.automl(y=y, x=x,
                               max_runtime_secs = run_time,
                               max_models = 500))
 
-
 # * Save models -----------------------------------------------------------
 
-folder_name <-"model_binary_8h"
+folder_name <-"model_life_traits_8h"
 unlink(here("output", folder_name), recursive = TRUE)
 
 leaderboard <- as.data.frame(aml@leaderboard)
@@ -88,17 +85,6 @@ for(i in 1:nrow(leaderboard)) {
 write.csv(leaderboard, here("output", folder_name, "leaderboard.csv"), row.names = FALSE)
 
 
-#### find best model
-folder_name <- "model_binary_4h"
-leaderboard <- read.csv(here("output", folder_name, "leaderboard.csv"), stringsAsFactors = FALSE)
-
-mods <- list() 
-
-for(i in 1:nrow(leaderboard)){
-  mods[[i]] <- h2o.loadModel(here("output", folder_name, leaderboard$model_id[i]))
-}
-
-# * Find probability threshold  -----------------
 cutoff=seq(0.29, 1, 0.01) #threshold values
 n=nrow(leaderboard) #number of models
 
@@ -164,7 +150,7 @@ opt_par_final <- full_join(opt_train, opt_test)%>%
   group_by(fname) %>%
   mutate(cutoff = (cutoff.test+ cutoff.train)/2) %>%
   arrange(desc(AUC.test), desc(AUC.train))  %T>%
-  write.csv(here("output", "Table_S_maximised_threshold_model_binary.csv"), row.names = FALSE) 
+  write.csv(here("output", "Table_S_maximised_threshold_model_morph.csv"), row.names = FALSE) 
 
 # Terminate h2o session ---------------------------------------------------
 h2o.shutdown(prompt=FALSE)

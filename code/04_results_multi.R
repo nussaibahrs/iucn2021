@@ -41,25 +41,11 @@ df.corals <- read.csv(here("data", "traits_iucn.csv"), stringsAsFactors = FALSE)
   depth_ori = max_depth,
   range_ori = range)
 
-df.corals <- df.corals %>% mutate_at(c("max_depth", "corallite", "range"), function (x) as.numeric(scale(x))) #normalise numerical predictors
+df <- subset(na.omit(df.corals[,-1]), iucn != "Data Deficient")
+df$branching <-  factor(df$branching, levels=c("NB", "LB", "MB", "HB"))
+df$iucn <- as.factor(df$iucn)
 
-df <- df.corals %>%
-  na.omit() %>%
-  
-  #remove all Data Deficient corals
-  filter(iucn != "Data Deficient") %>%
-  
-  #treat as binary
-  mutate(
-    status =iucn, 
-    #reclassify iucn status 
-    iucn = case_when(iucn == "Least Concern" ~ "NT",         
-                     iucn == "Vulnerable" ~ "T",           
-                     iucn == "Near Threatened"   ~ "NT",    
-                     iucn == "Endangered"   ~ "T",         
-                     iucn == "Critically Endangered"~ "T"),
-    branching = factor(branching, levels=c("NB", "LB", "MB", "HB")),
-    iucn = ifelse(iucn == "T", 1, 0) %>% as.factor()) 
+levels(df$iucn) <- c("EN", "EN", "LC", "NT", "VU")
 
 # Set up h2o session ------------------------------------------------------
 
@@ -85,21 +71,18 @@ x <- c("max_depth", "branching", "corallite", "range" )
 
 # * Load best model in h2o session ------------------------------------
 
-folder_name <- "model_binary_4h"
-leaderboard <- read.csv(here("output", "Table_S_maximised_threshold_model_binary.csv"), stringsAsFactors = FALSE)
-win <- 1
-aml_leader <- h2o.loadModel(here("output", folder_name, leaderboard$fname[win]))
+folder_name <- "model_multi"
+leaderboard <- read.csv(here("output", folder_name, "leaderboard.csv"), stringsAsFactors = FALSE)
+aml_leader <- h2o.loadModel(here("output", folder_name, leaderboard$model_id[1])) #load top one
 
 # * Confusion Matrix ------------------------------------------------------
-res.train <- h2o.predict(aml_leader , train)
-res.train <- as.data.frame(res.train)$p1
+res.train <- h2o.predict(aml_leader, train)
 
 res.test <- h2o.predict(aml_leader , test)
-res.test <- as.data.frame(res.test)$p1
 
 #all values lower than cutoff value will be classified as 0 (NT in this case)
-train.labels <- ifelse(res.train < opt_par_final$cutoff[win], 0, 1)
-test.labels <- ifelse(res.test < opt_par_final$cutoff[win], 0, 1)
+train.labels <- as.data.frame(res.train)$predict
+test.labels <- as.data.frame(res.test)$predict
 true.train.labels <- as.data.frame(train)$iucn
 true.test.labels <- as.data.frame(test)$iucn
 
@@ -112,28 +95,22 @@ prop.table(cf.test$table, 2)
 
 # * Misclassification -----------------------------------------------------
 train.df <- train %>% as.data.frame %>% 
-  mutate(pred = ifelse(train.labels==0, "NT", "T"))
+  mutate(pred = train.labels)
 
 test.df <- test %>% as.data.frame %>% 
-  mutate(pred = ifelse(test.labels==0, "NT", "T"))
+  mutate(pred= test.labels)
 
 
-df <- bind_rows(train.df, test.df) %>%
-  mutate(
-    status = factor(status, levels=c("Least Concern", "Near Threatened", "Vulnerable", "Endangered", "Critically Endangered")),
-         iucn = case_when(status == "Least Concern" ~ "NT",         
-                          status == "Vulnerable" ~ "T",           
-                          status == "Near Threatened"   ~ "NT",    
-                          status == "Endangered"   ~ "T",
-                          status == "Critically Endangered"   ~ "T")) 
+df <- bind_rows(train.df, test.df)
+
 # per iucn status
-df %>% group_by(status, iucn, pred) %>%
+df %>% group_by(iucn, pred) %>%
   tally() %>%
-  group_by(status) %>%
+  group_by(iucn) %>%
   mutate(tot=sum(n), 
          prop = n/sum(n)) %>%
   ungroup %>%
-  reshape2::dcast(status+iucn~pred, value.var = "prop")
+  reshape2::dcast(iucn~pred, value.var = "prop")
 
 # per branching
 df %>% 
@@ -195,20 +172,12 @@ pred <- function(model, newdata)  {
 
 
 # * Global feature importance ---------------------------------------------
-# ** Fig 2: Variable Importance -------------------------------------------
-if(aml_leader@algorithm != "stackedensemble") {
-  aml_varimp <- h2o.varimp(aml_leader) 
-} else {
-  #get base model contributing to the most to the stackedensemble
-  meta <- h2o.getModel(aml_leader@model$metalearner$name)
-  meta <- sort(meta@model$coefficients, decreasing = TRUE)[1]
-  meta <- h2o.getModel(names(meta))
-  aml_varimp <- h2o.varimp(meta) 
-}
+aml_varimp <- h2o.varimp(aml_leader) #calculate variable importance
 
-aml_varimp <- aml_varimp %>%
+# ** Fig 2: Variable Importance -------------------------------------------
+aml_varimp <- aml_varimp %>% 
   as.data.frame() %>%
-  filter(variable != "branching: missing(NA)") %>%
+  filter(relative_importance > 0.11) %>%
   mutate(rank = nrow(.):1) %>%
   mutate(variable = gsub("\\.", ": ", variable),
          variable = gsub("_", " ", variable))
@@ -388,7 +357,7 @@ ds_occ <- read.csv(here("data", "2019-11-05_obis_scleractinia.csv"), stringsAsFa
   filter(!between(decimalLatitude, 39, 45) & !between(decimalLongitude, -38, 30)) %>% #remove mediterranean ones
   filter(scientificName %in% df$sp) %>% #select data sufficient species only
   distinct(scientificName, decimalLatitude, decimalLongitude) %>%
-  left_join(df %>% dplyr::select(sp, iucn) %>% mutate(status = iucn) %>% select(-iucn), by=c("scientificName" = "sp"))
+  left_join(df %>% dplyr::select(sp, iucn) %>% mutate(status = ifelse(iucn == 0, "NT", "T")) %>% select(-iucn), by=c("scientificName" = "sp"))
 
 ds_occ$cell <- locate(gr, ds_occ[, c(3,2)])
 
