@@ -20,15 +20,20 @@ library(ggthemes)
 library(patchwork)
 library(grid)
 library(ggalluvial)
+library(raster)
+library(ggpubr)
 
 #load functions
 source(here("code", "functions.R"))
 
 #rescaling
-scaled.new <- function (newdata, olddata) {scale(newdata, attr(olddata, "scaled:center"), attr(olddata, "scaled:scale"))}
-unscale <- function(newdata, olddata){
-  newdata * attr(olddata, 'scaled:scale') + attr(olddata, 'scaled:center')
-}
+# scaled.new <- function (newdata, olddata) {scale(newdata, attr(olddata, "scaled:center"), attr(olddata, "scaled:scale"))}
+# unscale <- function(newdata, olddata){
+#   newdata * attr(olddata, 'scaled:scale') + attr(olddata, 'scaled:center')
+# }
+
+scaled.new <- function (newdata, olddata) {(newdata-min(olddata, na.rm = TRUE))/(max(olddata, na.rm = TRUE)-min(olddata, na.rm = TRUE))}
+unscale <- function(newdata, olddata){min(olddata, na.rm = TRUE) + newdata * (max(olddata, na.rm = TRUE) - min(olddata, na.rm=TRUE))}
 
 # Data  -------------------------------------------------------------------
 #palette
@@ -41,7 +46,8 @@ df.corals <- read.csv(here("data", "traits_iucn.csv"), stringsAsFactors = FALSE)
   depth_ori = max_depth,
   range_ori = range)
 
-df.corals <- df.corals %>% mutate_at(c("max_depth", "corallite", "range"), function (x) as.numeric(scale(x))) #normalise numerical predictors
+#df.corals <- df.corals %>% mutate_at(c("max_depth", "corallite", "range"), function (x) as.numeric(scale(x))) #normalise numerical predictors
+df.corals <- df.corals %>% mutate_at(c("max_depth", "corallite", "range"), function(x){(x-min(x, na.rm = TRUE))/(max(x, na.rm = TRUE)-min(x, na.rm = TRUE))})
 
 df <- df.corals %>%
   na.omit() %>%
@@ -79,16 +85,55 @@ test <- data.split[[2]] # For final evaluation of model performance
 
 # variable names for response & features
 y <- "iucn"
-x <- c("branching", "corallite")
+x <- c("max_depth", "branching", "corallite", "range" )
 
 # Load Model --------------------------------------------------------------
 
-# * Load 10 best models in h2o session ------------------------------------
+# * Load best model in h2o session ------------------------------------
+hours <- 1
+leaderboard <- read.csv(here("output", paste0("Table_S_maximised_threshold_model_binary_norm_", hours, "h.csv")), stringsAsFactors = FALSE) %>% arrange(desc(AUC.test))
+folder <- paste0("model_binary_norm_", hours, "h")
+folder_name <- folder
 
-folder_name <- "model_life_traits"
-leaderboard <- read.csv(here("output", "Table_S_maximised_threshold_model_morph.csv"), stringsAsFactors = FALSE)
-win <- 1
+#number of models to choose from
+n=5
+auc.df <- data.frame(n = 1:n, 
+                     fname=NA,
+                     cutoff = NA,
+                     AUC.train=NA,
+                     AUC.test=NA)
+
+for (i in 1:n){
+  auc.df$fname[i] <- leaderboard$fname[i]
+  auc.df$cutoff[i] <- leaderboard$cutoff[i]
+  mod <- h2o.loadModel(here("output", folder_name, leaderboard$fname[i]))
+  
+  res.train <- h2o.predict(mod , train)
+  res.train <- as.data.frame(res.train)$p1
+  
+  res.test <- h2o.predict(mod , test)
+  res.test <- as.data.frame(res.test)$p1
+  
+  #all values lower than cutoff value will be classified as 0 (NT in this case)
+  train.labels <- ifelse(res.train < leaderboard$cutoff[i], 0, 1)
+  test.labels <- ifelse(res.test < leaderboard$cutoff[i], 0, 1)
+  true.train.labels <- as.data.frame(train)$iucn
+  true.test.labels <- as.data.frame(test)$iucn
+  
+  auc.df$AUC.train[i] <- as.numeric(auc(true.train.labels, train.labels))
+  auc.df$AUC.test[i] <- as.numeric(auc(true.test.labels, test.labels))
+  
+}
+
+auc.df <- auc.df %>% arrange(desc(AUC.test))
+auc.df
+win <- auc.df$n[1]
 aml_leader <- h2o.loadModel(here("output", folder_name, leaderboard$fname[win]))
+
+#### TEXT FOR PAPER
+paste0("Out of the", nrow(leaderboard), "models trained by the AutoML, the optimal model was a", aml_leader@algorithm, 
+"with AUC of ", auc.df$AUC.train[win],  "on the training dataset and ", auc.df$AUC.test[win], "on the test dataset and", 
+"an average classification probability threshold (decision threshold) of ", auc.df$cutoff[win])
 
 # * Confusion Matrix ------------------------------------------------------
 res.train <- h2o.predict(aml_leader , train)
@@ -98,8 +143,8 @@ res.test <- h2o.predict(aml_leader , test)
 res.test <- as.data.frame(res.test)$p1
 
 #all values lower than cutoff value will be classified as 0 (NT in this case)
-train.labels <- ifelse(res.train < opt_par_final$cutoff[win], 0, 1)
-test.labels <- ifelse(res.test < opt_par_final$cutoff[win], 0, 1)
+train.labels <- ifelse(res.train < leaderboard$cutoff[win], 0, 1)
+test.labels <- ifelse(res.test < leaderboard$cutoff[win], 0, 1)
 true.train.labels <- as.data.frame(train)$iucn
 true.test.labels <- as.data.frame(test)$iucn
 
@@ -109,7 +154,12 @@ cf.test <- caret::confusionMatrix(as.factor(test.labels), true.test.labels)
 prop.table(cf.train$table, 2)
 prop.table(cf.test$table, 2)
 
-
+### TEXT FOR PAPER
+paste0("The model correctly classified", cf.train[2,2]*100,"% and ",cf.test[2,2]*100,
+       "% of the threatened species for the training and test dataset respectively.")
+paste0("It had a slightly lower classification accuracy for non-threatened species, ",cf.train[1,1],
+       "% and ",cf.test[1,1],"%, and overall accuracy of ",cf.train$overall,"% and ",cf.test$overall,
+       "%, respectively on the training and test datasets.")
 # * Misclassification -----------------------------------------------------
 train.df <- train %>% as.data.frame %>% 
   mutate(pred = ifelse(train.labels==0, "NT", "T"))
@@ -135,6 +185,8 @@ df %>% group_by(status, iucn, pred) %>%
   ungroup %>%
   reshape2::dcast(status+iucn~pred, value.var = "prop")
 
+
+
 # per branching
 df %>% 
   group_by(branching, iucn, pred) %>%
@@ -147,7 +199,7 @@ df %>%
 
 # per corallite diameter
 df %>% 
-  mutate( ints = cut(corallite_ori ,breaks = c(0, 5, 250))) %>%
+  mutate(ints = cut(corallite_ori ,breaks = c(0, 5, max(corallite_ori)))) %>%
   group_by(iucn, pred, ints) %>%
   tally() %>%
   ungroup() %>%
@@ -156,12 +208,33 @@ df %>%
   filter(iucn != pred) %>%
   group_by(ints) %>% summarise(sum(prop))
 
-rm(list=("mods")) #remove models to save memory
+# per range
+df %>% 
+  mutate( ints = cut(range_ori ,breaks=c(0, 1000, 20000))) %>%
+  group_by(iucn, pred, ints) %>%
+  tally() %>%
+  ungroup() %>%
+  group_by(ints) %>%
+  mutate(prop = n/sum(n)) %>%
+  filter(iucn != pred) %>%
+  group_by(ints) %>% summarise(sum(prop))
+
+# per depth
+df %>% 
+  mutate( ints = cut(depth_ori ,breaks=c(0, 30, 165))) %>%
+  group_by(iucn, pred, ints) %>%
+  tally() %>%
+  ungroup() %>%
+  group_by(ints) %>%
+  mutate(prop = n/sum(n)) %>%
+  filter(iucn != pred) %>%
+  group_by(ints) %>% summarise(sum(prop))
 
 # * Model agnostic metrics
 
 # create a data frame with just the features
-features <- as.data.frame(df) %>% select(-iucn)
+features <- as.data.frame(df) %>% dplyr::select(-iucn)
+
 #  Create a numeric vector with the actual responses
 response <- ifelse(df$iucn == "NT", 0, 1)
 
@@ -173,21 +246,39 @@ pred <- function(model, newdata)  {
 
 
 # * Global feature importance ---------------------------------------------
-
 # ** Fig 2: Variable Importance -------------------------------------------
-aml_varimp <- vip::vip(
-  aml_leader,
-  train = as.data.frame(train)[,c(2:5)],
-  method = "permute",
-  target = "iucn",
-  reference_class = "iucn",
-  metric = "auc",
-  nsim = 50,
-  sample_frac = 0.5,
-  pred_wrapper = pred
-)
+if(aml_leader@algorithm != "stackedensemble") {
+  aml_varimp <- h2o.varimp(aml_leader) 
+} else {
+  #get base model contributing to the most to the stackedensemble
+  meta <- h2o.getModel(aml_leader@model$metalearner$name)
+  meta <- sort(meta@model$coefficients, decreasing = TRUE)[1]
+  meta <- h2o.getModel(names(meta))
+  aml_varimp <- h2o.varimp(meta) 
+}
 
-#ggsave (here("figs", "Fig_02_var_imp.svg"), p_vi, h=4, w=8)
+aml_varimp <- aml_varimp %>%
+  as.data.frame() %>%
+  filter(variable != "branching: missing(NA)") %>%
+  mutate(rank = nrow(.):1) %>%
+  mutate(variable = gsub("\\.", ": ", variable),
+         variable = gsub("_", " ", variable))
+
+p_vi <- aml_varimp %>% 
+  as.data.frame() %>%
+  filter(variable != "branching: missing(NA)") %>%
+  mutate(rank = nrow(.):1) %>%
+  ggplot(aes(x=reorder(variable, rank), y=scaled_importance)) +
+  geom_bar(stat="identity", width = 0.6, fill = u_col[5]) +
+  scale_y_continuous(expand=expand_scale(mult = c(0, .1))) +
+  labs(x="Variables", y="Scaled Importance") +
+  coord_flip() +
+  theme_light(base_size = 15) +
+  theme(axis.title = element_text(size = 12, face="bold"),
+        axis.text.x = element_text(family = "Roboto Mono", size = 10),
+        panel.grid = element_blank()) 
+
+ggsave (here("figs", "Fig_02_var_imp.svg"), p_vi, h=4, w=8)
 
 # *  Partial dependence profile ---------------------------------------------------
 
@@ -203,6 +294,9 @@ dalex_explainer <- DALEX::explain(
 # ** generate the partial dependence profiles for each variable ------------
 pdp_corallite <- ingredients::partial_dependency(dalex_explainer, variables = "corallite")
 pdp_branching <- ingredients::partial_dependency(dalex_explainer, variables = "branching", variable_type="categorical")
+pdp_range <- ingredients::partial_dependency(dalex_explainer, variables = "range")
+pdp_max_depth <- ingredients::partial_dependency(dalex_explainer, variables = "max_depth")
+
 
 # ** Fig. 3: Partial dependency Plots -------------------------------------
 
@@ -237,21 +331,24 @@ pdp_plot <- function (pdp, olddata=NULL, levels=NULL, unscale=TRUE, col="darkred
   return(p)
 }
 
-
-
 # plot pdp
-p1 <- pdp_plot(pdp_corallite, olddata=scale(df$corallite_ori), col = u_col[2]) + labs(x="Corallite Diameter (mm)") + 
-  coord_cartesian(xlim=c(0, 25)) + geom_hline(yintercept = opt_par_final$cutoff[win], linetype="dashed", col="darkgrey")
+p1 <- pdp_plot(pdp_corallite, olddata=df$corallite_ori, col = u_col[2]) + labs(x="Corallite Diameter (mm)") + 
+  coord_cartesian(xlim=c(0, 25)) 
 
 p2 <- pdp_plot(pdp_branching, unscale = FALSE, levels=c("NB", "LB", "MB", "HB")) + scale_fill_manual(values=u_col[2:5]) + 
-  labs(x="Degree of branching")  + geom_hline(yintercept = opt_par_final$cutoff[win], linetype="dashed", col="darkgrey")
+  labs(x="Degree of branching")  
 
-#svg(here("figs", "Fig_03_model_metrics.svg"), w=8, h=8)
-p1 + p2 + plot_annotation(tag_levels = "A")
-#dev.off()
+p3 <- pdp_plot(pdp_range, olddata=df$range_ori, col = u_col[3]) + labs(x="Range (km)") 
+
+p4 <- pdp_plot(pdp_max_depth, olddata=df$depth_ori, col = u_col[4]) + labs(x="Maximum depth (m)") +
+  coord_cartesian(xlim=c(0, 100)) 
+
+svg(here("figs", "Fig_03_model_metrics.svg"), w=8, h=8)
+p1 + p2 + p3 + p4  + plot_annotation(tag_levels = "A")
+dev.off()
 
 # DD species ------------------------------------------------
-dd <- df.corals %>% filter(iucn =="Data Deficient") %>% select (sp, branching, corallite, corallite_ori)
+dd <- df.corals %>% filter(iucn =="Data Deficient") %>% dplyr::select (-iucn)
 
 # * Prediction of threat status -------------------------------------------
 
@@ -259,11 +356,12 @@ res <- h2o.predict(aml_leader, as.h2o(dd))
 res <- as.data.frame(res)$p1
 
 # calculate threat status based on threshold cutoff
-dd$status <- ifelse(res < opt_par_final$cutoff[win], "NT", "T")
+dd$status <- ifelse(res < leaderboard$cutoff[win], "NT", "T")
 
 #number of missing values for each species
-dd$na_count <- apply(dd, 1, function(x) sum(is.na(x)))
-dd[dd$na_count >1,]$status <- "DD"
+dd$na_count <- apply(dd[,x], 1, function(x) sum(is.na(x)))
+dd[dd$na_count >2,]$status <- "DD"
+table(dd$status)
 
 #get genus for each species
 dd$genus <- gsub( " .*$", "", dd$sp)
@@ -308,19 +406,20 @@ p <- ggplot(dd_plot, aes(fill=status2, y=n3, x=reorder(genus, n2))) +
         legend.position = "none",
         plot.margin = unit(c(2, 1, 1, 1), "lines"))
 
-#svg(here("figs", "Fig_04_dd_species.svg"), w=6, h=6)
+svg(here("figs", "Fig_04_dd_species.svg"), w=6, h=6)
 p 
 grid::grid.text("Threatened", x = unit(0.45, "npc"), y = unit(.95, "npc"), 
                 gp=gpar(family="Roboto Mono", fontface="bold"), hjust=-1.04)
 grid::grid.text("Not Threatened", x = unit(0.45, "npc"), y = unit(.95, "npc"), 
                 gp=gpar(family="Roboto Mono", fontface="bold"), hjust=0.3)
-#dev.off()
+dev.off()
 
 # * Map of DD distribution risk -------------------------------------------
 gr <- hexagrid(16, sp=TRUE) #2.5 degrees
 world <- rworldmap::getMap()
 cuts <- seq(0.0, 1, 0.2)
 map_col <- colorRampPalette(u_col[c(2,4,5)])(length(cuts)-1)
+
 
 #### DD only
 dd_occ <- read.csv(here("data", "2019-11-05_obis_scleractinia.csv"), stringsAsFactors = FALSE) %>%
@@ -332,16 +431,15 @@ dd_occ <- read.csv(here("data", "2019-11-05_obis_scleractinia.csv"), stringsAsFa
 dd_occ$cell <- locate(gr, dd_occ[, c(3,2)])
 
 me_dd <- tapply(INDEX=dd_occ$cell, X=dd_occ$status, function (x) length(x[x == "T"])/length(x[x=="NT"| x == "T"]))
+
 mean(me_dd, na.rm = TRUE)
-
-
 
 ##### DS only
 ds_occ <- read.csv(here("data", "2019-11-05_obis_scleractinia.csv"), stringsAsFactors = FALSE) %>%
   filter(!between(decimalLatitude, 39, 45) & !between(decimalLongitude, -38, 30)) %>% #remove mediterranean ones
-  filter(scientificName %in% df$sp) %>% #select only occurrences for dd species
+  filter(scientificName %in% df$sp) %>% #select data sufficient species only
   distinct(scientificName, decimalLatitude, decimalLongitude) %>%
-  left_join(df %>% dplyr::select(sp, iucn) %>% mutate(status = ifelse(iucn == 0, "NT", "T")) %>% mutate(status  = iucn) %>% select(-iucn) , by=c("scientificName" = "sp"))
+  left_join(df %>% dplyr::select(sp, iucn) %>% mutate(status = iucn) %>% dplyr::select(-iucn), by=c("scientificName" = "sp"))
 
 ds_occ$cell <- locate(gr, ds_occ[, c(3,2)])
 
@@ -352,21 +450,84 @@ mean(me_ds, na.rm = TRUE)
 all_occ <- rbind(ds_occ, dd_occ)
 
 all_occ$cell <- locate(gr, all_occ[, c(3,2)])
-
+  
 me <- tapply(INDEX=all_occ$cell, X=all_occ$status, function (x) length(x[x == "T"])/length(x[x=="NT"| x == "T"]))
 mean(me, na.rm = TRUE)
+
+#### summarise sp results
+sp.pol <- gr@sp
+sp.df <- data.frame(faces = rownames(gr@faces))
+
+sp.df <- sp.df %>% left_join(as.data.frame(me_dd) %>% mutate(faces=rownames(.))) %>%
+  left_join(as.data.frame(me_ds) %>% mutate(faces=rownames(.))) %>%
+  left_join(as.data.frame(me) %>% mutate(faces=rownames(.)))
+
+rownames(sp.df) <- sp.df$faces
+sp.pol <- SpatialPolygonsDataFrame(sp.pol, sp.df)
+
+#crop according to regions
+carribean_ext <- extent(-100.546875,-40.649414,6.271618,37.230328) 
+indo_pacific_ext <- extent(28.125000,240.820313,-45.336702,22.593726)
+carribean <- crop(sp.pol, carribean_ext)
+indo_pacific <- crop(sp.pol, indo_pacific_ext)
+
+#transform to data.frame
+carribean <- carribean@data %>%
+  reshape2::melt()
+indo_pacific <- indo_pacific@data %>%
+  reshape2::melt()
+
+my_comparisons <- list( c("me_dd", "me_ds"), c("me_ds", "me"))
+
+p1 <- ggplot(carribean, aes(x = variable, y = value, col=variable)) +
+  scale_x_discrete(breaks=c("me_dd", "me_ds", "me"), 
+                   labels=c("Data-Deficient", "Data-Sufficient", "Combined")) +
+  labs(y="Proportion of \nspecies threatened", x="")+
+  scale_color_manual(values=u_col[c(1,2,5)], guide=FALSE) +
+  geom_boxplot()+
+  stat_compare_means(comparisons = my_comparisons, label="p.signif")  +# Add pairwise comparisons p-value
+  theme_light(base_size = 15) +
+  theme(axis.title = element_text(size = 12, face="bold"),
+        legend.title = element_text(size = 12, face="bold"),
+        legend.text = element_text(family = "Roboto Mono", size = 10),
+        axis.text = element_text(family = "Roboto Mono", size = 10),
+        panel.grid = element_blank(), 
+        legend.position = "none",
+        plot.margin = unit(c(2, 1, 1, 1), "lines"))
+
+p2 <- ggplot(indo_pacific, aes(x = variable, y = value, col=variable)) +
+  scale_x_discrete(breaks=c("me_dd", "me_ds", "me"), 
+                   labels=c("Data-Deficient", "Data-Sufficient", "Combined")) +
+  labs(y="Proportion of \nspecies threatened", x="")+
+  scale_color_manual(values=u_col[c(1,2,5)], guide=FALSE) +
+  geom_boxplot()+
+  stat_compare_means(comparisons = my_comparisons, label="p.signif")  +# Add pairwise comparisons p-value
+  theme_light(base_size = 15) +
+  theme(axis.title = element_text(size = 12, face="bold"),
+        legend.title = element_text(size = 12, face="bold"),
+        legend.text = element_text(family = "Roboto Mono", size = 10),
+        axis.text = element_text(family = "Roboto Mono", size = 10),
+        panel.grid = element_blank(), 
+        legend.position = "none",
+        plot.margin = unit(c(2, 1, 1, 1), "lines"))
+
+svg(here("figs", "Fig_S_carribean_vs_indo.svg"), w=6, h=8)
+p1+p2 + plot_layout(ncol=1) +
+  plot_annotation(tag_levels = "A")
+dev.off()
 
 ##### plot
 txt <- 1.2
 asp=1.2
-#svg(here("figs", "Fig_05_map_dd_risk.svg"), w=6, h=6.5)
-#x11(w=6, h=6.5)
+
+svg(here("figs", "Fig_05_map_dd_risk.svg"), w=5.5, h=6.5)
+#x11(w=5.5, h=6.5)
 layout(matrix(c(1,2,3,4), nrow=4, byrow=TRUE),
        heights = c(1,1,1,0.3))
 par(mar=c(1,3,2,1))
 
 plot(NULL, xlim=c(-180, 180), ylim=c(-30,30), axes=FALSE, xlab="", ylab="",
-     asp=asp)
+     asp=asp, xaxs="i")
 
 for (i in 1:(length(cuts)-1)){
   n <- which(me_ds >= cuts[i] & me_ds < cuts[i+1])  
@@ -375,13 +536,13 @@ for (i in 1:(length(cuts)-1)){
   plot(gr[temp], col=map_col[i], border="white", add=TRUE)
 }
 
-plot(world, col=scales::alpha("grey95", 0.8), border="grey80", add=TRUE)
+plot(world, col="grey95", border="grey80", add=TRUE)
 
 mtext ("A", side=3, line=0, adj=-0.04, cex=txt)
 box(col="darkgrey")
 # dd
 plot(NULL, xlim=c(-180, 180), ylim=c(-30,30), axes=FALSE, xlab="", ylab="",
-     asp=asp)
+     asp=asp, xaxs="i")
 
 for (i in 1:(length(cuts)-1)){
   n <- which(me_dd >= cuts[i] & me_dd < cuts[i+1])  
@@ -390,12 +551,12 @@ for (i in 1:(length(cuts)-1)){
   plot(gr[temp], col=map_col[i], border="white", add=TRUE)
 }
 
-plot(world, col=scales::alpha("grey95", 0.8), border="grey80", add=TRUE)
+plot(world, col="grey95", border="grey80", add=TRUE)
 mtext ("B", side=3, line=0, adj=-0.04, cex=txt)
 box(col="darkgrey")
 # combined
 plot(NULL, xlim=c(-180, 180), ylim=c(-30,30), axes=FALSE, xlab="", ylab="",
-     asp=asp)
+     asp=asp, xaxs="i")
 
 for (i in 1:(length(cuts)-1)){
   n <- which(me >= cuts[i] & me < cuts[i+1])  
@@ -404,10 +565,9 @@ for (i in 1:(length(cuts)-1)){
   plot(gr[temp], col=map_col[i], border="white", add=TRUE)
 }
 
-plot(world, col=scales::alpha("grey95", 0.8), border="grey80", add=TRUE)
+plot(world, col="grey95", border="grey80", add=TRUE)
 mtext ("C", side=3, line=0, adj=-0.04, cex=txt)
 box(col="darkgrey")
-
 #add legend
 par(xpd=TRUE)
 plot(0,0, type="n", axes=FALSE)
@@ -417,37 +577,37 @@ legend("center", paste0(cuts_labs[1:(length(cuts)-1)], "-", cuts_labs[2:length(c
        cex=1.2)
 
 
-#dev.off()
+dev.off()
 
 # Plio-Pleistocene --------------------------------------------------------
 
 pleist.df <- read.csv(here("data", "pleist_resolved.csv"), stringsAsFactors = FALSE) %>%
-  select(-range, -max_depth) %>%
   mutate(corallite = as.numeric(gsub(">", "", corallite)))
 
 pleist.df <- pleist.df %>% group_by(valid_name) %>%
-  summarise(corallite = max(corallite), 
+  summarise(corallite = max(corallite), max_depth=max(max_depth), range = max(prop_range), #prop_range = max(prop_range), 
             branching = unique(branching)[1], globally.extinct = unique(globally.extinct), 
             regionally.extinct = unique(regionally.extinct)) 
 
 #scale based on original data
 pleist.df <- pleist.df %>% 
-  mutate(corallite = as.numeric(scaled.new(corallite, scale(df.corals$corallite_ori)))
+  mutate(corallite = as.numeric(scaled.new(corallite, df.corals$corallite_ori)),
+         max_depth = as.numeric(scaled.new(max_depth, df.corals$depth_ori))
+         #range = as.numeric(scaled.new(max_depth, scale(df.corals$range_ori)))
          )
 
 pleist.df[pleist.df$branching == "",]$branching <- NA 
 
 pleist.df[pleist.df$globally.extinct == "extinct" & pleist.df$regionally.extinct == "extant",]$regionally.extinct <- "extinct"
-
 res <- h2o.predict(aml_leader, as.h2o(pleist.df))
 res <- as.data.frame(res)$p1
 
 # calculate threat status based on threshold cutoff
-pleist.df$status <- ifelse(res < opt_par_final$cutoff[win], "NT", "T")
+pleist.df$status <- ifelse(res < leaderboard$cutoff[win], "NT", "T")
 
 #number of missing values for each species
 pleist.df$na_count <- apply(pleist.df, 1, function(x) sum(is.na(x)))
-pleist.df[pleist.df$na_count >1,]$status <- "DD"
+pleist.df[pleist.df$na_count >2,]$status <- "DD"
 
 prop.table(table(pleist.df$status[pleist.df$status != "DD"]))
 
@@ -492,12 +652,12 @@ ggplot(pleist.summ,
         legend.position = "top",
         legend.direction = "horizontal")
 
-#ggsave(here("figs", "Fig_06_pleist_predictions.svg"), w=6, h=8)
+ggsave(here("figs", "Fig_06_pleist_predictions.svg"), w=6, h=6)
 
 ### per genus
 df.ds <- df.corals %>%
   na.omit() %>%
-  select(sp, iucn) %>%
+  dplyr::select(sp, iucn) %>%
   #remove all Data Deficient corals
   filter(iucn != "Data Deficient") %>%
   
@@ -512,7 +672,7 @@ df.ds <- df.corals %>%
 
 df.dd <- dd %>% 
   filter(status != "DD") %>%
-  select(sp, status) %>%
+  dplyr::select(sp, status) %>%
     mutate(iucn = "DD")
 
 df <- rbind(df.ds, df.dd)
@@ -527,7 +687,7 @@ df.comp <- pleist.df %>%
   replace_na(list(T=0)) %>%
   mutate(tot = sum(T, NT, na.rm=TRUE),
          T=T/tot) %>% 
-  select(genus, T, tot) %>%
+  dplyr::select(genus, T, tot) %>%
   rename(fossil = T) %>%
   left_join(df %>% separate(sp, c("genus", "species")) %>% 
   group_by(genus, status) %>%
@@ -537,7 +697,7 @@ df.comp <- pleist.df %>%
     replace_na(list(T=0)) %>%
     mutate(totm = sum(T, NT, na.rm=TRUE),
            T=T/totm)%>% 
-    select(genus, T, totm) %>%
+    dplyr::select(genus, T, totm) %>%
     rename(modern = T), by="genus") %>%
   na.omit()
   
@@ -551,7 +711,6 @@ ggplot(df.comp, aes(x=fossil, y=modern, label=paste0(genus, "(", tot, "/", totm,
   # geom_hline(yintercept = 0.305, linetype="dashed") +
   # geom_vline(xintercept = 0.305, linetype="dashed") +
   geom_abline(slope=1, intercept=0) +
-  #geom_abline(slope=c(2, 0.5), intercept = 0, linetype="dashed") +
   theme_light(base_size = 15) +
   theme(axis.title = element_text(size = 12, face="bold"),
         legend.title = element_text(size = 12, face="bold"),
@@ -562,4 +721,4 @@ ggplot(df.comp, aes(x=fossil, y=modern, label=paste0(genus, "(", tot, "/", totm,
         legend.position = "top",
         legend.direction = "horizontal")
 
-#ggsave(here("figs", "Fig_S_plio_modern_comp.svg"), w=7, h=7)
+ggsave(here("figs", "Fig_S_plio_modern_comp.svg"), w=7, h=7)

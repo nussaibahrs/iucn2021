@@ -2,17 +2,21 @@
 # helper packages
 library(here)
 library(tidyverse)
+library(magrittr)
 library(ggthemes)
 library(patchwork)
 
 # setting up machine learning models
 library(h2o)
 
+
 # Data  -------------------------------------------------------------------
 
 # classification data
 df.corals <- read.csv(here("data", "traits_iucn.csv"), stringsAsFactors = FALSE) %>% mutate(range = ifelse(range > 0, range, NA))
-df.corals <- df.corals %>% mutate_if(is.numeric, function (x) as.numeric(scale(x))) #normalise numerical predictors
+#df.corals <- df.corals %>% mutate_if(is.numeric, function (x) as.numeric(scale(x))) #normalise numerical predictors
+
+df.corals <- df.corals %>% mutate_if(is.numeric, function(x){(x-min(x, na.rm = TRUE))/(max(x, na.rm = TRUE)-min(x, na.rm = TRUE))})
 
 df <- df.corals %>%
   na.omit() %>%
@@ -52,12 +56,13 @@ test <- data.split[[2]] # For final evaluation of model performance
 
 # variable names for response & features
 y <- "iucn"
-x <- setdiff(names(df), y)
+x <- c("corallite", "max_depth", "range", "branching")
 
 
 # Models ------------------------------------------------------------------
-
-run_time <- 60 * 60 * 8 #maximum time to run automl
+hours <- 8
+folder <- paste0("model_binary_norm_", hours, "h")
+run_time <-60 * 60 * hours #maximum time to run automl
 
 # * Automatic Machine Learning ----------------------------------------------
 system.time(aml <- h2o.automl(y=y, x=x, 
@@ -73,8 +78,7 @@ system.time(aml <- h2o.automl(y=y, x=x,
 
 
 # * Save models -----------------------------------------------------------
-
-folder_name <-"model_binary_8h"
+folder_name <-folder 
 unlink(here("output", folder_name), recursive = TRUE)
 
 leaderboard <- as.data.frame(aml@leaderboard)
@@ -87,9 +91,8 @@ for(i in 1:nrow(leaderboard)) {
 
 write.csv(leaderboard, here("output", folder_name, "leaderboard.csv"), row.names = FALSE)
 
-
-#### find best model
-folder_name <- "model_binary_4h"
+# Find best model ---------------------------------------------------------
+folder_name <- folder
 leaderboard <- read.csv(here("output", folder_name, "leaderboard.csv"), stringsAsFactors = FALSE)
 
 mods <- list() 
@@ -99,7 +102,7 @@ for(i in 1:nrow(leaderboard)){
 }
 
 # * Find probability threshold  -----------------
-cutoff=seq(0.29, 1, 0.01) #threshold values
+cutoff=seq(0, 1, 0.01) #threshold values
 n=nrow(leaderboard) #number of models
 
 opt_par <- list()
@@ -154,18 +157,18 @@ opt_par <- do.call(rbind, opt_par)
 temp <- opt_par %>% group_by(fname) %>% summarise(youden.train=max(youden.train), youden.test=max(youden.test)) %>%
   na.omit()
 
-opt_train <- temp %>% select(fname, youden.train) %>% 
-  left_join(opt_par %>% select(fname, AUC.train, youden.train, cutoff.train), by=c("fname", "youden.train"))
+opt_train <- temp %>% dplyr::select(fname, youden.train) %>% 
+  left_join(opt_par %>% dplyr::select(fname, AUC.train, youden.train, cutoff.train), by=c("fname", "youden.train"))
 
-opt_test <- temp %>% select(fname, youden.test) %>% 
-  left_join(opt_par %>% select(fname, AUC.test, youden.test, cutoff.test), by=c("fname", "youden.test"))
+opt_test <- temp %>% dplyr::select(fname, youden.test) %>% 
+  left_join(opt_par %>% dplyr::select(fname, AUC.test, youden.test, cutoff.test), by=c("fname", "youden.test"))
 
 opt_par_final <- full_join(opt_train, opt_test)%>%
   group_by(fname) %>%
   mutate(cutoff = (cutoff.test+ cutoff.train)/2) %>%
   arrange(desc(AUC.test), desc(AUC.train))  %T>%
-  write.csv(here("output", "Table_S_maximised_threshold_model_binary.csv"), row.names = FALSE) 
+  write.csv(here("output", paste0("Table_S_maximised_threshold_model_binary_norm_", hours, "h.csv")), row.names = FALSE) 
 
 # Terminate h2o session ---------------------------------------------------
 h2o.shutdown(prompt=FALSE)
-rm(list=ls())
+
