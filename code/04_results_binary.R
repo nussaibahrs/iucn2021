@@ -90,7 +90,7 @@ x <- c("max_depth", "branching", "corallite", "range" )
 # Load Model --------------------------------------------------------------
 
 # * Load best model in h2o session ------------------------------------
-hours <- 1
+hours <- 8
 leaderboard <- read.csv(here("output", paste0("Table_S_maximised_threshold_model_binary_norm_", hours, "h.csv")), stringsAsFactors = FALSE) %>% arrange(desc(AUC.test))
 folder <- paste0("model_binary_norm_", hours, "h")
 folder_name <- folder
@@ -131,9 +131,9 @@ win <- auc.df$n[1]
 aml_leader <- h2o.loadModel(here("output", folder_name, leaderboard$fname[win]))
 
 #### TEXT FOR PAPER
-paste0("Out of the", nrow(leaderboard), "models trained by the AutoML, the optimal model was a", aml_leader@algorithm, 
-"with AUC of ", auc.df$AUC.train[win],  "on the training dataset and ", auc.df$AUC.test[win], "on the test dataset and", 
-"an average classification probability threshold (decision threshold) of ", auc.df$cutoff[win])
+paste0("Out of the ", length(unique(leaderboard$fname)), " models trained by the AutoML, the optimal model was a ", aml_leader@algorithm, 
+       " with AUC of ", round(auc.df$AUC.train[win],2),  " on the training dataset and ", round(auc.df$AUC.test[win],2), " on the test dataset and", 
+       " an average classification probability threshold (decision threshold) of ", auc.df$cutoff[win])
 
 # * Confusion Matrix ------------------------------------------------------
 res.train <- h2o.predict(aml_leader , train)
@@ -151,15 +151,16 @@ true.test.labels <- as.data.frame(test)$iucn
 cf.train <- caret::confusionMatrix(as.factor(train.labels), true.train.labels)
 cf.test <- caret::confusionMatrix(as.factor(test.labels), true.test.labels)
 
-prop.table(cf.train$table, 2)
-prop.table(cf.test$table, 2)
+acc.train <- prop.table(cf.train$table, 2)
+acc.test <- prop.table(cf.test$table, 2)
 
 ### TEXT FOR PAPER
-paste0("The model correctly classified", cf.train[2,2]*100,"% and ",cf.test[2,2]*100,
+paste0("The model correctly classified ", round(acc.train[2,2], 2)*100,"% and ",round(acc.test[2,2], 2)*100,
        "% of the threatened species for the training and test dataset respectively.")
-paste0("It had a slightly lower classification accuracy for non-threatened species, ",cf.train[1,1],
-       "% and ",cf.test[1,1],"%, and overall accuracy of ",cf.train$overall,"% and ",cf.test$overall,
+paste0("It had a slightly lower classification accuracy for non-threatened species, ",round(acc.train[1,1], 2)*100,
+       "% and ",round(acc.test[1,1], 2)*100,"%, and overall accuracy of ", round(cf.train$overall[1], 2),"% and ", round(cf.test$overall[1], 2),
        "%, respectively on the training and test datasets.")
+
 # * Misclassification -----------------------------------------------------
 train.df <- train %>% as.data.frame %>% 
   mutate(pred = ifelse(train.labels==0, "NT", "T"))
@@ -171,11 +172,11 @@ test.df <- test %>% as.data.frame %>%
 df <- bind_rows(train.df, test.df) %>%
   mutate(
     status = factor(status, levels=c("Least Concern", "Near Threatened", "Vulnerable", "Endangered", "Critically Endangered")),
-         iucn = case_when(status == "Least Concern" ~ "NT",         
-                          status == "Vulnerable" ~ "T",           
-                          status == "Near Threatened"   ~ "NT",    
-                          status == "Endangered"   ~ "T",
-                          status == "Critically Endangered"   ~ "T")) 
+    iucn = case_when(status == "Least Concern" ~ "NT",         
+                     status == "Vulnerable" ~ "T",           
+                     status == "Near Threatened"   ~ "NT",    
+                     status == "Endangered"   ~ "T",
+                     status == "Critically Endangered"   ~ "T")) 
 # per iucn status
 df %>% group_by(status, iucn, pred) %>%
   tally() %>%
@@ -233,7 +234,7 @@ df %>%
 # * Model agnostic metrics
 
 # create a data frame with just the features
-features <- as.data.frame(df) %>% dplyr::select(-iucn)
+features <- as.data.frame(df) %>% dplyr::select(x)
 
 #  Create a numeric vector with the actual responses
 response <- ifelse(df$iucn == "NT", 0, 1)
@@ -450,7 +451,7 @@ mean(me_ds, na.rm = TRUE)
 all_occ <- rbind(ds_occ, dd_occ)
 
 all_occ$cell <- locate(gr, all_occ[, c(3,2)])
-  
+
 me <- tapply(INDEX=all_occ$cell, X=all_occ$status, function (x) length(x[x == "T"])/length(x[x=="NT"| x == "T"]))
 mean(me, na.rm = TRUE)
 
@@ -482,6 +483,7 @@ my_comparisons <- list( c("me_dd", "me_ds"), c("me_ds", "me"))
 p1 <- ggplot(carribean, aes(x = variable, y = value, col=variable)) +
   scale_x_discrete(breaks=c("me_dd", "me_ds", "me"), 
                    labels=c("Data-Deficient", "Data-Sufficient", "Combined")) +
+  scale_y_continuous(limits = c(0,1.3), breaks=seq(0,1, 0.2)) +
   labs(y="Proportion of \nspecies threatened", x="")+
   scale_color_manual(values=u_col[c(1,2,5)], guide=FALSE) +
   geom_boxplot()+
@@ -498,6 +500,7 @@ p1 <- ggplot(carribean, aes(x = variable, y = value, col=variable)) +
 p2 <- ggplot(indo_pacific, aes(x = variable, y = value, col=variable)) +
   scale_x_discrete(breaks=c("me_dd", "me_ds", "me"), 
                    labels=c("Data-Deficient", "Data-Sufficient", "Combined")) +
+  scale_y_continuous(limits = c(0,1.3), breaks=seq(0,1, 0.2)) +
   labs(y="Proportion of \nspecies threatened", x="")+
   scale_color_manual(values=u_col[c(1,2,5)], guide=FALSE) +
   geom_boxplot()+
@@ -594,7 +597,7 @@ pleist.df <- pleist.df %>%
   mutate(corallite = as.numeric(scaled.new(corallite, df.corals$corallite_ori)),
          max_depth = as.numeric(scaled.new(max_depth, df.corals$depth_ori))
          #range = as.numeric(scaled.new(max_depth, scale(df.corals$range_ori)))
-         )
+  )
 
 pleist.df[pleist.df$branching == "",]$branching <- NA 
 
@@ -631,7 +634,7 @@ pleist.summ %>% group_by(status, regionally.extinct) %>% summarise(n=sum(n)) %>%
   group_by(regionally.extinct) %>%
   mutate(prop=n/sum(n))
 
- 
+
 ggplot(pleist.summ,
        aes(y = n,axis1 = globally.extinct,
            axis2 = regionally.extinct,  axis3 = status)) +
@@ -665,15 +668,15 @@ df.ds <- df.corals %>%
   mutate(
     #reclassify iucn status 
     status = case_when(iucn == "Least Concern" ~ "NT",         
-                     iucn == "Vulnerable" ~ "T",           
-                     iucn == "Near Threatened"   ~ "NT",    
-                     iucn == "Endangered"   ~ "T",         
-                     iucn == "Critically Endangered"~ "T")) 
+                       iucn == "Vulnerable" ~ "T",           
+                       iucn == "Near Threatened"   ~ "NT",    
+                       iucn == "Endangered"   ~ "T",         
+                       iucn == "Critically Endangered"~ "T")) 
 
 df.dd <- dd %>% 
   filter(status != "DD") %>%
   dplyr::select(sp, status) %>%
-    mutate(iucn = "DD")
+  mutate(iucn = "DD")
 
 df <- rbind(df.ds, df.dd)
 
@@ -690,18 +693,16 @@ df.comp <- pleist.df %>%
   dplyr::select(genus, T, tot) %>%
   rename(fossil = T) %>%
   left_join(df %>% separate(sp, c("genus", "species")) %>% 
-  group_by(genus, status) %>%
-  tally() %>%
-  reshape2::dcast(genus~status) %>%
-    group_by(genus) %>%
-    replace_na(list(T=0)) %>%
-    mutate(totm = sum(T, NT, na.rm=TRUE),
-           T=T/totm)%>% 
-    dplyr::select(genus, T, totm) %>%
-    rename(modern = T), by="genus") %>%
+              group_by(genus, status) %>%
+              tally() %>%
+              reshape2::dcast(genus~status) %>%
+              group_by(genus) %>%
+              replace_na(list(T=0)) %>%
+              mutate(totm = sum(T, NT, na.rm=TRUE),
+                     T=T/totm)%>% 
+              dplyr::select(genus, T, totm) %>%
+              rename(modern = T), by="genus") %>%
   na.omit()
-  
-library(ggrepel)
 
 ggplot(df.comp, aes(x=fossil, y=modern, label=paste0(genus, "(", tot, "/", totm, ")"))) +
   geom_point() +
