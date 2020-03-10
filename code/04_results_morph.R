@@ -349,7 +349,7 @@ dd_plot <- dd %>% filter(status != "DD") %>%
 dd_sum <- dd_plot %>% ungroup() %>% group_by(genus, status) %>% mutate(tot=sum(n), n=sum(n3)) %>%
   mutate(status2 = ifelse(status == "NT", "NTc", "Tc")) %>% distinct(genus, status2, n, tot)
 
-p <- ggplot(dd_plot, aes(fill=status2, y=n3, x=reorder(genus, n2))) +
+p <- ggplot(dd_plot, aes(fill=status, y=n3, x=reorder(genus, n2))) +
   geom_bar(stat="identity", alpha=0.5, width=0.6) +
   geom_point(data=dd_sum , 
              aes(x=genus, y=n, col=status2), cex=7.5, inherit.aes = FALSE) +
@@ -437,69 +437,6 @@ table(all_occ$region, all_occ$status) %>% prop.table(1)
 table(all_occ$status) %>% prop.table()
 table(ds_occ$status) %>% prop.table()
 
-##### plot
-txt <- 1.2
-asp=1.2
-
-#svg(here("figs", "Fig_05_map_dd_risk.svg"), w=5.5, h=6.5)
-#x11(w=5.5, h=6.5)
-layout(matrix(c(1,2,3,4), nrow=4, byrow=TRUE),
-       heights = c(1,1,1,0.3))
-par(mar=c(1,3,2,1))
-
-plot(NULL, xlim=c(-180, 180), ylim=c(-30,30), axes=FALSE, xlab="", ylab="",
-     asp=asp, xaxs="i")
-
-for (i in 1:(length(cuts)-1)){
-  n <- which(me_ds >= cuts[i] & me_ds < cuts[i+1])  
-  temp <- names(n)
-  
-  plot(gr[temp], col=map_col[i], border="white", add=TRUE)
-}
-
-plot(world, col="grey95", border="grey80", add=TRUE)
-
-mtext ("A", side=3, line=0, adj=-0.04, cex=txt)
-box(col="darkgrey")
-# dd
-plot(NULL, xlim=c(-180, 180), ylim=c(-30,30), axes=FALSE, xlab="", ylab="",
-     asp=asp, xaxs="i")
-
-for (i in 1:(length(cuts)-1)){
-  n <- which(me_dd >= cuts[i] & me_dd < cuts[i+1])  
-  temp <- names(n)
-  
-  plot(gr[temp], col=map_col[i], border="white", add=TRUE)
-}
-
-plot(world, col="grey95", border="grey80", add=TRUE)
-mtext ("B", side=3, line=0, adj=-0.04, cex=txt)
-box(col="darkgrey")
-# combined
-plot(NULL, xlim=c(-180, 180), ylim=c(-30,30), axes=FALSE, xlab="", ylab="",
-     asp=asp, xaxs="i")
-
-for (i in 1:(length(cuts)-1)){
-  n <- which(me >= cuts[i] & me < cuts[i+1])  
-  temp <- names(n)
-  
-  plot(gr[temp], col=map_col[i], border="white", add=TRUE)
-}
-
-plot(world, col="grey95", border="grey80", add=TRUE)
-mtext ("C", side=3, line=0, adj=-0.04, cex=txt)
-box(col="darkgrey")
-#add legend
-par(xpd=TRUE)
-plot(0,0, type="n", axes=FALSE)
-cuts_labs <-cuts*100 #turn to percentage
-legend("center", paste0(cuts_labs[1:(length(cuts)-1)], "-", cuts_labs[2:length(cuts)], "%"), fill=map_col, horiz=TRUE, border=NA, bty="n", 
-       title = expression(bold("Percentage of coral species under threat")), 
-       cex=1.2)
-
-
-#dev.off()
-
 # Plio-Pleistocene --------------------------------------------------------
 
 pleist.df <- read.csv(here("data", "pleist_resolved.csv"), stringsAsFactors = FALSE) %>%
@@ -531,7 +468,6 @@ pleist.df$na_count <- apply(pleist.df[,x], 1, function(x) sum(is.na(x)))
 pleist.df[pleist.df$na_count >1,]$status <- "DD"
 
 prop.table(table(pleist.df$status[pleist.df$status != "DD"]))
-
 
 pleist.summ <- pleist.df %>% 
   filter(status != "DD") %>%
