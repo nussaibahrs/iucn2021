@@ -1,885 +1,997 @@
-"sp","iucn","max_depth","branching","corallite","range"
-"Oulastrea crispata","Least Concern",10,"LB",5.6,"16968.7467603728"
-"Goniopora tantillus","Data Deficient",22,NA,2.9,NA
-"Acropora millepora","Data Deficient",30,"MB",1.6,"16404.3690255599"
-"Alveopora japonica","Vulnerable",NA,"NB",2.7,NA
-"Montipora angulata","Vulnerable",20,"HB",1.3,"11241.3602226079"
-"Acropora pectinata","Data Deficient",20,"HB",NA,"10475.635224917"
-"Goniastrea columella","Near Threatened",15,"NB",17.5,"3861.84610046756"
-"Moseleya latistellata","Vulnerable",10,"NB",73,"12446.8277291073"
-"Pectinia elongata","Near Threatened",25,"HB",11,"2181.29825862547"
-"Dipsastraea vietnamensis","Near Threatened",20,"NB",14.1,"12065.0057612457"
-"Scolymia lacera","Least Concern",80,NA,NA,"3470.94906533332"
-"Pocillopora kelleheri","Least Concern",40,"HB",1.2,"653.162001142023"
-"Leptoseris tubulifera","Least Concern",70,"LB",2.5,"18056.3839647072"
-"Heliofungia fralinae","Least Concern",27,NA,90,"3494.94477087336"
-"Goniopora tenella","Near Threatened",30,"LB",2.9,"7156.89125801346"
-"Acropora japonica","Data Deficient",8,"LB",0.9,NA
-"Colpophyllia natans","Least Concern",55,"NB",12.9,"8115.09113107153"
-"Acropora seriata","Data Deficient",12,"LB",NA,"11046.1586822983"
-"Porites nodifera","Least Concern",15,"MB",1.6,"15125.9652518802"
-"Catalaphyllia jardinei","Vulnerable",40,"NB",21.3,"13891.5752656874"
-"Porites duerdeni","Least Concern",NA,NA,NA,"4902.97789489359"
-"Montipora hodgsoni","Vulnerable",20,"MB",0.6,"4912.66019240983"
-"Platygyra crosslandi","Near Threatened",20,"NB",5.9,"7274.6652196107"
-"Dipsastraea veroni","Near Threatened",25,"NB",17.5,"13134.4547341659"
-"Alveopora marionensis","Vulnerable",30,"NB",3.4,"11461.7590045003"
-"Goniopora cellulosa","Vulnerable",20,"NB",4.1,NA
-"Dipsastraea rosaria","Vulnerable",20,"LB",9.3,"5848.02966802483"
-"Lobophyllia radians","Least Concern",40,"NB",35,"14003.8129587821"
-"Leptoseris amitoriensis","Near Threatened",30,"MB",3.7,"3336.61071283815"
-"Fungia puishani","Data Deficient",NA,NA,NA,"3941.34963610417"
-"Alveopora catalai","Near Threatened",30,"HB",4.1,"13916.1231098386"
-"Echinomorpha nishihirai","Near Threatened",40,"LB",115.5,"11162.2553884607"
-"Acropora loripes","Data Deficient",40,"MB",1.2,"19878.4503082255"
-"Acropora turaki","Vulnerable",20,"HB",0.8,"6808.73530673668"
-"Acropora divaricata","Near Threatened",25,"LB",1.1,"19583.9620225447"
-"Enigmopora darveliensis","Data Deficient",NA,NA,NA,NA
-"Acropora rudis","Endangered",30,"HB",1.2,"2818.80236710549"
-"Acropora squarrosa","Data Deficient",60,"HB",0.8,"17296.6579867906"
-"Pectinia pygmaea","Near Threatened",30,"HB",4.7,"1954.54443681025"
-"Acropora stoddarti","Data Deficient",30,"LB",1.3,"8263.49830603212"
-"Echinopora ashmorensis","Vulnerable",20,"LB",5.1,"0"
-"Porites branneri","Near Threatened",3,NA,1.8,"8219.78517627297"
-"Pachyseris gemmae","Near Threatened",25,"MB",3.3,"3432.68554717534"
-"Madracis asanoi","Data Deficient",183,"HB",2.5,"1734.14584864109"
-"Leptoseris striata","Near Threatened",103,"LB",4,"3080.71151464521"
-"Pectinia lactuca","Vulnerable",20,"LB",30,"14546.0331079058"
-"Acanthastrea subechinata","Near Threatened",35,"NB",NA,"12587.8871839463"
-"Montipora gaimardi","Vulnerable",15,"LB",0.8,"2456.58575431969"
-"Acropora willisae","Vulnerable",40,"MB",1,"14557.4216698093"
-"Montipora orientalis","Vulnerable",20,"MB",1,"7353.36055602229"
-"Acropora carduus","Near Threatened",50,"HB",0.9,"10966.998308668"
-"Acropora tanegashimensis","Data Deficient",15,"LB",0.8,"0"
-"Acropora plumosa","Vulnerable",30,"LB",1.2,"4857.65676876195"
-"Acropora spathulata","Least Concern",11,NA,1.5,"2006.78674939998"
-"Porites evermanni","Data Deficient",30,"MB",1,"18037.5766291764"
-"Heterocyathus sulcatus","Least Concern",100,NA,NA,"14804.5125800808"
-"Cynarina macassarensis","Data Deficient",25,"NB",NA,"0"
-"Montipora patula","Vulnerable",10,"MB",0.7,"3110.6551770152"
-"Stylophora madagascarensis","Endangered",20,"HB",0.8,"3882.02001438903"
-"Montipora nodosa","Near Threatened",30,"NB",1.3,"18519.7158999489"
-"Porites colonensis","Data Deficient",25,"MB",1.4,"2375.89926287357"
-"Acropora loripes","Data Deficient",40,"MB",1.2,"19878.4503082255"
-"Echinophyllia echinoporoides","Least Concern",30,"LB",5.7,"13013.526584173"
-"Goniopora pendulus","Least Concern",20,"NB",5.6,"6556.14837004039"
-"Acropora tenuis","Data Deficient",30,"MB",1.2,"18088.8462331415"
-"Acropora rufa","Data Deficient",10,"HB",NA,"0"
-"Acropora valida","Data Deficient",45,"HB",0.9,"19895.265616894"
-"Merulina scheeri","Least Concern",45,"LB",8.2,NA
-"Goniopora pearsoni","Least Concern",NA,"NB",3.3,"0"
-"Turbinaria bifrons","Vulnerable",25,"MB",1.6,"7462.87889242329"
-"Porites desilveri","Endangered",NA,"LB",1,"0"
-"Oculina tenella","Data Deficient",75,NA,NA,"2515.76672748692"
-"Lobophyllia erythraea","Least Concern",45,"NB",17.5,"3861.84610046756"
-"Manicina areolata","Least Concern",65,"NB",15.1,"13744.1942752648"
-"Pleuractis taiwanensis","Vulnerable",35,"NB",193,NA
-"Fimbriaphyllia yaeyamensis","Near Threatened",30,"NB",25.2,"0"
-"Halomitra clavator","Vulnerable",25,"NB",5.3,"4219.32129534778"
-"Agaricia lamarcki","Vulnerable",76,"MB",7.9,"17906.9250410271"
-"Acropora tumida","Data Deficient",40,"HB",1.4,"2442.72732529647"
-"Acropora paniculata","Vulnerable",42,"LB",0.8,"18947.8191357496"
-"Anacropora matthai","Vulnerable",20,"HB",0.6,"13263.5143621691"
-"Plerogyra discus","Vulnerable",15,"NB",20.8,"5.50867564208638"
-"Montipora stilosa","Vulnerable",50,"NB",0.8,"3861.84610046756"
-"Favites complanata","Near Threatened",50,"NB",18.8,"17788.0676492498"
-"Acropora hemprichii","Vulnerable",15,"HB",1.2,"9826.88831981269"
-"Montigyra kenti","Data Deficient",NA,"NB",32,NA
-"Acropora derawanensis","Vulnerable",30,"HB",1,"4453.55408635372"
-"Turbinaria radicalis","Near Threatened",25,"LB",2.5,"6929.86123578432"
-"Echinopora gemmacea","Least Concern",50,"MB",4.2,"17133.4296788169"
-"Acropora longicyathus","Least Concern",25,"HB",1.3,"17602.4441905327"
-"Psammocora interstinctus","Data Deficient",NA,NA,NA,NA
-"Acropora multiacuta","Vulnerable",30,"HB",2,"9752.16290637321"
-"Coscinaraea crassa","Near Threatened",30,"LB",14.3,"11630.735762867"
-"Zoopilus echinatus","Least Concern",20,"NB",20,"7066.16985569199"
-"Favites vasta","Near Threatened",20,"NB",17.5,"10422.3188846352"
-"Goniopora planulata","Vulnerable",20,"MB",3.1,"13277.3653603449"
-"Pleuractis seychellensis","Vulnerable",25,"NB",88.8,"3861.84610046756"
-"Millepora nitida","Data Deficient",NA,NA,NA,"126.156592860866"
-"Goniastrea favulus","Near Threatened",15,"NB",7.5,"18320.2092019716"
-"Mycetophyllia lamarckana","Least Concern",75,"LB",18.5,NA
-"Acropora cerealis","Data Deficient",40,"HB",0.8,"19444.2601701347"
-"Seriatopora stellata","Near Threatened",20,"HB",0.6,"15222.5705546902"
-"Leptastrea bewickensis","Near Threatened",20,"LB",4.2,"7656.10823778614"
-"Montipora florida","Vulnerable",20,"MB",0.8,"6760.07412577918"
-"Simplastrea vesicularis","Data Deficient",NA,"LB",4.2,NA
-"Palauastrea ramosa","Near Threatened",30,"HB",1.2,"17807.2290602459"
-"Anacropora spumosa","Data Deficient",15,"HB",0.7,"5062.57651318352"
-"Acropora palmata","Critically Endangered",40,"HB",1.6,"18909.6281338699"
-"Coscinaraea mcneilli","Least Concern",NA,"LB",5.8,"3873.07195594255"
-"Montipora malampaya","Vulnerable",15,"LB",0.7,"3774.004718169"
-"Favites acuticollis","Near Threatened",20,"NB",9.3,"11842.0594488554"
-"Montipora maeandrina","Vulnerable",50,"LB",0.9,NA
-"Dipsastraea albida","Near Threatened",10,"NB",12.1,"67.031087715803"
-"Acropora selago","Near Threatened",40,"HB",0.9,"18748.298086671"
-"Acropora kirstyae","Vulnerable",30,"HB",0.8,"9851.1768597642"
-"Acropora elseyi","Least Concern",35,"HB",0.9,"18719.181792654"
-"Pocillopora ankeli","Vulnerable",10,"HB",1,"12799.2026963802"
-"Orbicella franksi","Vulnerable",50,NA,NA,"4234.20615592782"
-"Goniopora polyformis","Vulnerable",NA,NA,5.9,"2966.84442701914"
-"Acropora lamarcki","Data Deficient",15,"LB",NA,"3861.84610046756"
-"Montipora millepora","Least Concern",55,"LB",8,"19947.9317144262"
-"Acropora tenuis","Data Deficient",30,"MB",1.2,"18088.8462331415"
-"Echinophyllia patula","Least Concern",40,"MB",7,"7907.67282827571"
-"Acropora palmerae","Data Deficient",23,"LB",1.3,"16334.5130152274"
-"Galaxea cryptoramosa","Vulnerable",15,"HB",4.6,"9.50453877449036e-05"
-"Astreopora incrustans","Vulnerable",40,"LB",0.9,"15282.0434606189"
-"Alveopora daedalea","Vulnerable",30,"MB",2.2,"13060.4391272277"
-"Montipora niugini","Near Threatened",35,"LB",0.7,"1219.0403727073"
-"Psammocora nierstraszi","Least Concern",40,"NB",2.3,"18727.9716454402"
-"Porites columnaris","Least Concern",15,"MB",1.5,"3861.84610046756"
-"Mycedium mancaoi","Least Concern",NA,"MB",7.2,"12065.0057612457"
-"Siderastrea radians","Least Concern",33,"NB",3,"18356.3639209853"
-"Agaricia undata","Data Deficient",80,"MB",6,"3856.50965730875"
-"Goniastrea minuta","Near Threatened",15,"NB",5.9,"12199.9225776694"
-"Acropora abrotanoides","Data Deficient",26,"HB",1.2,"19328.1218722705"
-"Dichocoenia stokesii","Vulnerable",72,"NB",11.2,"13130.2265790193"
-"Montipora effusa","Near Threatened",20,"NB",0.8,"16144.0762316039"
-"Acropora robusta","Data Deficient",20,"HB",1.5,"18760.3180718265"
-"Lobophyllia flabelliformis","Vulnerable",30,"NB",59.5,"12199.9225776694"
-"Acropora elegantula","Data Deficient",20,"HB",NA,"9.50453877449036e-05"
-"Acropora pulchra","Least Concern",20,"HB",1.2,"17228.7497972078"
-"Acropora selago","Data Deficient",40,"HB",0.9,"18748.298086671"
-"Porites attenuata","Vulnerable",20,"HB",2.1,"12369.1811830143"
-"Cycloseris curvata","Vulnerable",73,"NB",81,"19178.2039713401"
-"Hydnophora bonsai","Endangered",15,"LB",4.5,NA
-"Mycetophyllia reesi","Data Deficient",76,"MB",10,"3097.42710685723"
-"Galaxea acrhelia","Vulnerable",15,"HB",5.4,"7064.05380483012"
-"Ctenactis crassa","Least Concern",67,"NB",236,"11862.6558531922"
-"Turbinaria conspicua","Least Concern",20,"MB",1.6,"3987.61894873576"
-"Montipora saudii","Near Threatened",8,"LB",0.8,"5062.57651318352"
-"Echinopora mammiformis","Near Threatened",15,"LB",8.9,"7163.41685756678"
-"Acropora caroliniana","Vulnerable",40,"LB",1,"13224.8685209502"
-"Montipora cactus","Vulnerable",20,"LB",1.2,"5638.180724512"
-"Millepora complanata","Least Concern",NA,NA,NA,"4004.86888015019"
-"Duncanopsammia axifuga","Near Threatened",30,"HB",10.5,"3932.82021246166"
-"Acropora retusa","Vulnerable",28.5,"LB",0.9,"19055.1217811335"
-"Porites sillimaniani","Vulnerable",5,"LB",1.9,"0"
-"Mycetophyllia aliciae","Least Concern",85,"NB",20,"3904.73815273037"
-"Plerogyra cauliformis","Data Deficient",NA,NA,NA,NA
-"Astreopora suggesta","Least Concern",15,"NB",1.6,"14088.0472283932"
-"Acropora latistella","Least Concern",40,"MB",0.9,"19788.4814673376"
-"Siderastrea siderea","Critically Endangered",70,"NB",4.5,"15034.1959854954"
-"Acropora sarmentosa","Data Deficient",26,"MB",2,"17585.2811635369"
-"Acropora plantaginea","Data Deficient",10,"MB",NA,"18505.7937825942"
-"Goniopora norfolkensis","Least Concern",30,"LB",2.4,"12210.5730019287"
-"Porites cumulatus","Vulnerable",20,"HB",1.1,"9860.29601380175"
-"Echinopora irregularis","Data Deficient",4,"LB",4.2,"1898.42821785656"
-"Dendrogyra cylindrus","Vulnerable",25,"MB",4.2,"3055.55219882326"
-"Scolymia cubensis","Least Concern",92,"NB",56.5,"7790.71795933513"
-"Acropora fenneri","Data Deficient",NA,"HB",NA,NA
-"Lobophyllia hassi","Vulnerable",20,"NB",20,"6392.30007105329"
-"Montipora spongiosa","Least Concern",20,"HB",0.8,"13138.1871273901"
-"Acropora pruinosa","Data Deficient",20,"HB",1.6,"3378.75041412848"
-"Fimbriaphyllia paradivisa","Vulnerable",72,"NB",45,"2292.49753275278"
-"Astreopora ocellata","Least Concern",30,"NB",2.5,"15325.9857144732"
-"Acropora paragemmifera","Data Deficient",NA,NA,NA,NA
-"Platygyra verweyi","Near Threatened",20,"NB",4.7,"12422.3654860032"
-"Tubipora musica","Near Threatened",NA,NA,NA,"16288.7607277186"
-"Montipora friabilis","Vulnerable",20,"MB",1,"11524.0985075644"
-"Platygyra yaeyamaensis","Vulnerable",20,NA,5.1,NA
-"Acropora abrolhosensis","Vulnerable",40,"HB",1.5,"7600.33251222226"
-"Platygyra sinensis","Least Concern",30,"NB",6.7,"17691.8134827076"
-"Orbicella annularis","Endangered",82,"NB",3.8,"15044.6475667063"
-"Astreopora cucullata","Vulnerable",15,"NB",2.3,"14379.3413724359"
-"Madracis pharensis","Least Concern",99,"LB",2.1,"19337.0660298029"
-"Montipora echinata","Data Deficient",10,NA,0.8,"0"
-"Acropora valida","Data Deficient",45,"HB",0.9,"19895.265616894"
-"Porites gabonensis","Least Concern",NA,"LB",NA,"0.0434029734962523"
-"Paragoniastrea deformis","Vulnerable",20,"NB",8.8,"3861.84610046756"
-"Schizoculina fissipara","Data Deficient",35,"LB",3.4,NA
-"Millepora squarrosa","Least Concern",NA,NA,NA,"12852.7195874008"
-"Millepora alcicornis","Least Concern",NA,NA,NA,"17209.2392866001"
-"Stylocoeniella cocosensis","Vulnerable",10,"LB",0.7,"402.976996290329"
-"Turbinaria frondens","Least Concern",20,"MB",1.1,"17644.2467946909"
-"Leptoseris yabei","Vulnerable",74,"MB",3.7,"18048.669178837"
-"Goniopora ciliatus","Least Concern",30,"MB",3.8,"4794.75052130363"
-"Porites aranetai","Vulnerable",20,"LB",1,"4916.62159916863"
-"Dipsastraea lacuna","Near Threatened",15,"NB",9.8,"5062.57651318352"
-"Acanthastrea pachysepta","Near Threatened",30,"NB",32.6,"13054.8747319601"
-"Agaricia fragilis","Data Deficient",102,"LB",5,"8209.74568599824"
-"Echinophyllia pectinata","Data Deficient",40,"LB",14.5,NA
-"Pseudodiploria strigosa","Least Concern",NA,"NB",10.1,"17762.5264478881"
-"Lobophyllia vitiensis","Near Threatened",50,"NB",70,"18477.3373633543"
-"Astrea devantieri","Near Threatened",20,"NB",4.5,"3941.34963610417"
-"Acropora austera","Near Threatened",40,"HB",1.5,"19655.632100706"
-"Platygyra contorta","Least Concern",20,"NB",5.6,"13247.3320064562"
-"Paramontastraea salebrosa","Vulnerable",20,"NB",4.7,"6812.61758765424"
-"Coscinaraea marshae","Least Concern",NA,"LB",5.3,"9017.685394287"
-"Acropora russelli","Vulnerable",30,"HB",1,"8520.57356662092"
-"Oculina varicosa","Vulnerable",152,"HB",4.1,"3419.71217051877"
-"Pavona gigantea","Least Concern",30,"NB",5.7,"19058.1555719995"
-"Stylophora mamillata","Least Concern",40,"LB",1,"3861.84610046756"
-"Montipora dilatata","Endangered",10,"LB",1.2,"1497.70379242574"
-"Fimbriaphyllia ancora","Vulnerable",30,"NB",45,"18086.0980927133"
-"Astreopora moretonensis","Vulnerable",15,"MB",2.5,"7675.45521043548"
-"Coscinaraea exesa","Least Concern",35,"MB",6.1,"16377.7109385004"
-"Turbinaria patula","Vulnerable",20,"MB",3.5,"9134.97467020521"
-"Astrea annuligera","Near Threatened",30,"LB",6.3,"17691.8134827076"
-"Lithophyllon scabra","Least Concern",24,"NB",78,"12627.9410247828"
-"Galaxea longisepta","Near Threatened",20,"LB",7.6,"3034.24021196198"
-"Acropora sukarnoi","Data Deficient",30,NA,1.5,"5237.96417253319"
-"Isopora brueggemanni","Vulnerable",35,"HB",1.6,"11484.9977415318"
-"Mussismilia hispida","Data Deficient",NA,"NB",20.5,"2388.91879969976"
-"Montipora calcarea","Vulnerable",20,"LB",0.9,"13068.385158155"
-"Porites arnaudi","Least Concern",37,"MB",1.1,NA
-"Echinopora hirsutissima","Least Concern",40,"NB",4.2,"13954.5158310113"
-"Isopora brueggemanni","Data Deficient",35,"HB",1.6,"11484.9977415318"
-"Montipora vietnamensis","Vulnerable",15,"LB",0.7,"7717.99242528644"
-"Montipora porites","Near Threatened",25,"LB",0.9,"4479.45929154976"
-"Heliopora coerulea","Vulnerable",NA,NA,NA,"18043.6389874518"
-"Montipora digitata","Least Concern",5,"HB",0.9,"15380.9322861288"
-"Acropora appressa","Near Threatened",15,"MB",NA,"3861.84610046756"
-"Montipora incrassata","Near Threatened",30,"LB",1.4,"19766.6091002166"
-"Montipora aspergillus","Data Deficient",10,"HB",0.8,"0"
-"Montipora hemispherica","Data Deficient",20,"LB",0.9,"0"
-"Acropora forskali","Data Deficient",25,"HB",NA,"6370.9333255435"
-"Pectinia teres","Near Threatened",30,"HB",6.2,"4916.62159916863"
-"Acropora roseni","Endangered",12,"HB",1.6,"3861.84610046756"
-"Acropora clathrata","Least Concern",40,"LB",0.9,"19878.4503082255"
-"Dipsastraea speciosa","Least Concern",45,"NB",9.9,"19478.4898445408"
-"Porites negrosensis","Near Threatened",15,"HB",1.7,"12335.9763410371"
-"Oculina diffusa","Least Concern",30,"HB",5.7,"3792.75258687047"
-"Lithophyllon undulatum","Near Threatened",20,"LB",5.1,"7155.1062185524"
-"Meandrina danae","Least Concern",80,NA,NA,"0"
-"Pachyseris foliosa","Least Concern",25,"MB",6.3,"5287.25168005121"
-"Nemenzophyllia turbida","Vulnerable",30,"NB",13,"10710.2445650244"
-"Stylocoeniella muscosus","Data Deficient",NA,NA,NA,NA
-"Acropora donei","Vulnerable",45,"HB",1.4,"14690.8124899304"
-"Meandrina meandrites","Least Concern",80,"NB",13.5,"17194.7216421994"
-"Fimbriaphyllia divisa","Near Threatened",35,"NB",22,"9086.20977751979"
-"Lobophyllia serrata","Endangered",15,"NB",40.2,"2456.59243039236"
-"Astreopora expansa","Near Threatened",15,"MB",2.3,"18076.8819339829"
-"Euphyllia paraglabrescens","Vulnerable",15,"NB",51,"0"
-"Montipora flabellata","Vulnerable",10,"MB",0.2,"4201.54367275754"
-"Goniopora palmensis","Least Concern",20,"NB",2.4,"5475.22197421649"
-"Acropora kimbeensis","Vulnerable",40,"HB",0.6,"6306.19377146126"
-"Stylophora danae","Least Concern",40,"HB",1.1,"11824.1089077407"
-"Turbinaria heronensis","Vulnerable",15,"MB",4.4,"1860.56979556014"
-"Montastraea cavernosa","Least Concern",113,"NB",10,"9101.69836950413"
-"Montipora hispida","Least Concern",40,"LB",1.4,"18329.7000825196"
-"Pectinia crassa","Data Deficient",NA,NA,NA,NA
-"Echinopora pacifica","Near Threatened",15,"MB",4.6,"5744.11252672027"
-"Montipora spongodes","Least Concern",25,"LB",1.2,"17590.1664313344"
-"Acropora pharaonis","Vulnerable",25,"LB",1.5,"16272.1397085912"
-"Porites mayeri","Least Concern",20,"NB",1.6,"11138.3269806647"
-"Stylophora wellsi","Near Threatened",10,"HB",0.7,"3861.84610046756"
-"Acropora tortuosa","Least Concern",35,"HB",1.3,"18398.6498388582"
-"Blastomussa wellsi","Near Threatened",40,"NB",18.9,"10526.729462373"
-"Acropora suharsonoi","Endangered",25,"MB",0.8,"854.079898796"
-"Agaricia humilis","Least Concern",20,"LB",6,"8445.21839235918"
-"Diploria labyrinthiformis","Least Concern",43,"NB",5.8,"12481.6282459475"
-"Montipora stellata","Least Concern",20,"LB",0.9,"12357.0053435346"
-"Trachyphyllia geoffroyi","Near Threatened",40,"NB",4,"15954.8571646592"
-"Pavona danai","Vulnerable",15,NA,1.7,"14883.239414541"
-"Paramontastraea serageldini","Vulnerable",25,"NB",5,"3861.84610046756"
-"Acropora cardenae","Data Deficient",60,"HB",NA,"313.7689257141"
-"Acropora clathrata","Data Deficient",40,"LB",0.9,"19878.4503082255"
-"Acropora robusta","Least Concern",20,"HB",1.5,"18760.3180718265"
-"Goniopora diminuta","Data Deficient",15,"NB",4,"0"
-"Heliofungia actiniformis","Vulnerable",25,"NB",142,"13919.7163783946"
-"Porites myrmidonensis","Least Concern",55,"NB",1.4,"410.216168255415"
-"Acropora sarmentosa","Least Concern",26,"MB",2,"17585.2811635369"
-"Acropora microphthalma","Data Deficient",40,"HB",1,"18714.7462947802"
-"Acropora horrida","Data Deficient",40,"HB",1.5,"19955.8748174959"
-"Psammocora contigua","Data Deficient",35,"MB",1.5,"19860.9470143031"
-"Millepora latifolia","Vulnerable",NA,NA,NA,"9.50453877449036e-05"
-"Leptastrea pruinosa","Least Concern",40,"LB",3.6,"19488.2483918599"
-"Acropora horrida","Data Deficient",40,"HB",1.5,"19955.8748174959"
-"Acropora longicyathus","Data Deficient",25,"HB",1.3,"17602.4441905327"
-"Madracis formosa","Least Concern",40,"MB",1.6,"3895.68758326601"
-"Montipora kellyi","Data Deficient",15,"HB",0.9,"0"
-"Acropora batunai","Vulnerable",45,"LB",0.5,"4602.61382251956"
-"Montipora palawanensis","Near Threatened",40,"MB",0.7,NA
-"Porites lobata","Data Deficient",67,"NB",1.1,"19764.8841321034"
-"Caulastraea connata","Vulnerable",10,"NB",27.5,"3861.84610046756"
-"Agaricia grahamae","Least Concern",115,"MB",6.5,"3339.31796402296"
-"Acropora lokani","Vulnerable",40,"HB",0.9,"4994.35120261614"
-"Mycedium umbra","Least Concern",30,"LB",17,"5894.35581757317"
-"Porites tuberculosus","Vulnerable",20,"HB",1.1,NA
-"Goniopora savignyi","Least Concern",20,"MB",2.2,"9633.03693066281"
-"Montipora turgescens","Least Concern",30,"NB",1,"17705.8495839166"
-"Millepora boschmai","Critically Endangered",NA,NA,NA,NA
-"Porites ornata","Endangered",15,"HB",1.5,"0.000134414476389852"
-"Astreopora macrostoma","Near Threatened",15,"LB",2.5,"6445.19349414611"
-"Favites rotundata","Near Threatened",20,"NB",21.2,"15924.0565679009"
-"Pocillopora inflata","Vulnerable",10,"HB",1,"2033.13621891378"
-"Leptoria irregularis","Vulnerable",20,"LB",6.3,"10884.2703149111"
-"Acropora halmaherae","Data Deficient",25,NA,0.9,"6061.91817284266"
-"Acropora fastigata","Data Deficient",20,"HB",NA,"9.50453877449036e-05"
-"Acropora cytherea","Least Concern",67,"LB",1,"19827.2191673054"
-"Mycedium robokaki","Least Concern",NA,"MB",7.2,"1077.90217126538"
-"Cycloseris mokai","Least Concern",27,"NB",7.5,"12802.0714970345"
-"Acropora torihalimeda","Data Deficient",63,"HB",0.8,"23.1302754971988"
-"Acropora horrida","Vulnerable",40,"HB",1.5,"19955.8748174959"
-"Acropora solitaryensis","Vulnerable",40,"LB",1.1,"19854.8728478154"
-"Cyphastrea ocellina","Vulnerable",20,"NB",2.5,"11003.5919902831"
-"Acropora dendrum","Vulnerable",20,"MB",1.2,"8226.38825764766"
-"Coscinaraea monile","Least Concern",70,"NB",50,"14939.2907335792"
-"Psammocora nierstraszi","Data Deficient",40,"NB",2.3,"18727.9716454402"
-"Oulophyllia bennettae","Near Threatened",30,"NB",17.4,"13117.9746680824"
-"Acropora branchi","Data Deficient",NA,"LB",NA,"3861.84610046756"
-"Mycedium steeni","Vulnerable",30,"MB",3.1,"2821.02712885057"
-"Echinopora tiranensis","Data Deficient",15,"LB",3.5,"0"
-"Acropora speciosa","Vulnerable",65,"LB",0.8,"16949.471119462"
-"Alveopora ocellata","Data Deficient",60,"LB",1.5,"23.4314853709297"
-"Australophyllia wilsoni","Least Concern",NA,NA,NA,"9618.94255487778"
-"Anacropora forbesi","Least Concern",25,"HB",0.5,"15152.1424763035"
-"Montipora cryptus","Near Threatened",20,"LB",0.7,"5894.35581757317"
-"Podabacia sinai","Data Deficient",20,"MB",2.7,"0"
-"Psammocora albopicta","Data Deficient",28,NA,NA,"12877.2691664981"
-"Plerogyra diabolotus","Data Deficient",NA,NA,NA,"2699.2825938883"
-"Acropora variolosa","Least Concern",30,"HB",1.2,"5669.52333080177"
-"Porites compressa","Least Concern",30,"LB",1.6,"17583.5287399854"
-"Acropora ridzwani","Data Deficient",30,NA,1.8,NA
-"Acropora gomezi","Data Deficient",NA,"HB",NA,NA
-"Galaxea astreata","Vulnerable",55,"NB",3.7,"16127.328762062"
-"Acropora gemmifera","Data Deficient",18,"HB",1.6,"19148.792403382"
-"Mycetophyllia ferox","Vulnerable",30,"MB",11,"3904.73815273037"
-"Acropora microclados","Vulnerable",42,"MB",1.2,"19839.9248988899"
-"Montipora setosa","Endangered",20,"LB",0.8,"7.62704003389617"
-"Millepora braziliensis","Data Deficient",NA,NA,NA,"1137.21212332274"
-"Mycedium spina","Data Deficient",NA,NA,NA,NA
-"Micromussa lordhowensis","Near Threatened",30,"NB",13.5,"13462.5036317655"
-"Montipora confusa","Near Threatened",30,"LB",0.7,"7313.05336942835"
-"Goniopora albiconus","Vulnerable",30,"LB",3.2,"5017.97117512609"
-"Echinopora robusta","Vulnerable",25,"NB",8.6,"5015.78350809811"
-"Porites profundus","Least Concern",15,"HB",0.9,"13284.8838847545"
-"Cycloseris distorta","Least Concern",85,"NB",40,"18812.8182523135"
-"Polyphyllia novaehiberniae","Near Threatened",15,"NB",NA,"10282.4397998331"
-"Orbicella faveolata","Endangered",40,NA,NA,"4089.37455573537"
-"Micromussa multipunctata","Vulnerable",15,"LB",9.3,NA
-"Montipora corbettensis","Vulnerable",20,"LB",0.8,"4698.04528371503"
-"Pseudodiploria clivosa","Least Concern",NA,"NB",5.8,"3904.73815273037"
-"Acropora millepora","Data Deficient",30,"MB",1.6,"16404.3690255599"
-"Acropora cervicornis","Critically Endangered",60,"HB",1.7,"19782.7748437723"
-"Cantharellus noumeae","Endangered",30,"LB",200,"14928.9660257615"
-"Acropora austera","Data Deficient",40,"HB",1.5,"19655.632100706"
-"Siderastrea siderea","Least Concern",70,"NB",4.5,"15034.1959854954"
-"Goniopora burgosi","Vulnerable",30,"NB",1.7,"12798.3160941535"
-"Dipsastraea laxa","Near Threatened",25,"NB",5.8,"17602.4441905327"
-"Acropora loisetteae","Vulnerable",30,"HB",1.6,"8076.06681678686"
-"Porites porites","Least Concern",35,"HB",2.5,"18148.8154562941"
-"Acropora desalwii","Vulnerable",35,"MB",0.8,"12699.1766907419"
-"Cycloseris somervillei","Least Concern",35,"NB",135.2,"11883.0689052546"
-"Porites okinawensis","Vulnerable",NA,"NB",1.3,NA
-"Eusmilia fastigiata","Least Concern",65,"NB",20.9,"4169.53530458382"
-"Acropora hoeksemai","Vulnerable",22,"HB",1.1,"8133.95573816353"
-"Acropora squarrosa","Least Concern",60,"HB",0.8,"17296.6579867906"
-"Montipora samarensis","Vulnerable",15,"HB",0.7,"4320.35442704759"
-"Caulastraea tumida","Near Threatened",40,"NB",25,"14602.8177291995"
-"Cycloseris wellsi","Least Concern",58,"MB",2.5,"13272.638559275"
-"Montipora verruculosa","Vulnerable",20,"LB",0.8,"2684.11534183367"
-"Homophyllia bowerbanki","Vulnerable",20,"NB",25,"14273.6589905777"
-"Gyrosmilia interrupta","Least Concern",30,"NB",8.1,"8734.37939858688"
-"Cynarina lacrymalis","Near Threatened",70,"NB",85,"12546.0964710899"
-"Montipora circumvallata","Least Concern",20,"LB",0.6,"3861.84610046756"
-"Caulastraea furcata","Least Concern",30,"NB",12.8,"10609.5098082909"
-"Porites baueri","Data Deficient",NA,NA,NA,"9.50453877449036e-05"
-"Montipora capricornis","Vulnerable",20,"MB",1,"8911.03397452093"
-"Leptastrea inaequalis","Near Threatened",20,"NB",4.1,"13354.4232096167"
-"Solenastrea hyades","Least Concern",40,"NB",4.2,"2788.25359702321"
-"Acropora simplex","Vulnerable",60,"LB",0.8,"4146.64641284922"
-"Echinopora horrida","Near Threatened",25,"LB",2.4,"11860.69217088"
-"Porites heronensis","Least Concern",20,"MB",1.5,"4398.35996767158"
-"Heterocyathus aequicostatus","Least Concern",100,"NB",5.6,"18398.4953684577"
-"Acropora spicifera","Vulnerable",12,"LB",1.1,"16974.7407638479"
-"Montipora crassituberculata","Vulnerable",20,"MB",1.5,"9768.90682332099"
-"Montipora mactanensis","Vulnerable",20,"LB",0.9,"2374.1323696241"
-"Seriatopora dentritica","Vulnerable",40,"HB",0.6,"12199.9225776694"
-"Dichocoenia stokesii","Data Deficient",72,"NB",11.2,"13130.2265790193"
-"Pleuractis moluccensis","Least Concern",30,"NB",160,"18566.5961323385"
-"Agaricia tenuifolia","Near Threatened",18,"MB",5.1,"16165.3009712827"
-"Acropora walindii","Vulnerable",40,"HB",0.5,"9580.12990667368"
-"Oxypora lacera","Least Concern",30,"MB",8.8,"16400.9290305136"
-"Montipora australiensis","Vulnerable",30,"MB",0.1,"4712.34446099335"
-"Oculina valenciennesi","Data Deficient",30,"HB",2.7,"3441.15983274203"
-"Porites harrisoni","Near Threatened",15,"MB",1.1,"3861.84610046756"
-"Astrangia poculata","Least Concern",NA,"NB",NA,"4817.01392253259"
-"Echinopora taylorae","Near Threatened",12,"MB",5,NA
-"Acropora haimei","Data Deficient",NA,NA,NA,NA
-"Montipora turtlensis","Vulnerable",20,"LB",0.9,"5161.90424364926"
-"Montipora pachytuberculata","Data Deficient",10,"HB",0.6,"0"
-"Pavona xarifae","Data Deficient",20,NA,NA,"317.994099703751"
-"Mussa angulosa","Least Concern",59,"NB",60,"18088.6765321056"
-"Montipora cocosensis","Vulnerable",15,"NB",1.4,"321.659592282789"
-"Meandrina brasiliensis","Data Deficient",15,"NB",13.3,"6794.3917739468"
-"Acropora rongelapensis","Data Deficient",40,NA,0.8,"5505.13891591501"
-"Alveopora excelsa","Endangered",30,"NB",2,"10401.2326604699"
-"Plerogyra multilobata","Data Deficient",NA,NA,21,NA
-"Millepora squarrosa","Endangered",NA,NA,NA,"12852.7195874008"
-"Alveopora minuta","Endangered",20,"NB",1.3,"4954.2121474591"
-"Acropora downingi","Least Concern",10,"LB",1,"5642.35751500696"
-"Acropora bushyensis","Least Concern",5,"LB",1.5,"14109.0095667626"
-"Isopora crateriformis","Vulnerable",25,"LB",0.8,"16470.8985508369"
-"Acropora eurystoma","Data Deficient",26,NA,2,"17119.5583775711"
-"Madracis asperula","Data Deficient",NA,NA,NA,"11365.5954468839"
-"Mussismilia leptophylla","Data Deficient",NA,"NB",10.2,"75.4104178043495"
-"Acropora hyacinthus","Near Threatened",26,"LB",1.1,"19885.942028004"
-"Acropora natalensis","Data Deficient",30,"LB",NA,"2414.47872949308"
-"Acropora chesterfieldensis","Least Concern",40,"HB",1,"11117.5549103528"
-"Acropora mirabilis","Data Deficient",25,"MB",NA,"11136.6277270824"
-"Anomastraea irregularis","Vulnerable",20,"NB",5.4,"7355.41754705717"
-"Echinopora grandicula","Data Deficient",NA,NA,NA,NA
-"Pectinia africana","Vulnerable",30,"NB",16.6,"3861.84610046756"
-"Montipora delicatula","Vulnerable",15,"MB",0.6,"5235.14287626646"
-"Sclerophyllia maxima","Near Threatened",15,"NB",40,"1056.08889978809"
-"Acropora papillare","Vulnerable",23,"HB",1.6,"10517.6495916329"
-"Caulastraea echinulata","Vulnerable",18,"NB",13.8,"6140.19429042091"
-"Turbinaria peltata","Vulnerable",NA,NA,NA,"17645.5835824509"
-"Porites cocosensis","Vulnerable",NA,"LB",1.5,"0"
-"Acropora kosurini","Vulnerable",20,"HB",0.8,"14711.2721236805"
-"Alveopora gigas","Vulnerable",30,"MB",6.6,"12065.2121886175"
-"Porites furcata","Least Concern",50,"HB",1.9,"17560.3015488283"
-"Montipora taiwanensis","Data Deficient",2,"NB",0.9,"693.580515539421"
-"Cyphastrea hexasepta","Vulnerable",25,"NB",1,"0"
-"Acropora khayranensis","Data Deficient",NA,NA,NA,NA
-"Platygyra acuta","Near Threatened",20,"NB",5.2,"12566.8474099375"
-"Podabacia motuporensis","Near Threatened",20,"LB",2.8,"13847.0690773729"
-"Dipsastraea lizardensis","Near Threatened",20,"NB",16.7,"12561.1338004145"
-"Porites sverdrupi","Vulnerable",40,NA,NA,"169.400899696711"
-"Acropora anthocercis","Vulnerable",25,"LB",1.3,"18959.6813088818"
-"Psammocora contigua","Data Deficient",35,"MB",1.5,"19860.9470143031"
-"Goniastrea ramosa","Vulnerable",15,"LB",7.4,"3936.70372204825"
-"Lithophyllon ranjithi","Endangered",20,NA,NA,NA
-"Acropora samoensis","Data Deficient",15,"LB",1.8,"19955.7958013358"
-"Mycetophyllia danaana","Least Concern",30,"LB",13.8,"3104.43617262938"
-"Pavona chiriquiensis","Least Concern",30,NA,1.4,"2381.04037837841"
-"Stephanocoenia intersepta","Least Concern",100,"NB",2.7,"18225.6193668746"
-"Helioseris cucullata","Least Concern",90,"MB",2.9,"4517.26975404364"
-"Anacropora pillai","Data Deficient",25,"HB",0.6,"0"
-"Mussismilia harttii","Data Deficient",NA,"NB",20,"6228.71883387477"
-"Blastomussa merleti","Least Concern",50,NA,6,"14866.6082728315"
-"Horastrea indica","Vulnerable",40,"NB",13.8,"7744.97608077179"
-"Stylophora subseriata","Least Concern",30,"HB",0.7,"12104.9158207222"
-"Oculina robusta","Data Deficient",20,"HB",3.7,"3057.24111295686"
-"Pocillopora zelli","Least Concern",15,"HB",1.2,"19278.1363966791"
-"Agaricia agaricites","Least Concern",75,"MB",5.5,"8055.73891865763"
-"Millepora intricata","Least Concern",NA,NA,NA,"10402.4583116895"
-"Heterocyathus alternatus","Least Concern",NA,NA,NA,"13285.5523718313"
-"Goniopora paliformis","Vulnerable",NA,"NB",2.7,"3861.84610046756"
-"Isopora elizabethensis","Data Deficient",20,"HB",NA,"1713.77599878346"
-"Leptastrea aequalis","Vulnerable",20,"LB",2.8,"14269.1063537795"
-"Porites brighami","Least Concern",NA,"NB",1.5,"8743.63363526585"
-"Madracis carmabi","Data Deficient",40,NA,NA,"0"
-"Porites latistellata","Least Concern",20,"LB",1.4,"18505.7937825942"
-"Acropora yongei","Least Concern",21,"HB",1.2,"17991.9116021759"
-"Porites panamensis","Least Concern",36,"NB",0.9,"16657.7623486579"
-"Acropora glauca","Near Threatened",20,"LB",1.3,"19655.6620593515"
-"Pocillopora fungiformis","Endangered",15,"LB",0.8,"0"
-"Echinopora fruticulosa","Near Threatened",20,"HB",4.8,"0"
-"Porites deformis","Near Threatened",30,"LB",1.6,"14896.3603858711"
-"Montipora spumosa","Least Concern",30,"LB",0.9,"17157.7331654922"
-"Porites flavus","Data Deficient",20,"HB",0.7,"11275.1035776301"
-"Oxypora convoluta","Data Deficient",30,"MB",7.3,"0"
-"Montipora peltiformis","Near Threatened",30,"NB",0.9,"16774.4405826383"
-"Isophyllia rigida","Least Concern",20,"NB",18.2,"2940.19196825214"
-"Lobophyllia dentata","Vulnerable",10,"NB",32.6,"3741.86448967251"
-"Porites rugosus","Vulnerable",15,"HB",0.9,"12198.4367293521"
-"Platygyra carnosa","Near Threatened",15,"NB",5,"9453.27031024842"
-"Porites echinulata","Near Threatened",50,"MB",2.1,"5287.04803023952"
-"Lobophyllia rowleyensis","Near Threatened",40,"NB",13.4,"6782.34572168265"
-"Porites pukoensis","Critically Endangered",NA,"MB",1.7,"4154.57826176861"
-"Cladocora arbuscula","Least Concern",25,"HB",2.9,"14228.7084462324"
-"Favites spinosa","Vulnerable",10,"NB",8.2,"8531.61147771363"
-"Favites melicerum","Near Threatened",20,NA,8.1,"11619.4997360972"
-"Pocillopora molokensis","Data Deficient",55,"HB",1.3,"2557.76325329622"
-"Montipora carinata","Near Threatened",15,"HB",0.5,"9.50453877449036e-05"
-"Acropora awi","Vulnerable",20,"HB",1,"7501.32580298105"
-"Porites divaricata","Least Concern",47,"HB",1.1,"3857.80549872804"
-"Pseudosiderastrea tayamai","Near Threatened",20,"NB",4,"12408.2801428474"
-"Mussismilia braziliensis","Data Deficient",NA,"NB",14.9,"1150.815055942"
-"Cycloseris explanulata","Least Concern",35,"MB",4.5,"16822.1573984848"
-"Siderastrea savignyana","Least Concern",10,"NB",3.8,"6378.12871647716"
-"Isophyllia sinuosa","Least Concern",20,"NB",11.2,"3065.79160885694"
-"Acropora exquisita","Data Deficient",20,"HB",NA,"2849.04549830204"
-"Favia fragum","Least Concern",30,"NB",5.8,"15224.779029975"
-"Millepora platyphylla","Least Concern",NA,NA,NA,"18771.2607879221"
-"Schizoculina africana","Data Deficient",35,"HB",9.1,"0"
-"Cantharellus doederleini","Least Concern",30,"NB",53.3,"3861.84610046756"
-"Acropora proximalis","Data Deficient",15,"HB",NA,"0.000164623440599257"
-"Montipora undata","Near Threatened",30,"MB",1.2,"16743.4705036728"
-"Acropora indonesia","Vulnerable",26,"HB",1,"13671.2644171745"
-"Isopora togianensis","Endangered",25,"HB",1.2,"3335.3901990996"
-"Millepora intricata","Near Threatened",NA,NA,NA,"10402.4583116895"
-"Acropora arabensis","Near Threatened",12,"LB",2,"5575.50131667551"
-"Scolymia wellsii","Data Deficient",40,NA,NA,"2637.7715483496"
-"Lobophyllia recta","Least Concern",40,"NB",15,"17590.1664313344"
-"Oxypora egyptensis","Data Deficient",60,"NB",11.3,"0"
-"Echinophyllia orpheensis","Least Concern",30,"NB",10.1,"14255.7923191823"
-"Porites decasepta","Data Deficient",7,NA,NA,"0"
-"Madracis senaria","Least Concern",30,"LB",1.8,"958.647458501032"
-"Millepora foveolata","Vulnerable",NA,NA,NA,NA
-"Seriatopora guttata","Least Concern",40,"HB",0.6,"11630.735762867"
-"Bernardpora stutchburyi","Least Concern",30,"LB",NA,"13811.9803094358"
-"Acropora jacquelineae","Vulnerable",36,"LB",0.5,"4457.81333769508"
-"Madracis auretenra","Least Concern",60,"HB",1.5,"4234.20615592782"
-"Lobophyllia diminuta","Vulnerable",10,"NB",42.5,"7409.32758659643"
-"Australogyra zelli","Vulnerable",15,"HB",7.2,"4715.40615840632"
-"Acropora valenciennesi","Least Concern",45,"HB",1.5,"16199.1324946989"
-"Montipora capitata","Near Threatened",70,"LB",1,"15387.3990552632"
-"Montipora cebuensis","Vulnerable",20,"MB",0.8,"5750.66149277043"
-"Dipsastraea faviaformis","Vulnerable",12,"NB",20.6,"13265.6354507501"
-"Porites studeri","Least Concern",40,NA,NA,"4153.81791758517"
-"Acropora digitifera","Data Deficient",22,"LB",1.6,"19597.0722927091"
-"Paramontastraea peresi","Near Threatened",40,"NB",12.5,"8124.35417716256"
-"Favites stylifera","Near Threatened",20,"NB",6.8,"14329.4482137197"
-"Favites micropentagonus","Near Threatened",20,"NB",5.2,"12771.781068744"
-"Erythrastrea flabellata","Near Threatened",25,"NB",14,NA
-"Montipora vaughani","Data Deficient",NA,NA,NA,"0"
-"Pocillopora indiania","Vulnerable",20,"HB",1.2,"3861.84610046756"
-"Acropora pichoni","Near Threatened",70,"LB",0.9,"5407.95603879052"
-"Acanthastrea hemprichii","Vulnerable",20,"NB",NA,"14519.2442016849"
-"Goniopora sultani","Least Concern",20,"MB",7.8,"0"
-"Porites somaliensis","Near Threatened",20,"NB",2.3,"8986.88046701452"
-"Acropora polystoma","Vulnerable",17.5,"MB",1.5,"19268.776193486"
-"Favites paraflexuosus","Near Threatened",20,"NB",16.2,"11629.7850181939"
-"Platygyra lamellina","Near Threatened",30,"NB",9.1,"19315.6186385193"
-"Isopora cylindrica","Data Deficient",NA,NA,NA,NA
-"Favites chinensis","Near Threatened",20,"NB",12.5,"14109.0095667626"
-"Acropora donei","Data Deficient",45,"HB",1.4,"14690.8124899304"
-"Echinophyllia costata","Vulnerable",10,"MB",6,"0"
-"Solenastrea bournoni","Least Concern",30,"NB",20.5,"3653.57156702646"
-"Stylophora kuehlmanni","Least Concern",70,"HB",0.7,"91.3576635305662"
-"Acropora echinata","Vulnerable",60,"HB",1,"12124.5024056898"
-"Madracis decactis","Least Concern",98,"LB",2.2,"11461.3028901136"
-"Pachyseris involuta","Vulnerable",15,"MB",4.1,"9.50453877449036e-05"
-"Goniastrea thecata","Near Threatened",15,"NB",8.4,"5062.57651318352"
-"Craterastrea levis","Least Concern",70,NA,NA,"3861.84610046756"
-"Goniopora stokesi","Near Threatened",30,"MB",4.7,"14129.7947523478"
-"Cyphastrea decadia","Least Concern",40,"HB",2.8,"3975.46049228748"
-"Acanthastrea minuta","Near Threatened",30,"NB",6.4,"4796.79565513453"
-"Heteropsammia eupsammides","Near Threatened",38,NA,NA,"18444.8663998694"
-"Acropora cytherea","Data Deficient",67,"LB",1,"19827.2191673054"
-"Montipora mollis","Least Concern",40,"NB",0.9,"19901.3595488124"
-"Alveopora tizardi","Least Concern",50,"LB",1.5,"12436.5011045994"
-"Acropora polystoma","Data Deficient",17.5,"MB",1.5,"19268.776193486"
-"Acropora muricata","Data Deficient",30,"HB",1.2,"19870.7243107484"
-"Heteropsammia cochlea","Least Concern",100,"NB",7.3,"18798.3390111047"
-"Porites astreoides","Least Concern",70,"NB",1.6,"8711.71717066196"
-"Acropora samoensis","Data Deficient",15,"LB",1.8,"19955.7958013358"
-"Acropora subulata","Least Concern",30,"LB",1.2,"18306.2661581902"
-"Pectinia maxima","Endangered",25,"MB",15,"481.217764249894"
-"Coscinaraea hahazimaensis","Vulnerable",NA,"NB",3,"0"
-"Leptoseris cailleti","Least Concern",150,"MB",3.5,"2084.35749674106"
-"Echinopora forskaliana","Near Threatened",20,"NB",5.8,"5099.19895382975"
-"Acropora elegans","Vulnerable",60,"LB",0.8,"4853.01762847181"
-"Anacropora reticulata","Vulnerable",15,"HB",0.9,"5286.65710277765"
-"Cyphastrea japonica","Least Concern",20,"NB",1.9,"6403.91528380706"
-"Pocillopora effusa","Data Deficient",NA,"HB",1.1,NA
-"Blastomussa loyae","Endangered",NA,"NB",NA,"5894.35581757317"
-"Sandalolitha robusta","Least Concern",21,"NB",4.6,"17602.4441905327"
-"Physophyllia ayleni","Near Threatened",25,"MB",15,"11308.7001484009"
-"Caulastraea curvata","Vulnerable",20,"HB",13.9,"5464.57550841452"
-"Montipora altasepta","Vulnerable",10,"HB",0.8,"5137.05040160051"
-"Acropora nana","Near Threatened",15,"HB",1,"18471.1226517445"
-"Acropora filiformis","Data Deficient",20,"HB",NA,NA
-"Ctenella chagius","Endangered",45,"NB",NA,"3861.84610046756"
-"Porites ericacea","Data Deficient",NA,NA,NA,NA
-"Nematostella vectensis","Vulnerable",NA,NA,NA,"8832.01175265491"
-"Endopsammia pourtalesi","Data Deficient",NA,NA,NA,NA
-"Rhizopsammia wellingtoni","Critically Endangered",NA,NA,NA,NA
-"Tubastraea floreana","Critically Endangered",NA,NA,NA,"110.941357765343"
-"Flabellum (Ulocyathus) daphnense","Data Deficient",NA,NA,NA,"0.000134414476389852"
-"Pseudocyathoceras avis","Data Deficient",NA,NA,NA,NA
-"Caryophyllia (Caryophyllia) solida","Data Deficient",NA,NA,NA,"2752.1881294778"
-"Concentrotheca vaughani","Data Deficient",NA,NA,NA,"83.5003271204064"
-"Crispatotrochus galapagensis","Data Deficient",NA,NA,NA,"2955.45865691046"
-"Polycyathus isabela","Vulnerable",NA,NA,NA,"2913.30682203001"
-"Dendrophyllia johnsoni","Data Deficient",NA,NA,NA,"160.000595745914"
-"Edwardsia ivelli","Data Deficient",NA,NA,NA,"83.6433506997741"
-"Eunicella verrucosa","Vulnerable",NA,NA,NA,"14553.7465604657"
-"Clavularia carpediem","Data Deficient",NA,NA,NA,NA
-"Clavularia crassa","Least Concern",NA,NA,NA,"242.439926188042"
-"Maasella edwardsii","Data Deficient",NA,NA,NA,NA
-"Paramuricea macrospina","Data Deficient",NA,NA,NA,"1723.75695699993"
-"Bunodeopsis strumosa","Data Deficient",NA,NA,NA,"3806.88298135311"
-"Cladopsammia rolandi","Data Deficient",NA,NA,NA,"1950.44035716897"
-"Actinia cari","Data Deficient",NA,NA,NA,"3814.09281715962"
-"Cribrinopsis crassa","Least Concern",NA,NA,NA,"935.197424032949"
-"Paranemonia cinerea","Data Deficient",NA,NA,NA,"850.766310368167"
-"Paranemonia vouliagmeniensis","Endangered",NA,NA,NA,"0"
-"Segonzactis hartogi","Data Deficient",NA,NA,NA,"440.762230932051"
-"Phymanthus pulcher","Data Deficient",NA,NA,NA,"1811.47129289459"
-"Crassophyllum thessalonicae","Endangered",NA,NA,NA,"1.07156258482599"
-"Psammocora stellata","Vulnerable",70,"NB",2.5,"18695.803440435"
-"Acropora cophodactyla","Data Deficient",12,"LB",NA,"9627.07328560115"
-"Cycloseris costulata","Least Concern",30,"NB",76,"16791.1329592206"
-"Acropora florida","Near Threatened",40,"HB",1.4,"18471.1226517445"
-"Porites densa","Near Threatened",20,"NB",1.3,"14779.3643212728"
-"Dipsastraea maxima","Near Threatened",25,"NB",29,"13906.9845625898"
-"Pavona venosa","Vulnerable",20,"LB",9.3,"16743.4586630352"
-"Hydnophora rigida","Least Concern",40,"HB",6.7,"16542.624288645"
-"Paragoniastrea australensis","Least Concern",40,"NB",10,"19706.0949385064"
-"Leptoseris hawaiiensis","Least Concern",165,"LB",4.4,"18959.825339787"
-"Leptoseris explanata","Least Concern",70,"MB",4,"15298.4733364136"
-"Acropora secale","Near Threatened",30,"HB",1.2,"19878.4503082255"
-"Hydnophora pilosa","Least Concern",30,"MB",8,"15341.5259698968"
-"Porites eridani","Endangered",20,"LB",0.8,"4874.91510621312"
-"Leptoseris solida","Least Concern",70,"LB",3.8,"18505.7937825942"
-"Pavona minuta","Near Threatened",55,"NB",3.3,"18475.6427269713"
-"Acropora abrotanoides","Data Deficient",26,"HB",1.2,"19328.1218722705"
-"Pavona maldivensis","Least Concern",67,"MB",4.1,"19150.0809087079"
-"Siderastrea stellata","Data Deficient",NA,"NB",3,"2191.87505132948"
-"Turbinaria irregularis","Least Concern",40,"MB",2.1,"14258.0115613035"
-"Gardineroseris planulata","Least Concern",40,"NB",5,"19590.1849414672"
-"Astrea curta","Least Concern",45,"NB",9.3,"19556.7294203094"
-"Pocillopora woodjonesi","Least Concern",26,"HB",1.1,"18473.7417404588"
-"Sinuorota hexagonalis","Least Concern",25,"NB",29,"17931.1498362538"
-"Dipsastraea pallida","Least Concern",50,"NB",10.2,"19821.4292482205"
-"Acropora acuminata","Vulnerable",25,"HB",1.2,"18944.7083903755"
-"Acropora granulosa","Near Threatened",65,"LB",0.9,"18472.4001938111"
-"Cycloseris cyclolites","Least Concern",40,"NB",35.7,"17602.4441905327"
-"Pectinia alcicornis","Vulnerable",25,"LB",21.2,"8734.99006147599"
-"Pocillopora capitata","Least Concern",20,"HB",0.4,"13711.8213226751"
-"Hydnophora grandis","Least Concern",25,"LB",4.7,"8669.0099585068"
-"Boninastrea boninensis","Data Deficient",NA,"NB",6.5,"0"
-"Acropora speciosa","Data Deficient",65,"LB",0.8,"16949.471119462"
-"Acropora listeri","Vulnerable",17.5,"HB",1,"18988.8732610758"
-"Millepora tenera","Least Concern",NA,NA,NA,"14511.2012328919"
-"Acropora loripes","Near Threatened",40,"MB",1.2,"19878.4503082255"
-"Favites magnistellata","Near Threatened",30,"NB",12.1,"13510.7985840686"
-"Leptoria phrygia","Near Threatened",30,"NB",3.5,"18686.7302678342"
-"Leptastrea bottae","Near Threatened",30,"LB",3.5,"19875.083349531"
-"Lithophyllon repanda","Least Concern",40,"NB",150,"19125.1965361326"
-"Acropora humilis","Near Threatened",20,"LB",1.8,"19624.8406967026"
-"Favites valenciennesii","Near Threatened",30,"NB",10,"16474.0770095803"
-"Acropora samoensis","Least Concern",15,"LB",1.8,"19955.7958013358"
-"Acropora humilis","Data Deficient",20,"LB",1.8,"19624.8406967026"
-"Goniopora pandoraensis","Least Concern",20,"MB",2.7,"7331.67469512537"
-"Lithophyllon spinifer","Least Concern",40,"NB",118,"6356.68080435834"
-"Acropora grandis","Least Concern",25,"HB",1.7,"17802.4854598228"
-"Porites vaughani","Least Concern",40,"LB",0.8,"16876.6139022295"
-"Acropora tenuis","Near Threatened",30,"MB",1.2,"18088.8462331415"
-"Acropora microphthalma","Least Concern",40,"HB",1,"18714.7462947802"
-"Porites lichen","Least Concern",40,"MB",1.4,"19192.8763835698"
-"Merulina scabricula","Least Concern",40,"MB",3.5,"13555.8636258511"
-"Acropora vaughani","Vulnerable",40,"HB",1.1,"19955.7958013358"
-"Seriatopora caliendrum","Near Threatened",40,"HB",1.1,"15843.1052432415"
-"Dipsastraea rotumana","Least Concern",30,"NB",14.2,"18728.7122340156"
-"Cycloseris fragilis","Least Concern",40,"NB",48,"18806.911450129"
-"Porites nigrescens","Vulnerable",20,"HB",1.6,"19320.9067941899"
-"Pavona decussata","Vulnerable",20,"LB",3.5,"16999.3403001078"
-"Psammocora digitata","Near Threatened",20,"MB",2.3,"13563.801662085"
-"Cantharellus jebbi","Least Concern",25,"LB",20,"3912.69756770821"
-"Pocillopora ligulata","Least Concern",NA,"HB",0.8,"18795.7632099457"
-"Anacropora spinosa","Endangered",15,"HB",0.9,"4532.88810441753"
-"Stylocoeniella guentheri","Least Concern",62,"LB",1.1,"18714.634297015"
-"Goniopora tenuidens","Least Concern",40,"NB",NA,"13117.9746680824"
-"Favites halicora","Near Threatened",55,"NB",16.8,"17691.8134827076"
-"Oxypora echinata","Least Concern",40,"MB",12.9,NA
-"Polyphyllia talpina","Least Concern",30,"NB",NA,"15152.1424763035"
-"Montipora informis","Least Concern",20,"NB",1.3,"17787.371149521"
-"Favites colemani","Near Threatened",20,"LB",7.8,"12319.431808365"
-"Montipora foliosa","Near Threatened",47,"MB",0.9,"17691.8134827076"
-"Lobophyllia robusta","Least Concern",40,"NB",47.5,"13789.9682596011"
-"Porites lutea","Least Concern",70,"NB",1.3,"19878.3813967113"
-"Ctenactis albitentaculata","Near Threatened",20,"NB",260,"8477.56217433768"
-"Dipsastraea amicorum","Least Concern",20,"NB",13.2,"19980.9488334694"
-"Acropora subglabra","Least Concern",40,"HB",0.8,"12469.822300462"
-"Echinopora lamellosa","Least Concern",50,"MB",3.4,"17210.8673499638"
-"Leptastrea purpurea","Least Concern",40,"LB",10,"19958.0490939871"
-"Leptoseris scabra","Least Concern",127,"LB",6.3,"19899.020449483"
-"Pocillopora meandrina","Least Concern",27,"HB",0.7,"19123.149896373"
-"Pocillopora verrucosa","Vulnerable",54,"HB",1.2,"19574.897026465"
-"Leptoseris papyracea","Least Concern",89,"MB",4.4,"19125.8217959355"
-"Pocillopora elegans","Vulnerable",30,"HB",1,"18471.6368395905"
-"Porites murrayensis","Near Threatened",5,"NB",1,"15091.0431220864"
-"Homophyllia bowerbanki","Near Threatened",20,"NB",25,"14273.6589905777"
-"Plerogyra simplex","Near Threatened",30,"HB",20,"3661.69236513194"
-"Montipora lobulata","Vulnerable",20,"NB",1.3,"12324.2906033392"
-"Lobophyllia valenciennesii","Least Concern",40,"LB",35,"14206.2524596"
-"Acropora aspera","Vulnerable",15,"HB",1.8,"18502.3498420607"
-"Dipsastraea marshae","Near Threatened",15,"NB",19.3,"4287.11860715726"
-"Astreopora scabra","Least Concern",15,"NB",2.5,"0.000134414476389852"
-"Isopora palifera","Near Threatened",40,"HB",1.4,"18519.7158999489"
-"Millepora exaesa","Least Concern",NA,NA,NA,"18505.7937825942"
-"Ctenactis echinata","Least Concern",20,"NB",284,"19680.6906472635"
-"Alveopora verrilliana","Vulnerable",70,"NB",2.1,"13172.1419323434"
-"Podabacia crustacea","Least Concern",50,"LB",3,"18803.4877436226"
-"Halomitra pileus","Least Concern",25,"NB",4.8,"17907.4017660664"
-"Cyphastrea serailia","Least Concern",50,"NB",2.4,"19799.548101077"
-"Coeloseris mayeri","Least Concern",5,"NB",11.9,"16610.92403851"
-"Echinophyllia aspera","Least Concern",90,"MB",10.9,"18661.8488951154"
-"Montipora efflorescens","Near Threatened",20,"NB",1.2,"18078.1021339502"
-"Pleuractis granulosa","Least Concern",60,"NB",120,"18213.4949306187"
-"Montipora floweri","Least Concern",35,"NB",0.9,"18473.7417404588"
-"Echinophyllia glabra","Least Concern",40,"MB",7.5,NA
-"Pocillopora verrucosa","Least Concern",54,"HB",1.2,"19574.897026465"
-"Goniopora fruticosa","Least Concern",25,"LB",3.7,"12761.5029149705"
-"Oulophyllia crispa","Near Threatened",40,"NB",11.6,"17675.6805683179"
-"Lobactis scutaria","Least Concern",40,"NB",169,"19125.1965361326"
-"Acropora tenella","Vulnerable",70,"LB",0.8,"5591.70813286733"
-"Psammocora contigua","Near Threatened",35,"MB",1.5,"19860.9470143031"
-"Favites pentagona","Least Concern",50,"NB",8.5,"18042.1906112896"
-"Astreopora myriophthalma","Data Deficient",50,"NB",2.3,"18727.5857650824"
-"Cycloseris tenuis","Least Concern",27,"NB",46.7,"19099.0114771455"
-"Porites lobata","Near Threatened",67,"NB",1.1,"19764.8841321034"
-"Montipora caliculata","Vulnerable",20,"NB",1,"18519.7158999489"
-"Pocillopora damicornis","Least Concern",55,"HB",1,"19908.2634744496"
-"Cycloseris vaughani","Least Concern",36,"NB",58.5,"19777.3196659128"
-"Diploastrea heliopora","Near Threatened",30,"NB",9,"16631.9722822585"
-"Galaxea paucisepta","Near Threatened",20,"LB",3.1,"5287.43676861284"
-"Acropora nasuta","Near Threatened",30,"MB",1.1,"19878.5929603198"
-"Pavona clavus","Least Concern",40,"MB",3.4,"19730.2911340836"
-"Pavona frondifera","Least Concern",15,"LB",2.6,"16897.7037689022"
-"Favites flexuosa","Near Threatened",20,"NB",18.8,"17602.4441905327"
-"Acanthastrea echinata","Least Concern",50,"NB",NA,"20001.0574118391"
-"Acropora robusta","Least Concern",20,"HB",1.5,"18760.3180718265"
-"Acropora digitifera","Near Threatened",22,"LB",1.6,"19597.0722927091"
-"Euphyllia glabrescens","Near Threatened",35,"NB",19,"16338.908179945"
-"Plerogyra sinuosa","Near Threatened",40,"NB",30,"17676.3065016428"
-"Porites annae","Near Threatened",30,"LB",1.1,"18007.151670777"
-"Astreopora listeri","Least Concern",30,"NB",1.6,"18088.8462331415"
-"Pectinia paeonia","Near Threatened",25,"MB",35,"9986.34757557818"
-"Porites australiensis","Least Concern",50,"NB",1.4,"18519.7158999489"
-"Plesiastrea versipora","Least Concern",40,"NB",4.6,"19793.1374904025"
-"Fimbriaphyllia paraancora","Vulnerable",30,"NB",30,"4173.8015227912"
-"Favites abdita","Near Threatened",50,"NB",15,"17602.4441905327"
-"Acropora striata","Vulnerable",34.1,"HB",1.1,"19787.4747470583"
-"Astreopora myriophthalma","Least Concern",50,"NB",2.3,"18727.5857650824"
-"Acropora valida","Least Concern",45,"HB",0.9,"19895.265616894"
-"Cycloseris sinensis","Least Concern",40,"NB",54.8,"18920.0852452354"
-"Astreopora gracilis","Least Concern",15,"NB",1.6,"18737.1574556913"
-"Acropora lutkeni","Near Threatened",26,"HB",1.2,"19788.0320384095"
-"Lobophyllia hataii","Least Concern",40,"NB",30,"12316.024708362"
-"Montipora verrilli","Data Deficient",40,"LB",0.8,"18768.6990016404"
-"Danafungia scruposa","Least Concern",55,"NB",111,"19300.0221798151"
-"Montipora aequituberculata","Least Concern",43,"MB",0.9,"19737.0883254558"
-"Acropora monticulosa","Near Threatened",14,"LB",1.2,"19055.1217811335"
-"Acropora gemmifera","Least Concern",18,"HB",1.6,"19148.792403382"
-"Cyphastrea chalcidicum","Least Concern",50,"NB",2.8,"19821.4292482205"
-"Micromussa regularis","Vulnerable",20,"NB",NA,"12199.9225776694"
-"Acropora lovelli","Vulnerable",30,"HB",1.7,"18666.1916212813"
-"Porites stephensoni","Near Threatened",5,"NB",1.3,"10586.7618858543"
-"Leptoseris foliosa","Least Concern",30,"MB",1.4,"19689.7358200357"
-"Millepora exaesa","Endangered",NA,NA,NA,"18505.7937825942"
-"Alveopora allingi","Vulnerable",60,"MB",3.7,"19842.2814830709"
-"Merulina ampliata","Least Concern",50,"MB",6.2,"18661.8488951154"
-"Paragoniastrea russelli","Near Threatened",25,"NB",16,"18088.8462331415"
-"Montipora tuberculosa","Least Concern",40,"NB",1,"19886.5922485765"
-"Leptoseris mycetoseroides","Least Concern",80,"MB",4.4,"18478.187732441"
-"Psammocora contigua","Near Threatened",35,"MB",1.5,"19860.9470143031"
-"Goniopora eclipsensis","Least Concern",20,"MB",3.1,"4987.68183119425"
-"Porites napopora","Vulnerable",15,"LB",0.9,"8393.36542727205"
-"Pavona bipartita","Vulnerable",20,"NB",3.1,"11877.0068280773"
-"Stylaraea punctata","Data Deficient",NA,"LB",1.2,"13364.200283297"
-"Goniastrea edwardsi","Least Concern",30,"NB",5,"17676.3065016428"
-"Lobophyllia ishigakiensis","Vulnerable",15,"NB",NA,"10035.1282457768"
-"Goniopora somaliensis","Least Concern",60,"LB",3.1,"17143.792712962"
-"Madracis kirbyi","Least Concern",60,"LB",2.6,"13462.5036317655"
-"Pavona explanulata","Least Concern",25,"MB",3,"19834.6771363247"
-"Dipsastraea laddi","Vulnerable",10,"NB",6.8,"3852.53306273415"
-"Acanthastrea rotundoflora","Near Threatened",30,"LB",NA,"11725.8966079123"
-"Acropora globiceps","Vulnerable",20,"LB",2.1,"15724.6762811455"
-"Pocillopora brevicornis","Least Concern",NA,NA,NA,"16483.3072619441"
-"Seriatopora hystrix","Least Concern",55,"HB",0.8,"17035.6307039402"
-"Acropora teres","Data Deficient",20,"HB",NA,"13186.5761458332"
-"Pavona varians","Least Concern",80,"LB",9.3,"19834.6771363247"
-"Turbinaria stellulata","Vulnerable",15,"NB",3.3,"17590.1664313344"
-"Psammocora haimiana","Least Concern",50,"NB",4.6,"19659.1091891266"
-"Pocillopora grandis","Near Threatened",20,"HB",1,"19440.9854144705"
-"Pachyseris speciosa","Least Concern",88,"MB",4.6,"19300.0221798151"
-"Goniastrea pectinata","Least Concern",40,"NB",15,"19887.3884264171"
-"Anacropora puertogalerae","Vulnerable",20,"HB",0.8,"13966.9027032018"
-"Lithophyllon concinna","Least Concern",50,"NB",160,"18505.7937825942"
-"Lobophyllia hemprichii","Least Concern",50,"NB",26.8,"19898.5213991894"
-"Montipora grisea","Least Concern",20,"NB",1.2,"18749.4758573945"
-"Danafungia horrida","Least Concern",25,"NB",204,"18505.7937825942"
-"Dipsastraea danai","Least Concern",20,"NB",9.2,"16607.4309971009"
-"Coscinaraea columna","Least Concern",30,"NB",6,"19494.5162086103"
-"Montipora foveolata","Near Threatened",25,"NB",2.9,"18519.7158999489"
-"Platygyra pini","Least Concern",30,"NB",7.2,"19405.0328389981"
-"Goniopora columna","Near Threatened",15,"MB",3.7,"15404.0848488079"
-"Montipora danae","Least Concern",50,"MB",1.4,"17654.8537686228"
-"Coelastrea aspera","Least Concern",15,"NB",11.5,"18088.8462331415"
-"Pachyseris rugosa","Vulnerable",20,"MB",4.8,"16970.1977041272"
-"Physogyra lichtensteini","Vulnerable",20,"NB",20,"14628.0960687547"
-"Hydnophora microconos","Near Threatened",35,"NB",7.2,"17732.3636346305"
-"Goniopora lobata","Near Threatened",30,"MB",4.6,"14238.3628019982"
-"Acropora aculeus","Vulnerable",60,"MB",1,"18495.8257579453"
-"Platygyra daedalea","Least Concern",40,"NB",10,"19220.1115426404"
-"Micromussa amakusensis","Near Threatened",30,"LB",11.5,"12833.1540708964"
-"Scapophyllia cylindrica","Least Concern",25,"MB",3.8,"11484.9977415318"
-"Lobophyllia agaricia","Least Concern",40,"NB",33.5,"13761.4425236595"
-"Hydnophora exesa","Near Threatened",55,"NB",4.5,"17727.3745203583"
-"Alveopora spongiosa","Near Threatened",50,"MB",1.5,"16114.5714490944"
-"Astreopora randalli","Least Concern",15,"MB",1.5,"18519.7158999489"
-"Porites horizontalata","Vulnerable",20,"LB",1.7,"15090.8503754606"
-"Oulophyllia levis","Least Concern",30,"NB",18.1,"5649.90480464559"
-"Porites rus","Least Concern",20,"LB",0.8,"18887.4912360215"
-"Platygyra ryukyuensis","Near Threatened",30,"NB",3.3,"12871.0587106524"
-"Galaxea horrescens","Least Concern",25,"HB",2.9,"7111.59021472161"
-"Porites cylindrica","Near Threatened",20,"LB",1.1,"17676.2822376539"
-"Psammocora profundacella","Least Concern",50,"NB",2.5,"19898.231819844"
-"Fungia fungites","Near Threatened",50,"NB",158,"19116.9173590009"
-"Dipsastraea truncata","Least Concern",20,"NB",10.5,"12239.9294358483"
-"Alveopora fenestrata","Vulnerable",30,"NB",3.4,"19910.270447143"
-"Montipora monasteriata","Least Concern",40,"MB",1.1,"17787.371149521"
-"Seriatopora aculeata","Vulnerable",40,"HB",0.5,"14157.2682698419"
-"Acropora palmerae","Vulnerable",23,"LB",1.3,"16334.5130152274"
-"Acropora verweyi","Vulnerable",29,"MB",1.1,"18913.0030998091"
-"Herpolitha limax","Least Concern",40,"NB",370,"19124.2728129698"
-"Leptoseris hawaiiensis","Vulnerable",165,"LB",4.4,"18959.825339787"
-"Merulina triangularis","Near Threatened",20,"HB",8.8,"6083.20628508108"
-"Stylocoeniella armata","Least Concern",50,"LB",2.3,"17623.7272695318"
-"Lobophyllia corymbosa","Least Concern",40,"NB",47.5,"17640.1973668543"
-"Millepora dichotoma","Least Concern",NA,NA,NA,"11861.7959994324"
-"Acanthastrea brevis","Vulnerable",20,"NB",NA,"3861.84610046756"
-"Pavona cactus","Vulnerable",35,"LB",1.4,"19328.1218722705"
-"Mycedium elephantotus","Least Concern",70,"MB",10,"18830.4149665651"
-"Coelastrea palauensis","Near Threatened",30,"NB",18.8,"15170.5106271685"
-"Homophyllia australis","Least Concern",40,"NB",75,"19994.1741159118"
-"Alveopora viridis","Near Threatened",50,"MB",1.7,"15268.7366773689"
-"Dipsastraea favus","Least Concern",50,"NB",10,"17691.8134827076"
-"Psammocora profundacella","Least Concern",50,"NB",2.5,"19898.231819844"
-"Acropora cerealis","Least Concern",40,"HB",0.8,"19444.2601701347"
-"Pavona diffluens","Vulnerable",20,"NB",2.6,"11066.838218814"
-"Oxypora crassispinosa","Least Concern",30,"MB",8.8,"13438.5519632244"
-"Sandalolitha dentata","Least Concern",25,"NB",3.5,"13388.3893364531"
-"Euphyllia cristata","Vulnerable",35,"NB",25,"10453.0584462994"
-"Goniastrea stelligera","Near Threatened",40,"NB",5.1,"19971.6843064501"
-"Dipsastraea helianthoides","Near Threatened",20,"NB",9,"14268.6513746501"
-"Goniopora pedunculata","Near Threatened",50,"LB",2.5,"16994.2781786837"
-"Porites solida","Least Concern",20,"NB",1.6,"19391.2850316651"
-"Dipsastraea matthaii","Near Threatened",40,"NB",13.8,"19852.44372884"
-"Cyphastrea agassizi","Vulnerable",20,"NB",2.2,"12076.5508556517"
-"Turbinaria mesenterina","Vulnerable",20,"MB",3.5,"19955.6716999073"
-"Goniastrea retiformis","Least Concern",20,"NB",6.5,"18789.712510599"
-"Montipora venosa","Near Threatened",30,"NB",1.8,"19887.6786259274"
-"Leptoseris gardineri","Least Concern",70,"MB",2.5,"10966.998308668"
-"Dipsastraea maritima","Near Threatened",30,"NB",18.8,"13127.3221003513"
-"Porites monticulosa","Least Concern",20,"LB",1.2,"16320.8064352148"
-"Goniopora djiboutiensis","Least Concern",58,"MB",4.7,"14060.456094285"
-"Acropora muricata","Near Threatened",30,"HB",1.2,"19870.7243107484"
-"Montipora verrucosa","Least Concern",45,"MB",1.4,"19025.3292120231"
-"Cyphastrea microphthalma","Least Concern",50,"NB",2.7,"17180.4456328038"
-"Acropora abrotanoides","Least Concern",26,"HB",1.2,"19328.1218722705"
-"Leptastrea transversa","Least Concern",50,"LB",9.2,"19861.8440124288"
-"Acropora hyacinthus","Data Deficient",26,"LB",1.1,"19885.942028004"
-"Isopora cuneata","Vulnerable",20,"LB",1,"17635.5110558313"
-"Galaxea fascicularis","Near Threatened",22,"NB",10.7,"17133.6359445681"
-"Acropora millepora","Near Threatened",30,"MB",1.6,"16404.3690255599"
-"Pleuractis paumotensis","Least Concern",40,"NB",235,"19640.5947477304"
-"Psammocora nierstraszi","Near Threatened",40,"NB",2.3,"18727.9716454402"
-"Stylophora pistillata","Near Threatened",65,"HB",1.4,"17729.2217903001"
-"Turbinaria reniformis","Vulnerable",60,"MB",4.2,"17729.2217903001"
-"Montipora hoffmeisteri","Least Concern",40,"LB",1.1,"11590.3892382941"
-"Pavona duerdeni","Least Concern",15,"NB",2.1,"18867.6989822536"
-"Epizoanthus tergestinus","Data Deficient",NA,NA,NA,"0"
-"Epizoanthus frenzeli","Data Deficient",NA,NA,NA,"9.50453877449036e-05"
-"Epizoanthus paguricola","Data Deficient",NA,NA,NA,"8429.62858595269"
-"Epizoanthus paxii","Data Deficient",NA,NA,NA,"1548.10188073768"
-"Condylactis aurantiaca","Least Concern",NA,NA,NA,"1742.78646003189"
-"Epizoanthus univittatus","Data Deficient",NA,NA,NA,NA
-"Epizoanthus vagus","Data Deficient",NA,NA,NA,"8429.62858595269"
-"Arachnanthus oligopodus","Data Deficient",NA,NA,NA,"8331.70082991938"
-"Epizoanthus steueri","Data Deficient",NA,NA,NA,NA
-"Epizoanthus mediterraneus","Data Deficient",NA,NA,NA,"510.856111735367"
-"Balanophyllia (Balanophyllia) europaea","Least Concern",NA,"NB",2.2,"2006.28358692032"
-"Cladocora caespitosa","Endangered",NA,"NB",4.5,"9813.00590305862"
-"Oculina patagonica","Least Concern",10,"HB",3.3,"10908.0562589672"
-"Paractinia striata","Data Deficient",NA,NA,NA,"0"
-"Ceratotrochus magnaghii","Data Deficient",NA,NA,NA,"1040.00476683434"
-"Spinimuricea klavereni","Data Deficient",NA,NA,NA,"19.8976154982137"
+"sp","branching","iucn","max_depth","corallite","range"
+"Oulastrea crispata","LB","Least Concern",10,5.6,16968.7467603728
+"Goniopora tantillus",NA,"Data Deficient",22,2.9,NA
+"Acropora millepora","MB","Data Deficient",30,1.6,16404.3690255599
+"Acropora millepora","MB","Data Deficient",30,1.6,16404.3690255599
+"Acropora millepora","MB","Near Threatened",30,1.6,16404.3690255599
+"Alveopora japonica","NB","Vulnerable",NA,2.7,NA
+"Montipora angulata","MB","Vulnerable",20,1.3,11241.3602226079
+"Acropora pectinata","MB",NA,NA,NA,NA
+"Goniastrea columella","NB","Near Threatened",15,17.5,3861.84610046756
+"Moseleya latistellata","NB","Vulnerable",10,73,12446.8277291073
+"Pectinia elongata","MB","Near Threatened",25,11,2181.29825862547
+"Dipsastraea vietnamensis","NB","Near Threatened",20,14.1,12065.0057612457
+"Scolymia lacera",NA,"Least Concern",80,NA,3470.94906533332
+"Pocillopora kelleheri","HB","Least Concern",40,1.2,653.162001142023
+"Leptoseris tubulifera","LB","Least Concern",70,2.5,18056.3839647072
+"Heliofungia fralinae",NA,"Least Concern",27,90,3494.94477087336
+"Goniopora tenella","LB","Near Threatened",30,2.9,7156.89125801346
+"Acropora japonica","LB","Data Deficient",8,0.9,NA
+"Colpophyllia natans","NB","Least Concern",55,12.9,8115.09113107153
+"Acropora seriata","LB","Data Deficient",12,NA,11046.1586822983
+"Porites nodifera","MB","Least Concern",15,1.6,15125.9652518802
+"Catalaphyllia jardinei","NB","Vulnerable",40,21.3,13891.5752656874
+"Porites duerdeni",NA,"Least Concern",NA,NA,4902.97789489359
+"Montipora hodgsoni","MB","Vulnerable",20,0.6,4912.66019240983
+"Platygyra crosslandi","NB","Near Threatened",20,5.9,7274.6652196107
+"Dipsastraea veroni","NB","Near Threatened",25,17.5,13134.4547341659
+"Alveopora marionensis","NB","Vulnerable",30,3.4,11461.7590045003
+"Goniopora cellulosa","NB","Vulnerable",20,4.1,NA
+"Dipsastraea rosaria","LB","Vulnerable",20,9.3,5848.02966802483
+"Lobophyllia radians","NB",NA,NA,NA,NA
+"Leptoseris amitoriensis","MB","Near Threatened",30,3.7,3336.61071283815
+"Fungia puishani",NA,NA,NA,NA,NA
+"Alveopora catalai","MB","Near Threatened",30,4.1,13916.1231098386
+"Echinomorpha nishihirai","LB","Near Threatened",40,115.5,11162.2553884607
+"Acropora loripes","MB","Data Deficient",40,1.2,19878.4503082255
+"Acropora loripes","MB","Data Deficient",40,1.2,19878.4503082255
+"Acropora loripes","MB","Near Threatened",40,1.2,19878.4503082255
+"Acropora turaki","HB","Vulnerable",20,0.8,6808.73530673668
+"Acropora divaricata","LB","Near Threatened",25,1.1,19583.9620225447
+"Enigmopora darveliensis",NA,"Data Deficient",NA,NA,NA
+"Acropora rudis","HB","Endangered",30,1.2,2818.80236710549
+"Acropora squarrosa","MB","Data Deficient",60,0.8,17296.6579867906
+"Acropora squarrosa","MB","Least Concern",60,0.8,17296.6579867906
+"Pectinia pygmaea","MB",NA,NA,NA,NA
+"Acropora stoddarti","LB","Data Deficient",30,1.3,8263.49830603212
+"Echinopora ashmorensis","LB","Vulnerable",20,5.1,0
+"Porites branneri",NA,"Near Threatened",3,1.8,8219.78517627297
+"Pachyseris gemmae","MB","Near Threatened",25,3.3,3432.68554717534
+"Madracis asanoi",NA,NA,NA,NA,NA
+"Leptoseris striata","LB","Near Threatened",103,4,3080.71151464521
+"Pectinia lactuca","LB","Vulnerable",20,30,14546.0331079058
+"Acanthastrea subechinata","NB","Near Threatened",35,NA,12587.8871839463
+"Montipora gaimardi","LB","Vulnerable",15,0.8,2456.58575431969
+"Acropora willisae","MB","Vulnerable",40,1,14557.4216698093
+"Montipora orientalis","MB","Vulnerable",20,1,7353.36055602229
+"Acropora carduus","HB","Near Threatened",50,0.9,10966.998308668
+"Acropora tanegashimensis","LB","Data Deficient",15,0.8,0
+"Acropora plumosa","LB","Vulnerable",30,1.2,4857.65676876195
+"Acropora spathulata",NA,"Least Concern",11,1.5,2006.78674939998
+"Porites evermanni","MB","Data Deficient",30,1,18037.5766291764
+"Heterocyathus sulcatus",NA,NA,NA,NA,NA
+"Cynarina macassarensis","NB",NA,NA,NA,NA
+"Montipora patula","MB","Vulnerable",10,0.7,3110.6551770152
+"Stylophora madagascarensis","MB","Endangered",20,0.8,3882.02001438903
+"Montipora nodosa","NB","Near Threatened",30,1.3,18519.7158999489
+"Porites colonensis","MB","Data Deficient",25,1.4,2375.89926287357
+"Acropora loripes","MB","Data Deficient",40,1.2,19878.4503082255
+"Acropora loripes","MB","Data Deficient",40,1.2,19878.4503082255
+"Acropora loripes","MB","Near Threatened",40,1.2,19878.4503082255
+"Echinophyllia echinoporoides","LB","Least Concern",30,5.7,13013.526584173
+"Goniopora pendulus","NB","Least Concern",20,5.6,6556.14837004039
+"Acropora tenuis","MB","Data Deficient",30,1.2,18088.8462331415
+"Acropora tenuis","MB","Data Deficient",30,1.2,18088.8462331415
+"Acropora tenuis","MB","Near Threatened",30,1.2,18088.8462331415
+"Acropora rufa","MB",NA,NA,NA,NA
+"Acropora valida","LB","Data Deficient",45,0.9,19895.265616894
+"Acropora valida","LB","Data Deficient",45,0.9,19895.265616894
+"Acropora valida","LB","Least Concern",45,0.9,19895.265616894
+"Merulina scheeri","LB","Least Concern",45,8.2,NA
+"Goniopora pearsoni","NB","Least Concern",NA,3.3,0
+"Turbinaria bifrons","MB","Vulnerable",25,1.6,7462.87889242329
+"Porites desilveri","LB","Endangered",NA,1,0
+"Oculina tenella",NA,NA,NA,NA,NA
+"Lobophyllia erythraea","NB",NA,NA,NA,NA
+"Manicina areolata","NB","Least Concern",65,15.1,13744.1942752648
+"Pleuractis taiwanensis","NB","Vulnerable",35,193,NA
+"Fimbriaphyllia yaeyamensis","NB",NA,NA,NA,NA
+"Halomitra clavator","NB","Vulnerable",25,5.3,4219.32129534778
+"Agaricia lamarcki","MB","Vulnerable",76,7.9,17906.9250410271
+"Acropora tumida","MB","Data Deficient",40,1.4,2442.72732529647
+"Acropora paniculata","LB","Vulnerable",42,0.8,18947.8191357496
+"Anacropora matthai","MB","Vulnerable",20,0.6,13263.5143621691
+"Plerogyra discus","NB","Vulnerable",15,20.8,5.50867564208638
+"Montipora stilosa","NB","Vulnerable",50,0.8,3861.84610046756
+"Favites complanata","NB","Near Threatened",50,18.8,17788.0676492498
+"Acropora hemprichii","HB","Vulnerable",15,1.2,9826.88831981269
+"Montigyra kenti","NB","Data Deficient",NA,32,NA
+"Acropora derawanensis","HB","Vulnerable",30,1,4453.55408635372
+"Turbinaria radicalis","LB","Near Threatened",25,2.5,6929.86123578432
+"Echinopora gemmacea","MB","Least Concern",50,4.2,17133.4296788169
+"Acropora longicyathus","HB","Least Concern",25,1.3,17602.4441905327
+"Acropora longicyathus","HB","Data Deficient",25,1.3,17602.4441905327
+"Psammocora interstinctus",NA,NA,NA,NA,NA
+"Acropora multiacuta","MB","Vulnerable",30,2,9752.16290637321
+"Coscinaraea crassa","LB","Near Threatened",30,14.3,11630.735762867
+"Zoopilus echinatus","NB","Least Concern",20,20,7066.16985569199
+"Favites vasta","NB","Near Threatened",20,17.5,10422.3188846352
+"Goniopora planulata","MB","Vulnerable",20,3.1,13277.3653603449
+"Pleuractis seychellensis","NB","Vulnerable",25,88.8,3861.84610046756
+"Millepora nitida",NA,NA,NA,NA,NA
+"Goniastrea favulus","NB","Near Threatened",15,7.5,18320.2092019716
+"Mycetophyllia lamarckana","LB",NA,NA,NA,NA
+"Acropora cerealis","MB","Data Deficient",40,0.8,19444.2601701347
+"Acropora cerealis","MB","Least Concern",40,0.8,19444.2601701347
+"Seriatopora stellata","MB","Near Threatened",20,0.6,15222.5705546902
+"Leptastrea bewickensis","LB","Near Threatened",20,4.2,7656.10823778614
+"Montipora florida","MB","Vulnerable",20,0.8,6760.07412577918
+"Simplastrea vesicularis","LB","Data Deficient",NA,4.2,NA
+"Palauastrea ramosa","MB","Near Threatened",30,1.2,17807.2290602459
+"Anacropora spumosa","MB","Data Deficient",15,0.7,5062.57651318352
+"Acropora palmata","HB","Critically Endangered",40,1.6,18909.6281338699
+"Coscinaraea mcneilli","LB","Least Concern",NA,5.8,3873.07195594255
+"Montipora malampaya","LB","Vulnerable",15,0.7,3774.004718169
+"Favites acuticollis","NB","Near Threatened",20,9.3,11842.0594488554
+"Montipora maeandrina","LB",NA,NA,NA,NA
+"Dipsastraea albida","NB","Near Threatened",10,12.1,67.031087715803
+"Acropora selago","MB","Near Threatened",40,0.9,18748.298086671
+"Acropora selago","MB","Data Deficient",40,0.9,18748.298086671
+"Acropora kirstyae","MB","Vulnerable",30,0.8,9851.1768597642
+"Acropora elseyi","HB","Least Concern",35,0.9,18719.181792654
+"Pocillopora ankeli","MB","Vulnerable",10,1,12799.2026963802
+"Orbicella franksi",NA,"Vulnerable",50,NA,4234.20615592782
+"Goniopora polyformis",NA,"Vulnerable",NA,5.9,2966.84442701914
+"Acropora lamarcki","LB","Data Deficient",15,NA,3861.84610046756
+"Montipora millepora","LB","Least Concern",55,8,19947.9317144262
+"Acropora tenuis","MB","Data Deficient",30,1.2,18088.8462331415
+"Acropora tenuis","MB","Data Deficient",30,1.2,18088.8462331415
+"Acropora tenuis","MB","Near Threatened",30,1.2,18088.8462331415
+"Echinophyllia patula","MB","Least Concern",40,7,7907.67282827571
+"Acropora palmerae","LB","Data Deficient",23,1.3,16334.5130152274
+"Acropora palmerae","LB","Vulnerable",23,1.3,16334.5130152274
+"Galaxea cryptoramosa","MB","Vulnerable",15,4.6,9.50453877449036e-05
+"Astreopora incrustans","LB","Vulnerable",40,0.9,15282.0434606189
+"Alveopora daedalea","MB","Vulnerable",30,2.2,13060.4391272277
+"Montipora niugini","LB","Near Threatened",35,0.7,1219.0403727073
+"Psammocora nierstraszi","NB",NA,NA,NA,NA
+"Porites columnaris","MB","Least Concern",15,1.5,3861.84610046756
+"Mycedium mancaoi","MB","Least Concern",NA,7.2,12065.0057612457
+"Siderastrea radians","NB","Least Concern",33,3,18356.3639209853
+"Agaricia undata","MB","Data Deficient",80,6,3856.50965730875
+"Goniastrea minuta","NB","Near Threatened",15,5.9,12199.9225776694
+"Acropora abrotanoides","HB","Data Deficient",26,1.2,19328.1218722705
+"Acropora abrotanoides","HB","Data Deficient",26,1.2,19328.1218722705
+"Acropora abrotanoides","HB","Least Concern",26,1.2,19328.1218722705
+"Dichocoenia stokesii","NB",NA,NA,NA,NA
+"Montipora effusa","NB","Near Threatened",20,0.8,16144.0762316039
+"Acropora robusta","HB","Data Deficient",20,1.5,18760.3180718265
+"Acropora robusta","HB","Least Concern",20,1.5,18760.3180718265
+"Acropora robusta","HB","Least Concern",20,1.5,18760.3180718265
+"Lobophyllia flabelliformis","NB","Vulnerable",30,59.5,12199.9225776694
+"Acropora elegantula","MB","Data Deficient",20,NA,9.50453877449036e-05
+"Acropora pulchra","HB","Least Concern",20,1.2,17228.7497972078
+"Acropora selago","MB","Near Threatened",40,0.9,18748.298086671
+"Acropora selago","MB","Data Deficient",40,0.9,18748.298086671
+"Porites attenuata","MB","Vulnerable",20,2.1,12369.1811830143
+"Cycloseris curvata","NB","Vulnerable",73,81,19178.2039713401
+"Hydnophora bonsai","LB","Endangered",15,4.5,NA
+"Mycetophyllia reesi","MB","Data Deficient",76,10,3097.42710685723
+"Galaxea acrhelia","MB","Vulnerable",15,5.4,7064.05380483012
+"Ctenactis crassa","NB","Least Concern",67,236,11862.6558531922
+"Turbinaria conspicua","MB","Least Concern",20,1.6,3987.61894873576
+"Montipora saudii","LB","Near Threatened",8,0.8,5062.57651318352
+"Echinopora mammiformis","LB","Near Threatened",15,8.9,7163.41685756678
+"Acropora caroliniana","LB","Vulnerable",40,1,13224.8685209502
+"Montipora cactus","LB","Vulnerable",20,1.2,5638.180724512
+"Millepora complanata",NA,NA,NA,NA,NA
+"Duncanopsammia axifuga","MB","Near Threatened",30,10.5,3932.82021246166
+"Acropora retusa","LB","Vulnerable",28.5,0.9,19055.1217811335
+"Porites sillimaniani","LB","Vulnerable",5,1.9,0
+"Mycetophyllia aliciae","NB","Least Concern",85,20,3904.73815273037
+"Plerogyra cauliformis",NA,"Data Deficient",NA,NA,NA
+"Astreopora suggesta","NB","Least Concern",15,1.6,14088.0472283932
+"Acropora latistella","MB","Least Concern",40,0.9,19788.4814673376
+"Siderastrea siderea","NB","Critically Endangered",70,4.5,15034.1959854954
+"Siderastrea siderea","NB","Least Concern",70,4.5,15034.1959854954
+"Acropora sarmentosa","MB","Data Deficient",26,2,17585.2811635369
+"Acropora sarmentosa","MB","Least Concern",26,2,17585.2811635369
+"Acropora plantaginea","MB","Data Deficient",10,NA,18505.7937825942
+"Goniopora norfolkensis","LB","Least Concern",30,2.4,12210.5730019287
+"Porites cumulatus","MB","Vulnerable",20,1.1,9860.29601380175
+"Echinopora irregularis","LB","Data Deficient",4,4.2,1898.42821785656
+"Dendrogyra cylindrus","MB","Vulnerable",25,4.2,3055.55219882326
+"Scolymia cubensis","NB","Least Concern",92,56.5,7790.71795933513
+"Acropora fenneri","HB","Data Deficient",NA,NA,NA
+"Lobophyllia hassi","NB",NA,NA,NA,NA
+"Montipora spongiosa","MB","Least Concern",20,0.8,13138.1871273901
+"Acropora pruinosa","MB","Data Deficient",20,1.6,3378.75041412848
+"Fimbriaphyllia paradivisa","NB",NA,NA,NA,NA
+"Astreopora ocellata","NB","Least Concern",30,2.5,15325.9857144732
+"Acropora paragemmifera",NA,NA,NA,NA,NA
+"Platygyra verweyi","NB","Near Threatened",20,4.7,12422.3654860032
+"Tubipora musica",NA,NA,NA,NA,NA
+"Montipora friabilis","MB","Vulnerable",20,1,11524.0985075644
+"Platygyra yaeyamaensis",NA,"Vulnerable",20,5.1,NA
+"Acropora abrolhosensis","HB","Vulnerable",40,1.5,7600.33251222226
+"Platygyra sinensis","NB","Least Concern",30,6.7,17691.8134827076
+"Orbicella annularis","NB","Endangered",82,3.8,15044.6475667063
+"Astreopora cucullata","NB","Vulnerable",15,2.3,14379.3413724359
+"Madracis pharensis",NA,NA,NA,NA,NA
+"Montipora echinata",NA,"Data Deficient",10,0.8,0
+"Acropora valida","LB","Data Deficient",45,0.9,19895.265616894
+"Acropora valida","LB","Data Deficient",45,0.9,19895.265616894
+"Acropora valida","LB","Least Concern",45,0.9,19895.265616894
+"Porites gabonensis","LB","Least Concern",NA,NA,0.0434029734962523
+"Paragoniastrea deformis","NB","Vulnerable",20,8.8,3861.84610046756
+"Schizoculina fissipara","LB","Data Deficient",35,3.4,NA
+"Millepora squarrosa",NA,NA,NA,NA,NA
+"Millepora alcicornis",NA,NA,NA,NA,NA
+"Stylocoeniella cocosensis","LB","Vulnerable",10,0.7,402.976996290329
+"Turbinaria frondens","MB","Least Concern",20,1.1,17644.2467946909
+"Leptoseris yabei","MB","Vulnerable",74,3.7,18048.669178837
+"Goniopora ciliatus","MB","Least Concern",30,3.8,4794.75052130363
+"Porites aranetai","LB","Vulnerable",20,1,4916.62159916863
+"Dipsastraea lacuna","NB","Near Threatened",15,9.8,5062.57651318352
+"Acanthastrea pachysepta","NB",NA,NA,NA,NA
+"Agaricia fragilis","LB","Data Deficient",102,5,8209.74568599824
+"Echinophyllia pectinata","LB","Data Deficient",40,14.5,NA
+"Pseudodiploria strigosa","NB","Least Concern",NA,10.1,17762.5264478881
+"Lobophyllia vitiensis","NB",NA,NA,NA,NA
+"Astrea devantieri","NB","Near Threatened",20,4.5,3941.34963610417
+"Acropora austera","MB","Near Threatened",40,1.5,19655.632100706
+"Acropora austera","MB","Data Deficient",40,1.5,19655.632100706
+"Platygyra contorta","NB","Least Concern",20,5.6,13247.3320064562
+"Paramontastraea salebrosa","NB","Vulnerable",20,4.7,6812.61758765424
+"Coscinaraea marshae","LB","Least Concern",NA,5.3,9017.685394287
+"Acropora russelli","MB","Vulnerable",30,1,8520.57356662092
+"Oculina varicosa",NA,NA,NA,NA,NA
+"Pavona gigantea","NB","Least Concern",30,5.7,19058.1555719995
+"Stylophora mamillata","LB","Least Concern",40,1,3861.84610046756
+"Montipora dilatata","LB","Endangered",10,1.2,1497.70379242574
+"Fimbriaphyllia ancora","NB",NA,NA,NA,NA
+"Astreopora moretonensis","MB","Vulnerable",15,2.5,7675.45521043548
+"Coscinaraea exesa","MB","Least Concern",35,6.1,16377.7109385004
+"Turbinaria patula","MB","Vulnerable",20,3.5,9134.97467020521
+"Astrea annuligera","LB","Near Threatened",30,6.3,17691.8134827076
+"Lithophyllon scabra","NB","Least Concern",24,78,12627.9410247828
+"Galaxea longisepta","LB","Near Threatened",20,7.6,3034.24021196198
+"Acropora sukarnoi",NA,"Data Deficient",30,1.5,5237.96417253319
+"Isopora brueggemanni","MB","Vulnerable",35,1.6,11484.9977415318
+"Isopora brueggemanni","MB","Data Deficient",35,1.6,11484.9977415318
+"Mussismilia hispida","NB","Data Deficient",NA,20.5,2388.91879969976
+"Montipora calcarea","LB","Vulnerable",20,0.9,13068.385158155
+"Porites arnaudi","MB","Least Concern",37,1.1,NA
+"Echinopora hirsutissima","NB","Least Concern",40,4.2,13954.5158310113
+"Isopora brueggemanni","MB","Vulnerable",35,1.6,11484.9977415318
+"Isopora brueggemanni","MB","Data Deficient",35,1.6,11484.9977415318
+"Montipora vietnamensis","LB","Vulnerable",15,0.7,7717.99242528644
+"Montipora porites","LB","Near Threatened",25,0.9,4479.45929154976
+"Heliopora coerulea",NA,NA,NA,NA,NA
+"Montipora digitata","HB","Least Concern",5,0.9,15380.9322861288
+"Acropora appressa","MB","Near Threatened",15,NA,3861.84610046756
+"Montipora incrassata","LB","Near Threatened",30,1.4,19766.6091002166
+"Montipora aspergillus","MB","Data Deficient",10,0.8,0
+"Montipora hemispherica","LB","Data Deficient",20,0.9,0
+"Acropora forskali","HB","Data Deficient",25,NA,6370.9333255435
+"Pectinia teres","MB","Near Threatened",30,6.2,4916.62159916863
+"Acropora roseni","HB","Endangered",12,1.6,3861.84610046756
+"Acropora clathrata","LB","Least Concern",40,0.9,19878.4503082255
+"Acropora clathrata","LB","Data Deficient",40,0.9,19878.4503082255
+"Dipsastraea speciosa","NB","Least Concern",45,9.9,19478.4898445408
+"Porites negrosensis","MB","Near Threatened",15,1.7,12335.9763410371
+"Oculina diffusa",NA,NA,NA,NA,NA
+"Lithophyllon undulatum","LB","Near Threatened",20,5.1,7155.1062185524
+"Meandrina danae",NA,"Least Concern",80,NA,0
+"Pachyseris foliosa","MB","Least Concern",25,6.3,5287.25168005121
+"Nemenzophyllia turbida","NB","Vulnerable",30,13,10710.2445650244
+"Stylocoeniella muscosus",NA,NA,NA,NA,NA
+"Acropora donei","MB","Vulnerable",45,1.4,14690.8124899304
+"Acropora donei","MB","Data Deficient",45,1.4,14690.8124899304
+"Meandrina meandrites","NB","Least Concern",80,13.5,17194.7216421994
+"Fimbriaphyllia divisa","NB",NA,NA,NA,NA
+"Lobophyllia serrata","NB","Endangered",15,40.2,2456.59243039236
+"Astreopora expansa","MB","Near Threatened",15,2.3,18076.8819339829
+"Euphyllia paraglabrescens","NB","Vulnerable",15,51,0
+"Montipora flabellata","MB","Vulnerable",10,0.2,4201.54367275754
+"Goniopora palmensis","NB","Least Concern",20,2.4,5475.22197421649
+"Acropora kimbeensis","MB","Vulnerable",40,0.6,6306.19377146126
+"Stylophora danae","MB","Least Concern",40,1.1,11824.1089077407
+"Turbinaria heronensis","MB","Vulnerable",15,4.4,1860.56979556014
+"Montastraea cavernosa","NB","Least Concern",113,10,9101.69836950413
+"Montipora hispida","LB","Least Concern",40,1.4,18329.7000825196
+"Pectinia crassa",NA,"Data Deficient",NA,NA,NA
+"Echinopora pacifica","MB",NA,NA,NA,NA
+"Montipora spongodes","LB","Least Concern",25,1.2,17590.1664313344
+"Acropora pharaonis","LB","Vulnerable",25,1.5,16272.1397085912
+"Porites mayeri","NB","Least Concern",20,1.6,11138.3269806647
+"Stylophora wellsi","MB","Near Threatened",10,0.7,3861.84610046756
+"Acropora tortuosa","MB","Least Concern",35,1.3,18398.6498388582
+"Blastomussa wellsi","NB","Near Threatened",40,18.9,10526.729462373
+"Acropora suharsonoi","MB","Endangered",25,0.8,854.079898796
+"Agaricia humilis","LB","Least Concern",20,6,8445.21839235918
+"Diploria labyrinthiformis","NB","Least Concern",43,5.8,12481.6282459475
+"Montipora stellata","LB","Least Concern",20,0.9,12357.0053435346
+"Trachyphyllia geoffroyi","NB","Near Threatened",40,4,15954.8571646592
+"Pavona danai",NA,"Vulnerable",15,1.7,14883.239414541
+"Paramontastraea serageldini","NB","Vulnerable",25,5,3861.84610046756
+"Acropora cardenae","HB","Data Deficient",60,NA,313.7689257141
+"Acropora clathrata","LB","Least Concern",40,0.9,19878.4503082255
+"Acropora clathrata","LB","Data Deficient",40,0.9,19878.4503082255
+"Acropora robusta","HB","Data Deficient",20,1.5,18760.3180718265
+"Acropora robusta","HB","Least Concern",20,1.5,18760.3180718265
+"Acropora robusta","HB","Least Concern",20,1.5,18760.3180718265
+"Goniopora diminuta","NB",NA,NA,NA,NA
+"Heliofungia actiniformis","NB","Vulnerable",25,142,13919.7163783946
+"Porites myrmidonensis","NB","Least Concern",55,1.4,410.216168255415
+"Acropora sarmentosa","MB","Data Deficient",26,2,17585.2811635369
+"Acropora sarmentosa","MB","Least Concern",26,2,17585.2811635369
+"Acropora microphthalma","MB","Data Deficient",40,1,18714.7462947802
+"Acropora microphthalma","MB","Least Concern",40,1,18714.7462947802
+"Acropora horrida","MB","Data Deficient",40,1.5,19955.8748174959
+"Acropora horrida","MB","Data Deficient",40,1.5,19955.8748174959
+"Acropora horrida","MB","Vulnerable",40,1.5,19955.8748174959
+"Psammocora contigua","MB","Data Deficient",35,1.5,19860.9470143031
+"Psammocora contigua","MB","Data Deficient",35,1.5,19860.9470143031
+"Psammocora contigua","MB","Near Threatened",35,1.5,19860.9470143031
+"Psammocora contigua","MB","Near Threatened",35,1.5,19860.9470143031
+"Millepora latifolia",NA,NA,NA,NA,NA
+"Leptastrea pruinosa","LB","Least Concern",40,3.6,19488.2483918599
+"Acropora horrida","MB","Data Deficient",40,1.5,19955.8748174959
+"Acropora horrida","MB","Data Deficient",40,1.5,19955.8748174959
+"Acropora horrida","MB","Vulnerable",40,1.5,19955.8748174959
+"Acropora longicyathus","HB","Least Concern",25,1.3,17602.4441905327
+"Acropora longicyathus","HB","Data Deficient",25,1.3,17602.4441905327
+"Madracis formosa","MB","Least Concern",40,1.6,3895.68758326601
+"Montipora kellyi","MB","Data Deficient",15,0.9,0
+"Acropora batunai","LB","Vulnerable",45,0.5,4602.61382251956
+"Montipora palawanensis","MB","Near Threatened",40,0.7,NA
+"Porites lobata","NB","Data Deficient",67,1.1,19764.8841321034
+"Porites lobata","NB","Near Threatened",67,1.1,19764.8841321034
+"Caulastraea connata","NB","Vulnerable",10,27.5,3861.84610046756
+"Agaricia grahamae","MB","Least Concern",115,6.5,3339.31796402296
+"Acropora lokani","MB","Vulnerable",40,0.9,4994.35120261614
+"Mycedium umbra","LB","Least Concern",30,17,5894.35581757317
+"Porites tuberculosus","MB",NA,NA,NA,NA
+"Goniopora savignyi","MB","Least Concern",20,2.2,9633.03693066281
+"Montipora turgescens","NB","Least Concern",30,1,17705.8495839166
+"Millepora boschmai",NA,NA,NA,NA,NA
+"Porites ornata","MB","Endangered",15,1.5,0.000134414476389852
+"Astreopora macrostoma","LB","Near Threatened",15,2.5,6445.19349414611
+"Favites rotundata","NB","Near Threatened",20,21.2,15924.0565679009
+"Pocillopora inflata","MB","Vulnerable",10,1,2033.13621891378
+"Leptoria irregularis","LB","Vulnerable",20,6.3,10884.2703149111
+"Acropora halmaherae",NA,"Data Deficient",25,0.9,6061.91817284266
+"Acropora fastigata","MB","Data Deficient",20,NA,9.50453877449036e-05
+"Acropora cytherea","LB","Least Concern",67,1,19827.2191673054
+"Acropora cytherea","LB","Data Deficient",67,1,19827.2191673054
+"Mycedium robokaki","MB","Least Concern",NA,7.2,1077.90217126538
+"Cycloseris mokai","NB","Least Concern",27,7.5,12802.0714970345
+"Acropora torihalimeda","MB","Data Deficient",63,0.8,23.1302754971988
+"Acropora horrida","MB","Data Deficient",40,1.5,19955.8748174959
+"Acropora horrida","MB","Data Deficient",40,1.5,19955.8748174959
+"Acropora horrida","MB","Vulnerable",40,1.5,19955.8748174959
+"Acropora solitaryensis","LB","Vulnerable",40,1.1,19854.8728478154
+"Cyphastrea ocellina","NB","Vulnerable",20,2.5,11003.5919902831
+"Acropora dendrum","MB","Vulnerable",20,1.2,8226.38825764766
+"Coscinaraea monile","NB","Least Concern",70,50,14939.2907335792
+"Psammocora nierstraszi","NB",NA,NA,NA,NA
+"Oulophyllia bennettae","NB","Near Threatened",30,17.4,13117.9746680824
+"Acropora branchi","LB","Data Deficient",NA,NA,3861.84610046756
+"Mycedium steeni","MB","Vulnerable",30,3.1,2821.02712885057
+"Echinopora tiranensis","LB","Data Deficient",15,3.5,0
+"Acropora speciosa","LB","Vulnerable",65,0.8,16949.471119462
+"Acropora speciosa","LB","Data Deficient",65,0.8,16949.471119462
+"Alveopora ocellata","LB","Data Deficient",60,1.5,23.4314853709297
+"Australophyllia wilsoni",NA,NA,NA,NA,NA
+"Anacropora forbesi","MB","Least Concern",25,0.5,15152.1424763035
+"Montipora cryptus","LB","Near Threatened",20,0.7,5894.35581757317
+"Podabacia sinai","MB","Data Deficient",20,2.7,0
+"Psammocora albopicta",NA,"Data Deficient",28,NA,12877.2691664981
+"Plerogyra diabolotus",NA,"Data Deficient",NA,NA,2699.2825938883
+"Acropora variolosa","HB","Least Concern",30,1.2,5669.52333080177
+"Porites compressa","LB","Least Concern",30,1.6,17583.5287399854
+"Acropora ridzwani",NA,"Data Deficient",30,1.8,NA
+"Acropora gomezi","HB","Data Deficient",NA,NA,NA
+"Galaxea astreata","NB","Vulnerable",55,3.7,16127.328762062
+"Acropora gemmifera","LB","Data Deficient",18,1.6,19148.792403382
+"Acropora gemmifera","LB","Least Concern",18,1.6,19148.792403382
+"Mycetophyllia ferox","MB","Vulnerable",30,11,3904.73815273037
+"Acropora microclados","MB","Vulnerable",42,1.2,19839.9248988899
+"Montipora setosa","LB","Endangered",20,0.8,7.62704003389617
+"Millepora braziliensis",NA,NA,NA,NA,NA
+"Mycedium spina",NA,"Data Deficient",NA,NA,NA
+"Micromussa lordhowensis","NB","Near Threatened",30,13.5,13462.5036317655
+"Montipora confusa","LB","Near Threatened",30,0.7,7313.05336942835
+"Goniopora albiconus","LB","Vulnerable",30,3.2,5017.97117512609
+"Echinopora robusta","NB","Vulnerable",25,8.6,5015.78350809811
+"Porites profundus","MB","Least Concern",15,0.9,13284.8838847545
+"Cycloseris distorta","NB","Least Concern",85,40,18812.8182523135
+"Polyphyllia novaehiberniae","NB","Near Threatened",15,NA,10282.4397998331
+"Orbicella faveolata",NA,"Endangered",40,NA,4089.37455573537
+"Micromussa multipunctata","LB","Vulnerable",15,9.3,NA
+"Montipora corbettensis","LB","Vulnerable",20,0.8,4698.04528371503
+"Pseudodiploria clivosa","NB","Least Concern",NA,5.8,3904.73815273037
+"Acropora millepora","MB","Data Deficient",30,1.6,16404.3690255599
+"Acropora millepora","MB","Data Deficient",30,1.6,16404.3690255599
+"Acropora millepora","MB","Near Threatened",30,1.6,16404.3690255599
+"Acropora cervicornis","HB","Critically Endangered",60,1.7,19782.7748437723
+"Cantharellus noumeae","LB","Endangered",30,200,14928.9660257615
+"Acropora austera","MB","Near Threatened",40,1.5,19655.632100706
+"Acropora austera","MB","Data Deficient",40,1.5,19655.632100706
+"Siderastrea siderea","NB","Critically Endangered",70,4.5,15034.1959854954
+"Siderastrea siderea","NB","Least Concern",70,4.5,15034.1959854954
+"Goniopora burgosi","NB","Vulnerable",30,1.7,12798.3160941535
+"Dipsastraea laxa","NB","Near Threatened",25,5.8,17602.4441905327
+"Acropora loisetteae","HB","Vulnerable",30,1.6,8076.06681678686
+"Porites porites","MB","Least Concern",35,2.5,18148.8154562941
+"Acropora desalwii","MB","Vulnerable",35,0.8,12699.1766907419
+"Cycloseris somervillei","NB","Least Concern",35,135.2,11883.0689052546
+"Porites okinawensis","NB","Vulnerable",NA,1.3,NA
+"Eusmilia fastigiata","NB","Least Concern",65,20.9,4169.53530458382
+"Acropora hoeksemai","HB","Vulnerable",22,1.1,8133.95573816353
+"Acropora squarrosa","MB","Data Deficient",60,0.8,17296.6579867906
+"Acropora squarrosa","MB","Least Concern",60,0.8,17296.6579867906
+"Montipora samarensis","HB","Vulnerable",15,0.7,4320.35442704759
+"Caulastraea tumida","NB","Near Threatened",40,25,14602.8177291995
+"Cycloseris wellsi","MB","Least Concern",58,2.5,13272.638559275
+"Montipora verruculosa","LB","Vulnerable",20,0.8,2684.11534183367
+"Homophyllia bowerbanki","NB","Vulnerable",20,25,14273.6589905777
+"Homophyllia bowerbanki","NB","Near Threatened",20,25,14273.6589905777
+"Gyrosmilia interrupta","NB","Least Concern",30,8.1,8734.37939858688
+"Cynarina lacrymalis","NB","Near Threatened",70,85,12546.0964710899
+"Montipora circumvallata","LB","Least Concern",20,0.6,3861.84610046756
+"Caulastraea furcata","NB","Least Concern",30,12.8,10609.5098082909
+"Porites baueri",NA,"Data Deficient",NA,NA,9.50453877449036e-05
+"Montipora capricornis","MB","Vulnerable",20,1,8911.03397452093
+"Leptastrea inaequalis","NB","Near Threatened",20,4.1,13354.4232096167
+"Solenastrea hyades","NB","Least Concern",40,4.2,2788.25359702321
+"Acropora simplex","LB","Vulnerable",60,0.8,4146.64641284922
+"Echinopora horrida","LB","Near Threatened",25,2.4,11860.69217088
+"Porites heronensis","MB","Least Concern",20,1.5,4398.35996767158
+"Heterocyathus aequicostatus",NA,NA,NA,NA,NA
+"Acropora spicifera","LB","Vulnerable",12,1.1,16974.7407638479
+"Montipora crassituberculata","MB","Vulnerable",20,1.5,9768.90682332099
+"Montipora mactanensis","LB","Vulnerable",20,0.9,2374.1323696241
+"Seriatopora dentritica","MB","Vulnerable",40,0.6,12199.9225776694
+"Dichocoenia stokesii","NB",NA,NA,NA,NA
+"Pleuractis moluccensis","NB","Least Concern",30,160,18566.5961323385
+"Agaricia tenuifolia","MB","Near Threatened",18,5.1,16165.3009712827
+"Acropora walindii","HB","Vulnerable",40,0.5,9580.12990667368
+"Oxypora lacera","MB","Least Concern",30,8.8,16400.9290305136
+"Montipora australiensis","MB","Vulnerable",30,0.1,4712.34446099335
+"Oculina valenciennesi","MB","Data Deficient",30,2.7,3441.15983274203
+"Porites harrisoni","MB","Near Threatened",15,1.1,3861.84610046756
+"Astrangia poculata",NA,NA,NA,NA,NA
+"Echinopora taylorae","MB","Near Threatened",12,5,NA
+"Acropora haimei",NA,NA,NA,NA,NA
+"Montipora turtlensis","LB","Vulnerable",20,0.9,5161.90424364926
+"Montipora pachytuberculata","MB","Data Deficient",10,0.6,0
+"Pavona xarifae",NA,"Data Deficient",20,NA,317.994099703751
+"Mussa angulosa","NB","Least Concern",59,60,18088.6765321056
+"Montipora cocosensis","NB","Vulnerable",15,1.4,321.659592282789
+"Meandrina brasiliensis","NB",NA,NA,NA,NA
+"Acropora rongelapensis",NA,"Data Deficient",40,0.8,5505.13891591501
+"Alveopora excelsa","NB","Endangered",30,2,10401.2326604699
+"Plerogyra multilobata",NA,"Data Deficient",NA,21,NA
+"Millepora squarrosa",NA,NA,NA,NA,NA
+"Alveopora minuta","NB","Endangered",20,1.3,4954.2121474591
+"Acropora downingi","LB","Least Concern",10,1,5642.35751500696
+"Acropora bushyensis","LB","Least Concern",5,1.5,14109.0095667626
+"Isopora crateriformis","LB","Vulnerable",25,0.8,16470.8985508369
+"Acropora eurystoma",NA,"Data Deficient",26,2,17119.5583775711
+"Madracis asperula",NA,NA,NA,NA,NA
+"Mussismilia leptophylla","NB","Data Deficient",NA,10.2,75.4104178043495
+"Acropora hyacinthus","LB","Near Threatened",26,1.1,19885.942028004
+"Acropora hyacinthus","LB","Data Deficient",26,1.1,19885.942028004
+"Acropora natalensis","LB","Data Deficient",30,NA,2414.47872949308
+"Acropora chesterfieldensis","MB","Least Concern",40,1,11117.5549103528
+"Acropora mirabilis","MB","Data Deficient",25,NA,11136.6277270824
+"Anomastraea irregularis","NB","Vulnerable",20,5.4,7355.41754705717
+"Echinopora grandicula",NA,NA,NA,NA,NA
+"Pectinia africana","NB",NA,NA,NA,NA
+"Montipora delicatula","MB","Vulnerable",15,0.6,5235.14287626646
+"Sclerophyllia maxima","NB","Near Threatened",15,40,1056.08889978809
+"Acropora papillare","HB","Vulnerable",23,1.6,10517.6495916329
+"Caulastraea echinulata","NB","Vulnerable",18,13.8,6140.19429042091
+"Turbinaria peltata",NA,NA,NA,NA,NA
+"Porites cocosensis","LB","Vulnerable",NA,1.5,0
+"Acropora kosurini","HB","Vulnerable",20,0.8,14711.2721236805
+"Alveopora gigas","MB","Vulnerable",30,6.6,12065.2121886175
+"Porites furcata","MB","Least Concern",50,1.9,17560.3015488283
+"Montipora taiwanensis","NB","Data Deficient",2,0.9,693.580515539421
+"Cyphastrea hexasepta","NB","Vulnerable",25,1,0
+"Acropora khayranensis",NA,NA,NA,NA,NA
+"Platygyra acuta","NB","Near Threatened",20,5.2,12566.8474099375
+"Podabacia motuporensis","LB","Near Threatened",20,2.8,13847.0690773729
+"Dipsastraea lizardensis","NB","Near Threatened",20,16.7,12561.1338004145
+"Porites sverdrupi",NA,"Vulnerable",40,NA,169.400899696711
+"Acropora anthocercis","LB","Vulnerable",25,1.3,18959.6813088818
+"Psammocora contigua","MB","Data Deficient",35,1.5,19860.9470143031
+"Psammocora contigua","MB","Data Deficient",35,1.5,19860.9470143031
+"Psammocora contigua","MB","Near Threatened",35,1.5,19860.9470143031
+"Psammocora contigua","MB","Near Threatened",35,1.5,19860.9470143031
+"Goniastrea ramosa","LB","Vulnerable",15,7.4,3936.70372204825
+"Lithophyllon ranjithi",NA,"Endangered",20,NA,NA
+"Acropora samoensis","LB","Data Deficient",15,1.8,19955.7958013358
+"Acropora samoensis","LB","Data Deficient",15,1.8,19955.7958013358
+"Acropora samoensis","LB","Least Concern",15,1.8,19955.7958013358
+"Mycetophyllia danaana","LB","Least Concern",30,13.8,3104.43617262938
+"Pavona chiriquiensis",NA,"Least Concern",30,1.4,2381.04037837841
+"Stephanocoenia intersepta","NB","Least Concern",100,2.7,18225.6193668746
+"Helioseris cucullata","MB","Least Concern",90,2.9,4517.26975404364
+"Anacropora pillai","MB","Data Deficient",25,0.6,0
+"Mussismilia harttii","NB","Data Deficient",NA,20,6228.71883387477
+"Blastomussa merleti",NA,"Least Concern",50,6,14866.6082728315
+"Horastrea indica","NB","Vulnerable",40,13.8,7744.97608077179
+"Stylophora subseriata","MB","Least Concern",30,0.7,12104.9158207222
+"Oculina robusta","HB","Data Deficient",20,3.7,3057.24111295686
+"Pocillopora zelli","HB","Least Concern",15,1.2,19278.1363966791
+"Agaricia agaricites","MB","Least Concern",75,5.5,8055.73891865763
+"Millepora intricata",NA,NA,NA,NA,NA
+"Heterocyathus alternatus",NA,NA,NA,NA,NA
+"Goniopora paliformis","NB","Vulnerable",NA,2.7,3861.84610046756
+"Isopora elizabethensis","HB","Data Deficient",20,NA,1713.77599878346
+"Leptastrea aequalis","LB","Vulnerable",20,2.8,14269.1063537795
+"Porites brighami","NB","Least Concern",NA,1.5,8743.63363526585
+"Madracis carmabi",NA,"Data Deficient",40,NA,0
+"Porites latistellata","LB",NA,NA,NA,NA
+"Acropora yongei","MB","Least Concern",21,1.2,17991.9116021759
+"Porites panamensis","NB","Least Concern",36,0.9,16657.7623486579
+"Acropora glauca","LB","Near Threatened",20,1.3,19655.6620593515
+"Pocillopora fungiformis","LB","Endangered",15,0.8,0
+"Echinopora fruticulosa","MB","Near Threatened",20,4.8,0
+"Porites deformis","LB","Near Threatened",30,1.6,14896.3603858711
+"Montipora spumosa","LB","Least Concern",30,0.9,17157.7331654922
+"Porites flavus","MB","Data Deficient",20,0.7,11275.1035776301
+"Oxypora convoluta","MB","Data Deficient",30,7.3,0
+"Montipora peltiformis","NB","Near Threatened",30,0.9,16774.4405826383
+"Isophyllia rigida","NB","Least Concern",20,18.2,2940.19196825214
+"Lobophyllia dentata","NB","Vulnerable",10,32.6,3741.86448967251
+"Porites rugosus","MB",NA,NA,NA,NA
+"Platygyra carnosa","NB",NA,NA,NA,NA
+"Porites echinulata","MB","Near Threatened",50,2.1,5287.04803023952
+"Lobophyllia rowleyensis","NB",NA,NA,NA,NA
+"Porites pukoensis","MB","Critically Endangered",NA,1.7,4154.57826176861
+"Cladocora arbuscula","MB","Least Concern",25,2.9,14228.7084462324
+"Favites spinosa","NB","Vulnerable",10,8.2,8531.61147771363
+"Favites melicerum",NA,"Near Threatened",20,8.1,11619.4997360972
+"Pocillopora molokensis","MB","Data Deficient",55,1.3,2557.76325329622
+"Montipora carinata","HB",NA,NA,NA,NA
+"Acropora awi","HB","Vulnerable",20,1,7501.32580298105
+"Porites divaricata","MB","Least Concern",47,1.1,3857.80549872804
+"Pseudosiderastrea tayamai","NB","Near Threatened",20,4,12408.2801428474
+"Mussismilia braziliensis","NB","Data Deficient",NA,14.9,1150.815055942
+"Cycloseris explanulata","MB","Least Concern",35,4.5,16822.1573984848
+"Siderastrea savignyana","NB","Least Concern",10,3.8,6378.12871647716
+"Isophyllia sinuosa","NB","Least Concern",20,11.2,3065.79160885694
+"Acropora exquisita","MB","Data Deficient",20,NA,2849.04549830204
+"Favia fragum","NB","Least Concern",30,5.8,15224.779029975
+"Millepora platyphylla",NA,NA,NA,NA,NA
+"Schizoculina africana","HB","Data Deficient",35,9.1,0
+"Cantharellus doederleini","NB","Least Concern",30,53.3,3861.84610046756
+"Acropora proximalis","MB","Data Deficient",15,NA,0.000164623440599257
+"Montipora undata","MB","Near Threatened",30,1.2,16743.4705036728
+"Acropora indonesia","HB","Vulnerable",26,1,13671.2644171745
+"Isopora togianensis","HB","Endangered",25,1.2,3335.3901990996
+"Millepora intricata",NA,NA,NA,NA,NA
+"Acropora arabensis","LB","Near Threatened",12,2,5575.50131667551
+"Scolymia wellsii",NA,NA,NA,NA,NA
+"Lobophyllia recta","NB",NA,NA,NA,NA
+"Oxypora egyptensis","NB","Data Deficient",60,11.3,0
+"Echinophyllia orpheensis","NB","Least Concern",30,10.1,14255.7923191823
+"Porites decasepta",NA,"Data Deficient",7,NA,0
+"Madracis senaria","LB","Least Concern",30,1.8,958.647458501032
+"Millepora foveolata",NA,NA,NA,NA,NA
+"Seriatopora guttata","MB","Least Concern",40,0.6,11630.735762867
+"Bernardpora stutchburyi","LB","Least Concern",30,NA,13811.9803094358
+"Acropora jacquelineae","LB","Vulnerable",36,0.5,4457.81333769508
+"Madracis auretenra","MB","Least Concern",60,1.5,4234.20615592782
+"Lobophyllia diminuta","NB","Vulnerable",10,42.5,7409.32758659643
+"Australogyra zelli","MB","Vulnerable",15,7.2,4715.40615840632
+"Acropora valenciennesi","HB","Least Concern",45,1.5,16199.1324946989
+"Montipora capitata","LB","Near Threatened",70,1,15387.3990552632
+"Montipora cebuensis","MB","Vulnerable",20,0.8,5750.66149277043
+"Dipsastraea faviaformis","NB",NA,NA,NA,NA
+"Porites studeri",NA,"Least Concern",40,NA,4153.81791758517
+"Acropora digitifera","HB","Data Deficient",22,1.6,19597.0722927091
+"Acropora digitifera","HB","Near Threatened",22,1.6,19597.0722927091
+"Paramontastraea peresi","NB","Near Threatened",40,12.5,8124.35417716256
+"Favites stylifera","NB","Near Threatened",20,6.8,14329.4482137197
+"Favites micropentagonus","NB","Near Threatened",20,5.2,12771.781068744
+"Erythrastrea flabellata","NB","Near Threatened",25,14,NA
+"Montipora vaughani",NA,NA,NA,NA,NA
+"Pocillopora indiania","MB","Vulnerable",20,1.2,3861.84610046756
+"Acropora pichoni","LB","Near Threatened",70,0.9,5407.95603879052
+"Acanthastrea hemprichii","NB",NA,NA,NA,NA
+"Goniopora sultani","MB","Least Concern",20,7.8,0
+"Porites somaliensis","NB","Near Threatened",20,2.3,8986.88046701452
+"Acropora polystoma","LB","Vulnerable",17.5,1.5,19268.776193486
+"Acropora polystoma","LB","Data Deficient",17.5,1.5,19268.776193486
+"Favites paraflexuosus","NB","Near Threatened",20,16.2,11629.7850181939
+"Platygyra lamellina","NB","Near Threatened",30,9.1,19315.6186385193
+"Isopora cylindrica",NA,NA,NA,NA,NA
+"Favites chinensis","NB","Near Threatened",20,12.5,14109.0095667626
+"Acropora donei","MB","Vulnerable",45,1.4,14690.8124899304
+"Acropora donei","MB","Data Deficient",45,1.4,14690.8124899304
+"Echinophyllia costata","MB","Vulnerable",10,6,0
+"Solenastrea bournoni","NB","Least Concern",30,20.5,3653.57156702646
+"Stylophora kuehlmanni","MB","Least Concern",70,0.7,91.3576635305662
+"Acropora echinata","HB","Vulnerable",60,1,12124.5024056898
+"Madracis decactis","LB","Least Concern",98,2.2,11461.3028901136
+"Pachyseris involuta","MB","Vulnerable",15,4.1,9.50453877449036e-05
+"Goniastrea thecata","NB","Near Threatened",15,8.4,5062.57651318352
+"Craterastrea levis",NA,"Least Concern",70,NA,3861.84610046756
+"Goniopora stokesi","MB","Near Threatened",30,4.7,14129.7947523478
+"Cyphastrea decadia","MB","Least Concern",40,2.8,3975.46049228748
+"Acanthastrea minuta","NB",NA,NA,NA,NA
+"Heteropsammia eupsammides",NA,NA,NA,NA,NA
+"Acropora cytherea","LB","Least Concern",67,1,19827.2191673054
+"Acropora cytherea","LB","Data Deficient",67,1,19827.2191673054
+"Montipora mollis","NB","Least Concern",40,0.9,19901.3595488124
+"Alveopora tizardi","LB","Least Concern",50,1.5,12436.5011045994
+"Acropora polystoma","LB","Vulnerable",17.5,1.5,19268.776193486
+"Acropora polystoma","LB","Data Deficient",17.5,1.5,19268.776193486
+"Acropora muricata","HB","Data Deficient",30,1.2,19870.7243107484
+"Acropora muricata","HB","Near Threatened",30,1.2,19870.7243107484
+"Heteropsammia cochlea",NA,NA,NA,NA,NA
+"Porites astreoides","NB","Least Concern",70,1.6,8711.71717066196
+"Acropora samoensis","LB","Data Deficient",15,1.8,19955.7958013358
+"Acropora samoensis","LB","Data Deficient",15,1.8,19955.7958013358
+"Acropora samoensis","LB","Least Concern",15,1.8,19955.7958013358
+"Acropora subulata","LB","Least Concern",30,1.2,18306.2661581902
+"Pectinia maxima","MB","Endangered",25,15,481.217764249894
+"Coscinaraea hahazimaensis","NB","Vulnerable",NA,3,0
+"Leptoseris cailleti","MB","Least Concern",150,3.5,2084.35749674106
+"Echinopora forskaliana","NB","Near Threatened",20,5.8,5099.19895382975
+"Acropora elegans","LB","Vulnerable",60,0.8,4853.01762847181
+"Anacropora reticulata","MB","Vulnerable",15,0.9,5286.65710277765
+"Cyphastrea japonica","NB","Least Concern",20,1.9,6403.91528380706
+"Pocillopora effusa","HB","Data Deficient",NA,1.1,NA
+"Blastomussa loyae","NB","Endangered",NA,NA,5894.35581757317
+"Sandalolitha robusta","NB","Least Concern",21,4.6,17602.4441905327
+"Physophyllia ayleni","MB","Near Threatened",25,15,11308.7001484009
+"Caulastraea curvata","MB","Vulnerable",20,13.9,5464.57550841452
+"Montipora altasepta","HB","Vulnerable",10,0.8,5137.05040160051
+"Acropora nana","MB","Near Threatened",15,1,18471.1226517445
+"Acropora filiformis","HB","Data Deficient",20,NA,NA
+"Ctenella chagius","NB","Endangered",45,NA,3861.84610046756
+"Porites ericacea",NA,NA,NA,NA,NA
+"Nematostella vectensis",NA,NA,NA,NA,NA
+"Endopsammia pourtalesi",NA,NA,NA,NA,NA
+"Rhizopsammia wellingtoni",NA,NA,NA,NA,NA
+"Tubastraea floreana",NA,NA,NA,NA,NA
+"Flabellum (Ulocyathus) daphnense",NA,NA,NA,NA,NA
+"Pseudocyathoceras avis",NA,NA,NA,NA,NA
+"Caryophyllia (Caryophyllia) solida",NA,NA,NA,NA,NA
+"Concentrotheca vaughani",NA,NA,NA,NA,NA
+"Crispatotrochus galapagensis",NA,NA,NA,NA,NA
+"Polycyathus isabela",NA,NA,NA,NA,NA
+"Dendrophyllia johnsoni",NA,NA,NA,NA,NA
+"Edwardsia ivelli",NA,NA,NA,NA,NA
+"Eunicella verrucosa",NA,NA,NA,NA,NA
+"Clavularia carpediem",NA,NA,NA,NA,NA
+"Clavularia crassa",NA,NA,NA,NA,NA
+"Maasella edwardsii",NA,NA,NA,NA,NA
+"Paramuricea macrospina",NA,NA,NA,NA,NA
+"Bunodeopsis strumosa",NA,NA,NA,NA,NA
+"Cladopsammia rolandi",NA,NA,NA,NA,NA
+"Actinia cari",NA,NA,NA,NA,NA
+"Cribrinopsis crassa",NA,NA,NA,NA,NA
+"Paranemonia cinerea",NA,NA,NA,NA,NA
+"Paranemonia vouliagmeniensis",NA,NA,NA,NA,NA
+"Segonzactis hartogi",NA,NA,NA,NA,NA
+"Phymanthus pulcher",NA,NA,NA,NA,NA
+"Crassophyllum thessalonicae",NA,NA,NA,NA,NA
+"Psammocora stellata","NB","Vulnerable",70,2.5,18695.803440435
+"Acropora cophodactyla","LB","Data Deficient",12,NA,9627.07328560115
+"Cycloseris costulata","NB","Least Concern",30,76,16791.1329592206
+"Acropora florida","HB","Near Threatened",40,1.4,18471.1226517445
+"Porites densa","NB","Near Threatened",20,1.3,14779.3643212728
+"Dipsastraea maxima","NB","Near Threatened",25,29,13906.9845625898
+"Pavona venosa","LB","Vulnerable",20,9.3,16743.4586630352
+"Hydnophora rigida","MB","Least Concern",40,6.7,16542.624288645
+"Paragoniastrea australensis","NB","Least Concern",40,10,19706.0949385064
+"Leptoseris hawaiiensis","LB","Least Concern",165,4.4,18959.825339787
+"Leptoseris hawaiiensis","LB","Vulnerable",165,4.4,18959.825339787
+"Leptoseris explanata","MB","Least Concern",70,4,15298.4733364136
+"Acropora secale","MB","Near Threatened",30,1.2,19878.4503082255
+"Hydnophora pilosa","MB","Least Concern",30,8,15341.5259698968
+"Porites eridani","LB","Endangered",20,0.8,4874.91510621312
+"Leptoseris solida","LB","Least Concern",70,3.8,18505.7937825942
+"Pavona minuta","NB","Near Threatened",55,3.3,18475.6427269713
+"Acropora abrotanoides","HB","Data Deficient",26,1.2,19328.1218722705
+"Acropora abrotanoides","HB","Data Deficient",26,1.2,19328.1218722705
+"Acropora abrotanoides","HB","Least Concern",26,1.2,19328.1218722705
+"Pavona maldivensis","MB","Least Concern",67,4.1,19150.0809087079
+"Siderastrea stellata","NB","Data Deficient",NA,3,2191.87505132948
+"Turbinaria irregularis","MB","Least Concern",40,2.1,14258.0115613035
+"Gardineroseris planulata","NB","Least Concern",40,5,19590.1849414672
+"Astrea curta","NB","Least Concern",45,9.3,19556.7294203094
+"Pocillopora woodjonesi","HB","Least Concern",26,1.1,18473.7417404588
+"Sinuorota hexagonalis","NB",NA,NA,NA,NA
+"Dipsastraea pallida","NB","Least Concern",50,10.2,19821.4292482205
+"Acropora acuminata","HB","Vulnerable",25,1.2,18944.7083903755
+"Acropora granulosa","LB","Near Threatened",65,0.9,18472.4001938111
+"Cycloseris cyclolites","NB","Least Concern",40,35.7,17602.4441905327
+"Pectinia alcicornis","LB","Vulnerable",25,21.2,8734.99006147599
+"Pocillopora capitata","HB","Least Concern",20,0.4,13711.8213226751
+"Hydnophora grandis","LB","Least Concern",25,4.7,8669.0099585068
+"Boninastrea boninensis","NB","Data Deficient",NA,6.5,0
+"Acropora speciosa","LB","Vulnerable",65,0.8,16949.471119462
+"Acropora speciosa","LB","Data Deficient",65,0.8,16949.471119462
+"Acropora listeri","MB","Vulnerable",17.5,1,18988.8732610758
+"Millepora tenera",NA,NA,NA,NA,NA
+"Acropora loripes","MB","Data Deficient",40,1.2,19878.4503082255
+"Acropora loripes","MB","Data Deficient",40,1.2,19878.4503082255
+"Acropora loripes","MB","Near Threatened",40,1.2,19878.4503082255
+"Favites magnistellata","NB","Near Threatened",30,12.1,13510.7985840686
+"Leptoria phrygia","NB","Near Threatened",30,3.5,18686.7302678342
+"Leptastrea bottae","LB","Near Threatened",30,3.5,19875.083349531
+"Lithophyllon repanda","NB","Least Concern",40,150,19125.1965361326
+"Acropora humilis","LB","Near Threatened",20,1.8,19624.8406967026
+"Acropora humilis","LB","Data Deficient",20,1.8,19624.8406967026
+"Favites valenciennesii","NB",NA,NA,NA,NA
+"Acropora samoensis","LB","Data Deficient",15,1.8,19955.7958013358
+"Acropora samoensis","LB","Data Deficient",15,1.8,19955.7958013358
+"Acropora samoensis","LB","Least Concern",15,1.8,19955.7958013358
+"Acropora humilis","LB","Near Threatened",20,1.8,19624.8406967026
+"Acropora humilis","LB","Data Deficient",20,1.8,19624.8406967026
+"Goniopora pandoraensis","MB","Least Concern",20,2.7,7331.67469512537
+"Lithophyllon spinifer","NB","Least Concern",40,118,6356.68080435834
+"Acropora grandis","HB","Least Concern",25,1.7,17802.4854598228
+"Porites vaughani","LB","Least Concern",40,0.8,16876.6139022295
+"Acropora tenuis","MB","Data Deficient",30,1.2,18088.8462331415
+"Acropora tenuis","MB","Data Deficient",30,1.2,18088.8462331415
+"Acropora tenuis","MB","Near Threatened",30,1.2,18088.8462331415
+"Acropora microphthalma","MB","Data Deficient",40,1,18714.7462947802
+"Acropora microphthalma","MB","Least Concern",40,1,18714.7462947802
+"Porites lichen","MB","Least Concern",40,1.4,19192.8763835698
+"Merulina scabricula","MB","Least Concern",40,3.5,13555.8636258511
+"Acropora vaughani","MB","Vulnerable",40,1.1,19955.7958013358
+"Seriatopora caliendrum","MB","Near Threatened",40,1.1,15843.1052432415
+"Dipsastraea rotumana","NB","Least Concern",30,14.2,18728.7122340156
+"Cycloseris fragilis","NB","Least Concern",40,48,18806.911450129
+"Porites nigrescens","MB","Vulnerable",20,1.6,19320.9067941899
+"Pavona decussata","LB","Vulnerable",20,3.5,16999.3403001078
+"Psammocora digitata","MB","Near Threatened",20,2.3,13563.801662085
+"Cantharellus jebbi","LB","Least Concern",25,20,3912.69756770821
+"Pocillopora ligulata","MB","Least Concern",NA,0.8,18795.7632099457
+"Anacropora spinosa","MB","Endangered",15,0.9,4532.88810441753
+"Stylocoeniella guentheri","LB","Least Concern",62,1.1,18714.634297015
+"Goniopora tenuidens","NB","Least Concern",40,NA,13117.9746680824
+"Favites halicora","NB","Near Threatened",55,16.8,17691.8134827076
+"Oxypora echinata","MB",NA,NA,NA,NA
+"Polyphyllia talpina","NB","Least Concern",30,NA,15152.1424763035
+"Montipora informis","NB","Least Concern",20,1.3,17787.371149521
+"Favites colemani","LB","Near Threatened",20,7.8,12319.431808365
+"Montipora foliosa","MB","Near Threatened",47,0.9,17691.8134827076
+"Lobophyllia robusta","NB","Least Concern",40,47.5,13789.9682596011
+"Porites lutea","NB","Least Concern",70,1.3,19878.3813967113
+"Ctenactis albitentaculata","NB","Near Threatened",20,260,8477.56217433768
+"Dipsastraea amicorum","NB","Least Concern",20,13.2,19980.9488334694
+"Acropora subglabra","HB","Least Concern",40,0.8,12469.822300462
+"Echinopora lamellosa","MB","Least Concern",50,3.4,17210.8673499638
+"Leptastrea purpurea","LB","Least Concern",40,10,19958.0490939871
+"Leptoseris scabra","LB","Least Concern",127,6.3,19899.020449483
+"Pocillopora meandrina","MB","Least Concern",27,0.7,19123.149896373
+"Pocillopora verrucosa","MB","Vulnerable",54,1.2,19574.897026465
+"Pocillopora verrucosa","MB","Least Concern",54,1.2,19574.897026465
+"Leptoseris papyracea","MB","Least Concern",89,4.4,19125.8217959355
+"Pocillopora elegans","MB","Vulnerable",30,1,18471.6368395905
+"Porites murrayensis","NB","Near Threatened",5,1,15091.0431220864
+"Homophyllia bowerbanki","NB","Vulnerable",20,25,14273.6589905777
+"Homophyllia bowerbanki","NB","Near Threatened",20,25,14273.6589905777
+"Plerogyra simplex","MB","Near Threatened",30,20,3661.69236513194
+"Montipora lobulata","NB","Vulnerable",20,1.3,12324.2906033392
+"Lobophyllia valenciennesii","LB",NA,NA,NA,NA
+"Acropora aspera","HB","Vulnerable",15,1.8,18502.3498420607
+"Dipsastraea marshae","NB","Near Threatened",15,19.3,4287.11860715726
+"Astreopora scabra","NB","Least Concern",15,2.5,0.000134414476389852
+"Isopora palifera","HB","Near Threatened",40,1.4,18519.7158999489
+"Millepora exaesa",NA,NA,NA,NA,NA
+"Ctenactis echinata","NB","Least Concern",20,284,19680.6906472635
+"Alveopora verrilliana","NB","Vulnerable",70,2.1,13172.1419323434
+"Podabacia crustacea","LB","Least Concern",50,3,18803.4877436226
+"Halomitra pileus","NB","Least Concern",25,4.8,17907.4017660664
+"Cyphastrea serailia","NB","Least Concern",50,2.4,19799.548101077
+"Coeloseris mayeri","NB","Least Concern",5,11.9,16610.92403851
+"Echinophyllia aspera","MB","Least Concern",90,10.9,18661.8488951154
+"Montipora efflorescens","NB","Near Threatened",20,1.2,18078.1021339502
+"Pleuractis granulosa","NB","Least Concern",60,120,18213.4949306187
+"Montipora floweri","NB","Least Concern",35,0.9,18473.7417404588
+"Echinophyllia glabra","MB",NA,NA,NA,NA
+"Pocillopora verrucosa","MB","Vulnerable",54,1.2,19574.897026465
+"Pocillopora verrucosa","MB","Least Concern",54,1.2,19574.897026465
+"Goniopora fruticosa","LB","Least Concern",25,3.7,12761.5029149705
+"Oulophyllia crispa","NB","Near Threatened",40,11.6,17675.6805683179
+"Lobactis scutaria","NB","Least Concern",40,169,19125.1965361326
+"Acropora tenella","LB","Vulnerable",70,0.8,5591.70813286733
+"Psammocora contigua","MB","Data Deficient",35,1.5,19860.9470143031
+"Psammocora contigua","MB","Data Deficient",35,1.5,19860.9470143031
+"Psammocora contigua","MB","Near Threatened",35,1.5,19860.9470143031
+"Psammocora contigua","MB","Near Threatened",35,1.5,19860.9470143031
+"Favites pentagona","NB","Least Concern",50,8.5,18042.1906112896
+"Astreopora myriophthalma","NB","Data Deficient",50,2.3,18727.5857650824
+"Astreopora myriophthalma","NB","Least Concern",50,2.3,18727.5857650824
+"Cycloseris tenuis","NB","Least Concern",27,46.7,19099.0114771455
+"Porites lobata","NB","Data Deficient",67,1.1,19764.8841321034
+"Porites lobata","NB","Near Threatened",67,1.1,19764.8841321034
+"Montipora caliculata","NB","Vulnerable",20,1,18519.7158999489
+"Pocillopora damicornis","MB","Least Concern",55,1,19908.2634744496
+"Cycloseris vaughani","NB","Least Concern",36,58.5,19777.3196659128
+"Diploastrea heliopora","NB","Near Threatened",30,9,16631.9722822585
+"Galaxea paucisepta","LB","Near Threatened",20,3.1,5287.43676861284
+"Acropora nasuta","MB","Near Threatened",30,1.1,19878.5929603198
+"Pavona clavus","MB","Least Concern",40,3.4,19730.2911340836
+"Pavona frondifera","LB","Least Concern",15,2.6,16897.7037689022
+"Favites flexuosa","NB","Near Threatened",20,18.8,17602.4441905327
+"Acanthastrea echinata","NB","Least Concern",50,NA,20001.0574118391
+"Acropora robusta","HB","Data Deficient",20,1.5,18760.3180718265
+"Acropora robusta","HB","Least Concern",20,1.5,18760.3180718265
+"Acropora robusta","HB","Least Concern",20,1.5,18760.3180718265
+"Acropora digitifera","HB","Data Deficient",22,1.6,19597.0722927091
+"Acropora digitifera","HB","Near Threatened",22,1.6,19597.0722927091
+"Euphyllia glabrescens","NB","Near Threatened",35,19,16338.908179945
+"Plerogyra sinuosa","NB","Near Threatened",40,30,17676.3065016428
+"Porites annae","LB","Near Threatened",30,1.1,18007.151670777
+"Astreopora listeri","NB","Least Concern",30,1.6,18088.8462331415
+"Pectinia paeonia","MB","Near Threatened",25,35,9986.34757557818
+"Porites australiensis","NB","Least Concern",50,1.4,18519.7158999489
+"Plesiastrea versipora","NB","Least Concern",40,4.6,19793.1374904025
+"Fimbriaphyllia paraancora","NB",NA,NA,NA,NA
+"Favites abdita","NB","Near Threatened",50,15,17602.4441905327
+"Acropora striata","MB","Vulnerable",34.1,1.1,19787.4747470583
+"Astreopora myriophthalma","NB","Data Deficient",50,2.3,18727.5857650824
+"Astreopora myriophthalma","NB","Least Concern",50,2.3,18727.5857650824
+"Acropora valida","LB","Data Deficient",45,0.9,19895.265616894
+"Acropora valida","LB","Data Deficient",45,0.9,19895.265616894
+"Acropora valida","LB","Least Concern",45,0.9,19895.265616894
+"Cycloseris sinensis","NB","Least Concern",40,54.8,18920.0852452354
+"Astreopora gracilis","NB","Least Concern",15,1.6,18737.1574556913
+"Acropora lutkeni","HB","Near Threatened",26,1.2,19788.0320384095
+"Lobophyllia hataii","NB","Least Concern",40,30,12316.024708362
+"Montipora verrilli","LB","Data Deficient",40,0.8,18768.6990016404
+"Danafungia scruposa","NB","Least Concern",55,111,19300.0221798151
+"Montipora aequituberculata","MB","Least Concern",43,0.9,19737.0883254558
+"Acropora monticulosa","LB","Near Threatened",14,1.2,19055.1217811335
+"Acropora gemmifera","LB","Data Deficient",18,1.6,19148.792403382
+"Acropora gemmifera","LB","Least Concern",18,1.6,19148.792403382
+"Cyphastrea chalcidicum","NB","Least Concern",50,2.8,19821.4292482205
+"Micromussa regularis","NB",NA,NA,NA,NA
+"Acropora lovelli","HB",NA,NA,NA,NA
+"Porites stephensoni","NB","Near Threatened",5,1.3,10586.7618858543
+"Leptoseris foliosa","MB","Least Concern",30,1.4,19689.7358200357
+"Millepora exaesa",NA,NA,NA,NA,NA
+"Alveopora allingi","MB","Vulnerable",60,3.7,19842.2814830709
+"Merulina ampliata","MB","Least Concern",50,6.2,18661.8488951154
+"Paragoniastrea russelli","NB","Near Threatened",25,16,18088.8462331415
+"Montipora tuberculosa","NB","Least Concern",40,1,19886.5922485765
+"Leptoseris mycetoseroides","MB","Least Concern",80,4.4,18478.187732441
+"Psammocora contigua","MB","Data Deficient",35,1.5,19860.9470143031
+"Psammocora contigua","MB","Data Deficient",35,1.5,19860.9470143031
+"Psammocora contigua","MB","Near Threatened",35,1.5,19860.9470143031
+"Psammocora contigua","MB","Near Threatened",35,1.5,19860.9470143031
+"Goniopora eclipsensis","MB","Least Concern",20,3.1,4987.68183119425
+"Porites napopora","LB","Vulnerable",15,0.9,8393.36542727205
+"Pavona bipartita","NB","Vulnerable",20,3.1,11877.0068280773
+"Stylaraea punctata","LB","Data Deficient",NA,1.2,13364.200283297
+"Goniastrea edwardsi","NB","Least Concern",30,5,17676.3065016428
+"Lobophyllia ishigakiensis","NB",NA,NA,NA,NA
+"Goniopora somaliensis","LB","Least Concern",60,3.1,17143.792712962
+"Madracis kirbyi","LB","Least Concern",60,2.6,13462.5036317655
+"Pavona explanulata","MB","Least Concern",25,3,19834.6771363247
+"Dipsastraea laddi","NB","Vulnerable",10,6.8,3852.53306273415
+"Acanthastrea rotundoflora","LB","Near Threatened",30,NA,11725.8966079123
+"Acropora globiceps","LB","Vulnerable",20,2.1,15724.6762811455
+"Pocillopora brevicornis",NA,"Least Concern",NA,NA,16483.3072619441
+"Seriatopora hystrix","MB","Least Concern",55,0.8,17035.6307039402
+"Acropora teres","HB","Data Deficient",20,NA,13186.5761458332
+"Pavona varians","LB","Least Concern",80,9.3,19834.6771363247
+"Turbinaria stellulata","NB","Vulnerable",15,3.3,17590.1664313344
+"Psammocora haimiana","NB","Least Concern",50,4.6,19659.1091891266
+"Pocillopora grandis","HB",NA,NA,NA,NA
+"Pachyseris speciosa","MB","Least Concern",88,4.6,19300.0221798151
+"Goniastrea pectinata","NB","Least Concern",40,15,19887.3884264171
+"Anacropora puertogalerae","MB","Vulnerable",20,0.8,13966.9027032018
+"Lithophyllon concinna","NB","Least Concern",50,160,18505.7937825942
+"Lobophyllia hemprichii","NB","Least Concern",50,26.8,19898.5213991894
+"Montipora grisea","NB","Least Concern",20,1.2,18749.4758573945
+"Danafungia horrida","NB","Least Concern",25,204,18505.7937825942
+"Dipsastraea danai","NB","Least Concern",20,9.2,16607.4309971009
+"Coscinaraea columna","NB","Least Concern",30,6,19494.5162086103
+"Montipora foveolata","NB","Near Threatened",25,2.9,18519.7158999489
+"Platygyra pini","NB","Least Concern",30,7.2,19405.0328389981
+"Goniopora columna","MB","Near Threatened",15,3.7,15404.0848488079
+"Montipora danae","MB","Least Concern",50,1.4,17654.8537686228
+"Coelastrea aspera","NB","Least Concern",15,11.5,18088.8462331415
+"Pachyseris rugosa","MB","Vulnerable",20,4.8,16970.1977041272
+"Physogyra lichtensteini","NB","Vulnerable",20,20,14628.0960687547
+"Hydnophora microconos","NB","Near Threatened",35,7.2,17732.3636346305
+"Goniopora lobata","MB","Near Threatened",30,4.6,14238.3628019982
+"Acropora aculeus","MB","Vulnerable",60,1,18495.8257579453
+"Platygyra daedalea","NB","Least Concern",40,10,19220.1115426404
+"Micromussa amakusensis","LB","Near Threatened",30,11.5,12833.1540708964
+"Scapophyllia cylindrica","MB","Least Concern",25,3.8,11484.9977415318
+"Lobophyllia agaricia","NB",NA,NA,NA,NA
+"Hydnophora exesa","NB","Near Threatened",55,4.5,17727.3745203583
+"Alveopora spongiosa","MB","Near Threatened",50,1.5,16114.5714490944
+"Astreopora randalli","MB","Least Concern",15,1.5,18519.7158999489
+"Porites horizontalata","LB","Vulnerable",20,1.7,15090.8503754606
+"Oulophyllia levis","NB","Least Concern",30,18.1,5649.90480464559
+"Porites rus","LB","Least Concern",20,0.8,18887.4912360215
+"Platygyra ryukyuensis","NB","Near Threatened",30,3.3,12871.0587106524
+"Galaxea horrescens","MB","Least Concern",25,2.9,7111.59021472161
+"Porites cylindrica","LB","Near Threatened",20,1.1,17676.2822376539
+"Psammocora profundacella","NB","Least Concern",50,2.5,19898.231819844
+"Psammocora profundacella","NB","Least Concern",50,2.5,19898.231819844
+"Fungia fungites","NB","Near Threatened",50,158,19116.9173590009
+"Dipsastraea truncata","NB","Least Concern",20,10.5,12239.9294358483
+"Alveopora fenestrata","NB","Vulnerable",30,3.4,19910.270447143
+"Montipora monasteriata","MB","Least Concern",40,1.1,17787.371149521
+"Seriatopora aculeata","MB","Vulnerable",40,0.5,14157.2682698419
+"Acropora palmerae","LB","Data Deficient",23,1.3,16334.5130152274
+"Acropora palmerae","LB","Vulnerable",23,1.3,16334.5130152274
+"Acropora verweyi","MB","Vulnerable",29,1.1,18913.0030998091
+"Herpolitha limax","NB","Least Concern",40,370,19124.2728129698
+"Leptoseris hawaiiensis","LB","Least Concern",165,4.4,18959.825339787
+"Leptoseris hawaiiensis","LB","Vulnerable",165,4.4,18959.825339787
+"Merulina triangularis","MB","Near Threatened",20,8.8,6083.20628508108
+"Stylocoeniella armata","LB","Least Concern",50,2.3,17623.7272695318
+"Lobophyllia corymbosa","NB","Least Concern",40,47.5,17640.1973668543
+"Millepora dichotoma",NA,NA,NA,NA,NA
+"Acanthastrea brevis","NB","Vulnerable",20,NA,3861.84610046756
+"Pavona cactus","LB","Vulnerable",35,1.4,19328.1218722705
+"Mycedium elephantotus","MB","Least Concern",70,10,18830.4149665651
+"Coelastrea palauensis","NB","Near Threatened",30,18.8,15170.5106271685
+"Homophyllia australis","NB","Least Concern",40,75,19994.1741159118
+"Alveopora viridis","MB","Near Threatened",50,1.7,15268.7366773689
+"Dipsastraea favus","NB","Least Concern",50,10,17691.8134827076
+"Psammocora profundacella","NB","Least Concern",50,2.5,19898.231819844
+"Psammocora profundacella","NB","Least Concern",50,2.5,19898.231819844
+"Acropora cerealis","MB","Data Deficient",40,0.8,19444.2601701347
+"Acropora cerealis","MB","Least Concern",40,0.8,19444.2601701347
+"Pavona diffluens","NB","Vulnerable",20,2.6,11066.838218814
+"Oxypora crassispinosa","MB","Least Concern",30,8.8,13438.5519632244
+"Sandalolitha dentata","NB","Least Concern",25,3.5,13388.3893364531
+"Euphyllia cristata","NB","Vulnerable",35,25,10453.0584462994
+"Goniastrea stelligera","NB","Near Threatened",40,5.1,19971.6843064501
+"Dipsastraea helianthoides","NB","Near Threatened",20,9,14268.6513746501
+"Goniopora pedunculata","LB",NA,NA,NA,NA
+"Porites solida","NB","Least Concern",20,1.6,19391.2850316651
+"Dipsastraea matthaii","NB","Near Threatened",40,13.8,19852.44372884
+"Cyphastrea agassizi","NB","Vulnerable",20,2.2,12076.5508556517
+"Turbinaria mesenterina","MB","Vulnerable",20,3.5,19955.6716999073
+"Goniastrea retiformis","NB","Least Concern",20,6.5,18789.712510599
+"Montipora venosa","NB","Near Threatened",30,1.8,19887.6786259274
+"Leptoseris gardineri","MB","Least Concern",70,2.5,10966.998308668
+"Dipsastraea maritima","NB","Near Threatened",30,18.8,13127.3221003513
+"Porites monticulosa","LB","Least Concern",20,1.2,16320.8064352148
+"Goniopora djiboutiensis","MB","Least Concern",58,4.7,14060.456094285
+"Acropora muricata","HB","Data Deficient",30,1.2,19870.7243107484
+"Acropora muricata","HB","Near Threatened",30,1.2,19870.7243107484
+"Montipora verrucosa","MB","Least Concern",45,1.4,19025.3292120231
+"Cyphastrea microphthalma","NB","Least Concern",50,2.7,17180.4456328038
+"Acropora abrotanoides","HB","Data Deficient",26,1.2,19328.1218722705
+"Acropora abrotanoides","HB","Data Deficient",26,1.2,19328.1218722705
+"Acropora abrotanoides","HB","Least Concern",26,1.2,19328.1218722705
+"Leptastrea transversa","LB","Least Concern",50,9.2,19861.8440124288
+"Acropora hyacinthus","LB","Near Threatened",26,1.1,19885.942028004
+"Acropora hyacinthus","LB","Data Deficient",26,1.1,19885.942028004
+"Isopora cuneata","LB","Vulnerable",20,1,17635.5110558313
+"Galaxea fascicularis","NB","Near Threatened",22,10.7,17133.6359445681
+"Acropora millepora","MB","Data Deficient",30,1.6,16404.3690255599
+"Acropora millepora","MB","Data Deficient",30,1.6,16404.3690255599
+"Acropora millepora","MB","Near Threatened",30,1.6,16404.3690255599
+"Pleuractis paumotensis","NB","Least Concern",40,235,19640.5947477304
+"Psammocora nierstraszi","NB",NA,NA,NA,NA
+"Stylophora pistillata","MB","Near Threatened",65,1.4,17729.2217903001
+"Turbinaria reniformis","MB","Vulnerable",60,4.2,17729.2217903001
+"Montipora hoffmeisteri","LB","Least Concern",40,1.1,11590.3892382941
+"Pavona duerdeni","NB","Least Concern",15,2.1,18867.6989822536
+"Epizoanthus tergestinus",NA,NA,NA,NA,NA
+"Epizoanthus frenzeli",NA,NA,NA,NA,NA
+"Epizoanthus paguricola",NA,NA,NA,NA,NA
+"Epizoanthus paxii",NA,NA,NA,NA,NA
+"Condylactis aurantiaca",NA,NA,NA,NA,NA
+"Epizoanthus univittatus",NA,NA,NA,NA,NA
+"Epizoanthus vagus",NA,NA,NA,NA,NA
+"Arachnanthus oligopodus",NA,NA,NA,NA,NA
+"Epizoanthus steueri",NA,NA,NA,NA,NA
+"Epizoanthus mediterraneus",NA,NA,NA,NA,NA
+"Balanophyllia (Balanophyllia) europaea","NB",NA,NA,NA,NA
+"Cladocora caespitosa","NB","Endangered",NA,4.5,9813.00590305862
+"Oculina patagonica","MB","Least Concern",10,3.3,10908.0562589672
+"Paractinia striata",NA,NA,NA,NA,NA
+"Ceratotrochus magnaghii",NA,NA,NA,NA,NA
+"Spinimuricea klavereni",NA,NA,NA,NA,NA

@@ -22,16 +22,9 @@ library(grid)
 library(ggalluvial)
 library(raster)
 library(ggpubr)
-
-#load functions
-source(here("code", "functions.R"))
+library(ggrepel)
 
 #rescaling
-# scaled.new <- function (newdata, olddata) {scale(newdata, attr(olddata, "scaled:center"), attr(olddata, "scaled:scale"))}
-# unscale <- function(newdata, olddata){
-#   newdata * attr(olddata, 'scaled:scale') + attr(olddata, 'scaled:center')
-# }
-
 scaled.new <- function (newdata, olddata) {(newdata-min(olddata, na.rm = TRUE))/(max(olddata, na.rm = TRUE)-min(olddata, na.rm = TRUE))}
 unscale <- function(newdata, olddata){min(olddata, na.rm = TRUE) + newdata * (max(olddata, na.rm = TRUE) - min(olddata, na.rm=TRUE))}
 
@@ -42,8 +35,9 @@ u_col <- ggsci::pal_uchicago("default")(9)[c(2,5,4,3,1)]
 # classification data
 df.corals <- read.csv(here("data", "traits_iucn.csv"), stringsAsFactors = FALSE) %>% mutate(
   range = ifelse(range > 0, range, NA),
-  corallite_ori = corallite,
+  corallite_ori = corallite, 
   depth_ori = max_depth,
+  #max_depth = ifelse(max_depth <=30, "shallow", "deep") %>% as.factor(),
   range_ori = range)
 
 #df.corals <- df.corals %>% mutate_at(c("max_depth", "corallite", "range"), function (x) as.numeric(scale(x))) #normalise numerical predictors
@@ -88,16 +82,24 @@ y <- "iucn"
 x <- c("max_depth", "branching", "corallite", "range" )
 
 # Load Model --------------------------------------------------------------
-
 # * Load best model in h2o session ------------------------------------
 hours <- 8
-leaderboard <- read.csv(here("output", paste0("Table_S_maximised_threshold_model_binary_norm_", hours, "h.csv")), stringsAsFactors = FALSE) %>% arrange(desc(AUC.test))
 folder <- paste0("model_binary_norm_", hours, "h")
 folder_name <- folder
 
+leaderboard <- read.csv(here("output", paste0("Table_S_maximised_threshold_model_binary_norm_", hours, "h.csv")), stringsAsFactors = FALSE) %>% arrange(desc(AUC.test))
+
+#results details
+res_summ <- table(sub("\\_.*", "", unique(leaderboard$fname))) %>%
+  as.data.frame() %>%
+  setNames(c("algorithm", "n"))
+
+write.csv(res_summ, here("output", "Table_S_results_summary.csv"), row.names = FALSE)
+
 #number of models to choose from
-n=5
+n=nrow(leaderboard)
 auc.df <- data.frame(n = 1:n, 
+                     algorithm =NA,
                      fname=NA,
                      cutoff = NA,
                      AUC.train=NA,
@@ -107,6 +109,8 @@ for (i in 1:n){
   auc.df$fname[i] <- leaderboard$fname[i]
   auc.df$cutoff[i] <- leaderboard$cutoff[i]
   mod <- h2o.loadModel(here("output", folder_name, leaderboard$fname[i]))
+  
+  auc.df$algorithm[i] <- mod@algorithm
   
   res.train <- h2o.predict(mod , train)
   res.train <- as.data.frame(res.train)$p1
@@ -122,18 +126,95 @@ for (i in 1:n){
   
   auc.df$AUC.train[i] <- as.numeric(auc(true.train.labels, train.labels))
   auc.df$AUC.test[i] <- as.numeric(auc(true.test.labels, test.labels))
-  
 }
 
-auc.df <- auc.df %>% arrange(desc(AUC.test))
+auc.df <- auc.df %>% filter(cutoff > 0.32) %>%
+  group_by(fname) %>% 
+  filter(AUC.test == max(AUC.test)) %>%
+  arrange(desc(AUC.test)) 
+
+write.csv(auc.df[1:10,], here("output", "Table_S_model_performance_binary.csv"), row.names=FALSE)
 auc.df
-win <- auc.df$n[1]
+w <- 1
+win <- auc.df$n[w]
 aml_leader <- h2o.loadModel(here("output", folder_name, leaderboard$fname[win]))
+
+#plot for AUC cutoff
+cutoff <- seq(0,1,0.01)
+
+mod <- data.frame(cutoff=cutoff,
+                  train = NA,
+                  test = NA)
+
+mod_cutoff <- leaderboard[leaderboard$fname == auc.df$fname[1] & leaderboard$cutoff == auc.df$cutoff[1], c("cutoff.train", "cutoff.test")] %>%
+  setNames(c("train", "test")) %>%
+  reshape2::melt()
+
+
+for (c in 1:length(cutoff)){
+  res.train <- h2o.predict(aml_leader , train)
+  res.train <- as.data.frame(res.train)$p1
+  
+  res.test <- h2o.predict(aml_leader , test)
+  res.test <- as.data.frame(res.test)$p1
+  
+  #all values lower than cutoff value will be classified as 0 (NT in this case)
+  train.labels <- ifelse(res.train < cutoff[c], 0, 1)
+  test.labels <- ifelse(res.test < cutoff[c], 0, 1)
+  true.train.labels <- as.data.frame(train)$iucn
+  true.test.labels <- as.data.frame(test)$iucn
+  
+  mod$train[c] <- as.numeric(auc(true.train.labels, train.labels))
+  mod$test[c] <- as.numeric(auc(true.test.labels, test.labels))
+}
+
+p1 <- reshape2::melt(mod, id.vars="cutoff") %>%
+  ggplot(aes(x=cutoff, y=value, col=variable)) +
+  geom_rect(aes(xmin=0, xmax=1, ymin=0, ymax=0.7),fill="lightgrey", alpha=0.02, col=NA)+
+  geom_line() +
+  geom_vline(data=mod_cutoff, aes(xintercept=value, col=variable), linetype="dashed", show.legend = FALSE) +
+  coord_cartesian(ylim=c(0,1), expand=FALSE)+
+  scale_color_manual(values=u_col[c(2,5)], labels=c("Training", "Test")) +
+  labs(x="Cutoff Threshold", y="AUC", col="Dataset")+
+  theme_light(base_size = 15) +
+  theme(axis.title = element_text(size = 12, face="bold"),
+        legend.title = element_text(size = 12, face="bold"),
+        legend.text = element_text(family = "Roboto Mono", size = 10),
+        axis.text = element_text(family = "Roboto Mono", size = 10),
+        panel.grid = element_blank(), 
+        # panel.border = element_blank(),
+        legend.position = "top",
+        legend.direction = "horizontal") 
+
+ggsave(here("figs", "Fig_S_final_model.svg"), p1, w=5, h=4)
+
+# #if stacked
+# meta <- h2o.getModel(aml_leader@model$metalearner$name)
+# coef <- sort(meta@model$coefficients, decreasing = TRUE)
+# names(coef) <- sub("\\_.*", "", names(coef))
+# 
+# p2 <- as.data.frame(coef) %>%
+#   rownames_to_column("algorithm") %>%
+#   filter(coef > 0) %>%
+#   arrange(desc(coef)) %>%
+#   mutate(algorithm=ifelse(algorithm=="DeepLearning", "Neural Network", algorithm)) %>%
+#   ggplot(aes(y=coef, x=reorder(algorithm, -coef))) +
+#   geom_bar(stat="identity", width = 0.4, fill = u_col[5]) +
+#   scale_y_continuous(expand=expand_scale(mult = c(0, .1))) +
+#   labs(x="Base Models", y="Coefficients") +
+#   theme_light(base_size = 15) +
+#   theme(axis.title = element_text(size = 12, face="bold"),
+#         axis.text.x = element_text(family = "Roboto Mono", size = 10),
+#         panel.grid = element_blank()) 
+
+# svg(here("figs", "Fig_S_final_model.svg"), w=5, h=8)
+# p2 + p1 + plot_layout(ncol=1) + plot_annotation(tag_levels = "A")
+# dev.off()
 
 #### TEXT FOR PAPER
 paste0("Out of the ", length(unique(leaderboard$fname)), " models trained by the AutoML, the optimal model was a ", aml_leader@algorithm, 
-       " with AUC of ", round(auc.df$AUC.train[win],2),  " on the training dataset and ", round(auc.df$AUC.test[win],2), " on the test dataset and", 
-       " an average classification probability threshold (decision threshold) of ", auc.df$cutoff[win])
+       " with AUC of ", round(auc.df$AUC.train[w],2),  " on the training dataset and ", round(auc.df$AUC.test[w],2), " on the test dataset and", 
+       " an average classification probability threshold (decision threshold) of ", auc.df$cutoff[w])
 
 # * Confusion Matrix ------------------------------------------------------
 res.train <- h2o.predict(aml_leader , train)
@@ -157,8 +238,8 @@ acc.test <- prop.table(cf.test$table, 2)
 ### TEXT FOR PAPER
 paste0("The model correctly classified ", round(acc.train[2,2], 2)*100,"% and ",round(acc.test[2,2], 2)*100,
        "% of the threatened species for the training and test dataset respectively.")
-paste0("It had a slightly lower classification accuracy for non-threatened species, ",round(acc.train[1,1], 2)*100,
-       "% and ",round(acc.test[1,1], 2)*100,"%, and overall accuracy of ", round(cf.train$overall[1], 2),"% and ", round(cf.test$overall[1], 2),
+paste0("It had a higher classification accuracy for non-threatened species, ",round(acc.train[1,1], 2)*100,
+       "% and ",round(acc.test[1,1], 2)*100,"%, and overall accuracy of ", round(cf.train$overall[1], 2)*100,"% and ", round(cf.test$overall[1], 2)*100,
        "%, respectively on the training and test datasets.")
 
 # * Misclassification -----------------------------------------------------
@@ -187,7 +268,6 @@ df %>% group_by(status, iucn, pred) %>%
   reshape2::dcast(status+iucn~pred, value.var = "prop")
 
 
-
 # per branching
 df %>% 
   group_by(branching, iucn, pred) %>%
@@ -200,7 +280,7 @@ df %>%
 
 # per corallite diameter
 df %>% 
-  mutate(ints = cut(corallite_ori ,breaks = c(0, 5, max(corallite_ori)))) %>%
+  mutate(ints = cut(corallite_ori ,breaks = c(0, 1.5, max(corallite_ori)))) %>%
   group_by(iucn, pred, ints) %>%
   tally() %>%
   ungroup() %>%
@@ -208,6 +288,7 @@ df %>%
   mutate(prop = n/sum(n)) %>%
   filter(iucn != pred) %>%
   group_by(ints) %>% summarise(sum(prop))
+
 
 # per range
 df %>% 
@@ -364,6 +445,10 @@ dd$na_count <- apply(dd[,x], 1, function(x) sum(is.na(x)))
 dd[dd$na_count >2,]$status <- "DD"
 table(dd$status)
 
+table(df$iucn) %>% prop.table()
+table(dd$status)[-1] %>% prop.table()
+table(c(df$iucn, dd$status))[-1] %>% prop.table()
+
 #get genus for each species
 dd$genus <- gsub( " .*$", "", dd$sp)
 
@@ -386,7 +471,7 @@ dd_plot <- dd %>% filter(status != "DD") %>%
 dd_sum <- dd_plot %>% ungroup() %>% group_by(genus, status) %>% mutate(tot=sum(n), n=sum(n3)) %>%
   mutate(status2 = ifelse(status == "NT", "NTc", "Tc")) %>% distinct(genus, status2, n, tot)
 
-p <- ggplot(dd_plot, aes(fill=status2, y=n3, x=reorder(genus, n2))) +
+p <- ggplot(dd_plot, aes(fill=status, y=n3, x=reorder(genus, n2))) +
   geom_bar(stat="identity", alpha=0.5, width=0.6) +
   geom_point(data=dd_sum , 
              aes(x=genus, y=n, col=status2), cex=7.5, inherit.aes = FALSE) +
@@ -418,50 +503,12 @@ dev.off()
 # * Map of DD distribution risk -------------------------------------------
 gr <- hexagrid(16, sp=TRUE) #2.5 degrees
 world <- rworldmap::getMap()
-cuts <- seq(0.0, 1, 0.2)
+cuts <- c(seq(0.0, 0.5, 0.1), 1)
 map_col <- colorRampPalette(u_col[c(2,4,5)])(length(cuts)-1)
 
-
-#### DD only
-dd_occ <- read.csv(here("data", "2019-11-05_obis_scleractinia.csv"), stringsAsFactors = FALSE) %>%
-  filter(!between(decimalLatitude, 39, 45) & !between(decimalLongitude, -38, 30)) %>% #remove mediterranean ones
-  filter(scientificName %in% dd$sp) %>% #select only occurrences for dd species
-  distinct(scientificName, decimalLatitude, decimalLongitude) %>%
-  left_join(dd %>% dplyr::select(sp, status), by=c("scientificName" = "sp"))
-
-dd_occ$cell <- locate(gr, dd_occ[, c(3,2)])
-
-me_dd <- tapply(INDEX=dd_occ$cell, X=dd_occ$status, function (x) length(x[x == "T"])/length(x[x=="NT"| x == "T"]))
-
-mean(me_dd, na.rm = TRUE)
-
-##### DS only
-ds_occ <- read.csv(here("data", "2019-11-05_obis_scleractinia.csv"), stringsAsFactors = FALSE) %>%
-  filter(!between(decimalLatitude, 39, 45) & !between(decimalLongitude, -38, 30)) %>% #remove mediterranean ones
-  filter(scientificName %in% df$sp) %>% #select data sufficient species only
-  distinct(scientificName, decimalLatitude, decimalLongitude) %>%
-  left_join(df %>% dplyr::select(sp, iucn) %>% mutate(status = iucn) %>% dplyr::select(-iucn), by=c("scientificName" = "sp"))
-
-ds_occ$cell <- locate(gr, ds_occ[, c(3,2)])
-
-me_ds <- tapply(INDEX=ds_occ$cell, X=ds_occ$status, function (x) length(x[x == "T"])/length(x[x=="NT"| x == "T"]))
-mean(me_ds, na.rm = TRUE)
-
-#### DS + DD
-all_occ <- rbind(ds_occ, dd_occ)
-
-all_occ$cell <- locate(gr, all_occ[, c(3,2)])
-
-me <- tapply(INDEX=all_occ$cell, X=all_occ$status, function (x) length(x[x == "T"])/length(x[x=="NT"| x == "T"]))
-mean(me, na.rm = TRUE)
-
-#### summarise sp results
+#### select regions
 sp.pol <- gr@sp
 sp.df <- data.frame(faces = rownames(gr@faces))
-
-sp.df <- sp.df %>% left_join(as.data.frame(me_dd) %>% mutate(faces=rownames(.))) %>%
-  left_join(as.data.frame(me_ds) %>% mutate(faces=rownames(.))) %>%
-  left_join(as.data.frame(me) %>% mutate(faces=rownames(.)))
 
 rownames(sp.df) <- sp.df$faces
 sp.pol <- SpatialPolygonsDataFrame(sp.pol, sp.df)
@@ -472,52 +519,41 @@ indo_pacific_ext <- extent(28.125000,240.820313,-45.336702,22.593726)
 carribean <- crop(sp.pol, carribean_ext)
 indo_pacific <- crop(sp.pol, indo_pacific_ext)
 
-#transform to data.frame
-carribean <- carribean@data %>%
-  reshape2::melt()
-indo_pacific <- indo_pacific@data %>%
-  reshape2::melt()
 
-my_comparisons <- list( c("me_dd", "me_ds"), c("me_ds", "me"))
+#### DD only
+dd_occ <- read.csv(here("data", "2019-11-05_obis_scleractinia.csv"), stringsAsFactors = FALSE) %>%
+  filter(!between(decimalLatitude, 39, 45) & !between(decimalLongitude, -38, 30)) %>% #remove mediterranean ones
+  filter(scientificName %in% dd$sp) %>% #select only occurrences for dd species
+  distinct(scientificName, decimalLatitude, decimalLongitude) %>%
+  left_join(dd %>% dplyr::select(sp, status), by=c("scientificName" = "sp"))
 
-p1 <- ggplot(carribean, aes(x = variable, y = value, col=variable)) +
-  scale_x_discrete(breaks=c("me_dd", "me_ds", "me"), 
-                   labels=c("Data-Deficient", "Data-Sufficient", "Combined")) +
-  scale_y_continuous(limits = c(0,1.3), breaks=seq(0,1, 0.2)) +
-  labs(y="Proportion of \nspecies threatened", x="")+
-  scale_color_manual(values=u_col[c(1,2,5)], guide=FALSE) +
-  geom_boxplot()+
-  stat_compare_means(comparisons = my_comparisons, label="p.signif")  +# Add pairwise comparisons p-value
-  theme_light(base_size = 15) +
-  theme(axis.title = element_text(size = 12, face="bold"),
-        legend.title = element_text(size = 12, face="bold"),
-        legend.text = element_text(family = "Roboto Mono", size = 10),
-        axis.text = element_text(family = "Roboto Mono", size = 10),
-        panel.grid = element_blank(), 
-        legend.position = "none",
-        plot.margin = unit(c(2, 1, 1, 1), "lines"))
+dd_occ$cell <- locate(gr, dd_occ[, c(3,2)])
+dd_occ$region <- ifelse(dd_occ$cell %in% carribean$faces, "carribean", "indo-pacific")
 
-p2 <- ggplot(indo_pacific, aes(x = variable, y = value, col=variable)) +
-  scale_x_discrete(breaks=c("me_dd", "me_ds", "me"), 
-                   labels=c("Data-Deficient", "Data-Sufficient", "Combined")) +
-  scale_y_continuous(limits = c(0,1.3), breaks=seq(0,1, 0.2)) +
-  labs(y="Proportion of \nspecies threatened", x="")+
-  scale_color_manual(values=u_col[c(1,2,5)], guide=FALSE) +
-  geom_boxplot()+
-  stat_compare_means(comparisons = my_comparisons, label="p.signif")  +# Add pairwise comparisons p-value
-  theme_light(base_size = 15) +
-  theme(axis.title = element_text(size = 12, face="bold"),
-        legend.title = element_text(size = 12, face="bold"),
-        legend.text = element_text(family = "Roboto Mono", size = 10),
-        axis.text = element_text(family = "Roboto Mono", size = 10),
-        panel.grid = element_blank(), 
-        legend.position = "none",
-        plot.margin = unit(c(2, 1, 1, 1), "lines"))
+dd_occ <- dd_occ %>% distinct(region, scientificName, status) %>%
+  filter(status != "DD") 
 
-svg(here("figs", "Fig_S_carribean_vs_indo.svg"), w=6, h=8)
-p1+p2 + plot_layout(ncol=1) +
-  plot_annotation(tag_levels = "A")
-dev.off()
+##### DS only
+ds_occ <- read.csv(here("data", "2019-11-05_obis_scleractinia.csv"), stringsAsFactors = FALSE) %>%
+  filter(!between(decimalLatitude, 39, 45) & !between(decimalLongitude, -38, 30)) %>% #remove mediterranean ones
+  filter(scientificName %in% df$sp) %>% #select data sufficient species only
+  distinct(scientificName, decimalLatitude, decimalLongitude) %>%
+  left_join(df %>% dplyr::select(sp, iucn) %>% mutate(status = iucn) %>% dplyr::select(-iucn), by=c("scientificName" = "sp"))
+
+ds_occ$cell <- locate(gr, ds_occ[, c(3,2)])
+
+ds_occ$region <- ifelse(ds_occ$cell %in% carribean$faces, "carribean", "indo-pacific")
+
+ds_occ <- ds_occ %>% distinct(region, scientificName, status) %>%
+  filter(status != "DD") 
+
+#### DS + DD
+all_occ <- rbind(ds_occ, dd_occ)
+
+#results
+table(dd_occ$region, dd_occ$status) %>% prop.table(1)
+table(ds_occ$region, ds_occ$status) %>% prop.table(1)
+table(all_occ$region, all_occ$status) %>% prop.table(1)
 
 ##### plot
 txt <- 1.2
@@ -574,8 +610,8 @@ box(col="darkgrey")
 #add legend
 par(xpd=TRUE)
 plot(0,0, type="n", axes=FALSE)
-cuts_labs <-cuts*100 #turn to percentage
-legend("center", paste0(cuts_labs[1:(length(cuts)-1)], "-", cuts_labs[2:length(cuts)], "%"), fill=map_col, horiz=TRUE, border=NA, bty="n", 
+cuts_labs <-cuts[-c(6,7)]*100 #turn to percentage
+legend("center", c(paste0(cuts_labs[1:(length(cuts)-3)], "-", cuts_labs[2:(length(cuts)-2)], "%"), "> 40%"), fill=map_col, horiz=TRUE, border=NA, bty="n", 
        title = expression(bold("Percentage of coral species under threat")), 
        cex=1.2)
 
@@ -635,17 +671,17 @@ pleist.summ %>% group_by(status, regionally.extinct) %>% summarise(n=sum(n)) %>%
   mutate(prop=n/sum(n))
 
 
-ggplot(pleist.summ,
-       aes(y = n,axis1 = globally.extinct,
-           axis2 = regionally.extinct,  axis3 = status)) +
+  ggplot(pleist.summ,
+       aes(y = n,axis2 = globally.extinct,
+           axis1 = regionally.extinct,  axis3 = status)) +
   scale_fill_manual(values = u_col[c(2,5)]) +
   geom_flow(stat = "alluvium", lode.guidance = "frontback", aes(fill = status), width=0.1) +
   geom_stratum(width = 0.1) +
   geom_text(stat = "stratum", infer.label = TRUE, reverse = TRUE, angle=90) +
-  scale_x_continuous(breaks = 1:3, labels = c("Globally", "Regionally", "Predicted \nStatus"), expand = expand_scale(mult = 0)) +
+  scale_x_continuous(breaks = 1:3, labels = c("Regionally", "Globally", "Predicted \nStatus"), expand = expand_scale(mult = 0)) +
   scale_y_continuous(expand = expand_scale(mult = 0)) +
   theme_light(base_size = 15) +
-  labs(x="", y="No. of species", fill = "Status")+
+  labs(x="", y="No. of species", fill = "Status predicted by the model")+
   theme(axis.title = element_text(size = 12, face="bold"),
         legend.title = element_text(size = 12, face="bold"),
         legend.text = element_text(family = "Roboto Mono", size = 10),
@@ -655,7 +691,7 @@ ggplot(pleist.summ,
         legend.position = "top",
         legend.direction = "horizontal")
 
-ggsave(here("figs", "Fig_06_pleist_predictions.svg"), w=6, h=6)
+ggsave(here("figs", "Fig_S_pleist_predictions.svg"), w=8, h=8)
 
 ### per genus
 df.ds <- df.corals %>%
@@ -704,10 +740,10 @@ df.comp <- pleist.df %>%
               rename(modern = T), by="genus") %>%
   na.omit()
 
-ggplot(df.comp, aes(x=fossil, y=modern, label=paste0(genus, "(", tot, "/", totm, ")"))) +
+ggplot(df.comp %>% filter(!(fossil == 0 & modern == 0)), aes(x=fossil, y=modern, label=paste0(genus, "(", tot, "/", totm, ")"))) +
   geom_point() +
   geom_text_repel(cex=3.2, vjust=-0.1, hjust=-0.1) +
-  labs(x="Proportion of Plio-Plestocene species threatened",
+  labs(x="Proportion of Plio-Pleistocene species extinct",
        y="Proportion of modern species threatened") +
   # geom_hline(yintercept = 0.305, linetype="dashed") +
   # geom_vline(xintercept = 0.305, linetype="dashed") +
@@ -722,4 +758,4 @@ ggplot(df.comp, aes(x=fossil, y=modern, label=paste0(genus, "(", tot, "/", totm,
         legend.position = "top",
         legend.direction = "horizontal")
 
-ggsave(here("figs", "Fig_S_plio_modern_comp.svg"), w=7, h=7)
+ggsave(here("figs", "Fig_06_plio_modern_comp.svg"), w=7, h=7)

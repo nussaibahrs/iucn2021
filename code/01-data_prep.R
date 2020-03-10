@@ -54,8 +54,6 @@ coral2$genus.x[x] <- coral2$genus.y[x]
 coral2 <- subset(coral2, select= c(-family.y, -validName, -valid, -scientificNameAuthorship.y, -genus.y))
 obis.corals <- coral2
 
-
-
 # download only those in iucn from obis
 iucn.corals <- read.csv(here("data", "iucn_resolved.csv"), stringsAsFactors = FALSE)
 obis.corals <- subset(coral2, scientificName %in% iucn.corals$valid)
@@ -85,7 +83,7 @@ write.csv(obis.corals %>% select(scientificName, decimalLongitude, decimalLatitu
 iucn.corals <- iucn.corals[!iucn.corals$scientificName %in% na.corals,]
 
 #### CoralTraits Database
-traits.corals <- read.csv(here("data", "ctdb_1.1.1_data.csv"), stringsAsFactors = FALSE)
+traits.corals <- read.csv(here("data", "original", "ctdb_1.1.1_data.csv"), stringsAsFactors = FALSE)
 
 #Check names with WoRMS
 namesToMatch <- traits.corals$specie_name %>% unique()
@@ -154,7 +152,7 @@ traits.corals <- read.csv(here("data", "ctdb_resolved.csv"), stringsAsFactors = 
     valid %in% iucn.corals$valid)
 
 #choose only symbiotic corals
-corals.z <- traits.corals %>% filter(value %in% c("zooxanthellate", "both")) %>% 
+corals.z <- traits.corals %>% filter(value %in% c("zooxanthellate")) %>% 
   pull(specie_name) %>% unique()
 length(corals.z)
 
@@ -212,13 +210,15 @@ for(i in 1:length(traits.sp)){
   
 }
 
+# binary form of depth 
+#traits.up$`Depth lower` <- ifelse(traits.up$`Depth lower` <=30, "shallow", "deep")
 head(traits.up)
 
 #### merge
 df.corals <- iucn.corals %>% left_join(traits.up, by=c("valid"="sp")) %>%
   left_join(as.data.frame(great_circle), by=c("valid"="sp"))
 
-df.corals[,c("valid", "redlistCategory", selected_traits, "range")] %>%
+df.corals <- df.corals[,c("valid", "redlistCategory", selected_traits, "range")] %>%
   setNames(c("sp", "iucn", "max_depth", "branching", "corallite", "range")) %T>%
   write.csv(here("data", "traits_iucn.csv"), row.names = FALSE)
 
