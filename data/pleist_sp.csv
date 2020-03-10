@@ -1,0 +1,154 @@
+sp,new,extinct,source,notes,accepted,extinct.final,accepted.name,corallite,source1,shape,source2
+Acropora cervicornis,Acropora cervicornis,extant,pbdb,NA,yes,extant,,1,NMITA,branching_open,ctdb
+Acropora palmata,Acropora palmata,extant,pbdb,NA,yes,extant,,0.8,NMITA,branching_open,NMITA
+Acropora panamensis,Acropora panamensis,extinct,worms,NA,yes,extinct,,1.5,Budd et al. (1994),"branching, encrusting",Budd et al. (1994)
+Acropora prolifera,Acropora prolifera,extant,worms,NA,yes,extant,,1.8,Budd et al. (1994),branching_closed,ctdb
+Acropora saludensis,Acropora saludensis,extinct,worms,NA,yes,extinct,,2.2,Budd et al. (1994),branching,NMITA
+Agaricia grahamae,Agaricia grahamae,NA,pbdb,NA,yes,extant,,2.9,NMITA,platy,NMITA
+Agaricia lamarcki,Agaricia lamarcki,NA,pbdb,NA,yes,extant,,4.5,NMITA,platy,NMITA
+Agaricia undata,Agaricia undata,NA,pbdb,NA,yes,extant,,2.9,NMITA,platy,NMITA
+Agathiphyllia hilli,Agathiphyllia hilli,extinct,pbdb,NA,yes,extinct,,12,Budd et al. (1994),massive,Budd et al. (1994)
+Alveopora tampae,Alveopora tampae,extinct,worms,NA,yes,extinct,,3,Budd et al. (1994),massive,Budd et al. (1994)
+Antiguastrea cellulosa,Antiguastrea cellulosa,extinct,worms,NA,yes,extinct,,6,Budd et al. (1994),massive,Budd et al. (1994)
+Antillia dentata,Antillia dentata,extinct,worms,NA,yes,extinct,,41,Budd et al. (1994),"solitary, freeliving",Budd et al. (1994)
+Antillia gregorii,NA,NA,NA,last discussed in Johnson and Kirby (2006),yes,extinct,,65,Budd et al. (1994),"solitary, freeliving",Budd et al. (1994)
+Antillophyllia sawkinsi,Trachyphyllia sawkinsi,extinct,pbdb,NA,yes,extinct,,45,Budd et al. (1994),"solitary, freeliving",Budd et al. (1994)
+Archohelia limonensis,Archohelia limonensis,extinct,worms,NA,yes,extinct,,,,,
+Astreopora goethalsi,Astreopora goethalsi,extinct,worms,NA,yes,extinct,,2,Budd et al. (1994),branching,Budd et al. (1994)
+Astrocoenia incrustans,Astrocoenia incrustans,extinct,pbdb,NA,yes,extinct,,1.8,Budd et al. (1994),massive,Budd et al. (1994)
+Caulastraea portoricensis,NA,NA,NA,NA,yes,extinct,Caulastraea portoricensis,10,NMITA,branching,NMITA
+Cladocora arbuscula,Cladocora arbuscula,NA,pbdb,NA,yes,extant,,3,Budd et al. (1994),branching_closed,ctdb
+Cladocora johnsoni,Cladocora johnsoni,NA,pbdb,NA,yes,extinct,,< 3,Budd et al. (1994),branching,Budd et al. (1994)
+Colpophyllia amaranthus,Colpophyllia natans,extant,pbdb,unaccepted in worms,yes,extant,Colpophyllia natans,>15,NMITA,massive,NMITA
+Colpophyllia breviserialis,Colpophyllia natans,NA,pbdb,unaccepted in worms,yes,extant,Colpophyllia natans,>15,NMITA,massive,NMITA
+Colpophyllia natans,Colpophyllia natans,NA,pbdb,NA,yes,extant,,>15,NMITA,massive,NMITA
+Dendrogyra cylindricus,NA,NA,NA,"unaccepted in worms,  could be D. cylindrus but original widely used in Caribbean literature",yes,extant,,10,NMITA,massive,NMITA
+Dichocoenia caloosahatcheensis,Dichocoenia caloosahatcheensis,NA,pbdb,NA,yes,extinct,,10,NMITA,massive or platy,NMITA
+Dichocoenia eminens,Dichocoenia eminens,NA,pbdb,NA,yes,extinct,,10,NMITA,massive,NMITA
+Dichocoenia stellaris,Dichocoenia stokesii,NA,pbdb,unaccepted in worms,yes,extant,Dichocoenia stokesii,10,NMITA,massive or platy,NMITA
+Dichocoenia stokesi,Dichocoenia stokesii,extant,pbdb,unaccepted in worms,yes,extant,Dichocoenia stokesii,4.5,Budd et al. (1994),massive,Budd et al. (1994)
+Dichocoenia tuberosa,Dichocoenia tuberosa,NA,pbdb,NA,yes,extinct,,3,Budd et al. (1994),massive,Budd et al. (1994)
+Diploria adentrensis,NA,NA,NA,"only two Google hits,  probably a nomen dubium",no,NA,,5,"NMITA, genus",massive,"NMITA, genus"
+Diploria clivosa,Pseudodiploria clivosa,extant,pbdb,unaccepted in worms,yes,extant,Pseudodiploria clivosa,5,NMITA,massive,ctdb
+Diploria labyrinthiformis,Diploria labyrinthiformis,extant,pbdb,NA,yes,extant,,10,NMITA,massive,ctdb
+Diploria sarasotana,Diploria sarasotana,NA,pbdb,NA,yes,extinct,,10,NMITA,massive,"NMITA, genus"
+Diploria strigosa,Pseudodiploria strigosa,extant,pbdb,unaccepted in worms,yes,extant,Pseudodiploria strigosa,10,NMITA,massive,ctdb
+Diploria zambensis,Diploria zambensis,NA,pbdb,NA,yes,extinct,,10,NMITA,massive,Johnson (2001)
+Eusmilia fastigiata,Eusmilia fastigiata,NA,pbdb,NA,yes,extant,,13,Budd et al. (1994),massive,ctdb
+Favia dominicensis,Favia dominicensis,extinct,pbdb,NA,yes,extinct,,10,NMITA,massive,Budd et al. (1994)
+Favia fragum,Favia fragum,NA,pbdb,NA,yes,extant,,5,NMITA,massive,Budd et al. (1994)
+Favia vokesae,Favia vokesae,NA,pbdb,NA,yes,extinct,,5,NMITA,massive,"NMITA, genus"
+Galaxea excelsa,Galaxea excelsa,extinct,pbdb,NA,yes,extinct,,5.4,Budd et al. (1994),massive,Budd et al. (1994)
+Gardineroseris planulata,Gardineroseris planulata,extant,pbdb,NA,yes,extant,,4.9,NMITA,massive,NMITA
+Goniastrea canalis,Goniastrea canalis,extinct,worms,NA,yes,extinct,,2,Budd et al. (1994),massive,Budd et al. (1994)
+Goniopora calhounensis,Goniopora calhounensis,extinct,pbdb,NA,yes,extinct,,5,Budd et al. (1994),massive,Budd et al. (1994)
+Goniopora hilli,Goniopora hilli,extinct,worms,NA,yes,extinct,,10,NMITA,massive,NMITA
+Goniopora imperatoris,Goniopora imperatoris,extinct,worms,NA,yes,extinct,,10,NMITA,massive,NMITA
+Goniopora panamensis,Goniopora panamensis,extinct,worms,NA,yes,extinct,,3.5,Budd et al. (1994),massive,NMITA
+Hadrophyllia saundersi,Hadrophyllia saundersi,extinct,pbdb,NA,yes,extinct,,>15,NMITA,massive,"NMITA, genus"
+Helioseris cucullata,Leptoseris cucullata,extant,pbdb,NA,yes,extant,,4.6,NMITA,platy,NMITA
+Isophyllastrea rigida,Isophyllia rigida,extant,pbdb,unaccepted in worms,yes,extant,Isophyllia rigida,20,NMITA,massive,NMITA
+Isophyllia sinuosa,Isophyllia sinuosa,extant,pbdb,NA,yes,extant,,25,Budd et al. (1994),massive,Budd et al. (1994)
+Leptoseris anguillensis,Leptoseris anguillensis,extinct,pbdb,NA,yes,extinct,,4.5,Budd et al. (1994),branching,Budd et al. (1994)
+Leptoseris cailleti,Leptoseris cailleti,NA,worms,NA,yes,extant,,2.3,Budd et al. (1994),laminar,ctdb
+Leptoseris gardineri,Leptoseris gardineri,extant,pbdb,NA,yes,extant,,4.7,NMITA,laminar,ctdb
+Leptoseris glabra,Leptoseris glabra,NA,pbdb,NA,yes,extant,,5.2,Budd et al. (1994),laminar,ctdb
+Leptoseris walli,Leptoseris walli,NA,pbdb,NA,yes,extinct,,3,Budd et al. (1994),platy,Budd et al. (1994)
+Madracis asperula,Madracis asperula,extant,pbdb,NA,yes,extant,,3,NMITA,branching_closed,ctdb
+Madracis cf.herricki,Madracis herricki,NA,NA,NA,yes,extinct,Madracis herricki,3,NMITA,branching to nodular,NMITA
+Madracis decactis,Madracis decactis,NA,pbdb,NA,yes,extant,,1.9,NMITA,digitate,ctdb
+Madracis decaseptata,Madracis decaseptata,extinct,pbdb,NA,yes,extinct,,1.7,NMITA,branching,NMITA
+Madracis formosa,Madracis formosa,NA,worms,NA,yes,extant,,1.3,NMITA,columnar,ctdb
+Madracis mirabilis,Madracis mirabilis,NA,pbdb,unaccepted in worms - ignore for now,yes,extant,,1.6,NMITA,branching_closed,ctdb
+Madracis pharensis,Madracis pharensis,extant,pbdb,NA,yes,extant,,< 0.6 ,NMITA,encrusting,NMITA
+Manicina areolata,Manicina areolata,extant,pbdb,NA,yes,extant,,15,NMITA,massive,Budd et al. (1994)
+Manicina geisteri,Manicina geisteri,NA,pbdb,NA,yes,extinct,,>15,NMITA,massive,"NMITA, genus"
+Manicina grandis,Manicina grandis,extinct,worms,NA,yes,extinct,,15,NMITA,massive,Budd et al. (1994)
+Manicina jungi,Manicina jungi,NA,pbdb,NA,yes,extinct,,15,NMITA,massive,"NMITA, genus"
+Manicina mayori,Manicina areolata,extant,pbdb,NA,yes,extant,,> 15,NMITA,massive,Budd et al. (1994)
+Manicina puntagordensis,Manicina puntagordensis,NA,pbdb,NA,yes,extinct,,> 15,NMITA,massive,Budd et al. (1994)
+Meandrina braziliensis,Meandrina brasiliensis,NA,NA,NA,yes,extant,Meandrina brasiliensis,20,NMITA,platy or massive,NMITA
+Meandrina meandrites,Meandrina meandrites,NA,pbdb,NA,yes,extant,,14,NMITA,massive,NMITA
+Montastraea annularis,Orbicella annularis,extant,pbdb,unaccepted in worms,yes,extant,Orbicella annularis,3.5,Budd et al. (1994),massive,Budd et al. (1994)
+Montastraea brevis,Montastraea brevis,NA,pbdb,NA,yes,extinct,Montastraea brevis,3.8,Budd et al. (1994),massive,Budd et al. (1994)
+Montastraea canalis,Montastraea canalis,extinct,worms,NA,yes,extinct,,5.5,Budd et al. (1994),massive,Budd et al. (1994)
+Montastraea cavernosa,Montastraea cavernosa,extant,worms,NA,yes,extant,,7.2,Budd et al. (1994),massive,Budd et al. (1994)
+Montastraea cavernosa,Montastraea cavernosa,extant,worms,NA,yes,extant,,7.2,Budd et al. (1994),massive,Budd et al. (1994)
+Montastraea cylindrica,Montastraea cylindrica,extant,pbdb,treated as valid in Florez et al. (2019),yes,extinct,,5,NMITA,platy or rounded mounds,NMITA
+Montastraea endothecata,Montastraea cavernosa,extinct,pbdb,unaccepted in worms,yes,extant,Montastraea cavernosa,9,NMITA,rounded mounds,NMITA
+Montastraea faveolata,Orbicella faveolata,extant,pbdb,unaccepted in worms,yes,extant,Orbicella faveolata,2.7,NMITA,massive,NMITA
+Montastraea franksi,Orbicella franksi ,extant,pbdb,unaccepted in worms,yes,extant,Orbicella franksi ,3.5,NMITA,massive,NMITA
+Montastraea imperatoris,Montastrea imperatoris,extant,pbdb,NA,yes,extant,,3.5,Budd et al. (1994),massive,Budd et al. (1994)
+Montastraea limbata,Orbicella limbata,extant,pbdb,accepted as Orbicella limbata in Florez et al. (2019),yes,extinct,Orbicella limbata,10,NMITA,massive,NMITA
+Montastraea limbata,Orbicella limbata,extant,pbdb,accepted as Orbicella limbata in Florez et al. (2019),yes,extinct,Orbicella limbata,10,NMITA,massive,NMITA
+Montastraea limbata,Orbicella limbata,extant,pbdb,check repeated entry,yes,extinct,Orbicella limbata,10,NMITA,massive,NMITA
+Montastraea limbata,Orbicella limbata,extant,pbdb,check repeated entry,yes,extinct,Orbicella limbata,10,NMITA,massive,NMITA
+Montastraea tampaensis,Montastrea tampaensis,NA,pbdb,NA,yes,extinct,,5.5,Budd et al. (1994),massive,Budd et al. (1994)
+Montastraea trinitatis,Montastraea trinitatis,NA,pbdb,NA,yes,extinct,Montastraea trinitatis,3.5,Budd et al. (1994),massive,Budd et al. (1994)
+Mussa angulosa,Mussa angulosa,NA,pbdb,NA,yes,extant,,7,NMITA,massive,ctdb
+Mussismilia hartti,Mussismilia hartii,NA,NA,NA,yes,extant,Mussismilia hartii,30,Budd et al. (1994),branching,Budd et al. (1994)
+Mussismilia hispida,Mussismilia hispida,extant,pbdb,NA,yes,extant,,15,Budd et al. (1994),massive,Budd et al. (1994)
+Mycetophyllia aliciae,Mycetophyllia aliciae,NA,pbdb,NA,yes,extant,,20,NMITA,platy or massive,NMITA
+Mycetophyllia bullbrooki,Mycetophyllia bullbrooki,NA,pbdb,NA,yes,extinct,,20,NMITA,platy or massive,NMITA
+Mycetophyllia danaana,Mycetophyllia danaana,extant,pbdb,NA,yes,extant,,20,NMITA,platy,NMITA
+Mycetophyllia ferox,Mycetophyllia ferox,NA,pbdb,NA,yes,extant,,20,NMITA,platy,NMITA
+Mycetophyllia lamarckiana,Mycetophyllia lamarckiana,NA,pbdb,unaccepted in worms  but ignore spelling error for now,yes,extant,,20,NMITA,platy,NMITA
+Mycetophyllia reesi,Mycetophyllia reesi,extant,pbdb,NA,yes,extant,,20,NMITA,platy,NMITA
+Pavona panamensis,Pavona panamensis,extinct,worms,NA,yes,extinct,,4,Budd et al. (1994),massive or encrusting ,Budd et al. (1994)
+Pavona pennyi,Pavona pennyi,NA,pbdb,NA,yes,extinct,,3.8,Budd et al. (1994),massive,Budd et al. (1994)
+Pavona trinitatis,Pavona trinitatis,NA,pbdb,NA,yes,extinct,,3,Budd et al. (1994),platy,Budd et al. (1994)
+Pironastrea anguillensis,Pironastrea anguillensis,extinct,pbdb,NA,yes,extinct,,5.5,Budd et al. (1994),massive,Budd et al. (1994)
+Placocyathus alveolus,Placocyathus alveolus,extinct,worms,NA,yes,extinct,,> 15,"NMITA, genus",massive,"NMITA, genus"
+Placocyathus barretti,Placocyathus barretti,extinct,worms,NA,yes,extinct,,> 15,"NMITA, genus",massive,"NMITA, genus"
+Placocyathus costatus,Placocyathus costatus,extinct,worms,NA,yes,extinct,,> 15,"NMITA, genus",massive,"NMITA, genus"
+Placocyathus trinitatis,Antillocyathus trinitatis,extinct,pbdb,NA,yes,extinct,,> 15,"NMITA, genus",massive,"NMITA, genus"
+Placocyathus variabilis,Placocyathus variabilis,extinct,worms,NA,yes,extinct,,> 15,"NMITA, genus",free living ,Johnson (2001)
+Pocillopora arnoldi,Pocillopora arnoldi,extinct,worms,NA,yes,extinct,,1.2,Budd et al. (1994),branching,Budd et al. (1994)
+Pocillopora baracoaensis,Pocillopora baracoaensis,extinct,worms,NA,yes,extinct,,< 0.8,Budd et al. (1994),branching,Budd et al. (1994)
+Pocillopora crassoramosa,Pocillopora crassoramosa,NA,pbdb,taxon inquirendum in worms,yes,extinct,,1,NMITA,branching,NMITA
+Pocillopora palmata,Pocillopora palmata,extinct,pbdb,unaccepted in worms. Last publication formally describing is Toth et al. (2015). Synonym in worms is Easter Pacific. Consider valid and extinct for now.,yes,extinct,,1,Budd et al. (1994),branching,Budd et al. (1994)
+Pocillopora portoricensis,NA,NA,NA,"only in NMITA,  consider valid and extinct",yes,extinct,,< 1.5,"NMITA, genus",branching,"NMITA, genus"
+Porites anguillensis,Porites anguillensis,extinct,worms,NA,yes,extinct,,2,NMITA,platy,NMITA
+Porites astreoides,Porites astreoides,NA,pbdb,NA,yes,extant,,1.4,NMITA,mound,NMITA
+Porites baracoaensis,Porites baracoaensis,extinct,worms,NA,yes,extinct,,>1.2,NMITA,intermediate branched,NMITA
+Porites branneri,Porites branneri,NA,pbdb,NA,yes,extant,,1.8,NMITA,encrusting,NMITA
+Porites chipolanum,Porites chipolanum,extinct,pbdb,NA,yes,extinct,,1.8,Budd et al. (1994),encrusting,Budd et al. (1994)
+Porites colonensis,Porites colonensis,NA,pbdb,NA,yes,extant,,2,NMITA,platy,NMITA
+Porites convivatoris,Porites convivatoris,NA,pbdb,NA,yes,extinct,,1.4,NMITA,encrusting,NMITA
+Porites divaricata,Porites divaricata,NA,pbdb,NA,yes,extant,,1.6,NMITA,branching_closed,ctdb
+Porites furcata,Porites furcata,NA,pbdb,NA,yes,extant,,1.8,NMITA,intermediate branched,NMITA
+Porites macdonaldi,Porites macdonaldi,extinct,worms,NA,yes,extinct,,1.6,NMITA,platy,NMITA
+Porites porites,Porites porites,NA,pbdb,NA,yes,extant,,2,NMITA,branching_closed,ctdb
+Porites portoricensis,Porites portoricensis,extinct,worms,NA,yes,extinct,,1.8,NMITA,columnar,Florez (2019)
+Porites trinitatis,Porites trinitatis,NA,pbdb,NA,yes,extinct,,1.8,NMITA,platy,NMITA
+Porites waylandi,Porites waylandi,extinct,worms,NA,yes,extinct,,1.6,NMITA,mound,NMITA
+Psammocora trinitatis,Psammocora trinitatis,NA,pbdb,NA,yes,extinct,,3,Budd et al. (1994),massive,Budd et al. (1994)
+Scolymia cubensis,Scolymia cubensis,extant,pbdb,NA,yes,extant,,> 20,NMITA,massive,NMITA
+Scolymia lacera,Scolymia lacera,extant,pbdb,NA,yes,extant,,> 20,NMITA,massive,NMITA
+Siderastrea conferta,Siderastrea conferta,extinct,worms,NA,yes,extinct,,8,Budd et al. (1994),massive,Budd et al. (1994)
+Siderastrea mendenhalli,Siderastrea mendenhalli,extinct,worms,NA,yes,extinct,,10,"NMITA, genus",massive,Johnson (2001)
+Siderastrea pliocenica,Siderastrea pliocenica,extinct,worms,NA,yes,extinct,,5,Budd et al. (1994),massive,Budd et al. (1994)
+Siderastrea radians,Siderastrea radians,extinct,pbdb,NA,yes,extinct,,3.5,NMITA,massive,NMITA
+Siderastrea siderea,Siderastrea siderea,NA,pbdb,NA,yes,extant,,5,NMITA,massive,NMITA
+Siderastrea silecensis,Siderastrea silecensis,NA,pbdb,NA,yes,extinct,,6.5,Budd et al. (1994),massive,Budd et al. (1994)
+Solenastrea bournoni,Solenastrea bournoni,extant,worms,NA,yes,extant,,2.5,NMITA,massive,NMITA
+Solenastrea hyades,Solenastrea hyades,extant,worms,NA,yes,extant,,10,NMITA,massive,NMITA
+Stephanocoenia duncani,Stephanocoenia duncani,NA,pbdb,NA,yes,extinct,,2,NMITA,massive,NMITA
+Stephanocoenia intersepta,Stephanocoenia intersepta,extant,worms,NA,yes,extant,,> 2,NMITA,massive,NMITA
+Stephanocoenia spongiformis,Stephanocoenia spongiformis,NA,pbdb,"unaccepted in worms,  accepted as valid in Florez et al. (2019)",yes,extinct,,2,NMITA,massive,NMITA
+Stylophora affinis,Stylophora affinis,extinct,worms,NA,yes,extinct,,1.2,Florez (2019b),branching,NMITA
+Stylophora affinis,Stylophora affinis,extinct,worms,NA,yes,extinct,,1,NMITA,branching,NMITA
+Stylophora canalis,Stylophora canalis,extinct,worms,NA,yes,extinct,,> 1,Budd et al. (1994),branching,Budd et al. (1994)
+Stylophora granulata,Stylophora granulata,extinct,worms,NA,yes,extinct,,1,NMITA,branching,NMITA
+Stylophora imperatoris,Stylophora imperatoris,extinct,worms,NA,yes,extinct,,> 1,Budd et al. (1994),branching,Budd et al. (1994)
+Stylophora minor,Stylophora minor,extinct,worms,NA,yes,extinct,,0.8,Florez (2019b),branching,NMITA
+Stylophora monticulosa,Stylophora monticulosa,extinct,pbdb,NA,yes,extinct,,> 1,Budd et al. (1994),branching,Budd et al. (1994)
+Stylophora panamensis,Stylophora affinis,NA,pbdb,unaccepted in worms,yes,extinct,Stylophora affinis,< 1.5,"NMITA, genus",branching,Johnson (2001)
+Stylophora undata,Stylophora undata,extinct,pbdb,NA,yes,extinct,,> 1,Budd et al. (1994),massive or encrusting ,Budd et al. (1994)
+Thysanus corbicula,Thysanus corbicula,extinct,pbdb,NA,yes,extinct,,15,NMITA,massive,"NMITA, genus"
+Thysanus excentricus,Thysanus excentricus,extinct,worms,NA,yes,extinct,,15,NMITA,massive,"NMITA, genus"
+Thysanus navicula,Thysanus navicula,extinct,pbdb,NA,yes,extinct,,15,NMITA,massive,"NMITA, genus"
+Trachyphyllia bilobata,Trachyphyllia bilobata,extant,pbdb,NA,yes,extant,,> 15,"NMITA, genus",massive,"NMITA, genus"
+Undaria agaricites,Agaricia agaricites,extant,pbdb,unaccepted in worms,yes,extant,Agaricia agaricites,3.1,NMITA,platy,Johnson (2001)
+Undaria crassa,Agaricia agaricites,extant,pbdb,NA,yes,extant,Agaricia agaricites,3,NMITA,platy,NMITA
+Undaria pusilla,Agaricia tenuifolia,NA,NA,a variant of A. tenuifolia,yes,extant,Agaricia tenuifolia,1.9,NMITA,platy or encrusting masses,NMITA
