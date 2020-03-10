@@ -248,7 +248,6 @@ p_vi <- aml_varimp %>%
         axis.text.x = element_text(family = "Roboto Mono", size = 10),
         panel.grid = element_blank()) 
 
-#ggsave (here("figs", "Fig_02_var_imp.svg"), p_vi, h=4, w=8)
 
 # *  Partial dependence profile ---------------------------------------------------
 
@@ -300,7 +299,7 @@ pdp_plot <- function (pdp, olddata=NULL, levels=NULL, unscale=TRUE, col="darkred
 
 # plot pdp
 p1 <- pdp_plot(pdp_corallite, olddata=df$corallite_ori, col = u_col[2]) + labs(x="Corallite Diameter (mm)") + 
-  coord_cartesian(xlim=c(0, 25), ylim=c(0.3,0.6)) 
+  coord_cartesian(xlim=c(0, 25), ylim=c(0.2,0.6)) 
 
 p2 <- pdp_plot(pdp_branching, unscale = FALSE, levels=c("NB", "LB", "MB", "HB")) + scale_fill_manual(values=u_col[2:5]) + 
   labs(x="Degree of branching")  
@@ -435,6 +434,8 @@ table(dd_occ$region, dd_occ$status) %>% prop.table(1)
 table(ds_occ$region, ds_occ$status) %>% prop.table(1)
 table(all_occ$region, all_occ$status) %>% prop.table(1)
 
+table(all_occ$status) %>% prop.table()
+table(ds_occ$status) %>% prop.table()
 
 ##### plot
 txt <- 1.2
