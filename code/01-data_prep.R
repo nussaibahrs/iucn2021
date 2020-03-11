@@ -22,6 +22,8 @@ write.csv(iucn, here("data", "iucn_resolved.csv"), row.names = FALSE)
 #Get OBIS Data
 #obis.corals<- occurrence("Scleractinia")
 load(here("data", "original", "2019-11-13_obis_scleractinia.RData"))
+
+#clean data according to Kiessling
 # Remove unknown coordinates # they all have coordinates
 coral <- subset(obis.corals, is.na(decimalLatitude)==F)
 
@@ -214,13 +216,50 @@ for(i in 1:length(traits.sp)){
 #traits.up$`Depth lower` <- ifelse(traits.up$`Depth lower` <=30, "shallow", "deep")
 head(traits.up)
 
-#### merge
-df.corals <- iucn.corals %>% left_join(traits.up, by=c("valid"="sp")) %>%
-  left_join(as.data.frame(great_circle), by=c("valid"="sp"))
+#checking for duplicates
+single_entries <- iucn.corals %>% distinct(scientificName,valid, redlistCategory)
 
-df.corals <- df.corals[,c("valid", "redlistCategory", selected_traits, "range")] %>%
+dupl <- single_entries %>%
+  group_by(valid) %>% summarise(n=length(unique(redlistCategory))) %>%
+  filter(n > 1) %>% pull(valid)
+
+#conflicting categories
+dupl_conflict <- single_entries %>% filter(valid %in% dupl_sp & redlistCategory != "Data Deficient") %>% 
+  group_by(valid) %>% summarise(n=length(unique(redlistCategory))) %>%
+  filter(n > 1) %>% pull(valid)
+
+write.csv(single_entries %>% filter(valid %in% dupl_dd) %>% arrange(valid), here("data", "sp_iucn_probs.csv"), row.names = FALSE)
+
+#remove duplicates
+dupl_resolved <- dupl[!dupl %in% dupl_conflict]
+
+dupl_stat <-c()
+
+for (i in 1:length(dupl_resolved)){
+  dupl_stat[i] <- single_entries %>% filter(valid == dupl_resolved[i] & redlistCategory != "Data Deficient") %>%
+    distinct(redlistCategory) %>% pull()
+}
+
+dupl_resolved <- cbind.data.frame(valid=dupl_resolved, redlistCategory=dupl_stat, stringsAsFactors = FALSE)
+
+iucn.corals <- iucn.corals %>%
+  select(valid, redlistCategory) %>%
+#remove all duplicates
+ filter(!valid %in% dupl) %>%
+  #add updated status of duplicates
+  bind_rows(dupl_resolved)
+
+#### merge
+df.corals <- traits.up %>% left_join(iucn.corals, by=c("sp"="valid")) %>%
+  filter(!is.na(redlistCategory)) %>%
+  left_join(as.data.frame(great_circle), by=c("sp"="sp"))
+
+df.corals <- df.corals[,c("sp", "redlistCategory", selected_traits, "range")] %>%
   setNames(c("sp", "iucn", "max_depth", "branching", "corallite", "range")) %T>%
   write.csv(here("data", "traits_iucn.csv"), row.names = FALSE)
 
-###### 
-
+###### occurrence map
+obis.corals <- read.csv(here("data", "2019-11-05_obis_scleractinia.csv"),
+                        stringsAsFactors = FALSE)
+occ.corals <- df.corals %>% left_join(obis.corals, by=c("sp" = "scientificName")) %>%
+  distinct(decimalLongitude, decimalLatitude)
