@@ -23,62 +23,6 @@ iucn$valid <- valid
 iucn[which(is.na(valid)),]$valid <- iucn[which(is.na(valid)),]$scientificName #NA generated one keep original sci. name
 write.csv(iucn, here("data", "iucn_resolved.csv"), row.names = FALSE)
 
-#Get OBIS Data
-#obis.corals<- occurrence("Scleractinia")
-load(here("data", "original", "2019-11-13_obis_scleractinia.RData"))
-
-# depth < 150
-# obis.corals <- obis.corals %>% filter(depth <=150)
-
-# check occurrences falling on land 
-w <- chronosphere::fetch("NaturalEarth", "land")[1,] #continents only 
-dat <- obis.corals %>% mutate(row_n = 1:nrow(.))
-coordinates(dat) <- ~ decimalLongitude + decimalLatitude
-proj4string(dat) <- proj4string(w)
-
-land_points <- over(w, dat)
-
-obis.corals <- obis.corals[-as.numeric(na.omit(land_points$row_n)),]
-
-#clean data according to Kiessling
-# Remove unknown coordinates # they all have coordinates
-coral <- subset(obis.corals, is.na(decimalLatitude)==F)
-
-# remove records not identified to species level
-coral <- subset(coral, is.na(species)==F)
-
-# delete extinct species
-extinct <- c("Sphenotrochus intermedius")
-coral <- subset(coral, scientificName%in%extinct==F)
-
-# Get valid species names from OBIS to update coral species list
-species <- subset(coral, select=c(family, scientificName, scientificNameAuthorship))
-species <- unique(species)
-
-val.sp <- readxl::read_excel(here("data", "coral_species_new.xlsx"))
-coral2 <- merge(coral, val.sp, by="scientificName")
-
-# remove nomina dubia
-x <- which(coral2$valid=="dubium")
-coral2 <- coral2[-x,]
-
-# correct species names (and other information)
-x <- which(!is.na(coral2$validName))
-
-coral2$scientificName[x] <- coral2$validName[x]
-coral2$family.x[x] <- coral2$family.y[x]
-coral2$genus.x[x] <- coral2$genus.y[x]
-
-# remove superfluent columns
-coral2 <- subset(coral2, select= c(-family.y, -validName, -valid, -scientificNameAuthorship.y, -genus.y))
-
-# download only those in iucn from obis
-iucn.corals <- read.csv(here("data", "iucn_resolved.csv"), stringsAsFactors = FALSE)
-obis.corals <- subset(coral2, scientificName %in% iucn.corals$valid)
-
-
-write.csv(obis.corals %>% dplyr::select(scientificName, decimalLongitude, decimalLatitude, depth, symbio), here("data", "2019-11-05_obis_scleractinia.csv"), row.names = FALSE)
-
 #### CoralTraits Database
 traits.corals <- read.csv(here("data", "original", "ctdb_1.1.1_data.csv"), stringsAsFactors = FALSE)
 
