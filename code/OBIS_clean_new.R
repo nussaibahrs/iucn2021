@@ -221,8 +221,9 @@ x <- which(coord %in% rem.oc)
 if (length(x) > 0) oc <- oc[-x,]
 
 # download only those in iucn from obis
-iucn.corals <- read.csv("data/iucn_resolved.csv", stringsAsFactors = FALSE)
-obis.corals <- subset(oc, scientificName %in% iucn.corals$valid)
+iucn.cnidaria <- read.csv("data/iucn_resolved.csv", stringsAsFactors = FALSE)
+iucn.cnidaria$valid <- sub(" \\(.*\\)", "", iucn.cnidaria$valid)
+obis.corals <- subset(oc, scientificName %in% iucn.cnidaria$valid)
 
 length(unique(obis.corals$scientificName))
 
