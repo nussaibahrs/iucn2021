@@ -86,11 +86,45 @@ traits.corals <- read.csv(here("data", "original", "ctdb_1.1.1_data.csv"), strin
 namesToMatch <- traits.corals$specie_name %>% unique()
 length(namesToMatch)
 
-valid <- match_taxa(namesToMatch, chunk = 10, verbose = FALSE)
+n <- 20 #doesn't work with a certain number of names e.g. > 30
+chunks <- c(seq(0,length(namesToMatch) - length(namesToMatch)%%n, n), length(namesToMatch))
 
-traits.corals$valid <- plyr::mapvalues(traits.corals$specie_name, from=namesToMatch, to=valid)
+valid <- list()
 
-write.csv(traits.corals, here("data", "ctdb_resolved.csv"), row.names =FALSE)
+for (i in 1:(length(chunks)-1)){
+  temp <- namesToMatch[(chunks[i]+1):chunks[i+1]]
+  tx <- worrms::wm_records_names(name=temp)
+  
+  for (t in 1:length(tx)){
+    if(nrow(tx[[t]]) > 0) tx[[t]] <- tx[[t]][,c("scientificname", "valid_name")] else tx[[t]]<- cbind.data.frame(
+      scientificname = temp[t],valid_name=NA)
+    
+    }
+  valid <- append(valid, tx)
+}
+
+valid <- do.call(rbind.data.frame, valid)
+
+#check for NAs in valid names
+na.tx <- as.data.frame(valid[is.na(valid$valid_name),])
+
+na.tx$manual <- match_taxa(na.tx$scientificname, verbose=FALSE, chunk=20)
+write.csv(na.tx, here("data", "ctdb_na.csv"), row.names = FALSE)
+
+# after manual check
+na.tx <- read.csv(here("data", "ctdb_na.csv"), stringsAsFactors = FALSE, sep=";") %>% 
+  filter(!is.na(manual))
+na.tx$manual <- sub("\\(.*\\) ", "", na.tx$manual)
+na.tx$valid_name <- na.tx$manual
+
+
+valid <- rbind(valid[!is.na(valid$valid_name),],
+      na.tx[,c(1,2)])
+
+traits.corals$valid <- plyr::mapvalues(traits.corals$specie_name, from=valid$scientificname, to=valid$valid_name)
+
+
+write.csv(traits.corals %>% filter(!is.na(valid)), here("data", "ctdb_resolved.csv"), row.names =FALSE)
 
 #### START HERE FOR MERGING ####
 
