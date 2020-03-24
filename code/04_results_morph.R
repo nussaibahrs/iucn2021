@@ -118,15 +118,19 @@ for (i in 1:n){
   
 }
 
-auc.df <- auc.df %>% arrange(desc(AUC.test))
-auc.df
-win <- auc.df$n[1]
+auc.df <- auc.df %>% filter(cutoff > 0.32) %>%
+  group_by(fname) %>% 
+  filter(AUC.test == max(AUC.test)) %>%
+  arrange(desc(AUC.test)) 
+auc.df[1:10,]
+w <- 2
+win <- auc.df$n[w]
 aml_leader <- h2o.loadModel(here("output", folder_name, leaderboard$fname[win]))
 
 #### TEXT FOR PAPER
 paste0("Out of the ", length(unique(leaderboard$fname)), " models trained by the AutoML, the optimal model was a ", aml_leader@algorithm, 
-       " with AUC of ", round(auc.df$AUC.train[win],2),  " on the training dataset and ", round(auc.df$AUC.test[win],2), " on the test dataset and", 
-       " an average classification probability threshold (decision threshold) of ", auc.df$cutoff[win])
+       " with AUC of ", round(auc.df$AUC.train[w],2),  " on the training dataset and ", round(auc.df$AUC.test[w],2), " on the test dataset and", 
+       " an average classification probability threshold (decision threshold) of ", auc.df$cutoff[w])
 
 # * Confusion Matrix ------------------------------------------------------
 res.train <- h2o.predict(aml_leader , train)
@@ -304,7 +308,7 @@ p1 <- pdp_plot(pdp_corallite, olddata=df$corallite_ori, col = u_col[2]) + labs(x
 p2 <- pdp_plot(pdp_branching, unscale = FALSE, levels=c("NB", "LB", "MB", "HB")) + scale_fill_manual(values=u_col[2:5]) + 
   labs(x="Degree of branching")  
 
-svg(here("figs", "Fig_S_model_metrics_morph.svg"), w=10, h=4)
+svg(here("figs", "Fig_S_model_metrics_morph.svg"), w=12, h=4)
 p_vi + p1 + p2  + plot_annotation(tag_levels = "A") + plot_layout(ncol=3)
 dev.off()
 
@@ -436,6 +440,7 @@ table(all_occ$region, all_occ$status) %>% prop.table(1)
 
 table(all_occ$status) %>% prop.table()
 table(ds_occ$status) %>% prop.table()
+
 
 # Plio-Pleistocene --------------------------------------------------------
 

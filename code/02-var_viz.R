@@ -30,14 +30,14 @@ p0 <- df.corals %>% group_by(iucn) %>%
   mutate(n = n/sum(n) * 100) %>%
   ggplot() +
   geom_bar(aes(x=iucn, y=n, fill=iucn), stat="identity") +
-  coord_cartesian(expand=FALSE, ylim=c(0,40)) +
+  coord_cartesian(expand=FALSE, ylim=c(0,48)) +
   labs(x="IUCN Red List Category", y="Percentage (%)") +
   scale_fill_manual(values=c(u_col, "black"), guide=FALSE) +
   theme(axis.title = element_text(face="bold"),
         panel.grid = element_blank()) +
   geom_vline(xintercept=c(1.5, 3.5), linetype="dashed")
 
-p0 <- p0 + annotate("text", x=c(1,2.5, 5), y=38, label=c("Data-deficient", "Non-threatened", "Threatened"), fontface=2)
+p0 <- p0 + annotate("text", x=c(1,2.5, 5), y=46, label=c("Data-deficient", "Non-threatened", "Threatened"), fontface=2)
 ggsave(here("figs", "Fig_SI_species_per_category.svg"), p0, w=8, h=8)
 
 #CR To EN

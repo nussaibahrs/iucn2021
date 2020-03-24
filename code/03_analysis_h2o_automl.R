@@ -13,10 +13,10 @@ library(h2o)
 # Data  -------------------------------------------------------------------
 
 # classification data
-df.corals <- read.csv(here("data", "traits_iucn.csv"), stringsAsFactors = FALSE) %>% 
-  mutate(
-    #max_depth = ifelse(max_depth <=30, "shallow", "deep") %>% as.factor(), 
-                            range = ifelse(range > 0, range, NA))
+df.corals <- read.csv(here("data", "traits_iucn.csv"), stringsAsFactors = FALSE)# %>% 
+#   mutate(
+#     #max_depth = ifelse(max_depth <=30, "shallow", "deep") %>% as.factor(), 
+#                             range = ifelse(range > 0, range, NA))
 df.corals <- df.corals %>% 
   #standardise numeric variables between 0 and 1
   mutate_if(is.numeric, function(x){(x-min(x, na.rm = TRUE))/(max(x, na.rm = TRUE)-min(x, na.rm = TRUE))})
@@ -169,9 +169,9 @@ opt_par_final <- full_join(opt_train, opt_test)%>%
   group_by(fname) %>%
   mutate(cutoff = (cutoff.test+ cutoff.train)/2) %>%
   arrange(desc(AUC.test), desc(AUC.train))  %T>%
-  write.csv(here("output", paste0("Table_S_maximised_threshold_model_binary_norm2_", hours, "h.csv")), row.names = FALSE) 
+  write.csv(here("output", paste0("Table_S_maximised_threshold_model_binary_norm_", hours, "h.csv")), row.names = FALSE) 
 
 
 # Terminate h2o session ---------------------------------------------------
 h2o.shutdown(prompt=FALSE)
-    
+      

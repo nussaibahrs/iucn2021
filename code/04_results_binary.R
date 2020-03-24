@@ -133,8 +133,9 @@ auc.df <- auc.df %>% filter(cutoff > 0.32) %>%
   filter(AUC.test == max(AUC.test)) %>%
   arrange(desc(AUC.test)) 
 
+auc.df <- auc.df[duplicated(auc.df$fname)==FALSE,] #remove duplicates
 write.csv(auc.df[1:10,], here("output", "Table_S_model_performance_binary.csv"), row.names=FALSE)
-auc.df
+
 w <- 1
 win <- auc.df$n[w]
 aml_leader <- h2o.loadModel(here("output", folder_name, leaderboard$fname[win]))
@@ -188,28 +189,28 @@ p1 <- reshape2::melt(mod, id.vars="cutoff") %>%
 
 ggsave(here("figs", "Fig_S_final_model.svg"), p1, w=5, h=4)
 
-# #if stacked
-# meta <- h2o.getModel(aml_leader@model$metalearner$name)
-# coef <- sort(meta@model$coefficients, decreasing = TRUE)
-# names(coef) <- sub("\\_.*", "", names(coef))
-# 
-# p2 <- as.data.frame(coef) %>%
-#   rownames_to_column("algorithm") %>%
-#   filter(coef > 0) %>%
-#   arrange(desc(coef)) %>%
-#   mutate(algorithm=ifelse(algorithm=="DeepLearning", "Neural Network", algorithm)) %>%
-#   ggplot(aes(y=coef, x=reorder(algorithm, -coef))) +
-#   geom_bar(stat="identity", width = 0.4, fill = u_col[5]) +
-#   scale_y_continuous(expand=expand_scale(mult = c(0, .1))) +
-#   labs(x="Base Models", y="Coefficients") +
-#   theme_light(base_size = 15) +
-#   theme(axis.title = element_text(size = 12, face="bold"),
-#         axis.text.x = element_text(family = "Roboto Mono", size = 10),
-#         panel.grid = element_blank()) 
+#if stacked
+meta <- h2o.getModel(aml_leader@model$metalearner$name)
+coef <- sort(meta@model$coefficients, decreasing = TRUE)
+names(coef) <- sub("\\_.*", "", names(coef))
 
-# svg(here("figs", "Fig_S_final_model.svg"), w=5, h=8)
-# p2 + p1 + plot_layout(ncol=1) + plot_annotation(tag_levels = "A")
-# dev.off()
+p2 <- as.data.frame(coef) %>%
+  rownames_to_column("algorithm") %>%
+  filter(coef > 0) %>%
+  arrange(desc(coef)) %>%
+  mutate(algorithm=ifelse(algorithm=="DeepLearning", "Neural Network", algorithm)) %>%
+  ggplot(aes(y=coef, x=reorder(algorithm, -coef))) +
+  geom_bar(stat="identity", width = 0.4, fill = u_col[5]) +
+  scale_y_continuous(expand=expand_scale(mult = c(0, .1))) +
+  labs(x="Base Models", y="Coefficients") +
+  theme_light(base_size = 15) +
+  theme(axis.title = element_text(size = 12, face="bold"),
+        axis.text.x = element_text(family = "Roboto Mono", size = 10),
+        panel.grid = element_blank())
+
+svg(here("figs", "Fig_S_final_model.svg"), w=5, h=8)
+p2 + p1 + plot_layout(ncol=1) + plot_annotation(tag_levels = "A")
+dev.off()
 
 #### TEXT FOR PAPER
 paste0("Out of the ", length(unique(leaderboard$fname)), " models trained by the AutoML, the optimal model was a ", aml_leader@algorithm, 
@@ -442,12 +443,12 @@ dd$status <- ifelse(res < leaderboard$cutoff[win], "NT", "T")
 
 #number of missing values for each species
 dd$na_count <- apply(dd[,x], 1, function(x) sum(is.na(x)))
-dd[dd$na_count >2,]$status <- "DD"
+# dd[dd$na_count >2,]$status <- "DD"
 table(dd$status)
 
 table(df$iucn) %>% prop.table()
-table(dd$status)[-1] %>% prop.table()
-table(c(df$iucn, dd$status))[-1] %>% prop.table()
+table(dd$status) %>% prop.table()
+table(c(df$iucn, dd$status)) %>% prop.table()
 
 #get genus for each species
 dd$genus <- gsub( " .*$", "", dd$sp)
@@ -503,6 +504,9 @@ dev.off()
 # * Map of DD distribution risk -------------------------------------------
 gr <- hexagrid(16, sp=TRUE) #2.5 degrees
 world <- rworldmap::getMap()
+world <- cleangeo::clgeo_Clean(world)
+world <- aggregate(world, dissolve=TRUE)
+
 cuts <- c(seq(0.0, 0.5, 0.1), 1)
 map_col <- colorRampPalette(u_col[c(2,4,5)])(length(cuts)-1)
 
@@ -554,6 +558,32 @@ all_occ <- rbind(ds_occ, dd_occ)
 table(dd_occ$region, dd_occ$status) %>% prop.table(1)
 table(ds_occ$region, ds_occ$status) %>% prop.table(1)
 table(all_occ$region, all_occ$status) %>% prop.table(1)
+
+# calculating proportions per grid
+dd_occ <- read.csv(here("data", "2019-11-05_obis_scleractinia.csv"), stringsAsFactors = FALSE) %>%
+  filter(!between(decimalLatitude, 39, 45) & !between(decimalLongitude, -38, 30)) %>% #remove mediterranean ones
+  filter(scientificName %in% dd$sp) %>% #select only occurrences for dd species
+  distinct(scientificName, decimalLatitude, decimalLongitude) %>%
+  left_join(dd %>% dplyr::select(sp, status), by=c("scientificName" = "sp"))
+
+dd_occ$cell <- locate(gr, dd_occ[, c(3,2)])
+
+ds_occ <- read.csv(here("data", "2019-11-05_obis_scleractinia.csv"), stringsAsFactors = FALSE) %>%
+  filter(!between(decimalLatitude, 39, 45) & !between(decimalLongitude, -38, 30)) %>% #remove mediterranean ones
+  filter(scientificName %in% df$sp) %>% #select data sufficient species only
+  distinct(scientificName, decimalLatitude, decimalLongitude) %>%
+  left_join(df %>% dplyr::select(sp, iucn) %>% mutate(status = iucn) %>% dplyr::select(-iucn), by=c("scientificName" = "sp"))
+
+ds_occ$cell <- locate(gr, ds_occ[, c(3,2)])
+
+all_occ <- rbind(ds_occ, dd_occ)
+
+all_occ$cell <- locate(gr, all_occ[, c(3,2)])
+
+
+me_dd <- tapply(INDEX=dd_occ$cell, X=dd_occ$status, function (x) length(x[x == "T"])/length(x[x=="NT"| x == "T"]))
+me_ds <- tapply(INDEX=ds_occ$cell, X=ds_occ$status, function (x) length(x[x == "T"])/length(x[x=="NT"| x == "T"]))
+me <- tapply(INDEX=all_occ$cell, X=all_occ$status, function (x) length(x[x == "T"])/length(x[x=="NT"| x == "T"]))
 
 ##### plot
 txt <- 1.2
@@ -671,7 +701,7 @@ pleist.summ %>% group_by(status, regionally.extinct) %>% summarise(n=sum(n)) %>%
   mutate(prop=n/sum(n))
 
 
-  ggplot(pleist.summ,
+ggplot(pleist.summ,
        aes(y = n,axis2 = globally.extinct,
            axis1 = regionally.extinct,  axis3 = status)) +
   scale_fill_manual(values = u_col[c(2,5)]) +

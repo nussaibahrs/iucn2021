@@ -2,6 +2,10 @@
 library(here)
 library(tidyverse)
 library(robis)
+library(rworldmap)
+library(rgeos)
+library(sp)
+library(rgdal)
 
 source(here("code", "functions.R"))
 
@@ -22,6 +26,19 @@ write.csv(iucn, here("data", "iucn_resolved.csv"), row.names = FALSE)
 #Get OBIS Data
 #obis.corals<- occurrence("Scleractinia")
 load(here("data", "original", "2019-11-13_obis_scleractinia.RData"))
+
+# depth < 150
+# obis.corals <- obis.corals %>% filter(depth <=150)
+
+# check occurrences falling on land 
+w <- chronosphere::fetch("NaturalEarth", "land")[1,] #continents only 
+dat <- obis.corals %>% mutate(row_n = 1:nrow(.))
+coordinates(dat) <- ~ decimalLongitude + decimalLatitude
+proj4string(dat) <- proj4string(w)
+
+land_points <- over(w, dat)
+
+obis.corals <- obis.corals[-as.numeric(na.omit(land_points$row_n)),]
 
 #clean data according to Kiessling
 # Remove unknown coordinates # they all have coordinates
@@ -54,35 +71,13 @@ coral2$genus.x[x] <- coral2$genus.y[x]
 
 # remove superfluent columns
 coral2 <- subset(coral2, select= c(-family.y, -validName, -valid, -scientificNameAuthorship.y, -genus.y))
-obis.corals <- coral2
 
 # download only those in iucn from obis
 iucn.corals <- read.csv(here("data", "iucn_resolved.csv"), stringsAsFactors = FALSE)
 obis.corals <- subset(coral2, scientificName %in% iucn.corals$valid)
 
-# obis.corals <- data.frame()
-# na.corals <- c()
-# 
-# for (i in 1:nrow(iucn.corals)){
-#   cat("\r", i, "out of", nrow(iucn.corals))
-#   temp <- iucn.corals$valid[i]
-#   
-#   #download taxa occurrence from obis
-#   temp.occ <- occurrence(temp, verbose=FALSE) 
-#   
-#   if(length(temp.occ) > 0){
-#     obis.corals <- rbind(obis.corals, temp.occ%>%
-#                            select(scientificName, decimalLatitude, decimalLongitude))
-#   } else {
-#     na.corals[i] <- temp
-#   }
-# }
-# 
-# na.corals <- na.corals[!is.na(na.corals)]
-# na.corals #not in the obis database
 
-write.csv(obis.corals %>% select(scientificName, decimalLongitude, decimalLatitude), here("data", "2019-11-05_obis_scleractinia.csv"), row.names = FALSE)
-iucn.corals <- iucn.corals[!iucn.corals$scientificName %in% na.corals,]
+write.csv(obis.corals %>% dplyr::select(scientificName, decimalLongitude, decimalLatitude, depth, symbio), here("data", "2019-11-05_obis_scleractinia.csv"), row.names = FALSE)
 
 #### CoralTraits Database
 traits.corals <- read.csv(here("data", "original", "ctdb_1.1.1_data.csv"), stringsAsFactors = FALSE)
@@ -104,16 +99,11 @@ library(fields)
 library(sp)
 library(here)
 library(tidyverse)
+library(magrittr)
 
 obis.corals <- read.csv(here("data", "2019-11-05_obis_scleractinia.csv"),
-                        stringsAsFactors = FALSE)
+                        stringsAsFactors = FALSE) 
 
-
-coordinates(obis.corals) <- ~ decimalLongitude + decimalLatitude
-proj4string(obis.corals) <- CRS("+proj=longlat +datum=WGS84")
-
-#transform to robinson with units kilometers
-#obis.corals <- spTransform(obis.corals, CRS("+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=km +no_defs"))
 
 scle.sp <- unique(obis.corals$scientificName)
 length(scle.sp)
@@ -124,7 +114,7 @@ for (i in 1:length(scle.sp)){
   temp <- obis.corals[obis.corals$scientificName == scle.sp[i],] 
   
   #returns the maximum great circle distance for species | mean radius of earth is 6371 km 
-  great_circle[i] <- max(fields::rdist.earth(unique(coordinates(temp)), 
+  great_circle[i] <- max(fields::rdist.earth(unique(temp[,-1]), 
                                      miles=FALSE)) 
 }
 
@@ -156,16 +146,16 @@ traits.corals <- read.csv(here("data", "ctdb_resolved.csv"), stringsAsFactors = 
 #choose only symbiotic corals
 corals.z <- traits.corals %>% filter(value %in% c("zooxanthellate")) %>% 
   pull(specie_name) %>% unique()
+
 length(corals.z)
 
 traits.corals <- traits.corals[traits.corals$specie_name %in% corals.z,]
 head(traits.corals)
 
 ### growth forms
-library(magrittr)
-traits.corals %>% filter(trait_name == "Growth form typical") %>%
-  group_by(value) %>% tally() %>%
-  arrange(n) #%T>% write.csv(here("data", "growth_forms.csv"), row.names = FALSE)
+# traits.corals %>% filter(trait_name == "Growth form typical") %>%
+#   group_by(value) %>% tally() %>%
+#   arrange(n) #%T>% write.csv(here("data", "growth_forms.csv"), row.names = FALSE)
 
 growth <- read.csv(here("data", "growth_forms.csv"), stringsAsFactors = FALSE)
 
@@ -223,43 +213,47 @@ dupl <- single_entries %>%
   group_by(valid) %>% summarise(n=length(unique(redlistCategory))) %>%
   filter(n > 1) %>% pull(valid)
 
+# resolving for synonynmisation duplication - 
+# assign the lowest threat level and ditch all others
 #conflicting categories
-dupl_conflict <- single_entries %>% filter(valid %in% dupl_sp & redlistCategory != "Data Deficient") %>% 
-  group_by(valid) %>% summarise(n=length(unique(redlistCategory))) %>%
-  filter(n > 1) %>% pull(valid)
+iucn_order <- unique(iucn.corals$redlistCategory)[c(2,1,4,3,5,6)]
 
-write.csv(single_entries %>% filter(valid %in% dupl_dd) %>% arrange(valid), here("data", "sp_iucn_probs.csv"), row.names = FALSE)
-
-#remove duplicates
-dupl_resolved <- dupl[!dupl %in% dupl_conflict]
-
-dupl_stat <-c()
-
-for (i in 1:length(dupl_resolved)){
-  dupl_stat[i] <- single_entries %>% filter(valid == dupl_resolved[i] & redlistCategory != "Data Deficient") %>%
-    distinct(redlistCategory) %>% pull()
+for (i in 1:length(dupl)){
+  temp_status <- single_entries %>% filter(valid == dupl[i] & redlistCategory != "Data Deficient") %>% 
+    distinct(redlistCategory) %>% pull(redlistCategory)
+  
+  if (length(temp_status) > 1) {
+    temp_sp <- single_entries %>% filter(valid == dupl[i])
+    
+    #check threat level
+    temp_thr <- temp_sp %>% group_by(scientificName) %>% mutate(n = which(iucn_order == redlistCategory),
+                                                                valid_n = ifelse(scientificName == valid, 1, 0))
+    
+    single_entries[single_entries$valid == dupl[i],]$redlistCategory <- iucn_order[min(temp_thr$n)]
+  } else {
+    single_entries[single_entries$valid == dupl[i],]$redlistCategory <- temp_status
+  }
 }
-
-dupl_resolved <- cbind.data.frame(valid=dupl_resolved, redlistCategory=dupl_stat, stringsAsFactors = FALSE)
 
 iucn.corals <- iucn.corals %>%
   select(valid, redlistCategory) %>%
 #remove all duplicates
  filter(!valid %in% dupl) %>%
   #add updated status of duplicates
-  bind_rows(dupl_resolved)
+  bind_rows(single_entries %>% select(-scientificName)) %>%
+  distinct()
 
 #### merge
 df.corals <- traits.up %>% left_join(iucn.corals, by=c("sp"="valid")) %>%
   filter(!is.na(redlistCategory)) %>%
-  left_join(as.data.frame(great_circle), by=c("sp"="sp"))
+  left_join(as.data.frame(great_circle, stringAsFactors = FALSE), by=c("sp"="sp"))
 
+#check for NAs in traits
+na.count <- apply(df.corals[-c(1,5)],1, function(x) {sum(is.na(x))})
+df.corals <- df.corals[-which(na.count > 2),]
+
+#save data
 df.corals <- df.corals[,c("sp", "redlistCategory", selected_traits, "range")] %>%
   setNames(c("sp", "iucn", "max_depth", "branching", "corallite", "range")) %T>%
   write.csv(here("data", "traits_iucn.csv"), row.names = FALSE)
 
-###### occurrence map
-obis.corals <- read.csv(here("data", "2019-11-05_obis_scleractinia.csv"),
-                        stringsAsFactors = FALSE)
-occ.corals <- df.corals %>% left_join(obis.corals, by=c("sp" = "scientificName")) %>%
-  distinct(decimalLongitude, decimalLatitude)
