@@ -5,7 +5,7 @@ library(tidyverse)
 library(magrittr)
 
 # setting up machine learning models
-library(h2o)
+library(h2o) # version 3.28.0.2
 
 # packages for explaining our ML models
 library(pROC)
@@ -136,7 +136,7 @@ auc.df <- auc.df %>% filter(cutoff > 0.32) %>%
 auc.df <- auc.df[duplicated(auc.df$fname)==FALSE,] #remove duplicates
 write.csv(auc.df[1:10,], here("output", "Table_S_model_performance_binary.csv"), row.names=FALSE)
 
-w <- 1
+w <- 3 #less overfitting on training dataset
 win <- auc.df$n[w]
 aml_leader <- h2o.loadModel(here("output", folder_name, leaderboard$fname[win]))
 
@@ -147,7 +147,7 @@ mod <- data.frame(cutoff=cutoff,
                   train = NA,
                   test = NA)
 
-mod_cutoff <- leaderboard[leaderboard$fname == auc.df$fname[1] & leaderboard$cutoff == auc.df$cutoff[1], c("cutoff.train", "cutoff.test")] %>%
+mod_cutoff <- leaderboard[leaderboard$fname == auc.df$fname[w] & leaderboard$cutoff == auc.df$cutoff[w], c("cutoff.train", "cutoff.test")] %>%
   setNames(c("train", "test")) %>%
   reshape2::melt()
 
@@ -173,10 +173,10 @@ p1 <- reshape2::melt(mod, id.vars="cutoff") %>%
   ggplot(aes(x=cutoff, y=value, col=variable)) +
   geom_rect(aes(xmin=0, xmax=1, ymin=0, ymax=0.7),fill="lightgrey", alpha=0.02, col=NA)+
   geom_line() +
-  geom_vline(data=mod_cutoff, aes(xintercept=value, col=variable), linetype="dashed", show.legend = FALSE) +
+  geom_vline(data=mod_cutoff, aes(xintercept=value, col=variable, linetype=variable), show.legend = FALSE) +
   coord_cartesian(ylim=c(0,1), expand=FALSE)+
   scale_color_manual(values=u_col[c(2,5)], labels=c("Training", "Test")) +
-  labs(x="Cutoff Threshold", y="AUC", col="Dataset")+
+  labs(x="Cutoff Threshold", y="AUC", col="Dataset", linetype="Dataset")+
   theme_light(base_size = 15) +
   theme(axis.title = element_text(size = 12, face="bold"),
         legend.title = element_text(size = 12, face="bold"),
@@ -605,7 +605,7 @@ for (i in 1:(length(cuts)-1)){
   plot(gr[temp], col=map_col[i], border="white", add=TRUE)
 }
 
-plot(world, col="grey95", border="grey80", add=TRUE)
+plot(world, col=scales::alpha("grey95", 0.5), border="grey80", add=TRUE)
 
 mtext ("A", side=3, line=0, adj=-0.04, cex=txt)
 box(col="darkgrey")
@@ -620,7 +620,7 @@ for (i in 1:(length(cuts)-1)){
   plot(gr[temp], col=map_col[i], border="white", add=TRUE)
 }
 
-plot(world, col="grey95", border="grey80", add=TRUE)
+plot(world, col=scales::alpha("grey95", 0.5), border="grey80", add=TRUE)
 mtext ("B", side=3, line=0, adj=-0.04, cex=txt)
 box(col="darkgrey")
 # combined
@@ -634,7 +634,7 @@ for (i in 1:(length(cuts)-1)){
   plot(gr[temp], col=map_col[i], border="white", add=TRUE)
 }
 
-plot(world, col="grey95", border="grey80", add=TRUE)
+plot(world, col=scales::alpha("grey95", 0.5), border="grey80", add=TRUE)
 mtext ("C", side=3, line=0, adj=-0.04, cex=txt)
 box(col="darkgrey")
 #add legend
