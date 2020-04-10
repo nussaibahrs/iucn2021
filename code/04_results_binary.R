@@ -13,6 +13,7 @@ library(hmeasure)
 library(pdp)
 library(DALEX)
 library(ingredients)
+library(caret)
 
 # plotting packages
 library(icosa)
@@ -32,6 +33,8 @@ unscale <- function(newdata, olddata){min(olddata, na.rm = TRUE) + newdata * (ma
 #palette
 u_col <- ggsci::pal_uchicago("default")(9)[c(2,5,4,3,1)]
 
+#font: windows only.
+windowsFonts(`Roboto Mono`=windowsFont("Roboto Mono"))
 # classification data
 df.corals <- read.csv(here("data", "traits_iucn.csv"), stringsAsFactors = FALSE) %>% mutate(
   range = ifelse(range > 0, range, NA),
@@ -89,6 +92,8 @@ folder_name <- folder
 
 leaderboard <- read.csv(here("output", paste0("Table_S_maximised_threshold_model_binary_norm_", hours, "h.csv")), stringsAsFactors = FALSE) %>% arrange(desc(AUC.test))
 
+
+# ** Save performance results ----------------------------------------------
 #results details
 res_summ <- table(sub("\\_.*", "", unique(leaderboard$fname))) %>%
   as.data.frame() %>%
@@ -134,9 +139,50 @@ auc.df <- auc.df %>% filter(cutoff > 0.32) %>%
   arrange(desc(AUC.test)) 
 
 auc.df <- auc.df[duplicated(auc.df$fname)==FALSE,] #remove duplicates
-write.csv(auc.df[1:10,], here("output", "Table_S_model_performance_binary.csv"), row.names=FALSE)
 
-w <- 3 #less overfitting on training dataset
+#checking for precision and recall
+train.precision <- c()
+test.precision <- c()
+
+train.recall <- c()
+test.recall <- c()
+
+for (w in 1:10){
+win <- auc.df$n[w]
+aml_leader <- h2o.loadModel(here("output", folder_name, leaderboard$fname[win]))
+
+res.train <- h2o.predict(aml_leader , train)
+res.train <- as.data.frame(res.train)$p1
+
+res.test <- h2o.predict(aml_leader , test)
+res.test <- as.data.frame(res.test)$p1
+
+#all values lower than cutoff value will be classified as 0 (NT in this case)
+train.labels <- ifelse(res.train < leaderboard$cutoff[win], 0, 1)
+test.labels <- ifelse(res.test < leaderboard$cutoff[win], 0, 1)
+true.train.labels <- as.data.frame(train)$iucn
+true.test.labels <- as.data.frame(test)$iucn
+
+train.precision[w] <- precision(as.factor(train.labels), true.train.labels, levels=c(1,0))
+test.precision[w] <- precision(as.factor(test.labels), true.test.labels, levels=c(1,0))
+
+train.recall[w] <- recall(as.factor(train.labels), true.train.labels, levels=c(1,0))
+test.recall[w] <- recall(as.factor(test.labels), true.test.labels, levels=c(1,0))
+
+
+}
+
+train.Fscore = 2 * train.precision * train.recall / (train.precision + train.recall)
+test.Fscore = 2 * test.precision * test.recall / (test.precision + test.recall)
+
+auc.df <- cbind(auc.df[1:10,], train.Fscore=train.Fscore, test.Fscore=test.Fscore)
+write.csv(auc.df, here("output", "Table_S_model_performance_binary.csv"), row.names=FALSE)
+
+
+# ** Load performance results ---------------------------------------------
+# reading output
+auc.df <- read.csv(here("output", "Table_S_model_performance_binary.csv"))
+w=1 #winning model
 win <- auc.df$n[w]
 aml_leader <- h2o.loadModel(here("output", folder_name, leaderboard$fname[win]))
 
@@ -189,33 +235,6 @@ p1 <- reshape2::melt(mod, id.vars="cutoff") %>%
 
 ggsave(here("figs", "Fig_S_final_model.svg"), p1, w=5, h=4)
 
-#if stacked
-meta <- h2o.getModel(aml_leader@model$metalearner$name)
-coef <- sort(meta@model$coefficients, decreasing = TRUE)
-names(coef) <- sub("\\_.*", "", names(coef))
-
-p2 <- as.data.frame(coef) %>%
-  rownames_to_column("algorithm") %>%
-  filter(coef > 0) %>%
-  arrange(desc(coef)) %>%
-  mutate(algorithm=ifelse(algorithm=="DeepLearning", "Neural Network", algorithm)) %>%
-  ggplot(aes(y=coef, x=reorder(algorithm, -coef))) +
-  geom_bar(stat="identity", width = 0.4, fill = u_col[5]) +
-  scale_y_continuous(expand=expand_scale(mult = c(0, .1))) +
-  labs(x="Base Models", y="Coefficients") +
-  theme_light(base_size = 15) +
-  theme(axis.title = element_text(size = 12, face="bold"),
-        axis.text.x = element_text(family = "Roboto Mono", size = 10),
-        panel.grid = element_blank())
-
-svg(here("figs", "Fig_S_final_model.svg"), w=5, h=8)
-p2 + p1 + plot_layout(ncol=1) + plot_annotation(tag_levels = "A")
-dev.off()
-
-#### TEXT FOR PAPER
-paste0("Out of the ", length(unique(leaderboard$fname)), " models trained by the AutoML, the optimal model was a ", aml_leader@algorithm, 
-       " with AUC of ", round(auc.df$AUC.train[w],2),  " on the training dataset and ", round(auc.df$AUC.test[w],2), " on the test dataset and", 
-       " an average classification probability threshold (decision threshold) of ", auc.df$cutoff[w])
 
 # * Confusion Matrix ------------------------------------------------------
 res.train <- h2o.predict(aml_leader , train)
@@ -230,18 +249,46 @@ test.labels <- ifelse(res.test < leaderboard$cutoff[win], 0, 1)
 true.train.labels <- as.data.frame(train)$iucn
 true.test.labels <- as.data.frame(test)$iucn
 
-cf.train <- caret::confusionMatrix(as.factor(train.labels), true.train.labels)
-cf.test <- caret::confusionMatrix(as.factor(test.labels), true.test.labels)
+cf.train <- caret::confusionMatrix(as.factor(train.labels), true.train.labels, positive="1")
+cf.test <- caret::confusionMatrix(as.factor(test.labels), true.test.labels, positive = "1")
 
 acc.train <- prop.table(cf.train$table, 2)
 acc.test <- prop.table(cf.test$table, 2)
 
-### TEXT FOR PAPER
+#### TEXT FOR PAPER
+paste0("Out of the ", length(unique(leaderboard$fname)), " models trained by the AutoML, the optimal model was a ", aml_leader@algorithm, 
+       " with AUC of ", round(auc.df$AUC.train[w],2),  " on the training dataset and ", round(auc.df$AUC.test[w],2), " on the test dataset and", 
+       " an average classification probability threshold (decision threshold) of ", auc.df$cutoff[w])
+
 paste0("The model correctly classified ", round(acc.train[2,2], 2)*100,"% and ",round(acc.test[2,2], 2)*100,
        "% of the threatened species for the training and test dataset respectively.")
 paste0("It had a higher classification accuracy for non-threatened species, ",round(acc.train[1,1], 2)*100,
        "% and ",round(acc.test[1,1], 2)*100,"%, and overall accuracy of ", round(cf.train$overall[1], 2)*100,"% and ", round(cf.test$overall[1], 2)*100,
        "%, respectively on the training and test datasets.")
+
+# #if stacked
+# meta <- h2o.getModel(aml_leader@model$metalearner$name)
+# coef <- sort(meta@model$coefficients, decreasing = TRUE)
+# names(coef) <- sub("\\_.*", "", names(coef))
+# 
+# p2 <- as.data.frame(coef) %>%
+#   rownames_to_column("algorithm") %>%
+#   filter(coef > 0) %>%
+#   arrange(desc(coef)) %>%
+#   mutate(algorithm=ifelse(algorithm=="DeepLearning", "Neural Network", algorithm)) %>%
+#   ggplot(aes(y=coef, x=reorder(algorithm, -coef))) +
+#   geom_bar(stat="identity", width = 0.4, fill = u_col[5]) +
+#   scale_y_continuous(expand=expand_scale(mult = c(0, .1))) +
+#   labs(x="Base Models", y="Coefficients") +
+#   theme_light(base_size = 15) +
+#   theme(axis.title = element_text(size = 12, face="bold"),
+#         axis.text.x = element_text(family = "Roboto Mono", size = 10),
+#         panel.grid = element_blank())
+# 
+# svg(here("figs", "Fig_S_final_model.svg"), w=5, h=8)
+# p2 + p1 + plot_layout(ncol=1) + plot_annotation(tag_levels = "A")
+# dev.off()
+
 
 # * Misclassification -----------------------------------------------------
 train.df <- train %>% as.data.frame %>% 
@@ -269,7 +316,7 @@ df %>% group_by(status, iucn, pred) %>%
   reshape2::dcast(status+iucn~pred, value.var = "prop")
 
 
-# per branching
+  # per branching
 df %>% 
   group_by(branching, iucn, pred) %>%
   tally() %>%
@@ -347,9 +394,10 @@ aml_varimp <- aml_varimp %>%
   mutate(variable = gsub("\\.", ": ", variable),
          variable = gsub("_", " ", variable))
 
+aml_varimp$variable <- c("Range", "Corallite \nDiameter", "Maximum \ndepth", "Degree of \nbranching")
+
 p_vi <- aml_varimp %>% 
   as.data.frame() %>%
-  filter(variable != "branching: missing(NA)") %>%
   mutate(rank = nrow(.):1) %>%
   ggplot(aes(x=reorder(variable, rank), y=scaled_importance)) +
   geom_bar(stat="identity", width = 0.6, fill = u_col[5]) +
@@ -370,7 +418,7 @@ ggsave (here("figs", "Fig_02_var_imp.svg"), p_vi, h=4, w=8)
 dalex_explainer <- DALEX::explain(
   model = aml_leader,
   data = features,
-  y = as.factor(response),
+  y = response,
   predict_function = pred
 )
 
@@ -379,7 +427,6 @@ pdp_corallite <- ingredients::partial_dependency(dalex_explainer, variables = "c
 pdp_branching <- ingredients::partial_dependency(dalex_explainer, variables = "branching", variable_type="categorical")
 pdp_range <- ingredients::partial_dependency(dalex_explainer, variables = "range")
 pdp_max_depth <- ingredients::partial_dependency(dalex_explainer, variables = "max_depth")
-
 
 # ** Fig. 3: Partial dependency Plots -------------------------------------
 
@@ -443,12 +490,14 @@ dd$status <- ifelse(res < leaderboard$cutoff[win], "NT", "T")
 
 #number of missing values for each species
 dd$na_count <- apply(dd[,x], 1, function(x) sum(is.na(x)))
-# dd[dd$na_count >2,]$status <- "DD"
+dd[dd$na_count >2,]$status <- "DD"
+
 table(dd$status)
 
 table(df$iucn) %>% prop.table()
-table(dd$status) %>% prop.table()
-table(c(df$iucn, dd$status)) %>% prop.table()
+table(dd$status)[-1] %>% prop.table()
+df$iucn2 <- df$iucn
+table(c(df$iucn, dd$status[-which(dd$status == "DD")])) %>% prop.table()
 
 #get genus for each species
 dd$genus <- gsub( " .*$", "", dd$sp)
@@ -487,8 +536,9 @@ p <- ggplot(dd_plot, aes(fill=status, y=n3, x=reorder(genus, n2))) +
   theme_light(base_size = 15) +
   theme(axis.title = element_text(size = 12, face="bold"),
         legend.title = element_text(size = 12, face="bold"),
-        legend.text = element_text(family = "Roboto Mono", size = 10),
-        axis.text = element_text(family = "Roboto Mono", size = 10),
+        legend.text = element_text(size = 10),
+        axis.text = element_text(size = 10),
+        axis.text.y = element_text(face="italic"),
         panel.grid = element_blank(), 
         legend.position = "none",
         plot.margin = unit(c(2, 1, 1, 1), "lines"))
@@ -542,7 +592,7 @@ ds_occ <- read.csv(here("data", "2019-11-05_obis_scleractinia.csv"), stringsAsFa
   filter(!between(decimalLatitude, 39, 45) & !between(decimalLongitude, -38, 30)) %>% #remove mediterranean ones
   filter(scientificName %in% df$sp) %>% #select data sufficient species only
   distinct(scientificName, decimalLatitude, decimalLongitude) %>%
-  left_join(df %>% dplyr::select(sp, iucn) %>% mutate(status = iucn) %>% dplyr::select(-iucn), by=c("scientificName" = "sp"))
+  left_join(df %>% dplyr::select(sp, iucn2) %>% mutate(status = iucn2) %>% dplyr::select(-iucn2), by=c("scientificName" = "sp"))
 
 ds_occ$cell <- locate(gr, ds_occ[, c(3,2)])
 
@@ -555,9 +605,11 @@ ds_occ <- ds_occ %>% distinct(region, scientificName, status) %>%
 all_occ <- rbind(ds_occ, dd_occ)
 
 #results
-table(dd_occ$region, dd_occ$status) %>% prop.table(1)
-table(ds_occ$region, ds_occ$status) %>% prop.table(1)
-table(all_occ$region, all_occ$status) %>% prop.table(1)
+cat("Data Deficient Corals");table(dd_occ$region, dd_occ$status) %>% prop.table(1)
+
+cat("Data Sufficient Corals");table(ds_occ$region, ds_occ$status) %>% prop.table(1)
+
+cat("Combined");table(all_occ$region, all_occ$status) %>% prop.table(1)
 
 # calculating proportions per grid
 dd_occ <- read.csv(here("data", "2019-11-05_obis_scleractinia.csv"), stringsAsFactors = FALSE) %>%
@@ -572,7 +624,7 @@ ds_occ <- read.csv(here("data", "2019-11-05_obis_scleractinia.csv"), stringsAsFa
   filter(!between(decimalLatitude, 39, 45) & !between(decimalLongitude, -38, 30)) %>% #remove mediterranean ones
   filter(scientificName %in% df$sp) %>% #select data sufficient species only
   distinct(scientificName, decimalLatitude, decimalLongitude) %>%
-  left_join(df %>% dplyr::select(sp, iucn) %>% mutate(status = iucn) %>% dplyr::select(-iucn), by=c("scientificName" = "sp"))
+  left_join(df %>% dplyr::select(sp, iucn2) %>% mutate(status = iucn2) %>% dplyr::select(-iucn2), by=c("scientificName" = "sp"))
 
 ds_occ$cell <- locate(gr, ds_occ[, c(3,2)])
 
@@ -693,13 +745,21 @@ pleist.summ <- pleist.df %>%
 # % of threaned status going extinct
 pleist.summ %>% group_by(status, globally.extinct) %>% summarise(n=sum(n)) %>%
   ungroup() %>%
-  left_join(pleist.summ %>% group_by(globally.extinct) %>% summarise(tot=sum(n))) %>%
+  left_join(pleist.summ %>% group_by(status) %>% summarise(tot=sum(n))) %>%
   mutate(prop = n/tot)
 
 pleist.summ %>% group_by(status, regionally.extinct) %>% summarise(n=sum(n)) %>%
-  group_by(regionally.extinct) %>%
+  group_by(status) %>%
   mutate(prop=n/sum(n))
 
+pleist.df$real <- ifelse(pleist.df$globally.extinct == "extant" & pleist.df$regionally.extinct == "extant", "NT", "T")
+
+#calculate accuracy
+true.labels <- as.factor(pleist.df$real[!pleist.df$status == "DD"])
+predicted.labels <- as.factor(pleist.df$status[!pleist.df$status == "DD"])
+
+cf.pleist <- caret::confusionMatrix(true.labels, predicted.labels, positive="T")
+cf.pleist$overall[1]
 
 ggplot(pleist.summ,
        aes(y = n,axis2 = globally.extinct,
@@ -746,46 +806,103 @@ df.dd <- dd %>%
 
 df <- rbind(df.ds, df.dd)
 
+# 
+# family <- c()
+# 
+# for (i in 1:nrow(df)){
+#   cat("\r", i, "out of", nrow(df))
+#   temp <- worrms::wm_classification_(name=df$sp[i]) 
+#     
+#   if (nrow(temp) > 0) {
+#     temp <- temp %>% filter(rank == "Family")
+#     family[i] <- temp$scientificname 
+#   }
+# }
+# 
+# df %>% dplyr::select(sp) %>%
+#   mutate(family=family) %T>%
+#   write.csv(here("data", "modern_class.csv"), row.names = FALSE)
+# 
+# family.plio <- c()
+# 
+# for (i in 1:nrow(pleist.df)){
+#   cat("\r", i, "out of", nrow(pleist.df))
+#   temp <- worrms::wm_classification_(name=pleist.df$valid_name[i]) 
+#   
+#   if (nrow(temp) > 0) {
+#     temp <- temp %>% filter(rank == "Family")
+#     family.plio[i] <- temp$scientificname 
+#   }
+# }
+# 
+# family.plio[138:140] <- NA
+# 
+# pleist.df %>% dplyr::select(valid_name) %>%
+#   mutate(family=family.plio) %T>%
+#   write.csv(here("data", "plio_class.csv"), row.names = FALSE)
+
+
+#after manual check
+pleist.class <- read.csv(here("data", "plio_class.csv"), stringsAsFactors = FALSE)
+modern.class <- read.csv(here("data", "modern_class.csv"), stringsAsFactors = FALSE)
+
 df.comp <- pleist.df %>% 
+  left_join(pleist.class) %>%
   filter(status != "DD") %>%
-  separate(valid_name, c("genus", "species")) %>%
-  group_by(genus, status) %>%
+  group_by(family, status) %>%
   tally() %>%
-  reshape2::dcast(genus~status) %>%
-  group_by(genus) %>%
+  reshape2::dcast(family~status) %>%
+  group_by(family) %>%
   replace_na(list(T=0)) %>%
   mutate(tot = sum(T, NT, na.rm=TRUE),
          T=T/tot) %>% 
-  dplyr::select(genus, T, tot) %>%
+  dplyr::select(family, T, tot) %>%
   rename(fossil = T) %>%
-  left_join(df %>% separate(sp, c("genus", "species")) %>% 
-              group_by(genus, status) %>%
+  left_join(df %>% left_join(modern.class) %>% 
+              group_by(family, status) %>%
               tally() %>%
-              reshape2::dcast(genus~status) %>%
-              group_by(genus) %>%
+              reshape2::dcast(family~status) %>%
+              group_by(family) %>%
               replace_na(list(T=0)) %>%
               mutate(totm = sum(T, NT, na.rm=TRUE),
                      T=T/totm)%>% 
-              dplyr::select(genus, T, totm) %>%
-              rename(modern = T), by="genus") %>%
+              dplyr::select(family, T, totm) %>%
+              rename(modern = T), by="family") %>%
   na.omit()
 
-ggplot(df.comp %>% filter(!(fossil == 0 & modern == 0)), aes(x=fossil, y=modern, label=paste0(genus, "(", tot, "/", totm, ")"))) +
-  geom_point() +
-  geom_text_repel(cex=3.2, vjust=-0.1, hjust=-0.1) +
+
+df.comp <- pleist.df %>% 
+  left_join(pleist.class) %>%
+  group_by(family, real) %>%
+  tally() %>%
+  reshape2::dcast(family~real) %>%
+  group_by(family) %>%
+  replace_na(list(T=0, NT=0)) %>%
+  mutate(extinct = T/(NT+T)) %>%
+  dplyr::select(family, extinct) %>% right_join(df.comp) %>%
+  ungroup()
+
+df.comp$lab <- ifelse(df.comp$modern==0 & df.comp$fossil==0, "", paste0(df.comp$family, "(", df.comp$tot, "/", df.comp$totm, ")"))
+
+ggplot(df.comp, aes(x=fossil, y=extinct, label=lab)) +
+  geom_hline(yintercept = 0.5, linetype="dashed") +
+  geom_vline(xintercept = 0.5, linetype="dashed") +
+  xlim(0,1) + ylim(0,1)+
+  geom_label(cex=3.5, vjust=-0.1, hjust=-0.1) +
+  geom_point(aes(col=modern), size=3) +
   labs(x="Proportion of Plio-Pleistocene species extinct",
-       y="Proportion of modern species threatened") +
-  # geom_hline(yintercept = 0.305, linetype="dashed") +
-  # geom_vline(xintercept = 0.305, linetype="dashed") +
-  geom_abline(slope=1, intercept=0) +
+       y="Proportion of Plio-Pleistocene species \npredicted as threatened",
+       col = "Proportion of modern \nspecies threatened") +
+  scale_color_gradientn(colors=u_col[c(2,4,5)], breaks=c(0,0.2,0.4,0.6), limits=c(0,0.6))+
   theme_light(base_size = 15) +
   theme(axis.title = element_text(size = 12, face="bold"),
-        legend.title = element_text(size = 12, face="bold"),
+        legend.title = element_text(size = 12),
         legend.text = element_text(family = "Roboto Mono", size = 10),
         axis.text = element_text(family = "Roboto Mono", size = 10),
         panel.grid = element_blank(), 
         panel.border = element_blank(),
-        legend.position = "top",
-        legend.direction = "horizontal")
+        legend.position = "bottom",
+        legend.direction = "horizontal") +
+  guides(color = guide_colourbar(barwidth = 10, barheight = 0.5))
 
 ggsave(here("figs", "Fig_06_plio_modern_comp.svg"), w=7, h=7)

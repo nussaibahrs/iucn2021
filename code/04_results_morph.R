@@ -1,4 +1,6 @@
 # Set up environment ------------------------------------------------------
+setwd("/mnt/c/Users/nussa/Dropbox/nuss/iucn_traits")
+
 # helper packages
 library(here)
 library(tidyverse)
@@ -8,6 +10,7 @@ library(magrittr)
 library(h2o)
 
 # packages for explaining our ML models
+library(caret)
 library(pROC)
 library(hmeasure)
 library(pdp)
@@ -88,9 +91,18 @@ leaderboard <- read.csv(here("output", paste0("Table_S_maximised_threshold_model
 folder <- paste0("model_morph_norm_", hours, "h")
 folder_name <- folder
 
+# ** Save performance results ----------------------------------------------
+#results details
+res_summ <- table(sub("\\_.*", "", unique(leaderboard$fname))) %>%
+  as.data.frame() %>%
+  setNames(c("algorithm", "n"))
+
+write.csv(res_summ, here("output", "Table_S_results_summary_morph.csv"), row.names = FALSE)
+
 #number of models to choose from
 n=nrow(leaderboard)
 auc.df <- data.frame(n = 1:n, 
+                     algorithm =NA,
                      fname=NA,
                      cutoff = NA,
                      AUC.train=NA,
@@ -100,6 +112,8 @@ for (i in 1:n){
   auc.df$fname[i] <- leaderboard$fname[i]
   auc.df$cutoff[i] <- leaderboard$cutoff[i]
   mod <- h2o.loadModel(here("output", folder_name, leaderboard$fname[i]))
+  
+  auc.df$algorithm[i] <- mod@algorithm
   
   res.train <- h2o.predict(mod , train)
   res.train <- as.data.frame(res.train)$p1
@@ -115,15 +129,58 @@ for (i in 1:n){
   
   auc.df$AUC.train[i] <- as.numeric(auc(true.train.labels, train.labels))
   auc.df$AUC.test[i] <- as.numeric(auc(true.test.labels, test.labels))
-  
 }
 
-auc.df <- auc.df %>% filter(cutoff > 0.32) %>%
+auc.df <- auc.df %>% #filter(cutoff > 0.32) %>%
   group_by(fname) %>% 
   filter(AUC.test == max(AUC.test)) %>%
   arrange(desc(AUC.test)) 
-auc.df[1:10,]
-w <- 2
+
+auc.df <- auc.df[duplicated(auc.df$fname)==FALSE,] #remove duplicates
+
+#checking for precision and recall
+train.precision <- c()
+test.precision <- c()
+
+train.recall <- c()
+test.recall <- c()
+
+for (w in 1:10){
+  win <- auc.df$n[w]
+  aml_leader <- h2o.loadModel(here("output", folder_name, leaderboard$fname[win]))
+  
+  res.train <- h2o.predict(aml_leader , train)
+  res.train <- as.data.frame(res.train)$p1
+  
+  res.test <- h2o.predict(aml_leader , test)
+  res.test <- as.data.frame(res.test)$p1
+  
+  #all values lower than cutoff value will be classified as 0 (NT in this case)
+  train.labels <- ifelse(res.train < leaderboard$cutoff[win], 0, 1)
+  test.labels <- ifelse(res.test < leaderboard$cutoff[win], 0, 1)
+  true.train.labels <- as.data.frame(train)$iucn
+  true.test.labels <- as.data.frame(test)$iucn
+  
+  train.precision[w] <- precision(as.factor(train.labels), true.train.labels, levels=c(1,0))
+  test.precision[w] <- precision(as.factor(test.labels), true.test.labels, levels=c(1,0))
+  
+  train.recall[w] <- recall(as.factor(train.labels), true.train.labels, levels=c(1,0))
+  test.recall[w] <- recall(as.factor(test.labels), true.test.labels, levels=c(1,0))
+  
+  
+}
+
+train.Fscore = 2 * train.precision * train.recall / (train.precision + train.recall)
+test.Fscore = 2 * test.precision * test.recall / (test.precision + test.recall)
+
+auc.df <- cbind(auc.df[1:10,], train.Fscore=train.Fscore, test.Fscore=test.Fscore)
+write.csv(auc.df, here("output", "Table_S_model_performance_morph.csv"), row.names=FALSE)
+
+# ** Load performance results ---------------------------------------------
+# reading output
+auc.df <- read.csv(here("output", "Table_S_model_performance_morph.csv")) %>% filter(cutoff > 0.32)
+w=2 #winning model
+
 win <- auc.df$n[w]
 aml_leader <- h2o.loadModel(here("output", folder_name, leaderboard$fname[win]))
 
