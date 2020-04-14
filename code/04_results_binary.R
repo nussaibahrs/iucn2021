@@ -33,8 +33,6 @@ unscale <- function(newdata, olddata){min(olddata, na.rm = TRUE) + newdata * (ma
 #palette
 u_col <- ggsci::pal_uchicago("default")(9)[c(2,5,4,3,1)]
 
-#font: windows only.
-windowsFonts(`Roboto Mono`=windowsFont("Roboto Mono"))
 # classification data
 df.corals <- read.csv(here("data", "traits_iucn.csv"), stringsAsFactors = FALSE) %>% mutate(
   range = ifelse(range > 0, range, NA),
@@ -189,6 +187,7 @@ aml_leader <- h2o.loadModel(here("output", folder_name, leaderboard$fname[win]))
 #plot for AUC cutoff
 cutoff <- seq(0,1,0.01)
 
+
 mod <- data.frame(cutoff=cutoff,
                   train = NA,
                   test = NA)
@@ -226,8 +225,8 @@ p1 <- reshape2::melt(mod, id.vars="cutoff") %>%
   theme_light(base_size = 15) +
   theme(axis.title = element_text(size = 12, face="bold"),
         legend.title = element_text(size = 12, face="bold"),
-        legend.text = element_text(family = "Roboto Mono", size = 10),
-        axis.text = element_text(family = "Roboto Mono", size = 10),
+        legend.text = element_text(size = 10),
+        axis.text = element_text(size = 10),
         panel.grid = element_blank(), 
         # panel.border = element_blank(),
         legend.position = "top",
@@ -265,30 +264,6 @@ paste0("The model correctly classified ", round(acc.train[2,2], 2)*100,"% and ",
 paste0("It had a higher classification accuracy for non-threatened species, ",round(acc.train[1,1], 2)*100,
        "% and ",round(acc.test[1,1], 2)*100,"%, and overall accuracy of ", round(cf.train$overall[1], 2)*100,"% and ", round(cf.test$overall[1], 2)*100,
        "%, respectively on the training and test datasets.")
-
-# #if stacked
-# meta <- h2o.getModel(aml_leader@model$metalearner$name)
-# coef <- sort(meta@model$coefficients, decreasing = TRUE)
-# names(coef) <- sub("\\_.*", "", names(coef))
-# 
-# p2 <- as.data.frame(coef) %>%
-#   rownames_to_column("algorithm") %>%
-#   filter(coef > 0) %>%
-#   arrange(desc(coef)) %>%
-#   mutate(algorithm=ifelse(algorithm=="DeepLearning", "Neural Network", algorithm)) %>%
-#   ggplot(aes(y=coef, x=reorder(algorithm, -coef))) +
-#   geom_bar(stat="identity", width = 0.4, fill = u_col[5]) +
-#   scale_y_continuous(expand=expand_scale(mult = c(0, .1))) +
-#   labs(x="Base Models", y="Coefficients") +
-#   theme_light(base_size = 15) +
-#   theme(axis.title = element_text(size = 12, face="bold"),
-#         axis.text.x = element_text(family = "Roboto Mono", size = 10),
-#         panel.grid = element_blank())
-# 
-# svg(here("figs", "Fig_S_final_model.svg"), w=5, h=8)
-# p2 + p1 + plot_layout(ncol=1) + plot_annotation(tag_levels = "A")
-# dev.off()
-
 
 # * Misclassification -----------------------------------------------------
 train.df <- train %>% as.data.frame %>% 
@@ -453,7 +428,7 @@ pdp_plot <- function (pdp, olddata=NULL, levels=NULL, unscale=TRUE, col="darkred
       labs(x=lab, y="Predicted Value") +
       theme_light(base_size = 15) +
       theme(axis.title = element_text(size = 12, face="bold"),
-            axis.text = element_text(family = "Roboto Mono", size = 10),
+            axis.text = element_text(size = 10),
             panel.grid = element_blank(), 
             legend.position = "none") 
   }
@@ -474,7 +449,7 @@ p4 <- pdp_plot(pdp_max_depth, olddata=df$depth_ori, col = u_col[4]) + labs(x="Ma
   coord_cartesian(xlim=c(0, 100)) 
 
 svg(here("figs", "Fig_03_model_metrics.svg"), w=8, h=8)
-p1 + p2 + p3 + p4  + plot_annotation(tag_levels = "A")
+p3 + p1 + p4 + p2 + plot_annotation(tag_levels = "A")
 dev.off()
 
 # DD species ------------------------------------------------
@@ -774,8 +749,8 @@ ggplot(pleist.summ,
   labs(x="", y="No. of species", fill = "Status predicted by the model")+
   theme(axis.title = element_text(size = 12, face="bold"),
         legend.title = element_text(size = 12, face="bold"),
-        legend.text = element_text(family = "Roboto Mono", size = 10),
-        axis.text = element_text(family = "Roboto Mono", size = 10, angle=45, hjust=1),
+        legend.text = element_text(size = 10),
+        axis.text = element_text(size = 10, angle=45, hjust=1),
         panel.grid = element_blank(), 
         panel.border = element_blank(),
         legend.position = "top",
@@ -883,26 +858,26 @@ df.comp <- pleist.df %>%
   ungroup()
 
 df.comp$lab <- ifelse(df.comp$modern==0 & df.comp$fossil==0, "", paste0(df.comp$family, "(", df.comp$tot, "/", df.comp$totm, ")"))
+data.lm <- lm(fossil~extinct, data=df.comp[-8,])
 
-ggplot(df.comp, aes(x=fossil, y=extinct, label=lab)) +
+ggplot(df.comp, aes(y=fossil, x=extinct, label=lab)) +
   geom_hline(yintercept = 0.5, linetype="dashed") +
   geom_vline(xintercept = 0.5, linetype="dashed") +
   xlim(0,1) + ylim(0,1)+
-  geom_label(cex=3.5, vjust=-0.1, hjust=-0.1) +
+  geom_label_repel(cex=3.5, min.segment.length = 0.5, force=2) +
   geom_point(aes(col=modern), size=3) +
-  labs(x="Proportion of Plio-Pleistocene species extinct",
-       y="Proportion of Plio-Pleistocene species \npredicted as threatened",
+  labs(y="Proportion of Plio-Pleistocene species extinct",
+       x="Proportion of Plio-Pleistocene species \npredicted as threatened",
        col = "Proportion of modern \nspecies threatened") +
   scale_color_gradientn(colors=u_col[c(2,4,5)], breaks=c(0,0.2,0.4,0.6), limits=c(0,0.6))+
   theme_light(base_size = 15) +
   theme(axis.title = element_text(size = 12, face="bold"),
         legend.title = element_text(size = 12),
-        legend.text = element_text(family = "Roboto Mono", size = 10),
-        axis.text = element_text(family = "Roboto Mono", size = 10),
+        legend.text = element_text(size = 10),
+        axis.text = element_text(size = 10),
         panel.grid = element_blank(), 
         panel.border = element_blank(),
         legend.position = "bottom",
         legend.direction = "horizontal") +
-  guides(color = guide_colourbar(barwidth = 10, barheight = 0.5))
-
+  guides(color = guide_colourbar(barwidth = 10, barheight = 0.5)) 
 ggsave(here("figs", "Fig_06_plio_modern_comp.svg"), w=7, h=7)

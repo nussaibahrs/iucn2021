@@ -1,5 +1,5 @@
 # Set up environment ------------------------------------------------------
-setwd("/mnt/c/Users/nussa/Dropbox/nuss/iucn_traits")
+#setwd("/mnt/c/Users/nussa/Dropbox/nuss/iucn_traits")
 
 # helper packages
 library(here)
@@ -321,6 +321,7 @@ dalex_explainer <- DALEX::explain(
   predict_function = pred
 )
 
+
 # ** generate the partial dependence profiles for each variable ------------
 pdp_corallite <- ingredients::partial_dependency(dalex_explainer, variables = "corallite")
 pdp_branching <- ingredients::partial_dependency(dalex_explainer, variables = "branching", variable_type="categorical")
@@ -350,7 +351,7 @@ pdp_plot <- function (pdp, olddata=NULL, levels=NULL, unscale=TRUE, col="darkred
       labs(x=lab, y="Predicted Value") +
       theme_light(base_size = 15) +
       theme(axis.title = element_text(size = 12, face="bold"),
-            axis.text = element_text(family = "Roboto Mono", size = 10),
+            axis.text = element_text(size = 10),
             panel.grid = element_blank(), 
             legend.position = "none") 
   }
@@ -365,8 +366,8 @@ p1 <- pdp_plot(pdp_corallite, olddata=df$corallite_ori, col = u_col[2]) + labs(x
 p2 <- pdp_plot(pdp_branching, unscale = FALSE, levels=c("NB", "LB", "MB", "HB")) + scale_fill_manual(values=u_col[2:5]) + 
   labs(x="Degree of branching")  
 
-svg(here("figs", "Fig_S_model_metrics_morph.svg"), w=12, h=4)
-p_vi + p1 + p2  + plot_annotation(tag_levels = "A") + plot_layout(ncol=3)
+svg(here("figs", "Fig_S_model_metrics_morph.svg"), w=10, h=5)
+p1 + p2  + plot_annotation(tag_levels = "A") + plot_layout(ncol=2)
 dev.off()
 
 # DD species ------------------------------------------------
@@ -425,8 +426,8 @@ p <- ggplot(dd_plot, aes(fill=status, y=n3, x=reorder(genus, n2))) +
   theme_light(base_size = 15) +
   theme(axis.title = element_text(size = 12, face="bold"),
         legend.title = element_text(size = 12, face="bold"),
-        legend.text = element_text(family = "Roboto Mono", size = 10),
-        axis.text = element_text(family = "Roboto Mono", size = 10),
+        legend.text = element_text(size = 10),
+        axis.text = element_text(size = 10),
         panel.grid = element_blank(), 
         legend.position = "none",
         plot.margin = unit(c(2, 1, 1, 1), "lines"))

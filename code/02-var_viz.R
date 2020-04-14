@@ -46,12 +46,11 @@ df.corals$iucn <- droplevels(df.corals$iucn)
 
 table(df.corals$iucn)
 
+levels(df.corals$iucn) <- c("DD", "N", "N", "T", "T")
 ##### status vs range
 world_avg <- df.corals %>%
   summarize(avg = median(range, na.rm = T)) %>%
   pull(avg)
-
-levels(df.corals$iucn) <- c("DD", "N", "N", "T", "T")
 
 reg_avg <- df.corals %>% group_by(iucn) %>%
   summarise(n=median(range, na.rm=TRUE))
@@ -63,7 +62,7 @@ p1 <- ggplot(df.corals, aes(x = iucn, y = range, color = iucn)) +
   labs(x = NULL, y = "Range (km)") +
   theme(legend.position = "none",
         axis.title = element_text(size = 12, face="bold"),
-        axis.text.x = element_text(family = "Roboto Mono", size = 10),
+        axis.text.x = element_text( size = 10),
         panel.grid = element_blank()) + 
   geom_hline(aes(yintercept = world_avg), color = "gray70", size = 0.6) +
   geom_segment(data=reg_avg, aes(x = iucn, xend = iucn,
@@ -86,7 +85,7 @@ p2 <- ggplot(na.omit(df.corals), aes(x = iucn, y = corallite, color = iucn)) +
   labs(x = NULL, y = "Corallite Diameter (mm)") +
   theme(legend.position = "none",
         axis.title = element_text(size = 12, face="bold"),
-        axis.text.x = element_text(family = "Roboto Mono", size = 10),
+        axis.text.x = element_text( size = 10),
         panel.grid = element_blank()) + 
   geom_hline(aes(yintercept = world_avg2), color = "gray70", size = 0.6) +
   geom_segment(data=reg_avg2, aes(x = iucn, xend = iucn,
@@ -113,26 +112,37 @@ p3 <- df.corals  %>%
   theme(legend.position=c(.5,.9),
         legend.direction="horizontal",
         axis.title = element_text(size = 12, face="bold"),
-        axis.text.x = element_text(family = "Roboto Mono", size = 10),
+        axis.text.x = element_text( size = 10),
         panel.grid = element_blank(),
         legend.title = element_text(size = 10, face="bold"),
         legend.text = element_text(size=10),
         legend.background = element_blank()) 
 
 #### maximum depth
-p4 <- ggplot(df.corals, aes(x = max_depth, y = iucn, fill = iucn, col=iucn)) +
-  geom_density_ridges(alpha=0.2, scale=1.2) +
-  theme_ridges() + 
-  scale_fill_manual(values=u_col[c(1,2,5)], guide=FALSE) + 
+world_avg3 <- df.corals %>%
+  summarize(avg = median(max_depth, na.rm = T)) %>%
+  pull(avg)
+
+
+reg_avg3 <- df.corals %>% group_by(iucn) %>%
+  summarise(n=median(max_depth, na.rm=TRUE))
+
+p4 <- ggplot(df.corals, aes(x = iucn, y = max_depth, color = iucn)) +
+  coord_flip() +
+  geom_jitter(size = 2, alpha = 0.1, width = 0.2) +
   scale_color_manual(values=u_col[c(1,2,5)], guide=FALSE) + 
-  scale_y_discrete(expand=expand_scale(add = c(0, 1.5))) +
-  labs(y = NULL, x = "Maximum depth (m)") +
-  theme_light(base_size = 15) +
-  theme(axis.title = element_text(size = 12, face="bold"),
-        axis.text.x = element_text(family = "Roboto Mono", size = 10),
-        panel.grid = element_blank()) 
+  labs(x = NULL, y = "Maximum depth (m)") +
+  theme(legend.position = "none",
+        axis.title = element_text(size = 12, face="bold"),
+        axis.text.x = element_text( size = 10),
+        panel.grid = element_blank()) + 
+  geom_hline(aes(yintercept = world_avg3), color = "gray70", size = 0.6) +
+  geom_segment(data=reg_avg3, aes(x = iucn, xend = iucn,
+                                 y = world_avg3, yend = n, col=iucn),
+               size = 0.8, inherit.aes = FALSE) +
+  stat_summary(fun.y = median, geom = "point", size = 5) 
 
 # merge
 svg(here("figs", "Fig_01_variables.svg"), w=8, h=8)
-(p1 + p2) / (p3 + p4) + plot_annotation(tag_levels = "A")
+(p1 + p2) / (p4 + p3) + plot_annotation(tag_levels = "A")
 dev.off()
