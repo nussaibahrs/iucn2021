@@ -165,8 +165,7 @@ opt_par_final <- full_join(opt_train, opt_test)%>%
   group_by(fname) %>%
   mutate(cutoff = (cutoff.test+ cutoff.train)/2) %>%
   arrange(desc(AUC.test), desc(AUC.train))  %T>%
-  write.csv(here("output", paste0("Table_S_maximised_threshold_model_morph_norm_", hours, "h.csv")), row.names = FALSE) 
+  write.csv(here("output", paste0("Table_S_maximised_threshold_model_dist_norm_", hours, "h.csv")), row.names = FALSE) 
 
 # Terminate h2o session ---------------------------------------------------
 h2o.shutdown(prompt=FALSE)
-fun::shutdown(wait=1800)
