@@ -9,7 +9,6 @@ u_col <- ggsci::pal_uchicago("default")(9)[c(2,5,4,3,1)]
 
 ### load data ####
 df.corals <- read.csv(here("data", "traits_iucn.csv"), stringsAsFactors = FALSE) %>%
-  na.omit() %>%
   mutate(
     #reclassify iucn status 
     iucn = case_when(iucn == "Least Concern" ~ "LC",         
