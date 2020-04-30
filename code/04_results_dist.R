@@ -178,7 +178,7 @@ write.csv(auc.df, here("output", "Table_S_model_performance_dist.csv"), row.name
 # ** Load performance results ---------------------------------------------
 # reading output
 auc.df <- read.csv(here("output", "Table_S_model_performance_dist.csv")) %>% filter(cutoff > 0.32)
-w=3 #winning model
+w=1 #winning model
 
 win <- auc.df$n[w]
 aml_leader <- h2o.loadModel(here("output", folder_name, leaderboard$fname[win]))
@@ -210,7 +210,7 @@ acc.test <- prop.table(cf.test$table, 2)
 ### TEXT FOR PAPER
 paste0("The model correctly classified ", round(acc.train[2,2], 2)*100,"% and ",round(acc.test[2,2], 2)*100,
        "% of the threatened species for the training and test dataset respectively.")
-paste0("It had a higher classification accuracy for non-threatened species, ",round(acc.train[1,1], 2)*100,
+paste0("It had a classification accuracy for non-threatened species, ",round(acc.train[1,1], 2)*100,
        "% and ",round(acc.test[1,1], 2)*100,"%, and overall accuracy of ", round(cf.train$overall[1], 2)*100,"% and ", round(cf.test$overall[1], 2)*100,
        "%, respectively on the training and test datasets.")
 
