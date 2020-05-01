@@ -178,7 +178,7 @@ write.csv(auc.df, here("output", "Table_S_model_performance_dist.csv"), row.name
 # ** Load performance results ---------------------------------------------
 # reading output
 auc.df <- read.csv(here("output", "Table_S_model_performance_dist.csv")) %>% filter(cutoff > 0.32)
-w=1 #winning model
+w=3 #winning model
 
 win <- auc.df$n[w]
 aml_leader <- h2o.loadModel(here("output", folder_name, leaderboard$fname[win]))

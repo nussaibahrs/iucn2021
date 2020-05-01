@@ -1,0 +1,7 @@
+"dataset","roc1","roc2","method","statistic","pvalue"
+"train","binary","morph","DeLong's test for two correlated ROC curves","12.8742114455653","6.2877975823655e-38"
+"train","binary","dist","DeLong's test for two correlated ROC curves","9.46560198292171","2.91874950638157e-21"
+"train","morph","dist","DeLong's test for two correlated ROC curves","-2.04890342329985","0.0404715595380286"
+"test","binary","morph","DeLong's test for two correlated ROC curves","3.17514747891229","0.00149760365554776"
+"test","binary","dist","DeLong's test for two correlated ROC curves","2.80450357243411","0.00503941291592885"
+"test","morph","dist","DeLong's test for two correlated ROC curves","-1.02328679934122","0.306172263323394"

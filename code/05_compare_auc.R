@@ -15,8 +15,6 @@ scaled.new <- function (newdata, olddata) {(newdata-min(olddata, na.rm = TRUE))/
 unscale <- function(newdata, olddata){min(olddata, na.rm = TRUE) + newdata * (max(olddata, na.rm = TRUE) - min(olddata, na.rm=TRUE))}
 
 # Data  -------------------------------------------------------------------
-#palette
-u_col <- ggsci::pal_uchicago("default")(9)[c(2,5,4,3,1)]
 
 # classification data
 df.corals <- read.csv(here("data", "traits_iucn.csv"), stringsAsFactors = FALSE) %>% mutate(
@@ -106,9 +104,27 @@ auc_val <- function(type, w, dataset="train"){
   return(auc)
 }
 
-roc_full <- auc_val("binary", 1, "test")
-roc_morph <- auc_val("morph", 2, "test")
-roc_dist <- auc_val("dist", 3, "test")
+type <- combn(c("binary","morph", "dist"),2)
+win <- c(binary=1, morph=2, dist=3)
 
-roc.test(roc_full, roc_morph)
+aucCompare <- list()
+
+for(d in c("train", "test")){
+  res <- matrix(ncol=6, nrow=ncol(type))
+  
+  for (t in 1:ncol(type)){
+    temp <- type[,t]
+    
+    roc1 <- auc_val(temp[1],win[temp[1]],d)
+    roc2 <- auc_val(temp[2],win[temp[2]],d)
+    
+    rocTest <- roc.test(roc1, roc2,)
+    
+    res[t,] <- c(d, temp, rocTest$method, rocTest$statistic, rocTest$p.value)
+  }
+  colnames(res) <- c("dataset", "roc1", "roc2", "method", "statistic", "pvalue")
+  aucCompare[[d]] <- as.data.frame(res)
+}
+
+write.csv(do.call(rbind, aucCompare), here("output", "Table_S_auc_comparison.csv"), row.names=FALSE))
 
