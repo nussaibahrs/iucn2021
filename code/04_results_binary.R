@@ -424,8 +424,12 @@ pdp_plot <- function (pdp, olddata=NULL, levels=NULL, unscale=TRUE, col="darkred
             panel.grid = element_blank(), 
             legend.position = "none") 
   } else {
+    r <- range(pdp$`_yhat_`)
+    
     p <- ggplot(pdp, aes(x=`_x_`, y=`_yhat_`)) + geom_line(col=col) + 
       labs(x=lab, y="Predicted Value") +
+      scale_y_continuous(expand=expand_scale(c(0, 0.1)))+
+      geom_linerange(aes(x=`_x_`, ymin=0, ymax=r[2]/20), col="darkgrey") +
       theme_light(base_size = 15) +
       theme(axis.title = element_text(size = 12, face="bold"),
             axis.text = element_text(size = 10),
@@ -437,7 +441,8 @@ pdp_plot <- function (pdp, olddata=NULL, levels=NULL, unscale=TRUE, col="darkred
 }
 
 # plot pdp
-p1 <- pdp_plot(pdp_corallite, olddata=df$corallite_ori, col = u_col[2]) + labs(x="Corallite Diameter (mm)") + 
+p1 <- pdp_plot(pdp_corallite, olddata=df$corallite_ori, col = u_col[2]) + 
+  labs(x="Corallite Diameter (mm)") + 
   coord_cartesian(xlim=c(0, 25)) 
 
 p2 <- pdp_plot(pdp_branching, unscale = FALSE, levels=c("NB", "LB", "MB", "HB")) + scale_fill_manual(values=u_col[2:5]) + 
@@ -551,7 +556,6 @@ indo_pacific <- crop(sp.pol, indo_pacific_ext)
 
 #### DD only
 dd_occ <- read.csv(here("data", "2019-11-05_obis_scleractinia.csv"), stringsAsFactors = FALSE) %>%
-  filter(!between(decimalLatitude, 39, 45) & !between(decimalLongitude, -38, 30)) %>% #remove mediterranean ones
   filter(scientificName %in% dd$sp) %>% #select only occurrences for dd species
   distinct(scientificName, decimalLatitude, decimalLongitude) %>%
   left_join(dd %>% dplyr::select(sp, status), by=c("scientificName" = "sp"))
@@ -821,6 +825,14 @@ df <- rbind(df.ds, df.dd)
 pleist.class <- read.csv(here("data", "plio_class.csv"), stringsAsFactors = FALSE)
 modern.class <- read.csv(here("data", "modern_class.csv"), stringsAsFactors = FALSE)
 
+#consider regional extinction only
+pleist.df$real <- ifelse(pleist.df$regionally.extinct == "extant", "NT", "T")
+
+# only choose modern caribbean corals
+cari.corals <- all_occ[all_occ$region == "carribean",]$scientificName
+
+df <- df[df$sp %in% cari.corals,]
+
 df.comp <- pleist.df %>% 
   left_join(pleist.class) %>%
   filter(status != "DD") %>%
@@ -861,14 +873,26 @@ df.comp$lab <- ifelse(df.comp$modern==0 & df.comp$fossil==0, "", paste0(df.comp$
 data.lm <- lm(fossil~extinct, data=df.comp[-8,])
 
 ggplot(df.comp, aes(y=fossil, x=extinct, label=lab)) +
+  
+  #add quadrant
   geom_hline(yintercept = 0.5, linetype="dashed") +
   geom_vline(xintercept = 0.5, linetype="dashed") +
+  
+  #coords limits
   xlim(0,1) + ylim(0,1)+
-  geom_label_repel(cex=3.5, min.segment.length = 0.5, force=2) +
+  
+  # family labels
+  geom_label_repel(cex=3.5, min.segment.length = 0.5, point.padding = 0.3) +
+  
+  # points
   geom_point(aes(col=modern), size=3) +
-  labs(y="Proportion of Plio-Pleistocene species extinct",
+  
+  #labs
+  labs(y="Proportion of Plio-Pleistocene species \n regionally extinct",
        x="Proportion of Plio-Pleistocene species \npredicted as threatened",
        col = "Proportion of modern \nspecies threatened") +
+  
+  #theme & colour
   scale_color_gradientn(colors=u_col[c(2,4,5)], breaks=c(0,0.2,0.4,0.6), limits=c(0,0.6))+
   theme_light(base_size = 15) +
   theme(axis.title = element_text(size = 12, face="bold"),
@@ -880,4 +904,6 @@ ggplot(df.comp, aes(y=fossil, x=extinct, label=lab)) +
         legend.position = "bottom",
         legend.direction = "horizontal") +
   guides(color = guide_colourbar(barwidth = 10, barheight = 0.5)) 
+
+
 ggsave(here("figs", "Fig_06_plio_modern_comp.svg"), w=7, h=7)

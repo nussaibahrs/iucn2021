@@ -9,6 +9,7 @@ library(h2o) # version 3.28.0.2
 
 # packages for explaining our ML models
 library(pROC)
+library(verification)
 
 #rescaling
 scaled.new <- function (newdata, olddata) {(newdata-min(olddata, na.rm = TRUE))/(max(olddata, na.rm = TRUE)-min(olddata, na.rm = TRUE))}
@@ -62,14 +63,7 @@ train <- data.split[[1]]  # For training
 test <- data.split[[2]] # For final evaluation of model performance
 
 
-# variable names for response & features
-y <- "iucn"
-x_full <- c("max_depth", "branching", "corallite", "range" )
-x_morph <- c("corallite", "branching")
-x_dist <- c("max_depth", "range")
-
-
-# Full model --------------------------------------------------------------
+# ROC --------------------------------------------------------------
 
 auc_val <- function(type, w, dataset="train"){
   
@@ -97,11 +91,17 @@ auc_val <- function(type, w, dataset="train"){
   
   if (dataset=="train"){
     auc <- roc(true.train.labels, train.labels)  
+    roc.p <- wilcox.test(train.labels[true.train.labels == 1], 
+                         train.labels[true.train.labels == 0], 
+                         alternative = "great")
   } else {
     auc <- roc(true.test.labels, test.labels)
+    roc.p <- wilcox.test(test.labels[true.test.labels == 1], 
+                         test.labels[true.test.labels == 0], 
+                         alternative = "great")
   }
   
-  return(auc)
+  return(list(auc, roc.p))
 }
 
 type <- combn(c("binary","morph", "dist"),2)
@@ -112,19 +112,21 @@ aucCompare <- list()
 for(d in c("train", "test")){
   res <- matrix(ncol=6, nrow=ncol(type))
   
-  for (t in 1:ncol(type)){
+  for (t in 1:2){
     temp <- type[,t]
     
     roc1 <- auc_val(temp[1],win[temp[1]],d)
     roc2 <- auc_val(temp[2],win[temp[2]],d)
     
-    rocTest <- roc.test(roc1, roc2,)
+    rocTest <- roc.test(roc1[[1]], roc2[[1]])
     
     res[t,] <- c(d, temp, rocTest$method, rocTest$statistic, rocTest$p.value)
   }
+  
   colnames(res) <- c("dataset", "roc1", "roc2", "method", "statistic", "pvalue")
   aucCompare[[d]] <- as.data.frame(res)
 }
 
-write.csv(do.call(rbind, aucCompare), here("output", "Table_S_auc_comparison.csv"), row.names=FALSE))
+write.csv(do.call(rbind, aucCompare), 
+          here("output", "Table_S_auc_comparison.csv"), row.names=FALSE)
 
