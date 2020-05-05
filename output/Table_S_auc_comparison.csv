@@ -1,0 +1,7 @@
+Dataset,Compare models,,Statistic,P-value
+Training,full,morphological,12.87,6.29E-38
+,full,distributional,9.47,2.92E-21
+,morphological,distributional,-2.05,0.040
+Test,full,morphological,3.18,0.001
+,full,distributional,2.80,0.005
+,morphological,distributional,-1.02,0.306
