@@ -1,5 +1,5 @@
 # Ecological and morphological traits as determinants of extinction risk in reef coral species	
-_(submitted to Ecology Letters)_
+_(submitted to Global Ecology and Biogeography)_
 
 Nussaïbah B. Raja, Andreas Lauchstedt, John M. Pandolfi, Sun W. Kim, Ann F. Budd, Wolfgang Kiessling
 
