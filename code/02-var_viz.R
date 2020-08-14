@@ -5,7 +5,6 @@ library(patchwork)
 
 #palette
 u_col <- ggsci::pal_uchicago("default")(9)[c(2,5,4,3,1)]
-#pie(1:5, col=u_col)
 
 ### load data ####
 df.corals <- read.csv(here("data", "traits_iucn.csv"), stringsAsFactors = FALSE) %>%
@@ -22,8 +21,10 @@ df.corals <- read.csv(here("data", "traits_iucn.csv"), stringsAsFactors = FALSE)
   )
 
 theme_set(theme_light(base_size = 15))
+df.corals2 <- df.corals
+
 # % of observations per status
-p0 <- df.corals %>% group_by(iucn) %>% 
+p0 <- df.corals2 %>% group_by(iucn) %>% 
   tally() %>%
   ungroup() %>%
   mutate(n = n/sum(n) * 100) %>%
