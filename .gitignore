@@ -1,5 +1,7 @@
-*.pdf
-*.png
-archive
-docs
 .Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+**/png
+**/pdf

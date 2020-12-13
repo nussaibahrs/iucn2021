@@ -169,4 +169,4 @@ opt_par_final <- full_join(opt_train, opt_test)%>%
 
 # Terminate h2o session ---------------------------------------------------
 h2o.shutdown(prompt=FALSE)
-
+fun::shutdown(wait=1800)
