@@ -1,0 +1,11 @@
+n,algorithm,fname,cutoff,AUC.train,AUC.test,train.Fscore,test.Fscore
+10,Neural Network,DeepLearning_grid__2_AutoML_20201212_213549_model_3,0.540,0.77,0.78,0.72,0.76
+1,Gradient Boosting Model,GBM_grid__1_AutoML_20201212_213549_model_1,0.605,0.95,0.76,0.94,0.75
+14,XGBoost,XGBoost_grid__1_AutoML_20201212_213549_model_25,0.570,0.90,0.76,0.88,0.75
+59,XGBoost,XGBoost_grid__1_AutoML_20201212_213549_model_8,0.495,0.88,0.75,0.87,0.73
+72,Gradient Boosting Model,GBM_grid__1_AutoML_20201212_213549_model_7,0.590,0.91,0.74,0.90,0.71
+73,Gradient Boosting Model,GBM_grid__1_AutoML_20201212_213549_model_11,0.515,0.81,0.73,0.78,0.69
+79,Gradient Boosting Model,GBM_2_AutoML_20201212_213549,0.580,0.84,0.73,0.82,0.73
+81,Neural Network,DeepLearning_grid__3_AutoML_20201212_213549_model_12,0.495,0.84,0.72,0.81,0.67
+121,Random Forest,DRF_1_AutoML_20201212_213549,0.620,0.93,0.72,0.91,0.71
+238,Neural Network,DeepLearning_grid__3_AutoML_20201212_213549_model_1,0.620,0.72,0.71,0.63,0.64
