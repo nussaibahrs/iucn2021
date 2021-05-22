@@ -8,7 +8,7 @@ library(h2o)
 
 
 # Data  and set up h20 session -------------------------------------------------------------------
-source(file.path("code", "01-model", "00-load_data.R"))
+source(file.path("code", "01-model_fmm", "00-load_data.R"))
 
 # * Automatic Machine Learning ----------------------------------------------
 system.time(aml <- h2o.automl(y=y, x=x, 
