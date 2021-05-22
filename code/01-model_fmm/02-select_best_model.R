@@ -10,14 +10,10 @@ library(h2o) # version 3.28.0.2
 library(pROC)
 library(hmeasure)
 
-#rescaling
-scaled.new <- function (newdata, olddata) {(newdata-min(olddata, na.rm = TRUE))/(max(olddata, na.rm = TRUE)-min(olddata, na.rm = TRUE))}
-unscale <- function(newdata, olddata){min(olddata, na.rm = TRUE) + newdata * (max(olddata, na.rm = TRUE) - min(olddata, na.rm=TRUE))}
-
 #palette
 u_col <- ggsci::pal_uchicago("default")(9)[c(2,5,4,3,1)]
 # Data  and set up h20 session -------------------------------------------------------------------
-source(file.path("code", "01-model", "00-load_data.R"))
+source(file.path("code", "01-model_fmm", "00-load_data.R"))
 
 # Read leaderboard data ------------------------------------------------------
 leaderboard <- read.csv(file.path("output", paste0("Table_S_maximised_threshold_model_fmm_", hours, "h.csv")), stringsAsFactors = FALSE) %>% arrange(desc(AUC.test))
