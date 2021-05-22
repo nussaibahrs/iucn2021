@@ -15,7 +15,7 @@ library(h2o) # version 3.28.0.2
 u_col <- ggsci::pal_uchicago("default")(9)[c(2,5,4,3,1)]
 
 # Data and h2o setup--------------------------------------------------------------------
-source(file.path("code", "02-modern_corals", "00-load_data.R"))
+source(file.path("code", "02-model_mmm", "00-load_data.R"))
 
 # Load model --------------------------------------------------------------
 auc.df <- read.csv(file.path("output", "Table_S_model_performance_fmm.csv")) 

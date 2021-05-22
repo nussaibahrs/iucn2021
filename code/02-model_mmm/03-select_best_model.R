@@ -17,7 +17,7 @@ source(file.path("code", "functions.R"))
 u_col <- ggsci::pal_uchicago("default")(9)[c(2,5,4,3,1)]
 
 # Data  and set up h20 session -------------------------------------------------------------------
-source(file.path("code", "02-modern_corals", "00-load_data.R"))
+source(file.path("code", "02-model_mmm", "00-load_data.R"))
 table(df$extinct)
 
 # Read leaderboard data ------------------------------------------------------

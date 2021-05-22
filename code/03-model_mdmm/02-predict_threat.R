@@ -28,7 +28,7 @@ u_col <- ggsci::pal_uchicago("default")(9)[c(2,5,4,3,1)]
 
 
 # Load data ---------------------------------------------------------------
-source(file.path("code", "03-modern_corals_mdmm", "00-load_data.R"))
+source(file.path("code", "03-model_mdmm", "00-load_data.R"))
 
 folder_name <- folder
 

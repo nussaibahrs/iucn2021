@@ -10,7 +10,7 @@ library(h2o)
 
 
 # Data  and set up h20 session -------------------------------------------------------------------
-source(file.path("code", "02-modern_corals", "00-load_data.R"))
+source(file.path("code", "02-model_mmm", "00-load_data.R"))
 table(df$extinct)
 
 train
